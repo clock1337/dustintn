@@ -296,14 +296,14 @@ export default function ServicePage() {
               <span className="text-sm font-medium">All Services</span>
             </Link>
 
-            <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-              <div>
+            <AnimatedSection className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <div className="lg:flex-1">
                 <h1 className="text-headline">{service.title}</h1>
                 <p className="text-2xl text-white/60 max-w-2xl font-light">{service.tagline}</p>
               </div>
-              <div className="flex-shrink-0 flex items-center gap-4">
+              <div className="flex-shrink-0 lg:self-center flex items-center gap-4">
                 <span className="text-accent text-sm font-medium uppercase tracking-wider">Service</span>
-                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center">
+                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-xl shadow-accent/20">
                   <ServiceIcon className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -495,49 +495,51 @@ export default function ServicePage() {
         </section>
 
         {/* Service Navigation */}
-        <section className="py-16 bg-black border-t border-white/5">
+        <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="flex justify-between items-center">
-              {prevService ? (
-                <Link
-                  href={`/services/${prevService.slug}`}
-                  className="group flex items-center gap-4"
-                >
-                  <div className="w-12 h-12 bg-dark-gray rounded-full flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <ArrowLeft className="w-5 h-5" />
-                  </div>
-                  <div className="hidden sm:block">
-                    <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Previous</div>
-                    <div className="font-medium group-hover:text-accent transition-colors">{prevService.title}</div>
-                  </div>
-                </Link>
-              ) : (
-                <div></div>
-              )}
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 lg:p-12">
+              <div className="flex justify-between items-center">
+                {prevService ? (
+                  <Link
+                    href={`/services/${prevService.slug}`}
+                    className="group flex items-center gap-4 flex-1"
+                  >
+                    <div className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent transition-all duration-300 border border-white/10 group-hover:border-accent">
+                      <ArrowLeft className="w-5 h-5" />
+                    </div>
+                    <div className="hidden sm:block">
+                      <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Previous Service</div>
+                      <div className="font-semibold text-lg group-hover:text-accent transition-colors">{prevService.title}</div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="flex-1"></div>
+                )}
 
-              <Link
-                href="/#services"
-                className="text-white/60 hover:text-white transition-colors text-sm"
-              >
-                All Services
-              </Link>
-
-              {nextService ? (
                 <Link
-                  href={`/services/${nextService.slug}`}
-                  className="group flex items-center gap-4 text-right"
+                  href="/services"
+                  className="hidden md:flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white/80 hover:text-white hover:bg-accent transition-all duration-300 border border-white/10 hover:border-accent mx-8"
                 >
-                  <div className="hidden sm:block">
-                    <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Next</div>
-                    <div className="font-medium group-hover:text-accent transition-colors">{nextService.title}</div>
-                  </div>
-                  <div className="w-12 h-12 bg-dark-gray rounded-full flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
+                  <span className="text-sm font-medium">All Services</span>
                 </Link>
-              ) : (
-                <div></div>
-              )}
+
+                {nextService ? (
+                  <Link
+                    href={`/services/${nextService.slug}`}
+                    className="group flex items-center gap-4 text-right flex-1 justify-end"
+                  >
+                    <div className="hidden sm:block">
+                      <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Next Service</div>
+                      <div className="font-semibold text-lg group-hover:text-accent transition-colors">{nextService.title}</div>
+                    </div>
+                    <div className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent transition-all duration-300 border border-white/10 group-hover:border-accent">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="flex-1"></div>
+                )}
+              </div>
             </div>
           </div>
         </section>

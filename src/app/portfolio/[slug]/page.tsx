@@ -281,16 +281,16 @@ export default function ProjectPage() {
               <span className="text-sm font-medium">Back to Portfolio</span>
             </Link>
 
-            <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-              <div>
+            <AnimatedSection className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <div className="lg:flex-1">
                 <span className="text-accent text-sm font-medium uppercase tracking-wider mb-4 block">
                   {project.category}
                 </span>
                 <h1 className="text-headline">{project.title}</h1>
                 <p className="text-xl text-white/50 max-w-2xl">{project.tagline}</p>
               </div>
-              <div className="flex-shrink-0">
-                <div className="px-8 py-6 bg-white rounded-2xl">
+              <div className="flex-shrink-0 lg:self-center">
+                <div className="px-8 py-6 bg-white rounded-2xl shadow-xl">
                   <Image
                     src={project.logo}
                     alt={`${project.title} logo`}
