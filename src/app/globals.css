@@ -257,44 +257,4 @@
     background: rgba(255, 107, 0, 0.15);
   }
 
-  /* Legacy nav-link styles (keep for compatibility) */
-  .nav-link {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    transition: color 0.3s ease;
-    cursor: pointer;
-  }
-
-  .nav-link:hover {
-    color: white;
-  }
-
-  .nav-link-text {
-    position: relative;
-  }
-
-  .nav-link-text::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent);
-    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .nav-link:hover .nav-link-text::after {
-    width: 100%;
-  }
-
-  /* Active nav link */
-  .nav-link.text-white .nav-link-text::after {
-    width: 100%;
-    background: var(--accent);
-  }
 }
