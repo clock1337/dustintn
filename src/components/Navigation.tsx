@@ -66,12 +66,12 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
             </Link>
 
             {/* About */}
-            <a
-              href="/#about"
+            <Link
+              href="/about"
               className="nav-link-new"
             >
               About
-            </a>
+            </Link>
 
             {/* Services Dropdown */}
             <div
@@ -120,7 +120,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                   {/* Footer CTA */}
                   <div className="mt-3 pt-3 border-t border-white/10">
                     <Link
-                      href="/#contact"
+                      href="/contact"
                       className="flex items-center justify-center gap-2 w-full py-2.5 bg-accent/10 hover:bg-accent text-accent hover:text-white rounded-xl text-sm font-medium transition-all duration-300"
                     >
                       Get a Quote
@@ -191,7 +191,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                   {/* Footer CTA */}
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <Link
-                      href="/#contact"
+                      href="/contact"
                       className="flex items-center justify-center gap-2 w-full py-2.5 bg-accent/10 hover:bg-accent text-accent hover:text-white rounded-xl text-sm font-medium transition-all duration-300"
                     >
                       Start Your Project
@@ -203,17 +203,17 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
             </div>
 
             {/* Contact */}
-            <a
-              href="/#contact"
+            <Link
+              href="/contact"
               className="nav-link-new"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* CTA Button */}
           <Link
-            href="/#contact"
+            href="/contact"
             className="btn-pill btn-pill-primary text-xs group overflow-hidden relative"
           >
             <span className="relative z-10 flex items-center gap-2">

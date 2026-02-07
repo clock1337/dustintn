@@ -10,8 +10,8 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: "DustinTN - Web Development & Digital Services | Nashville & Middle Tennessee",
-    template: "%s | DustinTN"
+    default: "Web Development & Digital Marketing Services Nashville | Middle Tennessee",
+    template: "%s"
   },
   description: "Expert web development, SEO, brand identity, and digital marketing services in Nashville, Hendersonville, Gallatin, Goodlettsville, and Middle Tennessee. 20+ years helping local businesses grow online with custom websites and proven strategies.",
   keywords: [

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services - Web Development & Digital Marketing | Nashville & Middle Tennessee",
+  title: "Web Development & Digital Marketing Services | Nashville Tennessee",
   description: "Professional web development, SEO, brand identity, social media, and digital strategy services in Nashville, Hendersonville, Gallatin, Goodlettsville, and Middle Tennessee. Get expert solutions tailored to your business.",
   keywords: [
     "web development services Nashville",

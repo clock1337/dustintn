@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Web Development Projects | Nashville & Middle Tennessee",
+  title: "Web Development Portfolio & Case Studies | Nashville Tennessee",
   description: "Explore our web development portfolio featuring custom websites for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee. See real results from our healthcare, fitness, hospitality, and real estate clients.",
   keywords: [
     "web development portfolio Nashville",
