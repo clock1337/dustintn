@@ -287,11 +287,11 @@ export default function ServicePage() {
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             {/* Back link */}
             <Link
-              href="/#services"
-              className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors"
+              href="/services"
+              className="inline-flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full text-white/80 hover:text-white hover:bg-accent transition-all duration-300 border border-white/10 hover:border-accent mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
-              All Services
+              <span className="text-sm font-medium">All Services</span>
             </Link>
 
             <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -549,7 +549,7 @@ export default function ServicePage() {
                   DustinTN<span className="text-accent">.</span>
                 </Link>
                 <p className="text-white/40 leading-relaxed mb-6">
-                  Building digital solutions for businesses across Middle Tennessee since 2004.
+                  Building digital solutions for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee since 2004.
                 </p>
                 <div className="flex gap-3">
                   {['Tw', 'Li', 'Ig', 'Dr'].map((social, index) => (

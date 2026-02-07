@@ -287,7 +287,7 @@ export default function ServicesPage() {
                   DustinTN<span className="text-accent">.</span>
                 </Link>
                 <p className="text-white/40 leading-relaxed mb-6">
-                  Building digital solutions for businesses across Middle Tennessee since 2004.
+                  Building digital solutions for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee since 2004.
                 </p>
                 <div className="flex gap-3">
                   {['Tw', 'Li', 'Ig', 'Dr'].map((social, index) => (

@@ -232,7 +232,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-xl text-white/50 max-w-xl mb-12 leading-relaxed animate-fadeIn" style={{ animationDelay: '0.7s' }}>
-                  We craft distinctive websites and digital experiences for businesses across Middle Tennessee. Two decades of turning ideas into memorable online presences.
+                  We craft distinctive websites and digital experiences for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee. Two decades of turning ideas into memorable online presences.
                 </p>
 
                 <div className="flex flex-wrap gap-4 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
@@ -292,7 +292,7 @@ export default function Home() {
                   Building digital solutions since <span className="text-accent">2004</span>
                 </h2>
                 <p className="text-white/50 text-lg leading-relaxed mb-6">
-                  Based in Middle Tennessee, we've spent two decades helping businesses establish and grow their online presence. From medical practices to local retailers, we bring dedication and expertise to every project.
+                  Proudly serving Nashville, Hendersonville, Gallatin, Goodlettsville, and all of Middle Tennessee, we've spent two decades helping local businesses establish and grow their online presence. From healthcare practices to restaurants, fitness studios to real estate, we bring dedication and expertise to every project.
                 </p>
                 <p className="text-white/50 leading-relaxed mb-10">
                   Our approach is simple: understand your goals, design with purpose, and build with precision. No corporate layers, no middlemen—just direct collaboration that delivers results.
@@ -630,7 +630,7 @@ export default function Home() {
                   DustinTN<span className="text-accent">.</span>
                 </a>
                 <p className="text-white/40 leading-relaxed mb-6">
-                  Building digital solutions for businesses across Middle Tennessee since 2004.
+                  Building digital solutions for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee since 2004.
                 </p>
                 <div className="flex gap-3">
                   {['Tw', 'Li', 'Ig', 'Dr'].map((social, index) => (
