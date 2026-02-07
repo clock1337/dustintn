@@ -41,7 +41,8 @@
       "Bash(node:*)",
       "Bash(git push)",
       "Bash(gh auth setup-git:*)",
-      "Bash(open https://dustin-delta.vercel.app/)"
+      "Bash(open https://dustin-delta.vercel.app/)",
+      "Bash(open https://dustin-delta.vercel.app/portfolio/coldwell-banker-commercial)"
     ]
   }
 }
