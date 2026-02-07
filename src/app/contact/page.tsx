@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Mail, Phone, MapPin, Clock, Send, CheckCircle2, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import ProudlyServing from "@/components/ProudlyServing";
+import Footer from "@/components/Footer";
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation(threshold = 0.1) {
@@ -405,89 +407,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Areas Served */}
-        <section className="py-20 bg-dark-gray">
-          <div className="container mx-auto px-6 lg:px-12">
-            <AnimatedSection className="text-center">
-              <h2 className="text-2xl font-semibold mb-8">
-                Proudly Serving <span className="text-accent">Middle Tennessee</span>
-              </h2>
-              <div className="flex flex-wrap justify-center gap-4">
-                {['Nashville', 'Hendersonville', 'Gallatin', 'Goodlettsville', 'Mount Juliet', 'Lebanon', 'Franklin', 'Murfreesboro', 'Smyrna', 'La Vergne'].map((city, index) => (
-                  <span
-                    key={index}
-                    className="px-6 py-3 bg-black rounded-full text-white/70 border border-white/10"
-                  >
-                    {city}
-                  </span>
-                ))}
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="py-16 bg-dark-gray border-t border-white/5">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid md:grid-cols-12 gap-12 mb-16">
-              <div className="md:col-span-4">
-                <Link href="/" className="text-2xl font-semibold tracking-tight mb-6 block">
-                  DustinTN<span className="text-accent">.</span>
-                </Link>
-                <p className="text-white/40 leading-relaxed mb-6">
-                  Building digital solutions for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee since 2004.
-                </p>
-                <div className="flex gap-3">
-                  {['Tw', 'Li', 'Ig', 'Dr'].map((social, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="w-10 h-10 bg-dark rounded-lg flex items-center justify-center text-white/40 hover:bg-accent hover:text-white transition-all duration-300"
-                    >
-                      <span className="text-xs font-medium">{social}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="md:col-span-2">
-                <h4 className="font-semibold mb-6">Navigation</h4>
-                <ul className="space-y-4 text-sm text-white/40">
-                  <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-                  <li><Link href="/about" className="hover:text-accent transition-colors">About</Link></li>
-                  <li><Link href="/services" className="hover:text-accent transition-colors">Services</Link></li>
-                  <li><Link href="/portfolio" className="hover:text-accent transition-colors">Work</Link></li>
-                </ul>
-              </div>
-
-              <div className="md:col-span-2">
-                <h4 className="font-semibold mb-6">Services</h4>
-                <ul className="space-y-4 text-sm text-white/40">
-                  <li><Link href="/services/web-development" className="hover:text-accent transition-colors">Web Development</Link></li>
-                  <li><Link href="/services/brand-identity" className="hover:text-accent transition-colors">Brand Identity</Link></li>
-                  <li><Link href="/services/social-media" className="hover:text-accent transition-colors">Social Media</Link></li>
-                  <li><Link href="/services/web-consulting" className="hover:text-accent transition-colors">Consulting</Link></li>
-                </ul>
-              </div>
-
-              <div className="md:col-span-4">
-                <h4 className="font-semibold mb-6">Get in Touch</h4>
-                <ul className="space-y-4 text-sm text-white/40">
-                  <li><a href="mailto:hello@dustintn.com" className="hover:text-accent transition-colors">hello@dustintn.com</a></li>
-                  <li><a href="tel:+16155551234" className="hover:text-accent transition-colors">(615) 555-1234</a></li>
-                  <li>Middle Tennessee</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="divider mb-8"></div>
-
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-white/30 text-sm">&copy; {new Date().getFullYear()} DustinTN. All rights reserved.</p>
-              <p className="text-white/30 text-sm">Crafted with care in Middle Tennessee</p>
-            </div>
-          </div>
-        </footer>
+        <ProudlyServing />
+        <Footer />
       </main>
     </div>
   );
