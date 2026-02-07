@@ -99,10 +99,22 @@ const projects = [
     location: "Nashville, TN",
     services: ["Web Design", "Development", "E-commerce"],
     website: "southerncollectivespiritco.com"
+  },
+  {
+    id: 5,
+    slug: "coldwell-banker-commercial",
+    title: "Coldwell Banker Commercial SC",
+    category: "Real Estate",
+    description: "A professional commercial real estate website for Southern California's premier brokerage team, featuring property listings, market insights, and comprehensive services for investors and business owners.",
+    image: "/screenshots/coldwell-banker-commercial.png",
+    client: "Coldwell Banker Commercial",
+    location: "Southern California",
+    services: ["Web Design", "Development", "SEO"],
+    website: "cbcsocalgroup.com"
   }
 ];
 
-const categories = ["All", "Web Development", "Healthcare", "Hospitality", "Branding"];
+const categories = ["All", "Web Development", "Healthcare", "Hospitality", "Real Estate", "Branding"];
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("All");

@@ -197,6 +197,42 @@ const projects = {
       "https://images.unsplash.com/photo-1514218953589-2d7d37efd2dc?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1504675099198-7023dd85f5a3?w=800&h=600&fit=crop"
     ]
+  },
+  "coldwell-banker-commercial": {
+    id: 5,
+    slug: "coldwell-banker-commercial",
+    title: "Coldwell Banker Commercial SC",
+    category: "Real Estate",
+    tagline: "Your Partner in Commercial Real Estate",
+    description: "Coldwell Banker Commercial SC is Southern California's premier commercial real estate brokerage, specializing in investment properties, retail spaces, and business sales. The website serves as a comprehensive platform for property listings, market insights, and client services.",
+    heroImage: "/screenshots/coldwell-banker-commercial.png",
+    logo: "/logos/coldwell-banker-commercial.png",
+    client: "Coldwell Banker Commercial",
+    date: "2024",
+    services: ["Web Design", "Development", "SEO Optimization"],
+    website: "cbcsocalgroup.com",
+    location: "Southern California",
+    challenge: "The brokerage needed a professional website that would showcase their extensive property listings, establish credibility in the competitive commercial real estate market, and generate qualified leads from investors and business owners.",
+    solution: "We developed a sophisticated real estate platform with advanced property search functionality, detailed listing pages, and lead capture systems. The design emphasizes professionalism and trust while making it easy for clients to explore available properties and connect with agents.",
+    features: [
+      "Advanced property search and filtering",
+      "Detailed property listing pages",
+      "Agent profiles and contact forms",
+      "Market insights and resources",
+      "Mobile-responsive design",
+      "Lead generation optimization"
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "IDX Integration", "Vercel"],
+    results: [
+      { metric: "65%", label: "More Inquiries" },
+      { metric: "2x", label: "Property Views" },
+      { metric: "40%", label: "Lead Conversion" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
+    ]
   }
 };
 

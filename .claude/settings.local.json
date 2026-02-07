@@ -38,7 +38,10 @@
       "Bash(gh auth status:*)",
       "Bash(gh auth login:*)",
       "Bash(open \"https://vercel.com/clock05s-projects/dustin/settings/git\")",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(git push)",
+      "Bash(gh auth setup-git:*)",
+      "Bash(open https://dustin-delta.vercel.app/)"
     ]
   }
 }

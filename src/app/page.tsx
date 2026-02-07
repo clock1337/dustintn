@@ -124,6 +124,7 @@ const portfolio = [
   { id: 2, slug: "champions-adaptive-fitness", title: "Champions Adaptive Fitness", category: "Web Development", image: "/screenshots/champions-adaptive-fitness.png" },
   { id: 3, slug: "pinnacle-health-choice", title: "Pinnacle Wellness", category: "Healthcare", image: "/screenshots/pinnacle-health-choice.png" },
   { id: 4, slug: "southern-collective-spirit-co", title: "Southern Collective Spirit Co.", category: "Hospitality", image: "/screenshots/southern-collective-spirit-co.png" },
+  { id: 5, slug: "coldwell-banker-commercial", title: "Coldwell Banker Commercial SC", category: "Real Estate", image: "/screenshots/coldwell-banker-commercial.png" },
 ];
 
 const stats = [
