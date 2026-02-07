@@ -294,15 +294,17 @@ export default function ServicePage() {
               All Services
             </Link>
 
-            <AnimatedSection>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center">
-                  <ServiceIcon className="w-8 h-8 text-accent" />
-                </div>
-                <span className="text-accent text-sm font-medium uppercase tracking-wider">Service</span>
+            <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+              <div>
+                <h1 className="text-headline">{service.title}</h1>
+                <p className="text-2xl text-white/60 max-w-2xl font-light">{service.tagline}</p>
               </div>
-              <h1 className="text-headline">{service.title}</h1>
-              <p className="text-2xl text-white/60 max-w-2xl font-light">{service.tagline}</p>
+              <div className="flex-shrink-0 flex items-center gap-4">
+                <span className="text-accent text-sm font-medium uppercase tracking-wider">Service</span>
+                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center">
+                  <ServiceIcon className="w-8 h-8 text-white" />
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </section>
