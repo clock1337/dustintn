@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navigation from "@/components/Navigation";
+import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation(threshold = 0.1) {
@@ -60,7 +61,7 @@ const projects = {
     category: "Web Development",
     tagline: "Transform Your Body with Personalized Training",
     description: "Fine Assets Personal Training is a comprehensive fitness coaching platform led by Lynn Mckinnie Belt, a certified trainer with over 20 years of experience. The website showcases personalized training solutions, client transformations, and accessible online coaching options.",
-    heroImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&h=900&fit=crop",
+    heroImage: "/screenshots/fine-assets.png",
     logo: "/logos/fine-assets-logo.png",
     client: "Lynn Mckinnie Belt",
     date: "2024",
@@ -96,7 +97,7 @@ const projects = {
     category: "Web Development",
     tagline: "Unleash Your Inner Champion",
     description: "Champions Adaptive Fitness is Temecula's premier private fitness studio specializing in inclusive programming for youth and adults with intellectual and developmental disabilities. The website needed to communicate warmth, professionalism, and the unique value of their adaptive fitness approach.",
-    heroImage: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&h=900&fit=crop",
+    heroImage: "/screenshots/champions-adaptive-fitness.png",
     logo: "/logos/champions-adaptive-fitness-logo.png",
     client: "Champions Adaptive Fitness",
     date: "2024",
@@ -132,7 +133,7 @@ const projects = {
     category: "Healthcare",
     tagline: "You Deserve to be Healthy",
     description: "Pinnacle Wellness is an established chiropractic clinic in San Antonio, Texas with over 35 years of experience. The practice needed a modern website that would attract new patients, explain their comprehensive services, and facilitate online appointment booking.",
-    heroImage: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&h=900&fit=crop",
+    heroImage: "/screenshots/pinnacle-health-choice.png",
     logo: "/logos/pinnacle-health-choice.png",
     client: "Pinnacle Wellness",
     date: "2024",
@@ -168,7 +169,7 @@ const projects = {
     category: "Hospitality",
     tagline: "Whiskey Is Our Passion",
     description: "Southern Collective Spirit Company is a Nashville-based distillery offering a unique, experiential approach to whiskey. The website showcases their curated barrel selections, custom blends with personalized labeling, and immersive tasting experiences that celebrate the artistry of spirits.",
-    heroImage: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=1600&h=900&fit=crop",
+    heroImage: "/screenshots/southern-collective-spirit-co.png",
     logo: "/logos/southern-collective-spirit-co.png",
     client: "Southern Collective Spirit Co.",
     date: "2024",
@@ -247,7 +248,7 @@ export default function ProjectPage() {
                 <span className="text-accent text-sm font-medium uppercase tracking-wider mb-4 block">
                   {project.category}
                 </span>
-                <h1 className="text-display mb-6">{project.title}</h1>
+                <h1 className="text-headline">{project.title}</h1>
                 <p className="text-xl text-white/50 max-w-2xl">{project.tagline}</p>
               </div>
               <div className="flex-shrink-0">
@@ -269,16 +270,11 @@ export default function ProjectPage() {
         <section className="pb-20">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection delay={100}>
-              <div className="aspect-[16/9] rounded-2xl overflow-hidden relative">
-                <Image
-                  src={project.heroImage}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
+              <ScrollingScreenshot
+                src={project.heroImage}
+                alt={project.title}
+                className="aspect-[16/9]"
+              />
             </AnimatedSection>
           </div>
         </section>
@@ -491,49 +487,51 @@ export default function ProjectPage() {
         </section>
 
         {/* Project Navigation */}
-        <section className="py-16 bg-black border-t border-white/5">
+        <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="flex justify-between items-center">
-              {prevProject ? (
-                <Link
-                  href={`/portfolio/${prevProject.slug}`}
-                  className="group flex items-center gap-4"
-                >
-                  <div className="w-12 h-12 bg-dark-gray rounded-full flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <ArrowLeft className="w-5 h-5" />
-                  </div>
-                  <div className="hidden sm:block">
-                    <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Previous</div>
-                    <div className="font-medium group-hover:text-accent transition-colors">{prevProject.title}</div>
-                  </div>
-                </Link>
-              ) : (
-                <div></div>
-              )}
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 lg:p-12">
+              <div className="flex justify-between items-center">
+                {prevProject ? (
+                  <Link
+                    href={`/portfolio/${prevProject.slug}`}
+                    className="group flex items-center gap-4 flex-1"
+                  >
+                    <div className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent transition-all duration-300 border border-white/10 group-hover:border-accent">
+                      <ArrowLeft className="w-5 h-5" />
+                    </div>
+                    <div className="hidden sm:block">
+                      <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Previous Project</div>
+                      <div className="font-semibold text-lg group-hover:text-accent transition-colors">{prevProject.title}</div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="flex-1"></div>
+                )}
 
-              <Link
-                href="/portfolio"
-                className="text-white/60 hover:text-white transition-colors text-sm"
-              >
-                All Projects
-              </Link>
-
-              {nextProject ? (
                 <Link
-                  href={`/portfolio/${nextProject.slug}`}
-                  className="group flex items-center gap-4 text-right"
+                  href="/portfolio"
+                  className="hidden md:flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white/80 hover:text-white hover:bg-accent transition-all duration-300 border border-white/10 hover:border-accent mx-8"
                 >
-                  <div className="hidden sm:block">
-                    <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Next</div>
-                    <div className="font-medium group-hover:text-accent transition-colors">{nextProject.title}</div>
-                  </div>
-                  <div className="w-12 h-12 bg-dark-gray rounded-full flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
+                  <span className="text-sm font-medium">All Projects</span>
                 </Link>
-              ) : (
-                <div></div>
-              )}
+
+                {nextProject ? (
+                  <Link
+                    href={`/portfolio/${nextProject.slug}`}
+                    className="group flex items-center gap-4 text-right flex-1 justify-end"
+                  >
+                    <div className="hidden sm:block">
+                      <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Next Project</div>
+                      <div className="font-semibold text-lg group-hover:text-accent transition-colors">{nextProject.title}</div>
+                    </div>
+                    <div className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent transition-all duration-300 border border-white/10 group-hover:border-accent">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="flex-1"></div>
+                )}
+              </div>
             </div>
           </div>
         </section>

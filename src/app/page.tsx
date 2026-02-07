@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Mail, Pho
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation(threshold = 0.1) {
@@ -119,10 +120,10 @@ const services = [
 ];
 
 const portfolio = [
-  { id: 1, slug: "fine-assets", title: "Fine Assets Personal Training", category: "Web Development", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop" },
-  { id: 2, slug: "champions-adaptive-fitness", title: "Champions Adaptive Fitness", category: "Web Development", image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop" },
-  { id: 3, slug: "pinnacle-health-choice", title: "Pinnacle Wellness", category: "Healthcare", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop" },
-  { id: 4, slug: "southern-collective-spirit-co", title: "Southern Collective Spirit Co.", category: "Hospitality", image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=800&h=600&fit=crop" },
+  { id: 1, slug: "fine-assets", title: "Fine Assets Personal Training", category: "Web Development", image: "/screenshots/fine-assets.png" },
+  { id: 2, slug: "champions-adaptive-fitness", title: "Champions Adaptive Fitness", category: "Web Development", image: "/screenshots/champions-adaptive-fitness.png" },
+  { id: 3, slug: "pinnacle-health-choice", title: "Pinnacle Wellness", category: "Healthcare", image: "/screenshots/pinnacle-health-choice.png" },
+  { id: 4, slug: "southern-collective-spirit-co", title: "Southern Collective Spirit Co.", category: "Hospitality", image: "/screenshots/southern-collective-spirit-co.png" },
 ];
 
 const stats = [
@@ -417,18 +418,11 @@ export default function Home() {
               {portfolio.map((project, index) => (
                 <AnimatedSection key={project.id} delay={index * 150}>
                   <Link href={`/portfolio/${project.slug}`} className="group block cursor-pointer">
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative">
-                      <Image
+                    <div className="mb-6">
+                      <ScrollingScreenshot
                         src={project.image}
                         alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300">
-                          <ArrowUpRight className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
                     </div>
                     <div className="flex items-start justify-between">
                       <div>

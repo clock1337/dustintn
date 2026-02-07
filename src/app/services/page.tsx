@@ -122,7 +122,7 @@ export default function ServicesPage() {
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <AnimatedSection className="max-w-3xl">
               <span className="section-label mb-6 block">What We Do</span>
-              <h1 className="text-display mb-8">
+              <h1 className="text-headline">
                 Services That <span className="text-accent">Deliver</span> Results
               </h1>
               <p className="text-xl text-white/50 leading-relaxed">

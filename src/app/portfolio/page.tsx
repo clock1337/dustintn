@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, ExternalLink, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation(threshold = 0.1) {
@@ -57,7 +58,7 @@ const projects = [
     title: "Fine Assets Personal Training",
     category: "Web Development",
     description: "A comprehensive fitness coaching platform featuring personalized training solutions, online coaching capabilities, and client transformation showcases for a certified trainer with 20+ years of experience.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop",
+    image: "/screenshots/fine-assets.png",
     client: "Lynn Mckinnie Belt",
     location: "Lake Norman, NC",
     services: ["Web Design", "Development", "SEO"],
@@ -69,7 +70,7 @@ const projects = [
     title: "Champions Adaptive Fitness",
     category: "Web Development",
     description: "A welcoming digital presence for Temecula's premier adaptive fitness studio, specializing in inclusive programming for youth and adults with intellectual and developmental disabilities.",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
+    image: "/screenshots/champions-adaptive-fitness.png",
     client: "Champions Adaptive Fitness",
     location: "Temecula, CA",
     services: ["Web Design", "Branding", "Development"],
@@ -81,7 +82,7 @@ const projects = [
     title: "Pinnacle Wellness",
     category: "Healthcare",
     description: "A professional healthcare website for an established chiropractic clinic in San Antonio, featuring online appointment booking, service information, and patient resources.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop",
+    image: "/screenshots/pinnacle-health-choice.png",
     client: "Pinnacle Wellness",
     location: "San Antonio, TX",
     services: ["Web Design", "Development", "Content"],
@@ -93,7 +94,7 @@ const projects = [
     title: "Southern Collective Spirit Company",
     category: "Hospitality",
     description: "An immersive website for a Nashville distillery offering curated barrel selections, custom whiskey blends, and unique tasting experiences that celebrate the artistry of spirits.",
-    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=800&h=600&fit=crop",
+    image: "/screenshots/southern-collective-spirit-co.png",
     client: "Southern Collective Spirit Co.",
     location: "Nashville, TN",
     services: ["Web Design", "Development", "E-commerce"],
@@ -123,7 +124,7 @@ export default function PortfolioPage() {
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <AnimatedSection className="max-w-3xl">
               <span className="section-label mb-6 block">Portfolio</span>
-              <h1 className="text-display mb-8">
+              <h1 className="text-headline">
                 Explore My <span className="text-accent">Latest</span> Work
               </h1>
               <p className="text-xl text-white/50 leading-relaxed">
@@ -164,20 +165,11 @@ export default function PortfolioPage() {
                   <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     {/* Image */}
                     <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <Link href={`/portfolio/${project.slug}`} className="group block">
-                        <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                            <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300">
-                              <ArrowUpRight className="w-8 h-8 text-white" />
-                            </div>
-                          </div>
-                        </div>
+                      <Link href={`/portfolio/${project.slug}`} className="block">
+                        <ScrollingScreenshot
+                          src={project.image}
+                          alt={project.title}
+                        />
                       </Link>
                     </div>
 

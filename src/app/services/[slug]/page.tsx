@@ -301,7 +301,7 @@ export default function ServicePage() {
                 </div>
                 <span className="text-accent text-sm font-medium uppercase tracking-wider">Service</span>
               </div>
-              <h1 className="text-display mb-6">{service.title}</h1>
+              <h1 className="text-headline">{service.title}</h1>
               <p className="text-2xl text-white/60 max-w-2xl font-light">{service.tagline}</p>
             </AnimatedSection>
           </div>
