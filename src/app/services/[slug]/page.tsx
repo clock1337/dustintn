@@ -309,21 +309,53 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* Hero Image */}
+        {/* Hero Split Section */}
         <section className="pb-20">
           <div className="container mx-auto px-6 lg:px-12">
-            <AnimatedSection delay={100}>
-              <div className="aspect-[16/9] rounded-2xl overflow-hidden relative">
-                <Image
-                  src={service.heroImage}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
-            </AnimatedSection>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left - Image */}
+              <AnimatedSection delay={100}>
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
+                  <Image
+                    src={service.heroImage}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+              </AnimatedSection>
+
+              {/* Right - Key Highlights */}
+              <AnimatedSection delay={200}>
+                <div className="bg-dark-gray rounded-2xl p-8 lg:p-10 border border-white/5">
+                  <h3 className="text-lg font-semibold mb-6 text-white/80">What You Get</h3>
+                  <div className="grid gap-4">
+                    {service.features.slice(0, 4).map((feature, index) => (
+                      <div key={index} className="flex items-center gap-4 p-4 bg-black/30 rounded-xl">
+                        <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <CheckCircle2 className="w-5 h-5 text-accent" />
+                        </div>
+                        <span className="text-white/70">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-8 pt-6 border-t border-white/10">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-white/40">Technologies we use</span>
+                      <div className="flex gap-2">
+                        {service.technologies.slice(0, 3).map((tech, index) => (
+                          <span key={index} className="px-3 py-1 bg-white/5 rounded-full text-white/60 text-xs">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 
