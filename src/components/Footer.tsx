@@ -63,6 +63,10 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-sm">© {new Date().getFullYear()} DustinTN. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/terms-of-use" className="text-white/30 text-sm hover:text-accent transition-colors">Terms of Use</Link>
+            <Link href="/privacy-policy" className="text-white/30 text-sm hover:text-accent transition-colors">Privacy Policy</Link>
+          </div>
           <p className="text-white/30 text-sm">Crafted with care in Middle Tennessee</p>
         </div>
       </div>
