@@ -398,7 +398,7 @@ export default function FreeConsultationPage() {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            placeholder="(615) 555-1234"
+                            placeholder="(615) 788-2453"
                             className="w-full px-4 py-3 bg-dark-gray border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:border-accent focus:outline-none transition-colors"
                           />
                         </div>

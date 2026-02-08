@@ -62,8 +62,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    value: "(615) 555-1234",
-    link: "tel:+16155551234",
+    value: "(615) 788-2453",
+    link: "tel:+16157882453",
     description: "Mon-Fri, 9am-5pm CST"
   },
   {
@@ -248,7 +248,7 @@ export default function ContactPage() {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            placeholder="(615) 555-1234"
+                            placeholder="(615) 788-2453"
                             className="w-full px-4 py-3 bg-dark-gray border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:border-accent focus:outline-none transition-colors"
                           />
                         </div>

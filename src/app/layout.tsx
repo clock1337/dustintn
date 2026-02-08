@@ -84,7 +84,7 @@ const jsonLd = {
   url: 'https://dustintn.com',
   logo: 'https://dustintn.com/og-image.png',
   image: 'https://dustintn.com/og-image.png',
-  telephone: '+1-615-555-1234',
+  telephone: '+1-615-788-2453',
   email: 'hello@dustintn.com',
   address: {
     '@type': 'PostalAddress',
