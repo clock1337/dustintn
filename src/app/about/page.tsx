@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import ProudlyServing from "@/components/ProudlyServing";
+import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 
 // Custom hook for scroll-triggered animations
@@ -286,6 +287,8 @@ export default function AboutPage() {
             </AnimatedSection>
           </div>
         </section>
+
+        <ResourceSnippets category="Digital Strategy" />
 
         <ProudlyServing />
         <Footer />

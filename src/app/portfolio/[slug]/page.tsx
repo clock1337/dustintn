@@ -8,6 +8,7 @@ import { useParams } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 import ProudlyServing from "@/components/ProudlyServing";
+import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 
 // Custom hook for scroll-triggered animations
@@ -573,6 +574,14 @@ export default function ProjectPage() {
             </div>
           </div>
         </section>
+
+        <ResourceSnippets
+          category={
+            project.category === "Web Development" ? "Web Development" :
+            project.category === "Healthcare" ? "SEO & Search" :
+            "Digital Strategy"
+          }
+        />
 
         <ProudlyServing />
         <Footer />

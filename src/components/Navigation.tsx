@@ -35,7 +35,7 @@ const serviceItems = [
 ];
 
 interface NavigationProps {
-  currentPage?: 'home' | 'portfolio' | 'project';
+  currentPage?: 'home' | 'portfolio' | 'project' | 'resources';
 }
 
 export default function Navigation({ currentPage = 'home' }: NavigationProps) {
@@ -201,6 +201,14 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                 </div>
               </div>
             </div>
+
+            {/* Resources */}
+            <Link
+              href="/resources"
+              className={`nav-link-new ${currentPage === 'resources' ? 'nav-link-active' : ''}`}
+            >
+              Resources
+            </Link>
 
             {/* Contact */}
             <Link

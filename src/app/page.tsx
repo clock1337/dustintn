@@ -7,6 +7,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 import ProudlyServing from "@/components/ProudlyServing";
+import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 
 // Custom hook for scroll-triggered animations
@@ -622,6 +623,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <ResourceSnippets limit={3} />
 
         <ProudlyServing />
         <Footer />

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import ProudlyServing from "@/components/ProudlyServing";
+import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 
 // Custom hook for scroll-triggered animations
@@ -543,6 +544,8 @@ export default function ServicePage() {
             </div>
           </div>
         </section>
+
+        <ResourceSnippets serviceSlug={slug} />
 
         <ProudlyServing />
         <Footer />
