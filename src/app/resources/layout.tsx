@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Resources | DustinTN - Web Development & Digital Marketing Tips",
+  title: "Free Web & Marketing Resources | DustinTN",
   description:
-    "Free guides, checklists, and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Nashville and Middle Tennessee.",
+    "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Middle Tennessee.",
   keywords: [
     "website maintenance checklist",
     "small business SEO tips",
@@ -15,11 +15,14 @@ export const metadata: Metadata = {
     "Nashville web development resources",
   ],
   openGraph: {
-    title: "Free Resources | DustinTN",
+    title: "Free Web & Marketing Resources | DustinTN",
     description:
-      "Free guides, checklists, and action plans to help your business grow online. Practical tips from 20+ years of web development experience.",
+      "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Middle Tennessee.",
     url: "https://dustintn.com/resources",
     type: "website",
+  },
+  alternates: {
+    canonical: "/resources",
   },
 };
 

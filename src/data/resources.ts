@@ -14,8 +14,11 @@ export interface ResourceCTA {
 export interface Resource {
   slug: string;
   title: string;
+  metaTitle: string;
+  metaDescription: string;
   category: string;
   excerpt: string;
+  image: string;
   readTime: string;
   publishDate: string;
   tags: string[];
@@ -36,9 +39,12 @@ export const resources: Resource[] = [
   {
     slug: "essential-website-maintenance-checklist-2026",
     title: "The Essential Website Maintenance Checklist for 2026",
+    metaTitle: "Website Maintenance Checklist 2026 | DustinTN",
+    metaDescription: "Keep your website secure and fast with this essential 2026 maintenance checklist. Weekly, monthly, and quarterly tasks for small businesses. Free actionable guide.",
     category: "Web Development",
     excerpt:
       "Keep your website running smoothly with this comprehensive maintenance checklist covering security, performance, content, and more.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     readTime: "8 min read",
     publishDate: "January 15, 2026",
     tags: ["Maintenance", "Security", "Performance"],
@@ -109,9 +115,12 @@ export const resources: Resource[] = [
   {
     slug: "build-strong-online-presence-small-business",
     title: "How to Build a Strong Online Presence for Your Small Business",
+    metaTitle: "Build Your Small Business Online Presence | DustinTN",
+    metaDescription: "Learn how to establish a strong online presence for your small business. Step-by-step guide covering websites, SEO, social media, and content strategy.",
     category: "Digital Strategy",
     excerpt:
       "A step-by-step guide to establishing and growing your small business's online presence across websites, search, and social media.",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
     readTime: "10 min read",
     publishDate: "January 22, 2026",
     tags: ["Online Presence", "Small Business", "Growth"],
@@ -159,9 +168,12 @@ export const resources: Resource[] = [
   {
     slug: "social-media-strategy-local-businesses",
     title: "Social Media Strategy for Local Businesses: A Practical Guide",
+    metaTitle: "Social Media Strategy for Local Businesses | DustinTN",
+    metaDescription: "Create a social media strategy that drives results for your local business. Practical tips on platforms, content calendars, engagement, and tracking ROI.",
     category: "Social Media",
     excerpt:
       "Learn how to create an effective social media strategy that helps your local business connect with your community and drive results.",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80",
     readTime: "9 min read",
     publishDate: "February 1, 2026",
     tags: ["Social Media", "Local Business", "Strategy"],
@@ -217,9 +229,12 @@ export const resources: Resource[] = [
   {
     slug: "30-day-website-launch-action-plan",
     title: "Your 30-Day Website Launch Action Plan",
+    metaTitle: "30-Day Website Launch Plan for Businesses | DustinTN",
+    metaDescription: "Launch your website in 30 days with this free action plan. Day-by-day tasks covering planning, design, development, testing, and a successful go-live.",
     category: "Web Development",
     excerpt:
       "A day-by-day action plan to take your new website from concept to launch in 30 days, with practical steps for each phase.",
+    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&q=80",
     readTime: "11 min read",
     publishDate: "February 5, 2026",
     tags: ["Website Launch", "Action Plan", "Planning"],
@@ -299,9 +314,12 @@ export const resources: Resource[] = [
   {
     slug: "10-seo-tips-small-business-2026",
     title: "10 SEO Tips Every Small Business Needs in 2026",
+    metaTitle: "10 SEO Tips for Small Businesses in 2026 | DustinTN",
+    metaDescription: "Boost your search rankings with these 10 actionable SEO tips for small businesses. Covers local SEO, Google Business Profile, speed, content, and more.",
     category: "SEO & Search",
     excerpt:
       "Practical, actionable SEO tips that help small businesses improve their search visibility and attract more local customers.",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
     readTime: "9 min read",
     publishDate: "February 10, 2026",
     tags: ["SEO", "Small Business", "Search Rankings"],
@@ -374,9 +392,12 @@ export const resources: Resource[] = [
   {
     slug: "digital-marketing-trends-2026",
     title: "Digital Marketing Trends That Matter in 2026",
+    metaTitle: "Digital Marketing Trends 2026 That Matter | DustinTN",
+    metaDescription: "Discover the digital marketing trends actually impacting businesses in 2026. AI personalization, short-form video, first-party data, and local SEO insights.",
     category: "Digital Strategy",
     excerpt:
       "Cut through the hype and focus on the digital marketing trends that will actually impact your business this year.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     readTime: "8 min read",
     publishDate: "February 14, 2026",
     tags: ["Digital Marketing", "Trends", "2026"],
@@ -429,9 +450,12 @@ export const resources: Resource[] = [
   {
     slug: "complete-guide-google-business-profile",
     title: "The Complete Guide to Optimizing Your Google Business Profile",
+    metaTitle: "Google Business Profile Optimization Guide | DustinTN",
+    metaDescription: "Optimize your Google Business Profile to attract more local customers. Complete guide to setup, photos, reviews, posts, and tracking your performance.",
     category: "SEO & Search",
     excerpt:
       "Everything you need to know about setting up and optimizing your Google Business Profile to attract more local customers.",
+    image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&q=80",
     readTime: "10 min read",
     publishDate: "February 18, 2026",
     tags: ["Google Business", "Local SEO", "Reviews"],
@@ -497,9 +521,12 @@ export const resources: Resource[] = [
   {
     slug: "30-day-social-media-action-plan",
     title: "Your 30-Day Social Media Action Plan",
+    metaTitle: "30-Day Social Media Action Plan for Business | DustinTN",
+    metaDescription: "Build your social media presence in 30 days with this free action plan. Daily tasks for auditing, content creation, engagement, and sustainable growth.",
     category: "Social Media",
     excerpt:
       "A practical, day-by-day plan to build your social media presence from scratch or breathe new life into existing accounts.",
+    image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80",
     readTime: "10 min read",
     publishDate: "February 22, 2026",
     tags: ["Social Media", "Action Plan", "30 Days"],
@@ -580,6 +607,94 @@ export const resources: Resource[] = [
         "Building a social media presence takes time and consistency. If you would rather focus on running your business, our team can manage your social media strategy, content creation, and community engagement for you.",
       buttonText: "Get Social Media Support",
       buttonHref: "/contact",
+    },
+  },
+  {
+    slug: "choose-right-website-platform-small-business",
+    title: "How to Choose the Right Website Platform for Your Business",
+    metaTitle: "Choose the Right Website Platform for Business | DustinTN",
+    metaDescription: "Compare WordPress, Squarespace, Wix, Shopify, and custom-built websites. Find the best platform for your small business goals, budget, and growth plans.",
+    category: "Web Development",
+    excerpt:
+      "WordPress, Squarespace, Wix, Shopify, or custom? Compare the most popular website platforms and find the right fit for your business goals and budget.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+    readTime: "9 min read",
+    publishDate: "February 28, 2026",
+    tags: ["Platforms", "WordPress", "Small Business"],
+    relatedServices: ["web-development", "web-consulting"],
+    sections: [
+      {
+        heading: "Why Your Platform Choice Matters",
+        content:
+          "Choosing a website platform is one of the most important decisions you will make for your online presence. The wrong choice can cost you time, money, and opportunities down the road. The right platform aligns with your business goals, your technical comfort level, and your growth plans. There is no single best platform for every business, so understanding the strengths and trade-offs of each option is essential before you commit.",
+      },
+      {
+        heading: "WordPress: The Most Flexible Option",
+        content:
+          "WordPress powers over 40 percent of all websites on the internet, and for good reason. It is incredibly flexible, with thousands of themes and plugins that can extend your site to do almost anything. WordPress is ideal for businesses that want full control over their website and plan to scale over time. However, it requires regular updates, security maintenance, and some technical knowledge to manage effectively. Hosting, backups, and security are your responsibility.",
+        list: [
+          "Best for: Blogs, business websites, membership sites, and complex projects",
+          "Pros: Unlimited customization, massive plugin ecosystem, SEO-friendly",
+          "Cons: Requires maintenance, steeper learning curve, hosting costs extra",
+          "Cost: Free software plus hosting ($10 to $50 per month) and premium themes or plugins",
+        ],
+      },
+      {
+        heading: "Squarespace: Beautiful and Simple",
+        content:
+          "Squarespace is known for its stunning design templates and all-in-one simplicity. Everything is included: hosting, security, and a drag-and-drop editor. It is perfect for businesses that prioritize visual presentation and want a polished site without managing technical details. The trade-off is less flexibility than WordPress and limited third-party integrations. Customization beyond the template options can be challenging.",
+        list: [
+          "Best for: Portfolios, restaurants, creative businesses, and service providers",
+          "Pros: Beautiful templates, all-in-one hosting, easy to use, built-in analytics",
+          "Cons: Limited customization, fewer integrations, harder to migrate away from",
+          "Cost: $16 to $49 per month depending on the plan",
+        ],
+      },
+      {
+        heading: "Wix: Quick and Beginner-Friendly",
+        content:
+          "Wix makes it easy for anyone to build a website quickly with its intuitive drag-and-drop editor and AI website builder. It is great for small businesses that need to get online fast without a steep learning curve. Wix offers a free tier with limitations and paid plans for more features. The downside is that Wix sites can be slower, SEO capabilities are more limited, and migrating to another platform later is difficult.",
+        list: [
+          "Best for: Very small businesses, personal sites, and getting started quickly",
+          "Pros: Easy editor, AI builder, affordable, large app marketplace",
+          "Cons: Slower performance, limited SEO, difficult to migrate, branded free tier",
+          "Cost: Free with Wix branding, or $17 to $159 per month for premium plans",
+        ],
+      },
+      {
+        heading: "Shopify: Built for Selling",
+        content:
+          "If your primary goal is selling products online, Shopify is purpose-built for e-commerce. It handles inventory management, payment processing, shipping, and taxes out of the box. The platform is reliable, secure, and scales with your business. For businesses that also need robust content pages or blogging, Shopify is more limited. Its transaction fees and app costs can add up quickly.",
+        list: [
+          "Best for: Online stores, retail businesses, product-based businesses",
+          "Pros: Powerful e-commerce tools, secure payments, inventory management, app ecosystem",
+          "Cons: Transaction fees, limited content flexibility, costs add up with apps",
+          "Cost: $39 to $399 per month plus transaction fees and app subscriptions",
+        ],
+      },
+      {
+        heading: "Custom-Built: Maximum Control and Performance",
+        content:
+          "A custom-built website using modern frameworks like Next.js, React, or similar technologies gives you complete control over every aspect of your site. Custom sites deliver the best performance, security, and user experience because they are built specifically for your business needs with no unnecessary bloat. The investment is higher upfront, but you own everything and are not locked into any platform. This is the ideal choice for businesses that need unique functionality, exceptional performance, or plan to scale significantly.",
+        list: [
+          "Best for: Growing businesses, unique requirements, performance-critical sites",
+          "Pros: Complete control, best performance, no platform limitations, you own everything",
+          "Cons: Higher upfront investment, requires a developer for changes",
+          "Cost: Varies based on project scope, typically starts at $3,000 and up",
+        ],
+      },
+      {
+        heading: "How to Make Your Decision",
+        content:
+          "Start by listing your must-have features and your nice-to-haves. Consider your budget not just for building the site but for ongoing costs like hosting, plugins, and maintenance. Think about where your business will be in two to three years and whether your platform can grow with you. If you are not sure, a free consultation with a web professional can save you from an expensive mistake. The best platform is the one that fits your business today and can scale with you tomorrow.",
+      },
+    ],
+    cta: {
+      heading: "Need Help Choosing the Right Platform?",
+      description:
+        "Picking the wrong platform can cost your business time and money. We help small businesses evaluate their options and make the right choice based on their goals, budget, and growth plans. Let us take the guesswork out of it.",
+      buttonText: "Get Platform Advice",
+      buttonHref: "/free-consultation",
     },
   },
 ];

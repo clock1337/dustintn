@@ -11,9 +11,12 @@ export const metadata: Metadata = {
     "hire web developer Tennessee",
   ],
   openGraph: {
-    title: "Contact Us - Web Development Nashville",
-    description: "Ready to start your project? Contact us for a free consultation. Serving Nashville and Middle Tennessee.",
+    title: "Get Your Free Quote | Nashville Web Design Consultation",
+    description: "Ready to grow your business online? Contact DustinTN for a free consultation. We serve Nashville, Hendersonville, Gallatin, and all of Middle Tennessee.",
     url: 'https://dustintn.com/contact',
+  },
+  alternates: {
+    canonical: '/contact',
   },
 };
 

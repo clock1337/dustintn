@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Mail, Phone, MapPin, Play, Users, Share2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Mail, Phone, MapPin, Play, Users, Share2, Video, Clock, CheckCircle2, Globe, Search, Wrench, Calendar, HelpCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -283,47 +283,112 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-32 bg-dark-gray relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent"></div>
+        {/* Free Consultation Section */}
+        <section id="free-call" className="py-32 bg-dark-gray relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[200px]"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/3 rounded-full blur-[150px]"></div>
 
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <AnimatedSection>
-                <span className="section-label mb-6 block">About Us</span>
-                <h2 className="text-headline mb-8">
-                  Building digital solutions since <span className="text-accent">2004</span>
+                <span className="section-label mb-6 block">Free — No Strings Attached</span>
+                <h2 className="text-headline mb-6">
+                  Free 30-Minute <span className="text-accent">Exploratory Call</span>
                 </h2>
-                <p className="text-white/50 text-lg leading-relaxed mb-6">
-                  Proudly serving Nashville, Hendersonville, Gallatin, Goodlettsville, and all of Middle Tennessee, we've spent two decades helping local businesses establish and grow their online presence. From healthcare practices to restaurants, fitness studios to real estate, we bring dedication and expertise to every project.
+                <p className="text-white/50 text-lg leading-relaxed mb-8">
+                  Not sure where to start with your online presence? Book a free call and let&apos;s talk it through.
+                  Whether you need a website, better search visibility, or ongoing support — we&apos;ll give you honest direction.
                 </p>
-                <p className="text-white/50 leading-relaxed mb-10">
-                  Our approach is simple: understand your goals, design with purpose, and build with precision. No corporate layers, no middlemen—just direct collaboration that delivers results.
-                </p>
-                <a href="#contact" className="btn-pill btn-pill-outline group">
-                  Start a Project
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </a>
+
+                <div className="grid sm:grid-cols-2 gap-3 mb-8">
+                  {[
+                    { icon: Globe, text: "Getting online" },
+                    { icon: Search, text: "SEO & search" },
+                    { icon: Wrench, text: "Website maintenance" },
+                    { icon: Share2, text: "Social media" },
+                    { icon: Calendar, text: "Monthly retainer" },
+                    { icon: HelpCircle, text: "Any digital question" },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <item.icon className="w-4 h-4 text-accent" />
+                      </div>
+                      <span className="text-white/60 text-sm">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-4 mb-10 text-sm text-white/40">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                    No obligation
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                    No pressure
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                    20+ years experience
+                  </span>
+                </div>
+
+                <Link href="/free-consultation" className="btn-pill btn-pill-primary group">
+                  Book My Free Call
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </AnimatedSection>
 
               <AnimatedSection delay={200}>
                 <div className="relative">
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden img-zoom">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=1000&fit=crop"
-                      alt="Team collaboration"
+                      src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+                      alt="Friendly business consultation on a video call"
                       fill
-                      className="object-cover img-placeholder"
+                      className="object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/60 via-transparent to-black/20"></div>
+
+                    {/* Overlay badges */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="flex items-center gap-2 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full text-xs text-white/80 border border-white/10">
+                          <Video className="w-3 h-3 text-accent" />
+                          Google Meet
+                        </span>
+                        <span className="flex items-center gap-2 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full text-xs text-white/80 border border-white/10">
+                          <Phone className="w-3 h-3 text-accent" />
+                          Phone Call
+                        </span>
+                        <span className="flex items-center gap-2 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full text-xs text-white/80 border border-white/10">
+                          <Clock className="w-3 h-3 text-accent" />
+                          30 Minutes
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  {/* Stats overlay */}
-                  <div className="absolute -bottom-8 -left-8 bg-accent text-white p-8 rounded-2xl shadow-2xl shadow-accent/20">
-                    <div className="text-5xl font-semibold">20+</div>
-                    <div className="text-sm text-white/80 mt-1">Years of Experience</div>
+
+                  {/* Floating badge */}
+                  <div className="absolute -top-4 -right-4 bg-accent rounded-2xl px-5 py-3 shadow-xl shadow-accent/20">
+                    <div className="text-lg font-semibold">FREE</div>
                   </div>
-                  {/* Decorative element */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 border border-accent/30 rounded-full"></div>
-                  <div className="absolute -top-8 -right-8 w-32 h-32 border border-accent/10 rounded-full"></div>
+
+                  {/* 3-step process */}
+                  <div className="grid grid-cols-3 gap-3 mt-6">
+                    {[
+                      { num: "1", label: "Fill out a quick form" },
+                      { num: "2", label: "We schedule a time" },
+                      { num: "3", label: "We talk it through" },
+                    ].map((step, idx) => (
+                      <div key={idx} className="text-center p-3 bg-black/50 rounded-xl border border-white/5">
+                        <div className="w-7 h-7 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-1.5">
+                          <span className="text-xs font-semibold text-accent">{step.num}</span>
+                        </div>
+                        <span className="text-xs text-white/50 leading-snug block">{step.label}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </AnimatedSection>
             </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "What We Do | Web Design, SEO & Digital Marketing Services",
-  description: "From custom websites to SEO and social media marketing, we offer full-service digital solutions for Nashville, Hendersonville, Gallatin, and Middle Tennessee businesses.",
+  description: "Custom websites, SEO, and social media marketing for Nashville and Middle Tennessee businesses. Full-service digital solutions from 20+ years of expertise.",
   keywords: [
     "web development services Nashville",
     "SEO services Middle Tennessee",
@@ -13,9 +13,12 @@ export const metadata: Metadata = {
     "small business web services Nashville",
   ],
   openGraph: {
-    title: "Services - DustinTN Web Development & Digital Marketing",
-    description: "Comprehensive digital services for businesses in Nashville and Middle Tennessee. Web development, SEO, branding, and more.",
+    title: "What We Do | Web Design, SEO & Digital Marketing Services",
+    description: "Custom websites, SEO, and social media marketing for Nashville and Middle Tennessee businesses. Full-service digital solutions from 20+ years of expertise.",
     url: 'https://dustintn.com/services',
+  },
+  alternates: {
+    canonical: '/services',
   },
 };
 

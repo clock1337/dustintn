@@ -371,10 +371,10 @@ export default function ContactPage() {
                       Not sure where to start? Schedule a free 30-minute consultation call.
                       We'll discuss your goals and provide recommendations tailored to your business.
                     </p>
-                    <a href="mailto:hello@dustintn.com?subject=Free Consultation Request" className="btn-pill btn-pill-primary">
+                    <Link href="/free-consultation" className="btn-pill btn-pill-primary">
                       Schedule a Call
                       <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Link>
                   </div>
                 </AnimatedSection>
               </div>

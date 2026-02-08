@@ -10,10 +10,10 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: "DustinTN | Nashville Web Development & Digital Marketing Agency",
+    default: "Nashville Web Development & Digital Marketing | DustinTN",
     template: "%s"
   },
-  description: "Expert web development, SEO, brand identity, and digital marketing services in Nashville, Hendersonville, Gallatin, Goodlettsville, and Middle Tennessee. 20+ years helping local businesses grow online with custom websites and proven strategies.",
+  description: "Expert web development, SEO, and digital marketing for Nashville and Middle Tennessee businesses. 20+ years building websites that drive results.",
   keywords: [
     "web development Nashville",
     "web design Middle Tennessee",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "DustinTN - Web Development & Digital Services | Nashville & Middle Tennessee",
-    description: "Expert web development, SEO, and digital marketing in Nashville, Hendersonville, Gallatin & Middle Tennessee. 20+ years of experience building websites that drive results.",
+    title: "Nashville Web Development & Digital Marketing | DustinTN",
+    description: "Expert web development, SEO, and digital marketing for Nashville and Middle Tennessee businesses. 20+ years building websites that drive results.",
     url: 'https://dustintn.com',
     siteName: 'DustinTN',
     images: [
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "DustinTN - Web Development & Digital Services",
-    description: "Expert web development, SEO, and digital marketing in Nashville & Middle Tennessee. 20+ years of experience.",
+    title: "Nashville Web Development & Digital Marketing | DustinTN",
+    description: "Expert web development, SEO, and digital marketing for Nashville and Middle Tennessee businesses. 20+ years of experience.",
     images: ['/og-image.png'],
     creator: '@dustintn',
   },
