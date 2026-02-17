@@ -68,6 +68,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "web-consulting",
     "social-media",
     "digital-strategy",
+    "geo-optimization",
+    "ai-seo",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
     lastModified: new Date(),

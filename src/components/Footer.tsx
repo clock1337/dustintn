@@ -44,7 +44,11 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-white/40">
               <li><Link href="/services/web-development" className="hover:text-accent transition-colors">Web Development</Link></li>
               <li><Link href="/services/brand-identity" className="hover:text-accent transition-colors">Brand Identity</Link></li>
+              <li><Link href="/services/seo-content" className="hover:text-accent transition-colors">SEO & Content</Link></li>
               <li><Link href="/services/social-media" className="hover:text-accent transition-colors">Social Media</Link></li>
+              <li><Link href="/services/digital-strategy" className="hover:text-accent transition-colors">Digital Strategy</Link></li>
+              <li><Link href="/services/geo-optimization" className="hover:text-accent transition-colors">GEO</Link></li>
+              <li><Link href="/services/ai-seo" className="hover:text-accent transition-colors">AI SEO</Link></li>
               <li><Link href="/services/web-consulting" className="hover:text-accent transition-colors">Consulting</Link></li>
             </ul>
           </div>

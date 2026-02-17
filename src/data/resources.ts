@@ -697,6 +697,146 @@ export const resources: Resource[] = [
       buttonHref: "/free-consultation",
     },
   },
+  {
+    slug: "what-is-geo-generative-engine-optimization",
+    title: "What Is GEO? A Guide to Generative Engine Optimization",
+    metaTitle: "What Is GEO? Generative Engine Optimization Guide | DustinTN",
+    metaDescription: "Learn what generative engine optimization (GEO) is, why it matters, and how to optimize your business for AI-powered search engines like ChatGPT and Perplexity.",
+    category: "SEO & Search",
+    excerpt:
+      "AI search engines are changing how people find businesses. Learn what GEO is, how it differs from traditional SEO, and how to get your brand cited in AI-generated answers.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    readTime: "9 min read",
+    publishDate: "February 17, 2026",
+    tags: ["GEO", "AI Search", "Generative AI"],
+    relatedServices: ["geo-optimization", "seo-content", "ai-seo"],
+    sections: [
+      {
+        heading: "What Is Generative Engine Optimization?",
+        content:
+          "Generative engine optimization, or GEO, is the practice of optimizing your online presence so that AI-powered search engines cite, reference, and recommend your business in their generated answers. Unlike traditional search engines that return a list of links, generative engines like ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot synthesize information and present direct answers to user queries. GEO ensures your brand is part of those answers. As more people turn to AI tools for research, recommendations, and purchasing decisions, GEO is becoming essential for any business that wants to stay visible online.",
+      },
+      {
+        heading: "Why GEO Matters for Your Business",
+        content:
+          "The way people search for information is fundamentally changing. Millions of users now ask ChatGPT and Perplexity questions instead of typing keywords into Google. Google itself has introduced AI Overviews that generate answers directly at the top of search results. When these AI engines answer a question about your industry, your product category, or your local area, your business either gets mentioned or it does not. GEO is about making sure you get mentioned. Businesses that ignore this shift risk losing visibility to competitors who are actively optimizing for AI search. The opportunity is especially significant for local businesses, service providers, and niche experts whose authority AI engines are designed to surface.",
+      },
+      {
+        heading: "GEO vs Traditional SEO: Key Differences",
+        content:
+          "Traditional SEO and GEO share the same goal — getting your business found online — but they work differently. Traditional SEO focuses on ranking in a list of search results. GEO focuses on being cited in a generated answer. Traditional SEO optimizes for keywords and backlinks. GEO optimizes for entity authority, structured data, and content that AI engines can easily parse. Traditional SEO measures rankings and click-through rates. GEO measures citations, brand mentions, and referral traffic from AI sources. The good news is that GEO and traditional SEO are complementary. Strong SEO fundamentals — quality content, authoritative backlinks, solid technical structure — also improve your GEO performance. Our SEO & Content service provides the foundation, while our dedicated GEO service targets AI-specific optimizations.",
+      },
+      {
+        heading: "Key GEO Strategies That Work",
+        content:
+          "Effective GEO requires a multi-faceted approach that signals authority and makes your content easy for AI engines to understand and cite.",
+        list: [
+          "Implement comprehensive structured data using Schema.org and JSON-LD markup",
+          "Build entity authority by establishing consistent brand information across the web",
+          "Create content that directly answers common questions in your industry",
+          "Use clear, well-organized content formatting with descriptive headings",
+          "Earn citations from authoritative sources that AI engines trust",
+          "Optimize your knowledge graph presence and entity associations",
+          "Monitor your brand mentions across AI platforms regularly",
+          "Target conversational, question-based queries that users ask AI tools",
+        ],
+      },
+      {
+        heading: "How to Get Started with GEO",
+        content:
+          "Getting started with GEO does not require throwing out your existing SEO strategy. Start by auditing how your brand currently appears when users ask AI tools about your industry or services. Search for your business name and your key services in ChatGPT, Perplexity, and Google AI Overviews. Note where you appear and where you are missing. Next, ensure your structured data is comprehensive and accurate. Add or update your Schema.org markup, especially LocalBusiness, Organization, and FAQ schemas. Then focus on creating content that answers the specific questions your customers ask, formatted in a way that AI engines can easily extract and cite. For a comprehensive approach, our GEO service handles the full optimization process from audit to ongoing monitoring. We also integrate GEO with our AI SEO service to use AI tools that accelerate the optimization process.",
+      },
+      {
+        heading: "The Future of Search Is AI-Powered",
+        content:
+          "AI-powered search is not a future trend — it is happening now. ChatGPT has hundreds of millions of users. Google AI Overviews appear on a growing percentage of search queries. Perplexity is one of the fastest-growing search platforms in the world. The businesses that position themselves for this shift now will have a significant advantage over those that wait. GEO is still a relatively new discipline, which means the competition is lower than traditional SEO. Early movers can establish authority and visibility in AI search results before the space becomes crowded. Whether you handle GEO yourself or work with our team, the time to start is now.",
+      },
+    ],
+    cta: {
+      heading: "Ready to Get Cited by AI Search Engines?",
+      description:
+        "AI search is transforming how customers find businesses. Our GEO services help you optimize for ChatGPT, Perplexity, Google AI Overviews, and more — so your brand gets cited when it matters most.",
+      buttonText: "Explore Our GEO Services",
+      buttonHref: "/services/geo-optimization",
+    },
+  },
+  {
+    slug: "ai-seo-how-artificial-intelligence-is-changing-search",
+    title: "AI SEO: How Artificial Intelligence Is Changing Search Optimization",
+    metaTitle: "AI SEO: How AI Is Changing Search Optimization | DustinTN",
+    metaDescription: "Discover how artificial intelligence is transforming SEO. Learn about AI-powered keyword research, content optimization, predictive analytics, and automated audits.",
+    category: "SEO & Search",
+    excerpt:
+      "AI is making SEO faster, smarter, and more effective. Learn how AI tools are transforming keyword research, content optimization, and technical audits.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
+    readTime: "10 min read",
+    publishDate: "February 17, 2026",
+    tags: ["AI SEO", "Artificial Intelligence", "SEO Tools"],
+    relatedServices: ["ai-seo", "seo-content", "geo-optimization"],
+    sections: [
+      {
+        heading: "What Is AI SEO?",
+        content:
+          "AI SEO is the application of artificial intelligence tools and techniques to improve search engine optimization. Rather than replacing traditional SEO, AI supercharges it — making keyword research faster, content optimization more precise, technical audits more thorough, and performance predictions more accurate. AI-powered SEO tools analyze massive datasets, identify patterns humans would miss, and automate repetitive tasks so you can focus on strategy. For small and mid-sized businesses, AI SEO levels the playing field against larger competitors with bigger marketing budgets.",
+      },
+      {
+        heading: "AI Tools That Are Transforming SEO",
+        content:
+          "The AI SEO toolkit has expanded rapidly. Today, businesses have access to powerful tools that were impossible just a few years ago.",
+        list: [
+          "AI keyword research tools that cluster topics and identify semantic relationships",
+          "Content optimization platforms that score your content and suggest improvements in real time",
+          "Predictive analytics that forecast ranking potential before you invest in content",
+          "Automated technical audit tools that crawl your site and prioritize fixes by impact",
+          "NLP analysis tools that help you match search intent more accurately",
+          "AI-powered competitor analysis that reveals content gaps and link opportunities",
+          "Automated internal linking tools that strengthen your site architecture",
+          "Performance forecasting models that predict traffic and revenue impact",
+        ],
+      },
+      {
+        heading: "AI-Powered Content Optimization",
+        content:
+          "Content optimization is where AI SEO delivers some of its most tangible results. AI tools can analyze the top-ranking content for any keyword, identify the topics, questions, and terms that need to be covered, and score your content against the competition. This takes the guesswork out of content creation. Instead of hoping your article covers the right ground, AI tells you exactly what to include, what to expand, and what is missing. Tools like SurferSEO and Clearscope provide real-time content scores as you write, ensuring your content is optimized before it goes live. Combined with our SEO & Content service, AI content optimization helps you create better content faster.",
+      },
+      {
+        heading: "Predictive Analytics and Ranking Forecasts",
+        content:
+          "One of the most powerful applications of AI in SEO is predictive analytics. AI models can analyze your site's authority, your competitors' performance, keyword difficulty, and search trends to forecast how likely you are to rank for a given keyword — before you create any content. This means you can prioritize the keywords and topics with the highest probability of success, rather than guessing. Predictive analytics also helps with budget allocation, showing you where your SEO investment will generate the greatest return. For businesses with limited resources, this data-driven approach eliminates wasted effort.",
+      },
+      {
+        heading: "Automated Technical SEO Audits",
+        content:
+          "Technical SEO audits have traditionally been time-consuming and require deep expertise. AI-powered audit tools change this by automatically crawling your website, identifying issues, and prioritizing them by their impact on search performance. These tools catch everything from broken links and missing meta tags to site speed issues, crawl errors, and mobile usability problems. More importantly, AI prioritizes the fixes that will make the biggest difference, so you are not wasting time on low-impact changes. Regular automated audits ensure your site stays technically healthy without manual effort.",
+      },
+      {
+        heading: "Best Practices for AI SEO Success",
+        content:
+          "AI is a powerful tool, but it works best when guided by human strategy and judgment. Here are key best practices for getting the most from AI SEO.",
+        list: [
+          "Use AI for research and optimization, but keep strategy and editorial decisions human",
+          "Start with AI-powered keyword clustering to build a topic-first content strategy",
+          "Score all content with AI optimization tools before publishing",
+          "Run automated technical audits monthly and prioritize high-impact fixes",
+          "Use predictive analytics to focus on keywords where you have a realistic chance of ranking",
+          "Combine AI SEO with GEO to cover both traditional and AI-powered search engines",
+          "Continuously evaluate new AI tools — the space evolves rapidly",
+        ],
+      },
+      {
+        heading: "AI SEO and the Future of Search",
+        content:
+          "AI is not just changing how we do SEO — it is changing search itself. As AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews grow, optimizing for these platforms becomes equally important. This is where AI SEO and generative engine optimization (GEO) converge. AI SEO uses AI tools to improve your search performance. GEO ensures your content gets cited by AI search engines. Together, they form a comprehensive modern search strategy. Our AI SEO and GEO services work hand in hand, powered by a foundation of strong traditional SEO through our SEO & Content service. The businesses that embrace AI-powered search optimization now will have a significant competitive advantage in the years ahead.",
+      },
+    ],
+    cta: {
+      heading: "Ready to Supercharge Your SEO with AI?",
+      description:
+        "AI is transforming SEO — and the businesses that adopt it first gain the biggest advantage. Our AI SEO services bring cutting-edge AI tools to your search strategy for faster, smarter results.",
+      buttonText: "Explore Our AI SEO Services",
+      buttonHref: "/services/ai-seo",
+    },
+  },
 ];
 
 export function getResourceBySlug(slug: string): Resource | undefined {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowLeft, Code2, Palette, MessageSquare, Zap, Users, Share2, CheckCircle2, Facebook, Instagram, Star } from "lucide-react";
+import { ArrowRight, ArrowLeft, Code2, Palette, MessageSquare, Zap, Users, Share2, CheckCircle2, Facebook, Instagram, Star, Globe, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -122,7 +122,7 @@ const services = {
     icon: MessageSquare,
     title: "SEO & Content",
     tagline: "Get Found Online",
-    description: "We help your business get discovered through strategic search engine optimization and compelling content. Our data-driven approach ensures your website ranks for the keywords that matter most to your business.",
+    description: "We help your business get discovered through strategic search engine optimization and compelling content. Our data-driven approach ensures your website ranks for the keywords that matter most — in traditional search results, AI-powered answers, and everywhere in between. We also offer specialized generative engine optimization (GEO) and AI SEO services to help you stay ahead as search evolves.",
     heroImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1600&h=900&fit=crop",
     features: [
       "Keyword research and strategy",
@@ -131,6 +131,8 @@ const services = {
       "Content strategy development",
       "Blog and article writing",
       "Local SEO optimization",
+      "Generative engine optimization (GEO)",
+      "AI-powered content optimization",
       "Google Business Profile management",
       "Performance tracking and reporting"
     ],
@@ -140,12 +142,34 @@ const services = {
       { step: "03", title: "Implementation", description: "Executing on-page, technical, and content optimizations." },
       { step: "04", title: "Monitor", description: "Tracking rankings, traffic, and conversions with regular reporting." }
     ],
-    technologies: ["Google Analytics", "Search Console", "SEMrush", "Ahrefs", "Screaming Frog", "Schema Markup"],
+    technologies: ["Google Analytics", "Search Console", "SEMrush", "Ahrefs", "Screaming Frog", "Schema Markup", "GEO Tools", "AI Content Tools"],
     benefits: [
       { title: "Visibility", description: "Appear in search results when customers are looking for you" },
       { title: "Traffic", description: "Drive qualified organic traffic to your website" },
       { title: "Authority", description: "Build trust through valuable content and strong rankings" },
       { title: "ROI", description: "Long-term results that compound over time" }
+    ],
+    faqs: [
+      {
+        question: "What is the difference between traditional SEO and GEO?",
+        answer: "Traditional SEO focuses on ranking in search engine results pages (SERPs) like Google and Bing. Generative engine optimization (GEO) focuses on getting your business cited and recommended in AI-powered answers from tools like ChatGPT, Perplexity, and Google AI Overviews. We offer both as part of a comprehensive search strategy. Learn more about our GEO services."
+      },
+      {
+        question: "How does AI change SEO strategy?",
+        answer: "AI is transforming SEO in two major ways. First, AI-powered search engines are changing how people find information, which is where GEO comes in. Second, AI tools are making SEO workflows faster and more effective — from keyword research to content optimization. Our AI SEO services leverage both of these shifts to give your business a competitive edge."
+      },
+      {
+        question: "How long does it take to see SEO results?",
+        answer: "Most businesses start seeing measurable improvements in rankings and traffic within 3 to 6 months of consistent SEO work. Some quick wins — like optimizing your Google Business Profile or fixing technical issues — can show results sooner. SEO is a long-term investment that compounds over time."
+      },
+      {
+        question: "Do I need local SEO if I serve a specific area?",
+        answer: "Absolutely. Local SEO is critical for businesses that serve specific geographic areas. It helps you appear in Google's local map pack, Google Business Profile results, and location-based searches. For businesses in Nashville, Hendersonville, Gallatin, and Middle Tennessee, local SEO is one of the highest-ROI marketing investments you can make."
+      },
+      {
+        question: "Can you help with content creation as well as SEO?",
+        answer: "Yes. Our SEO & Content service covers both strategy and execution. We handle keyword research, content planning, article writing, on-page optimization, and performance tracking. Great SEO and great content go hand in hand — you cannot have one without the other."
+      }
     ]
   },
   "web-consulting": {
@@ -245,6 +269,120 @@ const services = {
       { title: "Focus", description: "Clear priorities based on impact and feasibility" },
       { title: "Integration", description: "Cohesive digital ecosystem across all channels" },
       { title: "Results", description: "Measurable outcomes tied to business goals" }
+    ]
+  },
+  "geo-optimization": {
+    slug: "geo-optimization",
+    icon: Globe,
+    title: "Generative Engine Optimization",
+    tagline: "Get Cited by AI Search Engines",
+    description: "AI-powered search engines like ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot are changing how people find businesses. Generative engine optimization (GEO) ensures your brand is cited, recommended, and visible in these AI-generated answers — not just traditional search results. GEO works alongside traditional SEO and AI SEO to create a comprehensive search presence that covers every way your customers discover you.",
+    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop",
+    features: [
+      "AI search engine citation optimization",
+      "Structured data and entity markup",
+      "Authority and credibility signals",
+      "AI-friendly content formatting",
+      "Brand mention monitoring across AI platforms",
+      "Knowledge graph optimization",
+      "Conversational query targeting",
+      "AI overview and featured snippet strategy"
+    ],
+    process: [
+      { step: "01", title: "AI Audit", description: "Analyze how your brand currently appears across AI-powered search engines and identify gaps." },
+      { step: "02", title: "Strategy", description: "Develop a GEO roadmap targeting the AI platforms your customers use most." },
+      { step: "03", title: "Optimize", description: "Implement structured data, authority signals, and content formatting for AI citation." },
+      { step: "04", title: "Monitor", description: "Track your AI search visibility and refine strategy based on performance." }
+    ],
+    technologies: ["Schema.org", "JSON-LD", "Knowledge Graph", "ChatGPT", "Perplexity", "Google AI Overviews", "Bing Copilot", "Entity SEO"],
+    benefits: [
+      { title: "AI Visibility", description: "Get cited and recommended in AI-generated search answers" },
+      { title: "Future-Proof", description: "Stay ahead as search shifts toward AI-powered discovery" },
+      { title: "Authority", description: "Build the credibility signals AI engines prioritize" },
+      { title: "Reach", description: "Appear in the new places your customers are looking" }
+    ],
+    faqs: [
+      {
+        question: "What is generative engine optimization (GEO)?",
+        answer: "GEO is the practice of optimizing your online presence so that AI-powered search engines — like ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot — cite, reference, and recommend your business in their generated answers. It is an evolution of traditional SEO tailored for the AI search era."
+      },
+      {
+        question: "How is GEO different from traditional SEO?",
+        answer: "Traditional SEO focuses on ranking in search engine results pages. GEO focuses on being cited in AI-generated answers, which may not link to a traditional search result at all. GEO emphasizes structured data, entity authority, and content formats that AI engines can easily parse and reference. Both work together — our SEO & Content service covers the full spectrum."
+      },
+      {
+        question: "Which AI search engines does GEO target?",
+        answer: "We optimize for all major AI-powered search platforms including ChatGPT (with browsing), Perplexity AI, Google AI Overviews (formerly SGE), Bing Copilot, and other emerging AI search tools. The landscape is evolving quickly, and we stay on top of new platforms as they gain traction."
+      },
+      {
+        question: "Do I still need traditional SEO if I do GEO?",
+        answer: "Yes. Traditional SEO and GEO are complementary, not replacements for each other. Strong traditional SEO actually helps your GEO performance because AI engines often pull from well-ranked, authoritative sources. We recommend a combined approach through our SEO & Content and GEO services."
+      },
+      {
+        question: "How do you measure GEO results?",
+        answer: "We track brand mentions and citations across AI search platforms, monitor your visibility in AI-generated answers for target queries, and measure referral traffic from AI sources. We also track traditional metrics like organic traffic and rankings since GEO and SEO reinforce each other."
+      },
+      {
+        question: "How does GEO relate to AI SEO?",
+        answer: "GEO is about optimizing your content so AI search engines cite you. AI SEO is about using AI tools to make your overall SEO strategy more effective. They are two sides of the same coin — GEO targets AI as the audience, while AI SEO uses AI as a tool. Our AI SEO service covers the tools and automation side."
+      }
+    ]
+  },
+  "ai-seo": {
+    slug: "ai-seo",
+    icon: BrainCircuit,
+    title: "AI SEO",
+    tagline: "Supercharge SEO with Artificial Intelligence",
+    description: "Artificial intelligence is transforming how we approach search engine optimization. Our AI SEO services use cutting-edge AI tools to accelerate keyword research, optimize content at scale, predict ranking opportunities, and automate technical audits — delivering faster results with greater precision. Combined with our traditional SEO & Content and GEO services, AI SEO gives your business every advantage in modern search.",
+    heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&h=900&fit=crop",
+    features: [
+      "AI-driven keyword research and clustering",
+      "AI content optimization and scoring",
+      "Predictive ranking analytics",
+      "Automated technical SEO audits",
+      "AI-powered competitor analysis",
+      "Natural language processing for content",
+      "Automated internal linking optimization",
+      "AI performance forecasting"
+    ],
+    process: [
+      { step: "01", title: "Assess", description: "Evaluate your current SEO performance and identify high-impact opportunities with AI analysis." },
+      { step: "02", title: "Deploy", description: "Implement AI-powered tools and workflows tailored to your SEO goals." },
+      { step: "03", title: "Optimize", description: "Use AI insights to optimize content, fix technical issues, and target winning keywords." },
+      { step: "04", title: "Scale", description: "Continuously improve with AI-driven performance monitoring and predictive analytics." }
+    ],
+    technologies: ["AI Content Tools", "NLP Analysis", "Predictive Analytics", "Machine Learning", "SEMrush AI", "SurferSEO", "Clearscope", "Python"],
+    benefits: [
+      { title: "Speed", description: "Complete SEO tasks in hours that used to take weeks" },
+      { title: "Precision", description: "Data-driven decisions powered by machine learning" },
+      { title: "Scale", description: "Optimize hundreds of pages with consistent quality" },
+      { title: "Edge", description: "Stay ahead of competitors still using manual methods" }
+    ],
+    faqs: [
+      {
+        question: "What is AI SEO?",
+        answer: "AI SEO is the use of artificial intelligence tools and techniques to enhance search engine optimization. This includes AI-powered keyword research, content optimization scoring, predictive analytics for ranking opportunities, automated technical audits, and more. It makes traditional SEO faster, more precise, and scalable."
+      },
+      {
+        question: "How is AI SEO different from GEO?",
+        answer: "AI SEO uses AI as a tool to improve your SEO performance — think of it as smarter workflows and automation. GEO (generative engine optimization) is about optimizing your content so AI search engines cite and reference you. AI SEO improves how you do SEO, while GEO targets a new type of search platform. We offer both through our GEO and AI SEO services."
+      },
+      {
+        question: "Will AI replace human SEO expertise?",
+        answer: "No. AI is a powerful accelerator, but it still requires human expertise to guide strategy, interpret data, and make nuanced decisions. We use AI to handle repetitive tasks and surface insights faster, while our team provides the strategic thinking and creative judgment that AI cannot replicate."
+      },
+      {
+        question: "What AI tools do you use for SEO?",
+        answer: "We use a combination of industry-leading AI-powered SEO tools including SurferSEO for content optimization, Clearscope for content intelligence, SEMrush AI features, custom NLP analysis scripts, and predictive analytics models. We continuously evaluate and adopt new tools as the technology evolves."
+      },
+      {
+        question: "Can AI SEO help with content creation?",
+        answer: "Yes. AI tools help us research topics faster, identify content gaps, optimize existing content for better rankings, and ensure content meets search intent. We always combine AI efficiency with human creativity and editorial judgment — our SEO & Content service handles the full content lifecycle."
+      },
+      {
+        question: "How does AI SEO fit with your other SEO services?",
+        answer: "AI SEO enhances everything we do across our SEO & Content and GEO services. It is the technology layer that makes our keyword research sharper, our content optimization more precise, our technical audits more thorough, and our reporting more predictive. Think of it as the engine under the hood of our entire search strategy."
+      }
     ]
   }
 };
@@ -479,8 +617,31 @@ export default function ServicePage() {
           </div>
         </section>
 
+        {/* FAQs */}
+        {'faqs' in service && service.faqs && (
+          <section className="py-20 bg-dark-gray">
+            <div className="container mx-auto px-6 lg:px-12">
+              <AnimatedSection className="text-center mb-16">
+                <span className="section-label mb-6 inline-flex justify-center">Common Questions</span>
+                <h2 className="text-headline">Frequently Asked Questions</h2>
+              </AnimatedSection>
+
+              <div className="max-w-3xl mx-auto grid gap-6">
+                {service.faqs.map((faq, index) => (
+                  <AnimatedSection key={index} delay={index * 75}>
+                    <div className="bg-black/50 rounded-2xl p-8 border border-white/5">
+                      <h3 className="text-lg font-semibold mb-3 text-white">{faq.question}</h3>
+                      <p className="text-white/50 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* CTA */}
-        <section className="py-20 bg-dark-gray">
+        <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection className="text-center max-w-2xl mx-auto">
               <h2 className="text-headline mb-6">Ready to Get Started?</h2>

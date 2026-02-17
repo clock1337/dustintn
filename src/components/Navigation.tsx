@@ -32,7 +32,9 @@ const serviceItems = [
   { title: "SEO & Content", href: "/services/seo-content", description: "Search optimization" },
   { title: "Web Consulting", href: "/services/web-consulting", description: "Expert guidance" },
   { title: "Social Media", href: "/services/social-media", description: "Facebook, Instagram, Yelp" },
-  { title: "Digital Strategy", href: "/services/digital-strategy", description: "Growth roadmaps" }
+  { title: "Digital Strategy", href: "/services/digital-strategy", description: "Growth roadmaps" },
+  { title: "GEO", href: "/services/geo-optimization", description: "AI search optimization" },
+  { title: "AI SEO", href: "/services/ai-seo", description: "AI-powered SEO" }
 ];
 
 // Group resources by category (excluding "All")

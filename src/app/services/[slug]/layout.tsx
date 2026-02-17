@@ -31,6 +31,16 @@ const serviceMeta: Record<string, { title: string; description: string; tagline:
     description: "Align your digital presence with business goals. Comprehensive digital strategy, competitive analysis, and growth roadmaps for Nashville area businesses.",
     tagline: "Roadmaps for Digital Growth",
   },
+  "geo-optimization": {
+    title: "Generative Engine Optimization (GEO) Services | DustinTN",
+    description: "Get your business cited by AI search engines like ChatGPT, Perplexity, and Google AI Overviews. Expert GEO services for Nashville and Middle Tennessee businesses.",
+    tagline: "Get Cited by AI Search Engines",
+  },
+  "ai-seo": {
+    title: "AI SEO Services — AI-Powered Search Optimization | DustinTN",
+    description: "Supercharge your SEO with artificial intelligence. AI-driven keyword research, content optimization, predictive analytics, and automated audits for faster results.",
+    tagline: "Supercharge SEO with Artificial Intelligence",
+  },
 };
 
 export async function generateMetadata({
