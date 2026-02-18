@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Free Web & Marketing Resources | DustinTN",
   description:
-    "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Middle Tennessee.",
+    "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Nashville and beyond.",
   keywords: [
     "website maintenance checklist",
     "small business SEO tips",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Web & Marketing Resources | DustinTN",
     description:
-      "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Middle Tennessee.",
+      "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Nashville and beyond.",
     url: "https://dustintn.com/resources",
     type: "website",
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DustinTN - Web Development & Digital Services' }],

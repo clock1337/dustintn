@@ -69,7 +69,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    value: "Middle Tennessee",
+    value: "Nashville, TN",
     link: null,
     description: "Serving Nashville & surrounding areas"
   }
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     question: "What areas do you serve?",
-    answer: "We primarily serve businesses in Nashville, Hendersonville, Gallatin, Goodlettsville, and throughout Middle Tennessee. We also work with clients nationwide."
+    answer: "I'm based in Nashville and primarily serve Nashville, Hendersonville, Gallatin, and surrounding areas. I've also built websites for businesses in California, North Carolina, Texas, and beyond — so the call is open to anyone."
   },
   {
     question: "How much does a website cost?",

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowLeft, Clock, Calendar, Tag, Video, Phone, CheckCircle2, Globe, Search, Wrench, Share2, HelpCircle, Link2, Check } from "lucide-react";
+import { ArrowRight, ArrowLeft, Clock, Calendar, Tag, Video, Phone, CheckCircle2, Globe, Search, Wrench, Share2, HelpCircle, Link2, Check, Code2, BrainCircuit, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -9,7 +9,7 @@ import Navigation from "@/components/Navigation";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import ProudlyServing from "@/components/ProudlyServing";
 import Footer from "@/components/Footer";
-import { resources, getResourceBySlug } from "@/data/resources";
+import { resources, getResourceBySlug, getCategoryPageBySlug } from "@/data/resources";
 
 function useScrollAnimation(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -57,9 +57,169 @@ function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-export default function ResourceDetailPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Web Development": Code2,
+  "SEO & Search": Search,
+  "AI SEO & GEO": BrainCircuit,
+  "Social Media": Share2,
+  "Digital Strategy": Zap,
+};
+
+function CategoryLandingPage({ slug }: { slug: string }) {
+  const categoryPage = getCategoryPageBySlug(slug)!;
+  const categoryResources = resources.filter(r => r.category === categoryPage.name);
+  const IconComponent = categoryIcons[categoryPage.name] || Globe;
+
+  return (
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <Navigation currentPage="resources" />
+
+      <main>
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-dark-gray"></div>
+          <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[200px]"></div>
+
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            {/* Back link */}
+            <Link
+              href="/resources"
+              className="inline-flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full text-white/80 hover:text-white hover:bg-accent transition-all duration-300 border border-white/10 hover:border-accent mb-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="text-sm font-medium">All Resources</span>
+            </Link>
+
+            <AnimatedSection className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center">
+                  <IconComponent className="w-7 h-7 text-accent" />
+                </div>
+                <span className="px-4 py-1.5 bg-accent/10 rounded-full text-sm text-accent font-medium">
+                  {categoryPage.name}
+                </span>
+              </div>
+
+              <h1 className="text-headline mb-6">{categoryPage.headline}</h1>
+              {categoryPage.description.split('\n\n').map((paragraph, idx) => (
+                <p key={idx} className="text-xl text-white/50 leading-relaxed mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* What You'll Learn */}
+        <section className="py-20 bg-dark-gray">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto">
+              <AnimatedSection>
+                <h2 className="text-2xl lg:text-3xl font-semibold mb-8">
+                  What You&apos;ll <span className="text-accent">Learn</span>
+                </h2>
+                <div className="space-y-4">
+                  {categoryPage.whatYoullLearn.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-4">
+                      <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-white/70 text-lg">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+
+        {/* Articles Grid */}
+        <section className="py-20 bg-black">
+          <div className="container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="mb-12">
+              <h2 className="text-2xl lg:text-3xl font-semibold">
+                {categoryPage.name} <span className="text-accent">Guides</span>
+              </h2>
+              <p className="text-white/50 mt-2">{categoryResources.length} {categoryResources.length === 1 ? 'guide' : 'guides'} available</p>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categoryResources.map((resource, index) => (
+                <AnimatedSection key={resource.slug} delay={index * 100}>
+                  <Link
+                    href={`/resources/${resource.slug}`}
+                    className="group block bg-dark-gray rounded-2xl border border-white/5 hover:border-accent/30 transition-all duration-500 h-full overflow-hidden"
+                  >
+                    <div className="aspect-[5/2] relative overflow-hidden">
+                      <Image
+                        src={resource.image}
+                        alt={resource.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark-gray via-dark-gray/20 to-transparent"></div>
+                    </div>
+
+                    <div className="p-6 lg:p-8 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="flex items-center gap-1 text-xs text-white/40">
+                          <Clock className="w-3 h-3" />
+                          {resource.readTime}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs text-white/40">
+                          <Calendar className="w-3 h-3" />
+                          {resource.publishDate}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors leading-tight">
+                        {resource.title}
+                      </h3>
+
+                      <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
+                        {resource.excerpt}
+                      </p>
+
+                      <div className="flex items-center gap-2 text-accent group-hover:gap-3 transition-all">
+                        <span className="text-sm font-medium">Read More</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-32 bg-dark-gray relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.1),transparent_70%)]"></div>
+
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            <AnimatedSection className="max-w-3xl mx-auto text-center">
+              <span className="section-label mb-6 inline-flex justify-center">Need Expert Help?</span>
+              <h2 className="text-headline mb-8">
+                Let&apos;s Put These Ideas Into <span className="text-accent">Action</span>
+              </h2>
+              <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
+                Reading about it is a great start. When you&apos;re ready for expert help implementing these strategies,
+                I&apos;m here for you.
+              </p>
+              <Link href="/contact" className="btn-pill btn-pill-primary group">
+                Let&apos;s Talk
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        <ProudlyServing />
+        <Footer />
+      </main>
+    </div>
+  );
+}
+
+function ArticlePage({ slug }: { slug: string }) {
   const resource = getResourceBySlug(slug);
   const [copied, setCopied] = useState(false);
 
@@ -448,4 +608,17 @@ export default function ResourceDetailPage() {
       </main>
     </div>
   );
+}
+
+export default function ResourceDetailPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+
+  // Check if this is a category page
+  const categoryPage = getCategoryPageBySlug(slug);
+  if (categoryPage) {
+    return <CategoryLandingPage slug={slug} />;
+  }
+
+  return <ArticlePage slug={slug} />;
 }

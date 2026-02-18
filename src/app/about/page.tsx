@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, CheckCircle2, Users, Target, Heart, Zap, Award, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle2, Target, Heart, Zap, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -57,31 +57,31 @@ const values = [
   {
     icon: Target,
     title: "Results-Driven",
-    description: "Every project is designed with your business goals in mind. We measure success by the impact we create for your business."
+    description: "Every project is designed with your business goals in mind. I measure success by the impact I create for your business."
   },
   {
     icon: Heart,
     title: "Client-Focused",
-    description: "Your success is our priority. We build lasting relationships through transparent communication and dedicated support."
+    description: "Your success is my priority. I build lasting relationships through transparent communication and dedicated support."
   },
   {
     icon: Zap,
     title: "Innovation",
-    description: "We stay ahead of industry trends to deliver modern solutions that give your business a competitive edge."
+    description: "I stay ahead of industry trends to deliver modern solutions that give your business a competitive edge."
   },
   {
     icon: Award,
     title: "Quality",
-    description: "We never cut corners. Every line of code and every design element meets our high standards of excellence."
+    description: "I never cut corners. Every line of code and every design element meets my high standards of excellence."
   }
 ];
 
 const timeline = [
-  { year: "2004", title: "Founded", description: "Started helping local businesses build their online presence in Middle Tennessee." },
+  { year: "2004", title: "Founded", description: "Started helping local businesses build their online presence in Nashville, Tennessee." },
   { year: "2010", title: "Growth", description: "Expanded services to include SEO, branding, and digital marketing strategies." },
   { year: "2015", title: "Innovation", description: "Adopted modern web technologies and responsive design as industry standards evolved." },
   { year: "2020", title: "Adaptation", description: "Helped businesses pivot to digital-first strategies during challenging times." },
-  { year: "2024", title: "Today", description: "Continuing to deliver cutting-edge solutions for businesses across Nashville and beyond." }
+  { year: "2026", title: "Today", description: "Continuing to deliver cutting-edge solutions for businesses across Nashville and beyond." }
 ];
 
 const stats = [
@@ -104,13 +104,13 @@ export default function AboutPage() {
 
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <AnimatedSection className="max-w-3xl">
-              <span className="section-label mb-6 block">About Us</span>
+              <span className="section-label mb-6 block">About Me</span>
               <h1 className="text-headline mb-8">
                 Building Digital <span className="text-accent">Success</span> Stories Since 2004
               </h1>
               <p className="text-xl text-white/50 leading-relaxed">
-                We're a dedicated web development and digital marketing team serving Nashville, Hendersonville,
-                Gallatin, and all of Middle Tennessee. For over two decades, we've been helping local businesses
+                I&apos;m a web developer and digital marketer based in Nashville, Tennessee, serving
+                Hendersonville, Gallatin, and the surrounding areas. For over two decades, I&apos;ve been helping local businesses
                 thrive in the digital world.
               </p>
             </AnimatedSection>
@@ -124,8 +124,8 @@ export default function AboutPage() {
               <AnimatedSection>
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                    alt="Team collaboration"
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop"
+                    alt="Web development workspace"
                     fill
                     className="object-cover"
                   />
@@ -135,21 +135,21 @@ export default function AboutPage() {
 
               <AnimatedSection delay={200}>
                 <h2 className="text-3xl lg:text-4xl font-semibold mb-6">
-                  Our <span className="text-accent">Story</span>
+                  My <span className="text-accent">Story</span>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-6">
-                  What started as a passion for helping local businesses get online has grown into a full-service
-                  digital agency. Based in Middle Tennessee, we understand the unique challenges and opportunities
-                  that local businesses face.
+                  I started building websites in 2004 with a simple goal: help local businesses get online and grow.
+                  What began as a passion project quickly turned into a career as I saw firsthand how a strong digital
+                  presence could transform a small business.
                 </p>
                 <p className="text-white/60 leading-relaxed mb-6">
-                  Over the years, we've worked with healthcare providers, fitness studios, restaurants, real estate
+                  Over the years, I&apos;ve worked with healthcare providers, fitness studios, restaurants, real estate
                   professionals, and countless other businesses across Nashville and the surrounding areas. Each
-                  project has taught us something new and strengthened our commitment to delivering exceptional results.
+                  project has taught me something new and strengthened my commitment to delivering exceptional results.
                 </p>
                 <p className="text-white/60 leading-relaxed">
-                  Today, we combine two decades of experience with cutting-edge technology to create websites and
-                  digital strategies that truly make a difference for our clients.
+                  Today, I combine two decades of experience with cutting-edge technology to create websites and
+                  digital strategies that truly make a difference for my clients.
                 </p>
               </AnimatedSection>
             </div>
@@ -174,9 +174,9 @@ export default function AboutPage() {
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection className="text-center mb-16">
-              <span className="section-label mb-6 inline-flex justify-center">What Drives Us</span>
+              <span className="section-label mb-6 inline-flex justify-center">What Drives Me</span>
               <h2 className="text-headline">
-                Our <span className="text-accent">Values</span>
+                My <span className="text-accent">Values</span>
               </h2>
             </AnimatedSection>
 
@@ -200,7 +200,7 @@ export default function AboutPage() {
         <section className="py-20 bg-dark-gray">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection className="text-center mb-16">
-              <span className="section-label mb-6 inline-flex justify-center">Our Journey</span>
+              <span className="section-label mb-6 inline-flex justify-center">My Journey</span>
               <h2 className="text-headline">
                 20+ Years of <span className="text-accent">Growth</span>
               </h2>
@@ -225,19 +225,19 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Why Choose Us */}
+        {/* Why Choose Me */}
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <AnimatedSection>
-                <span className="section-label mb-6 block">Why Choose Us</span>
+                <span className="section-label mb-6 block">Why Work With Me</span>
                 <h2 className="text-3xl lg:text-4xl font-semibold mb-8">
                   A Partner Who <span className="text-accent">Understands</span> Your Business
                 </h2>
                 <div className="space-y-6">
                   {[
-                    "Local expertise with deep roots in Middle Tennessee",
-                    "Direct communication - no middlemen or account managers",
+                    "Local expertise with deep roots in Nashville",
+                    "Direct communication — you work with me, not a middleman",
                     "Transparent pricing with no hidden fees",
                     "Ongoing support long after your project launches",
                     "Modern technology that keeps you ahead of competitors",
@@ -254,8 +254,8 @@ export default function AboutPage() {
               <AnimatedSection delay={200}>
                 <div className="aspect-square rounded-2xl overflow-hidden relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=800&fit=crop"
-                    alt="Working together"
+                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=800&fit=crop"
+                    alt="Modern workspace"
                     fill
                     className="object-cover"
                   />
@@ -274,11 +274,11 @@ export default function AboutPage() {
             <AnimatedSection className="max-w-3xl mx-auto text-center">
               <span className="section-label mb-6 inline-flex justify-center">Ready to Start?</span>
               <h2 className="text-headline mb-8">
-                Let's Build Something <span className="text-accent">Great</span> Together
+                Let&apos;s Build Something <span className="text-accent">Great</span> Together
               </h2>
               <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
                 Whether you need a new website, want to improve your online presence, or just have questions,
-                we're here to help.
+                I&apos;m here to help.
               </p>
               <Link href="/contact" className="btn-pill btn-pill-primary group">
                 Get in Touch

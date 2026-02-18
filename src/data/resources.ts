@@ -161,7 +161,7 @@ export const resources: Resource[] = [
     cta: {
       heading: "Ready to Build Your Online Presence?",
       description:
-        "Building a strong online presence takes strategy and consistent effort. We help small businesses across Middle Tennessee create digital strategies that drive real results. Let us help you get found, build trust, and grow your business online.",
+        "Building a strong online presence takes strategy and consistent effort. We help small businesses across Nashville and beyond create digital strategies that drive real results. Let us help you get found, build trust, and grow your business online.",
       buttonText: "Let's Build Your Strategy",
       buttonHref: "/contact",
     },
@@ -385,7 +385,7 @@ export const resources: Resource[] = [
     cta: {
       heading: "Want to Improve Your Search Rankings?",
       description:
-        "SEO takes time and expertise to get right. Our team helps small businesses across Middle Tennessee improve their search visibility with proven strategies tailored to local markets. Let us help you get found by the customers who are already looking for you.",
+        "SEO takes time and expertise to get right. Our team helps small businesses across Nashville and beyond improve their search visibility with proven strategies tailored to local markets. Let us help you get found by the customers who are already looking for you.",
       buttonText: "Get an SEO Consultation",
       buttonHref: "/contact",
     },
@@ -443,7 +443,7 @@ export const resources: Resource[] = [
     cta: {
       heading: "Need a Digital Strategy That Actually Works?",
       description:
-        "Trends come and go, but a solid digital strategy gives your business a sustainable competitive advantage. We help businesses across Middle Tennessee build digital strategies that drive growth today and adapt to what comes tomorrow.",
+        "Trends come and go, but a solid digital strategy gives your business a sustainable competitive advantage. We help businesses across Nashville and beyond build digital strategies that drive growth today and adapt to what comes tomorrow.",
       buttonText: "Build Your Digital Strategy",
       buttonHref: "/contact",
     },
@@ -514,7 +514,7 @@ export const resources: Resource[] = [
     cta: {
       heading: "Want Expert Help With Your Google Presence?",
       description:
-        "A fully optimized Google Business Profile can be a game-changer for local businesses. Our team helps businesses across Middle Tennessee set up, optimize, and manage their Google presence to maximize local visibility and customer engagement.",
+        "A fully optimized Google Business Profile can be a game-changer for local businesses. Our team helps businesses across Nashville and beyond set up, optimize, and manage their Google presence to maximize local visibility and customer engagement.",
       buttonText: "Optimize My Google Profile",
       buttonHref: "/contact",
     },
@@ -771,7 +771,7 @@ export const resources: Resource[] = [
       "AI is making SEO faster, smarter, and more effective. Learn how AI tools are transforming keyword research, content optimization, and technical audits.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
     readTime: "10 min read",
-    publishDate: "February 17, 2026",
+    publishDate: "February 12, 2026",
     tags: ["AI SEO", "Artificial Intelligence", "SEO Tools"],
     relatedServices: ["ai-seo", "seo-content", "geo-optimization"],
     sections: [
@@ -848,7 +848,7 @@ export const resources: Resource[] = [
       "The ultimate resource for small business web development — from choosing a platform and designing your site to performance, security, and long-term maintenance.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
     readTime: "18 min read",
-    publishDate: "February 17, 2026",
+    publishDate: "February 7, 2026",
     tags: ["Web Development", "Small Business", "Ultimate Guide"],
     relatedServices: ["web-development", "web-consulting"],
     sections: [
@@ -898,7 +898,7 @@ export const resources: Resource[] = [
       {
         heading: "Next Steps: Getting Started with Your Web Project",
         content:
-          "Whether you are building your first website or redesigning an existing one, the most important step is getting started. Define your goals and your budget. Research your options. And do not be afraid to ask for help — the right web development partner can save you time, money, and costly mistakes. If you are ready to explore what a professional website can do for your business, we offer free 30-minute exploratory calls where we discuss your goals and recommend the best path forward. No pressure, no obligation — just honest direction from a team with over 20 years of experience building websites for small businesses across Middle Tennessee.",
+          "Whether you are building your first website or redesigning an existing one, the most important step is getting started. Define your goals and your budget. Research your options. And do not be afraid to ask for help — the right web development partner can save you time, money, and costly mistakes. If you are ready to explore what a professional website can do for your business, we offer free 30-minute exploratory calls where we discuss your goals and recommend the best path forward. No pressure, no obligation — just honest direction from a team with over 20 years of experience building websites for small businesses across Nashville and beyond.",
       },
     ],
     cta: {
@@ -919,7 +919,7 @@ export const resources: Resource[] = [
       "Everything you need to know about getting found online — from traditional SEO fundamentals to GEO and AI-powered search optimization.",
     image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
     readTime: "20 min read",
-    publishDate: "February 17, 2026",
+    publishDate: "February 2, 2026",
     tags: ["SEO", "GEO", "AI Search", "Ultimate Guide"],
     relatedServices: ["seo-content", "geo-optimization", "ai-seo"],
     sections: [
@@ -983,7 +983,7 @@ export const resources: Resource[] = [
     cta: {
       heading: "Ready to Improve Your Search Visibility?",
       description:
-        "From traditional SEO to GEO and AI-powered optimization, we help businesses across Middle Tennessee get found by the customers who are already looking for them.",
+        "From traditional SEO to GEO and AI-powered optimization, we help businesses across Nashville and beyond get found by the customers who are already looking for them.",
       buttonText: "Get an SEO Consultation",
       buttonHref: "/services/seo-content",
     },
@@ -998,7 +998,7 @@ export const resources: Resource[] = [
       "Everything local businesses need to know about social media — from choosing platforms and creating content to managing reviews and measuring real ROI.",
     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
     readTime: "17 min read",
-    publishDate: "February 17, 2026",
+    publishDate: "January 28, 2026",
     tags: ["Social Media", "Local Business", "Ultimate Guide"],
     relatedServices: ["social-media"],
     sections: [
@@ -1078,7 +1078,7 @@ export const resources: Resource[] = [
       "A comprehensive guide to building a digital strategy that aligns every channel, tool, and tactic with your business growth objectives.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     readTime: "18 min read",
-    publishDate: "February 17, 2026",
+    publishDate: "January 23, 2026",
     tags: ["Digital Strategy", "Business Growth", "Ultimate Guide"],
     relatedServices: ["digital-strategy", "web-consulting"],
     sections: [
@@ -1134,7 +1134,7 @@ export const resources: Resource[] = [
       {
         heading: "Taking the Next Step",
         content:
-          "Building a digital strategy does not have to be overwhelming. Start by assessing where you are today. Identify the one or two areas where improvement would have the biggest impact on your business. Create a 90-day plan focused on those priorities. Execute consistently, measure results, and adjust. If you are not sure where to start or want expert guidance, a digital strategy consultation can help you cut through the noise and focus on what matters most for your business. We help businesses across Middle Tennessee build digital strategies that are practical, measurable, and aligned with real business growth.",
+          "Building a digital strategy does not have to be overwhelming. Start by assessing where you are today. Identify the one or two areas where improvement would have the biggest impact on your business. Create a 90-day plan focused on those priorities. Execute consistently, measure results, and adjust. If you are not sure where to start or want expert guidance, a digital strategy consultation can help you cut through the noise and focus on what matters most for your business. We help businesses across Nashville and beyond build digital strategies that are practical, measurable, and aligned with real business growth.",
       },
     ],
     cta: {
@@ -1386,6 +1386,103 @@ export const resources: Resource[] = [
   },
 ];
 
+export interface CategoryPage {
+  name: string;
+  slug: string;
+  headline: string;
+  description: string;
+  whatYoullLearn: string[];
+  metaTitle: string;
+  metaDescription: string;
+}
+
+export const categoryPages: Record<string, CategoryPage> = {
+  "web-development": {
+    name: "Web Development",
+    slug: "web-development",
+    headline: "Build a Website That Works as Hard as You Do",
+    description: "Your website is the foundation of your online presence. Whether you're launching a brand-new site or maintaining an existing one, getting the technical details right makes the difference between a site that attracts customers and one that drives them away.\n\nThese guides cover everything from choosing the right platform and planning your launch to keeping your site secure, fast, and up to date. Written in plain language for business owners — not developers — so you can make informed decisions about your most important digital asset.",
+    whatYoullLearn: [
+      "How to plan and launch a new website in 30 days",
+      "Essential maintenance tasks to keep your site secure and fast",
+      "Choosing the right platform and hosting for your business",
+      "Performance optimization techniques that improve user experience",
+      "When to DIY and when to hire a professional"
+    ],
+    metaTitle: "Web Development Guides for Small Businesses | DustinTN",
+    metaDescription: "Free web development guides for small business owners. Learn about website launches, maintenance, performance, and making smart technology decisions."
+  },
+  "seo-search": {
+    name: "SEO & Search",
+    slug: "seo-search",
+    headline: "Get Found by the Customers Already Looking for You",
+    description: "Every day, people in your area search Google for exactly what you offer. Search engine optimization is how you make sure they find you instead of your competitors.\n\nThese guides break down SEO into practical steps you can take today. From optimizing your Google Business Profile to building local authority, you'll learn what actually moves the needle for small businesses — without the confusing jargon or outdated tactics.",
+    whatYoullLearn: [
+      "How to optimize your Google Business Profile for maximum visibility",
+      "Local SEO strategies that drive foot traffic and phone calls",
+      "On-page SEO fundamentals every business website needs",
+      "How to earn quality backlinks in your local market",
+      "Tracking and measuring your search performance"
+    ],
+    metaTitle: "SEO & Search Guides for Local Businesses | DustinTN",
+    metaDescription: "Free SEO guides for local businesses. Learn proven search optimization strategies for Google Business Profile, local rankings, and organic traffic growth."
+  },
+  "ai-seo-geo": {
+    name: "AI SEO & GEO",
+    slug: "ai-seo-geo",
+    headline: "Show Up Where AI Sends Your Next Customer",
+    description: "Search is changing fast. Millions of people now ask ChatGPT, Perplexity, Google AI Overviews, and other AI tools for business recommendations instead of scrolling through traditional search results. If your business isn't visible to these AI systems, you're missing a growing stream of customers.\n\nGenerative Engine Optimization (GEO) and AI SEO are the new frontier of digital visibility. These guides explain what's happening, why it matters for local businesses, and the concrete steps you can take to get recommended by AI — not just indexed by Google.",
+    whatYoullLearn: [
+      "How AI search tools like ChatGPT and Perplexity find and recommend businesses",
+      "What Generative Engine Optimization (GEO) means for your business",
+      "Practical steps to improve your visibility in AI-generated answers",
+      "How Google AI Overviews are changing local search results",
+      "Future-proofing your online presence for the AI era"
+    ],
+    metaTitle: "AI SEO & GEO Guides — AI Search Visibility | DustinTN",
+    metaDescription: "Free guides on AI SEO and Generative Engine Optimization. Learn how to get your business recommended by ChatGPT, Perplexity, and Google AI Overviews."
+  },
+  "social-media": {
+    name: "Social Media",
+    slug: "social-media",
+    headline: "Connect With Your Community and Grow Your Following",
+    description: "Social media is where your customers hang out, share recommendations, and discover new businesses. For local businesses, it's one of the most affordable and effective ways to build relationships and stay top of mind.\n\nThese guides help you cut through the noise and focus on what actually works. You'll learn how to choose the right platforms, create content people want to engage with, and turn followers into paying customers — without spending hours every day on your phone.",
+    whatYoullLearn: [
+      "How to choose the right platforms for your business",
+      "Creating a content calendar that's sustainable and effective",
+      "Engagement strategies that build real community connections",
+      "Using local hashtags and geotags to reach nearby customers",
+      "Measuring what's working and adjusting your approach"
+    ],
+    metaTitle: "Social Media Guides for Local Businesses | DustinTN",
+    metaDescription: "Free social media guides for local businesses. Learn practical strategies for content creation, community engagement, and growing your local following."
+  },
+  "digital-strategy": {
+    name: "Digital Strategy",
+    slug: "digital-strategy",
+    headline: "Plan Your Path to Digital Growth",
+    description: "A website and social media accounts are just pieces of the puzzle. Real digital growth comes from having a strategy that ties everything together — your website, your search presence, your social media, and your content all working toward the same goals.\n\nThese guides help you think strategically about your online presence. From building your initial digital foundation to staying ahead of industry trends, you'll learn how to make smart decisions that compound over time and give your business a lasting competitive advantage.",
+    whatYoullLearn: [
+      "How to build a cohesive online presence from the ground up",
+      "Digital marketing trends that actually matter for small businesses",
+      "Creating a digital strategy that aligns with your business goals",
+      "When and where to invest your marketing budget for maximum impact",
+      "Measuring ROI across your digital channels"
+    ],
+    metaTitle: "Digital Strategy Guides for Small Businesses | DustinTN",
+    metaDescription: "Free digital strategy guides for small businesses. Learn how to plan, execute, and measure a digital presence that drives real business growth."
+  }
+};
+
+export function getCategoryPageBySlug(slug: string): CategoryPage | undefined {
+  return categoryPages[slug];
+}
+
+export function getCategorySlug(categoryName: string): string {
+  const entry = Object.values(categoryPages).find(c => c.name === categoryName);
+  return entry?.slug ?? categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
 export function getResourceBySlug(slug: string): Resource | undefined {
   return resources.find((r) => r.slug === slug);
 }
@@ -1398,6 +1495,14 @@ export function getResourcesForService(
     r.relatedServices.includes(serviceSlug)
   );
   return limit ? filtered.slice(0, limit) : filtered;
+}
+
+export function getNewestResourceByCategory(category: string): Resource | null {
+  const catResources = resources.filter(r => r.category === category);
+  if (catResources.length === 0) return null;
+  return catResources.reduce((newest, r) =>
+    new Date(r.publishDate) > new Date(newest.publishDate) ? r : newest
+  );
 }
 
 export function getRelatedResources(

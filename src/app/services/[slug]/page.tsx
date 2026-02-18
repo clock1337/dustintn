@@ -188,7 +188,7 @@ const services = {
       },
       {
         question: "Do I need local SEO if I serve a specific area?",
-        answer: "Absolutely. Local SEO is critical for businesses that serve specific geographic areas. It helps you appear in Google's local map pack, Google Business Profile results, and location-based searches. For businesses in Nashville, Hendersonville, Gallatin, and Middle Tennessee, local SEO is one of the highest-ROI marketing investments you can make."
+        answer: "Absolutely. Local SEO is critical for businesses that serve specific geographic areas. It helps you appear in Google's local map pack, Google Business Profile results, and location-based searches. For businesses in Nashville, Hendersonville, Gallatin, and surrounding areas, local SEO is one of the highest-ROI marketing investments you can make."
       },
       {
         question: "Can you help with content creation as well as SEO?",

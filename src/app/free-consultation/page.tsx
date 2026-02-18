@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, CheckCircle2, PhoneCall, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle, MessageSquare, Clock, Shield, Users, BrainCircuit } from "lucide-react";
+import { ArrowRight, CheckCircle2, PhoneCall, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle, MessageSquare, Clock, Shield, Users, BrainCircuit, Palette } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -64,6 +64,7 @@ const helpTopics = [
 const contactMethods = [
   "Google Meet",
   "Phone Call",
+  "Text",
   "Either works",
 ];
 
@@ -75,6 +76,7 @@ const coverTopics = [
   { icon: Calendar, title: "Monthly Retainer", description: "Ongoing webmaster services so you can focus on your business" },
   { icon: BrainCircuit, title: "AI & GEO Search", description: "Getting cited by ChatGPT, Perplexity, and AI search engines" },
   { icon: HelpCircle, title: "General Guidance", description: "Any digital question — no topic is too basic or too niche" },
+  { icon: Palette, title: "Brand & Identity", description: "Logos, visual identity, and making your brand stand out online" },
 ];
 
 const steps = [
@@ -114,7 +116,7 @@ const faqs = [
   },
   {
     question: "Do you only work with businesses in Tennessee?",
-    answer: "We primarily serve Middle Tennessee — Nashville, Hendersonville, Gallatin, and surrounding areas — but we work with clients nationwide. The call is open to anyone.",
+    answer: "I'm based in Nashville and primarily serve Nashville, Hendersonville, Gallatin, and surrounding areas — but I've built websites for businesses in California, North Carolina, Texas, and beyond. The call is open to anyone.",
   },
 ];
 
@@ -292,37 +294,30 @@ export default function FreeConsultationPage() {
         {/* What We Can Cover */}
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <AnimatedSection>
-                <span className="section-label mb-6 block">Topics We Cover</span>
-                <h2 className="text-headline mb-6">
-                  Whatever&apos;s on Your <span className="text-accent">Mind</span>
-                </h2>
-                <p className="text-white/50 text-lg leading-relaxed mb-4">
-                  Every business is different. Whether you&apos;re starting from zero or looking to level up
-                  what you already have, we&apos;ll tailor the conversation to where you are right now.
-                </p>
-                <p className="text-white/50 leading-relaxed">
-                  No question is too basic. If it matters to your business, it matters to us.
-                </p>
-              </AnimatedSection>
+            <AnimatedSection className="text-center mb-12">
+              <span className="section-label mb-6 inline-flex justify-center">Topics We Cover</span>
+              <h2 className="text-headline mb-6">
+                Whatever&apos;s on Your <span className="text-accent">Mind</span>
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed max-w-2xl mx-auto">
+                Every business is different. Whether you&apos;re starting from zero or looking to level up
+                what you already have, I&apos;ll tailor the conversation to where you are right now.
+                No question is too basic — if it matters to your business, it matters to me.
+              </p>
+            </AnimatedSection>
 
-              <AnimatedSection delay={200}>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {coverTopics.map((topic, index) => (
-                    <div
-                      key={index}
-                      className="p-5 bg-dark-gray rounded-2xl border border-white/5 hover:border-accent/20 transition-all duration-300 group"
-                    >
-                      <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                        <topic.icon className="w-5 h-5 text-accent" />
-                      </div>
-                      <h3 className="font-semibold mb-1 text-sm">{topic.title}</h3>
-                      <p className="text-white/40 text-xs leading-relaxed">{topic.description}</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {coverTopics.map((topic, index) => (
+                <AnimatedSection key={index} delay={index * 75}>
+                  <div className="p-5 bg-dark-gray rounded-2xl border border-white/5 hover:border-accent/20 transition-all duration-300 group h-full">
+                    <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                      <topic.icon className="w-5 h-5 text-accent" />
                     </div>
-                  ))}
-                </div>
-              </AnimatedSection>
+                    <h3 className="font-semibold mb-1 text-sm">{topic.title}</h3>
+                    <p className="text-white/40 text-xs leading-relaxed">{topic.description}</p>
+                  </div>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>

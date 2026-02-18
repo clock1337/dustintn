@@ -272,7 +272,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-xl text-white/50 max-w-xl mb-12 leading-relaxed animate-fadeIn" style={{ animationDelay: '0.7s' }}>
-                  We craft distinctive websites and digital experiences for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee. Two decades of turning ideas into memorable online presences.
+                  I craft distinctive websites and digital experiences for businesses across Nashville, Hendersonville, Gallatin, and beyond. Two decades of turning ideas into memorable online presences.
                 </p>
 
                 <div className="flex flex-wrap gap-4 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
@@ -754,7 +754,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Location</div>
-                      <span className="text-lg">Middle Tennessee</span>
+                      <span className="text-lg">Nashville, TN</span>
                     </div>
                   </div>
                 </div>

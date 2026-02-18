@@ -48,7 +48,7 @@ export default function ProudlyServing() {
           }}
         >
           <h2 className="text-2xl font-semibold mb-8">
-            Proudly Serving <span className="text-accent">Middle Tennessee</span>
+            Proudly Serving <span className="text-accent">Nashville & Beyond</span>
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {cities.map((city, index) => (

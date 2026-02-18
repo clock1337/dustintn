@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const serviceMeta: Record<string, { title: string; description: string; tagline: string }> = {
   "web-development": {
     title: "Custom Web Development Services | DustinTN",
-    description: "Get a custom website built for performance and growth. Modern web development using Next.js, React, and Tailwind CSS for Nashville and Middle Tennessee businesses.",
+    description: "Get a custom website built for performance and growth. Modern web development using Next.js, React, and Tailwind CSS for Nashville businesses and clients nationwide.",
     tagline: "Custom Websites Built for Performance",
   },
   "brand-identity": {
@@ -13,7 +13,7 @@ const serviceMeta: Record<string, { title: string; description: string; tagline:
   },
   "seo-content": {
     title: "SEO & Content Marketing Services | DustinTN",
-    description: "Improve your search rankings with data-driven SEO and content strategy. Keyword research, on-page optimization, and local SEO for Middle Tennessee businesses.",
+    description: "Improve your search rankings with data-driven SEO and content strategy. Keyword research, on-page optimization, and local SEO for Nashville businesses.",
     tagline: "Get Found Online",
   },
   "web-consulting": {
@@ -33,7 +33,7 @@ const serviceMeta: Record<string, { title: string; description: string; tagline:
   },
   "geo-optimization": {
     title: "Generative Engine Optimization (GEO) Services | DustinTN",
-    description: "Get your business cited by AI search engines like ChatGPT, Perplexity, and Google AI Overviews. Expert GEO services for Nashville and Middle Tennessee businesses.",
+    description: "Get your business cited by AI search engines like ChatGPT, Perplexity, and Google AI Overviews. Expert GEO services for Nashville businesses and clients nationwide.",
     tagline: "Get Cited by AI Search Engines",
   },
   "ai-seo": {

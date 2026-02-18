@@ -1,14 +1,13 @@
 'use client';
 
-import { useState, useEffect, useRef, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Clock, CheckCircle2, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle, Code2, BrainCircuit, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import ProudlyServing from "@/components/ProudlyServing";
 import Footer from "@/components/Footer";
-import { resources, resourceCategories } from "@/data/resources";
+import { resources, getCategorySlug } from "@/data/resources";
 
 function useScrollAnimation(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -54,31 +53,6 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 
 export default function ResourcesPage() {
   return (
-    <Suspense>
-      <ResourcesPageContent />
-    </Suspense>
-  );
-}
-
-function ResourcesPageContent() {
-  const searchParams = useSearchParams();
-  const categoryParam = searchParams.get("category");
-  const [activeFilter, setActiveFilter] = useState(() => {
-    if (categoryParam && resourceCategories.includes(categoryParam)) return categoryParam;
-    return "All";
-  });
-
-  useEffect(() => {
-    if (categoryParam && resourceCategories.includes(categoryParam)) {
-      setActiveFilter(categoryParam);
-    }
-  }, [categoryParam]);
-
-  const filteredResources = activeFilter === "All"
-    ? resources
-    : resources.filter(r => r.category === activeFilter);
-
-  return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navigation currentPage="resources" />
 
@@ -112,26 +86,22 @@ function ResourcesPageContent() {
                 Free guides for every stage of your <span className="text-accent">digital journey</span>
               </h2>
               <p className="text-white/50 text-lg max-w-2xl mx-auto">
-                Step-by-step checklists, complete guides, and action plans written for small business owners — no jargon, no fluff.
+                Complete guides and action plans written for small business owners — no jargon, no fluff.
               </p>
             </AnimatedSection>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {[
-                { icon: Code2, title: "Web Development", description: "Site launches, maintenance & platform guides", count: resources.filter(r => r.category === "Web Development").length },
-                { icon: Search, title: "SEO & Search", description: "Rankings, local SEO & Google Business", count: resources.filter(r => r.category === "SEO & Search").length },
-                { icon: BrainCircuit, title: "AI SEO & GEO", description: "AI search visibility & optimization", count: resources.filter(r => r.category === "AI SEO & GEO").length },
-                { icon: Share2, title: "Social Media", description: "Strategy, content & engagement", count: resources.filter(r => r.category === "Social Media").length },
-                { icon: Zap, title: "Digital Strategy", description: "Trends, planning & growth roadmaps", count: resources.filter(r => r.category === "Digital Strategy").length },
+                { icon: Code2, title: "Web Development", description: "Site launches, maintenance & platform guides", slug: getCategorySlug("Web Development"), count: resources.filter(r => r.category === "Web Development").length },
+                { icon: Search, title: "SEO & Search", description: "Rankings, local SEO & Google Business", slug: getCategorySlug("SEO & Search"), count: resources.filter(r => r.category === "SEO & Search").length },
+                { icon: BrainCircuit, title: "AI SEO & GEO", description: "AI search visibility & optimization", slug: getCategorySlug("AI SEO & GEO"), count: resources.filter(r => r.category === "AI SEO & GEO").length },
+                { icon: Share2, title: "Social Media", description: "Strategy, content & engagement", slug: getCategorySlug("Social Media"), count: resources.filter(r => r.category === "Social Media").length },
+                { icon: Zap, title: "Digital Strategy", description: "Trends, planning & growth roadmaps", slug: getCategorySlug("Digital Strategy"), count: resources.filter(r => r.category === "Digital Strategy").length },
               ].map((cat, idx) => (
                 <AnimatedSection key={idx} delay={idx * 75}>
-                  <button
-                    onClick={() => setActiveFilter(cat.title)}
-                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 group ${
-                      activeFilter === cat.title
-                        ? 'bg-accent/10 border-accent/30'
-                        : 'bg-dark-gray border-white/5 hover:border-accent/20'
-                    }`}
+                  <Link
+                    href={`/resources/${cat.slug}`}
+                    className="block w-full text-left p-5 rounded-2xl border bg-dark-gray border-white/5 hover:border-accent/20 transition-all duration-300 group h-full"
                   >
                     <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
                       <cat.icon className="w-5 h-5 text-accent" />
@@ -139,29 +109,8 @@ function ResourcesPageContent() {
                     <h3 className="text-sm font-semibold mb-1">{cat.title}</h3>
                     <p className="text-xs text-white/40 leading-relaxed mb-2">{cat.description}</p>
                     <span className="text-xs text-accent font-medium">{cat.count} {cat.count === 1 ? 'guide' : 'guides'}</span>
-                  </button>
+                  </Link>
                 </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Filter Section */}
-        <section className="py-8 bg-black border-y border-white/5">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="flex flex-wrap gap-3">
-              {resourceCategories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveFilter(category)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeFilter === category
-                      ? 'bg-accent text-white'
-                      : 'bg-dark-gray text-white/60 hover:text-white hover:bg-dark-gray/80'
-                  }`}
-                >
-                  {category}
-                </button>
               ))}
             </div>
           </div>
@@ -171,7 +120,7 @@ function ResourcesPageContent() {
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredResources.map((resource, index) => (
+              {resources.map((resource, index) => (
                 <AnimatedSection key={resource.slug} delay={index * 100}>
                   <Link
                     href={`/resources/${resource.slug}`}
@@ -361,7 +310,7 @@ function ResourcesPageContent() {
               </h2>
               <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
                 Reading about it is a great start. When you&apos;re ready for expert help implementing these strategies,
-                we&apos;re here for you.
+                I&apos;m here for you.
               </p>
               <Link href="/contact" className="btn-pill btn-pill-primary group">
                 Let&apos;s Talk

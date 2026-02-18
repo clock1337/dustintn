@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, Code2, Search, BrainCircuit, Share2, Zap } from "lucide-react";
+import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, Code2, Search, BrainCircuit, Share2, Zap, Palette, BookOpen, Compass, Globe } from "lucide-react";
 import Link from "next/link";
-import { resources, resourceCategories } from "@/data/resources";
+import { resources, getCategorySlug, getNewestResourceByCategory } from "@/data/resources";
 
 const portfolioCategories = [
   {
@@ -27,14 +27,14 @@ const portfolioCategories = [
 ];
 
 const serviceItems = [
-  { title: "Web Development", href: "/services/web-development", description: "Custom websites & apps" },
-  { title: "Brand Identity", href: "/services/brand-identity", description: "Logos & visual identity" },
-  { title: "SEO & Content", href: "/services/seo-content", description: "Search optimization" },
-  { title: "Web Consulting", href: "/services/web-consulting", description: "Expert guidance" },
-  { title: "Social Media", href: "/services/social-media", description: "Facebook, Instagram, Yelp" },
-  { title: "Digital Strategy", href: "/services/digital-strategy", description: "Growth roadmaps" },
-  { title: "GEO", href: "/services/geo-optimization", description: "AI search optimization" },
-  { title: "AI SEO", href: "/services/ai-seo", description: "AI-powered SEO" }
+  { title: "Web Development", href: "/services/web-development", description: "Custom websites & apps", icon: Code2 },
+  { title: "Brand Identity", href: "/services/brand-identity", description: "Logos & visual identity", icon: Palette },
+  { title: "SEO & Content", href: "/services/seo-content", description: "Search optimization", icon: Search },
+  { title: "Web Consulting", href: "/services/web-consulting", description: "Expert guidance", icon: Compass },
+  { title: "Social Media", href: "/services/social-media", description: "Facebook, Instagram, Yelp", icon: Share2 },
+  { title: "Digital Strategy", href: "/services/digital-strategy", description: "Growth roadmaps", icon: Zap },
+  { title: "GEO", href: "/services/geo-optimization", description: "AI search optimization", icon: Globe },
+  { title: "AI SEO", href: "/services/ai-seo", description: "AI-powered SEO", icon: BrainCircuit }
 ];
 
 // Resource category metadata for dropdown
@@ -44,10 +44,15 @@ const resourceCategoryItems = [
   { title: "AI SEO & GEO", description: "AI search, ChatGPT & Perplexity", icon: BrainCircuit, category: "AI SEO & GEO" },
   { title: "Social Media", description: "Strategy, content & engagement", icon: Share2, category: "Social Media" },
   { title: "Digital Strategy", description: "Trends, planning & growth", icon: Zap, category: "Digital Strategy" },
-].map(item => ({
-  ...item,
-  count: resources.filter(r => r.category === item.category).length,
-}));
+].map(item => {
+  const newest = getNewestResourceByCategory(item.category);
+  return {
+    ...item,
+    slug: getCategorySlug(item.category),
+    count: resources.filter(r => r.category === item.category).length,
+    newestArticle: newest ? { title: newest.title, slug: newest.slug, date: newest.publishDate } : null,
+  };
+});
 
 interface NavigationProps {
   currentPage?: 'home' | 'portfolio' | 'project' | 'resources';
@@ -129,7 +134,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                     ? 'opacity-100 translate-y-0 pointer-events-auto'
                     : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}>
-                  <div className="bg-dark-gray/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 min-w-[320px] shadow-2xl shadow-black/50">
+                  <div className="bg-dark-gray/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 min-w-[480px] shadow-2xl shadow-black/50">
                     {/* Header */}
                     <div className="flex items-center justify-between mb-3 pb-3 border-b border-white/10">
                       <span className="text-xs font-medium text-white/40 uppercase tracking-wider">Our Services</span>
@@ -148,10 +153,15 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                         <Link
                           key={index}
                           href={item.href}
-                          className="flex flex-col p-3 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 group"
+                          className="flex items-start gap-3 p-3 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 group"
                         >
-                          <span className="text-sm font-medium group-hover:text-accent transition-colors">{item.title}</span>
-                          <span className="text-xs text-white/40 mt-0.5">{item.description}</span>
+                          <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0 mt-0.5">
+                            <item.icon className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium group-hover:text-accent transition-colors block">{item.title}</span>
+                            <span className="text-xs text-white/40 mt-0.5 block">{item.description}</span>
+                          </div>
                         </Link>
                       ))}
                     </div>
@@ -277,24 +287,38 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                     {/* Category Items */}
                     <div className="space-y-1">
                       {resourceCategoryItems.map((item) => (
-                        <Link
-                          key={item.category}
-                          href={`/resources?category=${encodeURIComponent(item.category)}`}
-                          className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 group"
-                        >
-                          <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <item.icon className="w-5 h-5" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
-                              {item.title}
+                        <div key={item.category}>
+                          <Link
+                            href={`/resources/${item.slug}`}
+                            className="flex items-start gap-4 p-3 pb-1 rounded-xl hover:bg-white/5 transition-all duration-200 group"
+                          >
+                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
+                              <item.icon className="w-5 h-5" />
                             </div>
-                            <div className="text-xs text-white/40 mt-0.5">
-                              {item.description}
+                            <div className="flex-1">
+                              <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
+                                {item.title}
+                              </div>
+                              <div className="text-xs text-white/40 mt-0.5">
+                                {item.description}
+                              </div>
                             </div>
-                          </div>
-                          <span className="text-xs text-white/30 mt-1">{item.count}</span>
-                        </Link>
+                            <span className="text-xs text-white/30 mt-1">{item.count}</span>
+                          </Link>
+                          {item.newestArticle && (
+                            <Link
+                              href={`/resources/${item.newestArticle.slug}`}
+                              className="flex items-center gap-2 ml-[3.5rem] px-3 pb-3 pt-1 group/article"
+                            >
+                              <span className="text-[11px] text-white/30 group-hover/article:text-accent transition-colors truncate flex-1">
+                                {item.newestArticle.title}
+                              </span>
+                              <span className="text-[10px] text-white/20 flex-shrink-0">
+                                {item.newestArticle.date}
+                              </span>
+                            </Link>
+                          )}
+                        </div>
                       ))}
                     </div>
 
@@ -419,10 +443,15 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                         key={index}
                         href={item.href}
                         onClick={closeMobile}
-                        className="flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
                       >
-                        <span className="text-sm font-medium text-white/80">{item.title}</span>
-                        <span className="text-xs text-white/40 mt-0.5">{item.description}</span>
+                        <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
+                          <item.icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <span className="text-sm font-medium text-white/80 block">{item.title}</span>
+                          <span className="text-xs text-white/40">{item.description}</span>
+                        </div>
                       </Link>
                     ))}
                   </div>
@@ -498,20 +527,35 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                       View All Resources
                     </Link>
                     {resourceCategoryItems.map((item) => (
-                      <Link
-                        key={item.category}
-                        href={`/resources?category=${encodeURIComponent(item.category)}`}
-                        onClick={closeMobile}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
-                          <item.icon className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <span className="text-sm font-medium text-white/80 block">{item.title}</span>
-                          <span className="text-xs text-white/40">{item.description}</span>
-                        </div>
-                      </Link>
+                      <div key={item.category}>
+                        <Link
+                          href={`/resources/${item.slug}`}
+                          onClick={closeMobile}
+                          className="flex items-center gap-3 px-4 py-3 pb-1 rounded-xl hover:bg-white/5 transition-colors"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
+                            <item.icon className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium text-white/80 block">{item.title}</span>
+                            <span className="text-xs text-white/40">{item.description}</span>
+                          </div>
+                        </Link>
+                        {item.newestArticle && (
+                          <Link
+                            href={`/resources/${item.newestArticle.slug}`}
+                            onClick={closeMobile}
+                            className="flex items-center gap-2 ml-[3.25rem] px-4 pb-2 pt-1"
+                          >
+                            <span className="text-[11px] text-white/30 truncate flex-1">
+                              {item.newestArticle.title}
+                            </span>
+                            <span className="text-[10px] text-white/20 flex-shrink-0">
+                              {item.newestArticle.date}
+                            </span>
+                          </Link>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>

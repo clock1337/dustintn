@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: [
     "free web consultation Nashville",
     "free website consultation",
-    "free SEO consultation Middle Tennessee",
+    "free SEO consultation Nashville Tennessee",
     "digital strategy consultation",
     "free business consultation Hendersonville",
   ],

@@ -13,7 +13,7 @@ export default function Footer() {
               DustinTN<span className="text-accent">.</span>
             </Link>
             <p className="text-white/40 leading-relaxed mb-6">
-              Building digital solutions for businesses across Nashville, Hendersonville, Gallatin, and Middle Tennessee since 2004.
+              Building digital solutions for businesses across Nashville, Hendersonville, Gallatin, and surrounding areas since 2004.
             </p>
             <div className="flex gap-3">
               {['Tw', 'Li', 'Ig', 'Dr'].map((social, index) => (
@@ -71,7 +71,7 @@ export default function Footer() {
             <Link href="/terms-of-use" className="text-white/30 text-sm hover:text-accent transition-colors">Terms of Use</Link>
             <Link href="/privacy-policy" className="text-white/30 text-sm hover:text-accent transition-colors">Privacy Policy</Link>
           </div>
-          <p className="text-white/30 text-sm">Crafted with care in Middle Tennessee</p>
+          <p className="text-white/30 text-sm">Crafted with care in Nashville, Tennessee</p>
         </div>
       </div>
     </footer>
