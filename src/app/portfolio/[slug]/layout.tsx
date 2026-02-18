@@ -43,6 +43,7 @@ export async function generateMetadata({
       description: meta.description,
       url: `https://dustintn.com/portfolio/${slug}`,
       type: "website",
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DustinTN - Web Development & Digital Services' }],
     },
     twitter: {
       card: "summary_large_image",

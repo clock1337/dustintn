@@ -7,55 +7,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: "2026-02-17",
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: "2026-02-01",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date(),
+      lastModified: "2026-02-17",
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
+      lastModified: "2026-02-01",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/resources`,
-      lastModified: new Date(),
+      lastModified: "2026-02-17",
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: "2026-01-15",
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/free-consultation`,
-      lastModified: new Date(),
+      lastModified: "2026-02-17",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/terms-of-use`,
-      lastModified: new Date(),
+      lastModified: "2025-12-01",
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: "2025-12-01",
       changeFrequency: "yearly",
       priority: 0.3,
     },
@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "ai-seo",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
+    lastModified: "2026-02-17",
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -85,14 +85,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "coldwell-banker-commercial",
   ].map((slug) => ({
     url: `${baseUrl}/portfolio/${slug}`,
-    lastModified: new Date(),
+    lastModified: "2026-02-01",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const resourcePages: MetadataRoute.Sitemap = resources.map((resource) => ({
     url: `${baseUrl}/resources/${resource.slug}`,
-    lastModified: new Date(),
+    lastModified: "2026-02-17",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

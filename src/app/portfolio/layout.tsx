@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Our Work | Web Design Projects & Success Stories",
     description: "Explore custom websites we've built for businesses across industries. From healthcare to real estate, see our portfolio of successful web projects.",
     url: 'https://dustintn.com/portfolio',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DustinTN - Web Development & Digital Services' }],
   },
   alternates: {
     canonical: '/portfolio',

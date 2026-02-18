@@ -245,7 +245,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <section className="flex items-center pt-32 pb-20 relative overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-dark-gray"></div>
           <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[200px] animate-pulse"></div>
@@ -289,10 +289,10 @@ export default function Home() {
 
               {/* Hero Image */}
               <div className="relative animate-fadeIn" style={{ animationDelay: '0.6s' }}>
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=1000&fit=crop"
-                    alt="Digital workspace"
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop"
+                    alt="Modern web development workspace"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"
                     priority
@@ -344,7 +344,7 @@ export default function Home() {
                     { icon: Wrench, text: "Website maintenance" },
                     { icon: Share2, text: "Social media" },
                     { icon: Calendar, text: "Monthly retainer" },
-                    { icon: HelpCircle, text: "Any digital question" },
+                    { icon: BrainCircuit, text: "GEO & AI search" },
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -450,58 +450,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="py-32 bg-black relative">
-          <div className="container mx-auto px-6 lg:px-12">
-            <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
-              <div className="max-w-2xl">
-                <span className="section-label mb-6 block">What We Do</span>
-                <h2 className="text-headline mb-6">
-                  Services that <span className="text-accent">deliver</span> results
-                </h2>
-                <p className="text-white/50 text-lg">
-                  Comprehensive digital solutions tailored to your business needs. Every project receives our full attention and expertise.
-                </p>
-              </div>
-              <Link href="/services" className="btn-pill btn-pill-outline group flex-shrink-0">
-                View All Services
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </AnimatedSection>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <AnimatedSection key={index} delay={index * 100}>
-                  <Link href={`/services/${service.slug}`} className="group block p-8 lg:p-10 bg-dark-gray rounded-2xl card-hover cursor-pointer border border-white/5 hover:border-accent/30 relative overflow-hidden h-full">
-                    {/* Background image on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-
-                    <div className="relative z-10">
-                      <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                        <service.icon className="w-7 h-7 text-accent group-hover:text-white transition-colors" />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
-                      <p className="text-white/50 leading-relaxed">{service.description}</p>
-
-                      <div className="mt-6 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="text-sm font-medium">Learn more</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </Link>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* GEO & AI SEO Section */}
         <section className="py-32 bg-dark-gray relative overflow-hidden">
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[200px]"></div>
@@ -578,6 +526,58 @@ export default function Home() {
                   </Link>
                 </div>
               </AnimatedSection>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="py-32 bg-black relative">
+          <div className="container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+              <div className="max-w-2xl">
+                <span className="section-label mb-6 block">What We Do</span>
+                <h2 className="text-headline mb-6">
+                  Services that <span className="text-accent">deliver</span> results
+                </h2>
+                <p className="text-white/50 text-lg">
+                  Comprehensive digital solutions tailored to your business needs. Every project receives our full attention and expertise.
+                </p>
+              </div>
+              <Link href="/services" className="btn-pill btn-pill-outline group flex-shrink-0">
+                View All Services
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service, index) => (
+                <AnimatedSection key={index} delay={index * 100}>
+                  <Link href={`/services/${service.slug}`} className="group block p-8 lg:p-10 bg-dark-gray rounded-2xl card-hover cursor-pointer border border-white/5 hover:border-accent/30 relative overflow-hidden h-full">
+                    {/* Background image on hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                        <service.icon className="w-7 h-7 text-accent group-hover:text-white transition-colors" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
+                      <p className="text-white/50 leading-relaxed">{service.description}</p>
+
+                      <div className="mt-6 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-sm font-medium">Learn more</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>

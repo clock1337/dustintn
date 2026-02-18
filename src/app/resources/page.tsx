@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { ArrowRight, Clock, CheckCircle2, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -52,7 +53,26 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 }
 
 export default function ResourcesPage() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  return (
+    <Suspense>
+      <ResourcesPageContent />
+    </Suspense>
+  );
+}
+
+function ResourcesPageContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const [activeFilter, setActiveFilter] = useState(() => {
+    if (categoryParam && resourceCategories.includes(categoryParam)) return categoryParam;
+    return "All";
+  });
+
+  useEffect(() => {
+    if (categoryParam && resourceCategories.includes(categoryParam)) {
+      setActiveFilter(categoryParam);
+    }
+  }, [categoryParam]);
 
   const filteredResources = activeFilter === "All"
     ? resources

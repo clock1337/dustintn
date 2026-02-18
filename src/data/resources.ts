@@ -31,6 +31,7 @@ export const resourceCategories = [
   "All",
   "Web Development",
   "SEO & Search",
+  "AI SEO & GEO",
   "Social Media",
   "Digital Strategy",
 ];
@@ -1150,7 +1151,7 @@ export const resources: Resource[] = [
     metaTitle: "SEO, GEO & AI SEO: Why They Work Better Together | DustinTN",
     metaDescription:
       "Learn how traditional SEO, Generative Engine Optimization, and AI-powered SEO complement each other to maximize your search visibility across every platform.",
-    category: "SEO & Search",
+    category: "AI SEO & GEO",
     excerpt:
       "Traditional SEO, GEO, and AI SEO are not competing strategies — they are complementary layers that compound each other's results across every search surface.",
     image:

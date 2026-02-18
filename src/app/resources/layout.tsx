@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       "Free guides and action plans for website maintenance, SEO, social media, and digital strategy. Practical tips for small businesses in Middle Tennessee.",
     url: "https://dustintn.com/resources",
     type: "website",
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DustinTN - Web Development & Digital Services' }],
   },
   alternates: {
     canonical: "/resources",

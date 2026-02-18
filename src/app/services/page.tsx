@@ -82,6 +82,24 @@ const services = [
     features: ["Keyword Research", "On-Page SEO", "Content Strategy", "Analytics"]
   },
   {
+    slug: "geo-optimization",
+    icon: Globe,
+    title: "GEO",
+    tagline: "Get Cited by AI Search Engines",
+    description: "Optimize your brand for AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews so you get cited in AI-generated answers.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    features: ["AI Citations", "Structured Data", "Entity SEO", "AI Monitoring"]
+  },
+  {
+    slug: "ai-seo",
+    icon: BrainCircuit,
+    title: "AI SEO",
+    tagline: "Supercharge SEO with AI",
+    description: "Use cutting-edge AI tools to accelerate keyword research, optimize content at scale, predict rankings, and automate technical audits.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop",
+    features: ["AI Keywords", "Content Scoring", "Predictive Analytics", "Auto Audits"]
+  },
+  {
     slug: "web-consulting",
     icon: Users,
     title: "Web Consulting",
@@ -107,24 +125,6 @@ const services = [
     description: "Comprehensive digital roadmaps that align technology choices with your business growth objectives.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
     features: ["Planning", "Analysis", "Roadmaps", "KPIs"]
-  },
-  {
-    slug: "geo-optimization",
-    icon: Globe,
-    title: "GEO",
-    tagline: "Get Cited by AI Search Engines",
-    description: "Optimize your brand for AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews so you get cited in AI-generated answers.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-    features: ["AI Citations", "Structured Data", "Entity SEO", "AI Monitoring"]
-  },
-  {
-    slug: "ai-seo",
-    icon: BrainCircuit,
-    title: "AI SEO",
-    tagline: "Supercharge SEO with AI",
-    description: "Use cutting-edge AI tools to accelerate keyword research, optimize content at scale, predict rankings, and automate technical audits.",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop",
-    features: ["AI Keywords", "Content Scoring", "Predictive Analytics", "Auto Audits"]
   }
 ];
 

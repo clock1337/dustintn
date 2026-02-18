@@ -274,9 +274,12 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                     <div className="space-y-4">
                       {resourcesByCategory.map((group) => (
                         <div key={group.category}>
-                          <span className="text-[10px] font-semibold text-accent uppercase tracking-widest px-3 mb-1 block">
+                          <Link
+                            href={`/resources?category=${encodeURIComponent(group.category)}`}
+                            className="text-[10px] font-semibold text-accent uppercase tracking-widest px-3 mb-1 block hover:text-accent-hover transition-colors"
+                          >
                             {group.category}
-                          </span>
+                          </Link>
                           <div className="space-y-0.5">
                             {group.items.map((item) => (
                               <Link
@@ -494,9 +497,13 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                     </Link>
                     {resourcesByCategory.map((group) => (
                       <div key={group.category}>
-                        <span className="text-[10px] font-semibold text-accent/70 uppercase tracking-widest px-4 mb-1 block">
+                        <Link
+                          href={`/resources?category=${encodeURIComponent(group.category)}`}
+                          onClick={closeMobile}
+                          className="text-[10px] font-semibold text-accent/70 uppercase tracking-widest px-4 mb-1 block hover:text-accent transition-colors"
+                        >
                           {group.category}
-                        </span>
+                        </Link>
                         {group.items.map((item) => (
                           <Link
                             key={item.slug}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, CheckCircle2, PhoneCall, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle, MessageSquare, Clock, Shield, Users } from "lucide-react";
+import { ArrowRight, CheckCircle2, PhoneCall, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle, MessageSquare, Clock, Shield, Users, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -56,6 +56,7 @@ const helpTopics = [
   "Website maintenance & updates",
   "Social media strategy",
   "Monthly webmaster services",
+  "GEO & AI search visibility",
   "General digital guidance",
   "Other",
 ];
@@ -72,6 +73,7 @@ const coverTopics = [
   { icon: Wrench, title: "Maintenance", description: "Keeping your existing website secure, fast, and up to date" },
   { icon: Share2, title: "Social Media", description: "Building a strategy that connects you with your community" },
   { icon: Calendar, title: "Monthly Retainer", description: "Ongoing webmaster services so you can focus on your business" },
+  { icon: BrainCircuit, title: "AI & GEO Search", description: "Getting cited by ChatGPT, Perplexity, and AI search engines" },
   { icon: HelpCircle, title: "General Guidance", description: "Any digital question — no topic is too basic or too niche" },
 ];
 
@@ -163,8 +165,25 @@ export default function FreeConsultationPage() {
     }
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navigation />
 
       <main>

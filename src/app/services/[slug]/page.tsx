@@ -439,8 +439,27 @@ export default function ServicePage() {
 
   const ServiceIcon = service.icon;
 
+  const faqJsonLd = 'faqs' in service && service.faqs ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: service.faqs.map((faq: { question: string; answer: string }) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <Navigation />
 
       <main>
@@ -475,7 +494,7 @@ export default function ServicePage() {
         </section>
 
         {/* Hero Split Section */}
-        <section className="pb-20">
+        <section className="py-20">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left - Image */}

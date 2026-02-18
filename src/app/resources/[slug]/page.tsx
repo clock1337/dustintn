@@ -53,6 +53,10 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
   );
 }
 
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
 export default function ResourceDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -144,14 +148,18 @@ export default function ResourceDetailPage() {
                   <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-5">In This Article</h2>
                   <nav className="space-y-3">
                     {resource.sections.map((section, idx) => (
-                      <div key={idx} className="flex items-start gap-3 group">
+                      <a
+                        key={idx}
+                        href={`#${slugify(section.heading)}`}
+                        className="flex items-start gap-3 group cursor-pointer"
+                      >
                         <span className="text-xs font-semibold text-accent/60 mt-0.5 w-5 flex-shrink-0">
                           {String(idx + 1).padStart(2, '0')}
                         </span>
-                        <span className="text-sm text-white/60 leading-snug group-hover:text-white/80 transition-colors">
+                        <span className="text-sm text-white/60 leading-snug group-hover:text-white transition-colors">
                           {section.heading}
                         </span>
-                      </div>
+                      </a>
                     ))}
                   </nav>
 
@@ -180,7 +188,10 @@ export default function ResourceDetailPage() {
               <div>
                 {resource.sections.map((section, index) => (
                   <AnimatedSection key={index} className="mb-16 last:mb-0">
-                    <h2 className="text-2xl lg:text-3xl font-semibold mb-6">
+                    <h2
+                      id={slugify(section.heading)}
+                      className="text-2xl lg:text-3xl font-semibold mb-6 scroll-mt-28"
+                    >
                       {section.heading}
                     </h2>
                     <p className="text-white/60 text-lg leading-relaxed mb-6">

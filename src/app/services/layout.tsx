@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "What We Do | Web Design, SEO & Digital Marketing Services",
     description: "Custom websites, SEO, and social media marketing for Nashville and Middle Tennessee businesses. Full-service digital solutions from 20+ years of expertise.",
     url: 'https://dustintn.com/services',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DustinTN - Web Development & Digital Services' }],
   },
   alternates: {
     canonical: '/services',
