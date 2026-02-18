@@ -837,6 +837,552 @@ export const resources: Resource[] = [
       buttonHref: "/services/ai-seo",
     },
   },
+  {
+    slug: "complete-guide-web-development-small-businesses",
+    title: "The Complete Guide to Web Development for Small Businesses",
+    metaTitle: "Complete Guide to Web Development for Small Business | DustinTN",
+    metaDescription: "Everything small businesses need to know about web development. Covers why you need a website, choosing a platform, design, development, maintenance, performance, and security.",
+    category: "Web Development",
+    excerpt:
+      "The ultimate resource for small business web development — from choosing a platform and designing your site to performance, security, and long-term maintenance.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+    readTime: "18 min read",
+    publishDate: "February 17, 2026",
+    tags: ["Web Development", "Small Business", "Ultimate Guide"],
+    relatedServices: ["web-development", "web-consulting"],
+    sections: [
+      {
+        heading: "Why Every Small Business Needs a Professional Website",
+        content:
+          "Your website is the foundation of your entire online presence. It is the one digital asset you fully own and control. Social media profiles can change their algorithms or disappear entirely, but your website is yours. Over 80 percent of consumers research a business online before making a purchase or visiting in person. If your business does not have a professional website — or has one that looks outdated — you are losing customers to competitors who do. A professional website builds credibility, generates leads around the clock, and gives customers the information they need to choose you. It is not an expense — it is the most important investment in your business's digital future.",
+      },
+      {
+        heading: "Choosing the Right Platform",
+        content:
+          "The platform you choose for your website affects everything from design flexibility to long-term costs. WordPress powers over 40 percent of the internet and offers maximum flexibility with thousands of plugins and themes. Squarespace provides beautiful templates and all-in-one simplicity. Wix is beginner-friendly with drag-and-drop editing. Shopify is purpose-built for e-commerce. Custom-built websites using modern frameworks like Next.js and React deliver the best performance and complete control. The right choice depends on your budget, technical comfort level, and growth plans. For a detailed comparison of each option, read our guide on how to choose the right website platform for your business.",
+      },
+      {
+        heading: "Design Principles That Convert Visitors into Customers",
+        content:
+          "Good web design is not just about looking attractive — it is about guiding visitors toward action. Every design decision should serve a business purpose. Use clear visual hierarchy to direct attention to your most important content. Keep navigation simple and intuitive. Ensure your calls to action are prominent and compelling. Use consistent branding throughout your site, including your color palette, typography, and imagery. White space is your friend — it makes content easier to read and reduces visual clutter. Most importantly, design for mobile first. Over 60 percent of web traffic comes from mobile devices, and a site that looks great on desktop but frustrates mobile users will lose business.",
+      },
+      {
+        heading: "The Development Process: From Concept to Launch",
+        content:
+          "Building a website involves several distinct phases, and understanding the process helps you set realistic expectations and stay involved at the right moments. The process typically begins with discovery and planning, where you define your goals, audience, and site structure. Next comes design, where wireframes and visual mockups bring your vision to life. Development follows, translating designs into working code. Testing ensures everything functions correctly across devices and browsers. Finally, launch day arrives — but that is really just the beginning. For a detailed day-by-day roadmap, check out our 30-day website launch action plan.",
+        list: [
+          "Discovery: Define goals, audience, competitors, and site structure",
+          "Design: Create wireframes, visual mockups, and get approval",
+          "Development: Build pages, add content, integrate forms and analytics",
+          "Testing: Check every page on desktop, tablet, and mobile",
+          "Launch: Go live, submit sitemap, and announce to your audience",
+          "Post-launch: Monitor analytics, gather feedback, and iterate",
+        ],
+      },
+      {
+        heading: "Website Maintenance: Keeping Your Site Healthy",
+        content:
+          "A website is not a set-it-and-forget-it asset. It requires regular maintenance to stay secure, fast, and effective. Neglected websites develop security vulnerabilities, broken features, and declining performance that drive visitors away. Weekly tasks include checking that pages load correctly and backing up your files. Monthly tasks include updating software, running security scans, and testing across devices. Quarterly tasks include reviewing SEO performance, auditing accessibility, and evaluating your hosting needs. For a complete breakdown of everything you should be doing, read our essential website maintenance checklist.",
+      },
+      {
+        heading: "Performance: Speed Matters More Than You Think",
+        content:
+          "Website speed directly affects your bottom line. Every second of delay reduces conversions by an average of seven percent. Google uses page speed as a ranking factor, so slow sites also rank lower in search results. Optimize your images by compressing them and using modern formats like WebP. Minimize unnecessary JavaScript and CSS. Use a content delivery network (CDN) to serve files from locations closer to your visitors. Enable browser caching so returning visitors load your site faster. Choose a hosting provider that prioritizes performance. Test your speed regularly using Google PageSpeed Insights and address any issues it identifies. A fast website is not a luxury — it is a competitive necessity.",
+      },
+      {
+        heading: "Security: Protecting Your Business and Your Customers",
+        content:
+          "Website security is not optional. A compromised website can damage your reputation, expose customer data, and result in search engine penalties that tank your rankings. Start with the basics: use strong, unique passwords and enable two-factor authentication for all admin accounts. Install an SSL certificate to encrypt data in transit — this is also a Google ranking factor. Keep all software, plugins, and themes updated to patch known vulnerabilities. Implement a web application firewall to block malicious traffic. Set up automated backups stored in a separate location so you can recover quickly if something goes wrong. If you are on WordPress, limit login attempts and change default admin paths. Security is an ongoing responsibility, not a one-time setup.",
+      },
+      {
+        heading: "Next Steps: Getting Started with Your Web Project",
+        content:
+          "Whether you are building your first website or redesigning an existing one, the most important step is getting started. Define your goals and your budget. Research your options. And do not be afraid to ask for help — the right web development partner can save you time, money, and costly mistakes. If you are ready to explore what a professional website can do for your business, we offer free 30-minute exploratory calls where we discuss your goals and recommend the best path forward. No pressure, no obligation — just honest direction from a team with over 20 years of experience building websites for small businesses across Middle Tennessee.",
+      },
+    ],
+    cta: {
+      heading: "Ready to Build Your Business Website?",
+      description:
+        "From planning to launch and beyond, we handle every aspect of web development so you can focus on running your business. Let us build a website that works as hard as you do.",
+      buttonText: "Start Your Web Project",
+      buttonHref: "/services/web-development",
+    },
+  },
+  {
+    slug: "complete-guide-seo-search-visibility",
+    title: "The Complete Guide to SEO & Search Visibility",
+    metaTitle: "Complete Guide to SEO & Search Visibility | DustinTN",
+    metaDescription: "Master SEO with this comprehensive guide covering local SEO, technical SEO, content strategy, GEO, AI search, Google Business Profile, and measuring success.",
+    category: "SEO & Search",
+    excerpt:
+      "Everything you need to know about getting found online — from traditional SEO fundamentals to GEO and AI-powered search optimization.",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
+    readTime: "20 min read",
+    publishDate: "February 17, 2026",
+    tags: ["SEO", "GEO", "AI Search", "Ultimate Guide"],
+    relatedServices: ["seo-content", "geo-optimization", "ai-seo"],
+    sections: [
+      {
+        heading: "What SEO Is and Why It Matters",
+        content:
+          "Search engine optimization (SEO) is the practice of improving your website and online presence so that search engines rank you higher when people look for businesses like yours. It is not about gaming the system — it is about making your business easier to find by the people who are already looking for what you offer. For small businesses, SEO is one of the highest-ROI marketing investments you can make. Unlike paid advertising, which stops the moment you stop paying, SEO builds long-term visibility that compounds over time. A business that invests in SEO today will reap the benefits for years to come. The search landscape now extends beyond Google — AI-powered search engines are changing how people discover businesses, making it more important than ever to have a comprehensive approach.",
+      },
+      {
+        heading: "Local SEO: Getting Found in Your Community",
+        content:
+          "If your business serves a specific geographic area, local SEO is your most important digital marketing channel. Local SEO focuses on making your business visible in location-based searches — the kind of searches people do when they are ready to buy. When someone searches for 'plumber near me' or 'best restaurant in Hendersonville,' Google shows a local map pack with three business listings before any organic results. Getting into that map pack requires a combination of an optimized Google Business Profile, consistent business information across the web, quality reviews, and locally relevant content on your website. For actionable tips, check out our 10 SEO tips every small business needs.",
+        list: [
+          "Claim and fully optimize your Google Business Profile",
+          "Ensure your name, address, and phone number are consistent everywhere online",
+          "Build citations in local directories and industry-specific listings",
+          "Earn reviews on Google, Yelp, and relevant platforms",
+          "Create location-specific content on your website",
+          "Use local keywords naturally in your titles, headings, and content",
+        ],
+      },
+      {
+        heading: "Technical SEO: The Foundation Under Everything",
+        content:
+          "Technical SEO covers the behind-the-scenes elements that make your website easy for search engines to crawl, understand, and index. Without solid technical SEO, even the best content may never reach its ranking potential. Key technical factors include site speed, mobile responsiveness, secure HTTPS connections, proper URL structures, XML sitemaps, and structured data markup. Search engines need to be able to access and understand every page on your site. Broken links, crawl errors, duplicate content, and missing meta tags all create obstacles. Regular technical audits help you catch and fix issues before they impact your rankings. AI-powered audit tools can now automate much of this process — our AI SEO service leverages these tools to keep your technical foundation strong.",
+      },
+      {
+        heading: "Content Strategy: Creating What Your Customers Need",
+        content:
+          "Content is the fuel that powers your SEO performance. But not just any content — it needs to be genuinely helpful, well-organized, and aligned with what your customers are searching for. Start with keyword research to understand the questions and topics your audience cares about. Create content that answers those questions better than anything else on the internet. Focus on depth over frequency — one comprehensive guide is worth more than ten thin blog posts. Organize your content with clear headings, natural keyword usage, and internal links that connect related topics. Every piece of content should serve a purpose in your overall strategy, whether that is attracting new visitors, building authority, or converting leads into customers.",
+      },
+      {
+        heading: "GEO and AI Search: The New Frontier",
+        content:
+          "The search landscape is undergoing its biggest shift since Google became dominant. AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews now synthesize information and present direct answers instead of just returning a list of links. Generative engine optimization (GEO) is the practice of optimizing your online presence so these AI engines cite and recommend your business. GEO emphasizes structured data, entity authority, and content formats that AI can easily parse. Meanwhile, AI SEO uses artificial intelligence tools to make your entire optimization strategy faster and more effective — from keyword research to content scoring to technical audits. For a deep dive into GEO, read our guide on what generative engine optimization is and how it works. To understand how AI tools are transforming SEO workflows, check out our guide on AI SEO.",
+      },
+      {
+        heading: "Google Business Profile: Your Local SEO Powerhouse",
+        content:
+          "Your Google Business Profile is arguably the single most impactful free marketing tool available to local businesses. It determines whether you appear in the local map pack and how your business looks when people search for you by name. A fully optimized profile includes accurate business information, high-quality photos, regular posts, and active review management. Businesses with complete profiles receive significantly more clicks, calls, and direction requests than those with sparse listings. Respond to every review, post updates weekly, and keep your hours and services current. For our complete optimization guide, read our guide to optimizing your Google Business Profile.",
+      },
+      {
+        heading: "Measuring SEO Success",
+        content:
+          "SEO success is measurable, but it requires looking at the right metrics. Track organic traffic in Google Analytics to see how many visitors find you through search. Monitor keyword rankings in Google Search Console to understand which queries drive your visibility. Track conversion actions — phone calls, form submissions, direction requests — to connect SEO performance to business outcomes. For local businesses, also monitor your Google Business Profile insights for search queries, photo views, and customer actions. Review your metrics monthly and look for trends rather than fixating on daily fluctuations. SEO is a long game — most businesses see meaningful results within three to six months of consistent effort, with performance compounding over time.",
+        list: [
+          "Organic traffic: visitors who find you through search engines",
+          "Keyword rankings: your position for target search queries",
+          "Click-through rate: percentage of searchers who click your result",
+          "Conversions: phone calls, form submissions, and other goal completions",
+          "Local visibility: map pack appearances and Google Business Profile actions",
+          "AI citations: mentions and recommendations in AI-generated answers",
+        ],
+      },
+      {
+        heading: "Building Your SEO Roadmap",
+        content:
+          "Effective SEO requires a strategic, phased approach. Start with a technical audit to fix any foundational issues. Next, optimize your Google Business Profile and local citations. Then build your content strategy around your most important keywords and topics. Layer in GEO and AI SEO as your foundation strengthens. The businesses that succeed with SEO are the ones that treat it as an ongoing investment rather than a one-time project. Every month of consistent effort builds on the previous one, creating a compounding effect that becomes increasingly difficult for competitors to match. Whether you handle SEO in-house or work with our team, the most important step is starting.",
+      },
+    ],
+    cta: {
+      heading: "Ready to Improve Your Search Visibility?",
+      description:
+        "From traditional SEO to GEO and AI-powered optimization, we help businesses across Middle Tennessee get found by the customers who are already looking for them.",
+      buttonText: "Get an SEO Consultation",
+      buttonHref: "/services/seo-content",
+    },
+  },
+  {
+    slug: "complete-guide-social-media-local-businesses",
+    title: "The Complete Guide to Social Media for Local Businesses",
+    metaTitle: "Complete Guide to Social Media for Local Businesses | DustinTN",
+    metaDescription: "Master social media for your local business. Covers platform selection, content strategy, engagement, reviews, advertising, and measuring ROI.",
+    category: "Social Media",
+    excerpt:
+      "Everything local businesses need to know about social media — from choosing platforms and creating content to managing reviews and measuring real ROI.",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80",
+    readTime: "17 min read",
+    publishDate: "February 17, 2026",
+    tags: ["Social Media", "Local Business", "Ultimate Guide"],
+    relatedServices: ["social-media"],
+    sections: [
+      {
+        heading: "Why Social Media Matters for Local Businesses",
+        content:
+          "Social media is not just for big brands and influencers. For local businesses, it is one of the most effective and affordable ways to connect with your community, build relationships, and stay top of mind with customers. People use social media to discover local businesses, check reviews, see what a business looks like inside, and decide where to spend their money. A strong social presence builds trust before a customer ever walks through your door. The key is approaching social media strategically rather than randomly posting when you remember. With the right strategy, even a small business with limited resources can build a meaningful social presence that drives real business results.",
+      },
+      {
+        heading: "Choosing the Right Platforms",
+        content:
+          "One of the biggest mistakes local businesses make is trying to be active on every platform. This spreads your efforts too thin and leads to inconsistent, low-quality content everywhere. Instead, choose one or two platforms where your target customers are most active and commit to them fully. Facebook remains the best all-around platform for local businesses thanks to its community groups, events, reviews, and detailed business pages. Instagram is ideal for visually-driven businesses like restaurants, salons, fitness studios, and retail shops. LinkedIn works well for B2B services and professional consulting. TikTok and YouTube Shorts are growing rapidly for businesses willing to create short-form video content. Choose based on where your customers are, not where you personally spend the most time. For a practical approach to getting started, read our social media strategy guide for local businesses.",
+      },
+      {
+        heading: "Content Strategy: What to Post and When",
+        content:
+          "Consistency beats perfection on social media. Create a simple content calendar that mixes different types of posts to keep your feed interesting and engaging. The best-performing content for local businesses is authentic, helpful, and community-focused. You do not need expensive equipment or professional production — a smartphone and genuine personality go a long way.",
+        list: [
+          "Behind-the-scenes: Show the human side of your business",
+          "Customer stories: Share testimonials and spotlight loyal customers",
+          "Tips and education: Provide value related to your industry expertise",
+          "Community involvement: Highlight local events and partnerships",
+          "Promotions and offers: Share deals and new products or services",
+          "Team spotlights: Introduce the people behind your business",
+          "User-generated content: Reshare customer posts about your business",
+        ],
+      },
+      {
+        heading: "Engagement: Building Real Relationships",
+        content:
+          "Social media is a two-way conversation, not a billboard. The businesses that succeed are the ones that engage authentically with their community. Respond to every comment and message promptly — ideally within a few hours. Ask questions in your posts to encourage conversation. Comment on posts from other local businesses and community organizations. Join local Facebook groups and participate genuinely without being overly promotional. Share and celebrate your customers' milestones. When someone tags your business or shares a positive experience, acknowledge it publicly. These interactions build loyalty and turn customers into advocates who spread the word about your business organically.",
+      },
+      {
+        heading: "Reviews and Reputation Management",
+        content:
+          "Your online reviews are one of the most powerful factors in a potential customer's decision-making process. Most consumers read online reviews before visiting a local business, and the majority trust reviews as much as personal recommendations. Actively encourage satisfied customers to leave reviews on Google, Facebook, and Yelp. Make it easy by providing direct links and asking at the point of sale or in follow-up communications. Respond to every review — positive and negative — within 24 to 48 hours. Thank positive reviewers for specific things they mentioned. For negative reviews, acknowledge the concern professionally, explain what you are doing about it, and offer to continue the conversation offline. Never argue or get defensive publicly. How you handle negative feedback tells potential customers as much about your business as the reviews themselves.",
+      },
+      {
+        heading: "Social Media Advertising Basics",
+        content:
+          "Organic reach on social media has declined significantly, which means paid advertising is increasingly necessary to reach new customers. The good news is that social media advertising is highly targetable and affordable compared to traditional advertising. Facebook and Instagram ads let you target people by location, age, interests, behavior, and more. Start small — even five to ten dollars per day can deliver meaningful results for local businesses. Run ads promoting your best-performing organic content to amplify what is already working. Use lead generation ads to capture contact information. Promote special offers and events to reach people in your area who do not yet follow you. Track your results carefully and reinvest in what works.",
+      },
+      {
+        heading: "Measuring Social Media ROI",
+        content:
+          "Measuring the return on your social media investment goes beyond counting likes and followers. Focus on metrics that connect to business outcomes. Track website clicks from social media in your analytics. Monitor how many phone calls, direction requests, and form submissions come from social channels. Ask new customers how they found you. Use UTM parameters on links to track which posts drive the most conversions. Review your platform analytics monthly to identify which content types generate the most engagement and reach. For a step-by-step approach to building measurement into your social strategy from the start, read our 30-day social media action plan.",
+        list: [
+          "Engagement rate: likes, comments, shares relative to your audience size",
+          "Reach and impressions: how many people see your content",
+          "Website traffic: clicks from social media to your site",
+          "Conversions: actions taken as a result of social media exposure",
+          "Follower growth: steady growth indicates expanding reach",
+          "Response time: how quickly you reply to messages and comments",
+        ],
+      },
+      {
+        heading: "Building a Sustainable Social Media System",
+        content:
+          "The biggest challenge for local businesses is not creating great social media content — it is doing it consistently over time. Build a system that makes consistency achievable. Block 30 minutes each day for social media: 15 minutes for creating and scheduling content, 15 minutes for engaging with your community. Batch-create content weekly so you are never scrambling for something to post. Use free scheduling tools like Meta Business Suite to schedule posts in advance. Create templates for recurring post types so you are not starting from scratch every time. And remember — done consistently is better than done perfectly. The businesses that show up reliably in their customers' feeds are the ones that build lasting relationships and drive real results.",
+      },
+    ],
+    cta: {
+      heading: "Need Help With Your Social Media Strategy?",
+      description:
+        "Managing social media while running a business is a lot to juggle. We help local businesses build and execute social media strategies that drive real engagement and measurable results.",
+      buttonText: "Get Social Media Help",
+      buttonHref: "/services/social-media",
+    },
+  },
+  {
+    slug: "complete-guide-digital-strategy-growing-businesses",
+    title: "The Complete Guide to Digital Strategy for Growing Businesses",
+    metaTitle: "Complete Guide to Digital Strategy for Growing Businesses | DustinTN",
+    metaDescription: "Build a digital strategy that drives growth. Covers online presence foundations, channel integration, data and analytics, marketing trends, and strategic roadmapping.",
+    category: "Digital Strategy",
+    excerpt:
+      "A comprehensive guide to building a digital strategy that aligns every channel, tool, and tactic with your business growth objectives.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    readTime: "18 min read",
+    publishDate: "February 17, 2026",
+    tags: ["Digital Strategy", "Business Growth", "Ultimate Guide"],
+    relatedServices: ["digital-strategy", "web-consulting"],
+    sections: [
+      {
+        heading: "What Is Digital Strategy and Why Does It Matter?",
+        content:
+          "Digital strategy is the plan that aligns your online presence, marketing channels, and technology decisions with your business goals. Without a strategy, digital marketing becomes a collection of disconnected tactics — a website here, some social media posts there, maybe an ad campaign that does not connect to anything else. A digital strategy ties everything together into a cohesive system where each channel supports the others and every investment moves you toward your objectives. For growing businesses, a clear digital strategy is the difference between random online activity and intentional growth. It helps you prioritize where to invest your time and money, measure what is working, and adapt as the landscape changes.",
+      },
+      {
+        heading: "Building Your Online Presence Foundation",
+        content:
+          "Every digital strategy starts with a strong foundation. Your website is the hub — it is the one digital asset you fully own and control, and everything else should drive traffic back to it. Your Google Business Profile is critical for local visibility. Your social media profiles extend your reach and build community. Your email list is your most valuable direct communication channel. Before you invest in advanced tactics, make sure these foundations are solid. A beautiful website that does not rank in search results, a Google Business Profile that has not been updated in months, or social media accounts with no consistent posting schedule are all signs that your foundation needs attention. For a detailed guide on building this foundation, read our guide to building a strong online presence.",
+      },
+      {
+        heading: "Integrating Your Digital Channels",
+        content:
+          "The power of digital strategy comes from integration — making your channels work together rather than in isolation. Your website should capture email subscribers. Your email campaigns should drive traffic to your website and social media. Your social media should promote your content and drive traffic back to your site. Your SEO strategy should inform your content creation. Your paid advertising should amplify your best organic content. When channels work together, the whole becomes greater than the sum of its parts. Create a content ecosystem where a single idea can become a blog post, a social media series, an email newsletter, and a video — each format reaching different audiences and reinforcing the same message.",
+        list: [
+          "Website: The hub that all other channels point to",
+          "SEO: Drives organic discovery through search engines",
+          "Social media: Builds community and extends your reach",
+          "Email marketing: Nurtures leads and retains customers",
+          "Paid advertising: Amplifies your best content to new audiences",
+          "Content marketing: Fuels every channel with valuable information",
+        ],
+      },
+      {
+        heading: "Data and Analytics: Making Informed Decisions",
+        content:
+          "One of the greatest advantages of digital marketing is that nearly everything is measurable. But data is only valuable if you know what to look at and how to act on it. Start with Google Analytics on your website to understand where visitors come from, what pages they view, and what actions they take. Use Google Search Console to see which search queries drive your visibility. Monitor social media analytics to understand what content resonates with your audience. Track conversion actions — phone calls, form submissions, purchases — to connect marketing activity to business outcomes. Set up a monthly review process where you analyze your data, identify trends, and adjust your strategy based on what the numbers tell you. The businesses that make data-driven decisions consistently outperform those that rely on gut feeling alone.",
+      },
+      {
+        heading: "Marketing Trends That Shape Digital Strategy",
+        content:
+          "Digital strategy needs to evolve as the landscape changes. AI-powered search engines are transforming how people find businesses, making GEO and AI SEO increasingly important alongside traditional SEO. Short-form video continues to dominate social media engagement. First-party data is becoming more valuable as third-party cookies disappear. Local SEO is getting more competitive as more businesses invest in online visibility. Voice and visual search are growing steadily. The key is not to chase every trend, but to evaluate which ones align with your business goals and your customers' behavior. For a deeper look at the trends impacting businesses right now, read our guide on digital marketing trends that matter.",
+      },
+      {
+        heading: "Planning Your Digital Strategy Roadmap",
+        content:
+          "A digital strategy roadmap breaks your long-term goals into quarterly priorities and monthly action items. Start by defining your business objectives — what do you want your digital presence to accomplish in the next 12 months? Then audit your current digital presence to identify strengths, weaknesses, and gaps. Prioritize initiatives based on impact and feasibility. A common phased approach works well for most growing businesses.",
+        list: [
+          "Phase 1: Fix the foundation — website, Google Business Profile, core SEO",
+          "Phase 2: Build the engine — content strategy, social media, email marketing",
+          "Phase 3: Accelerate growth — paid advertising, GEO, AI SEO, advanced analytics",
+          "Phase 4: Optimize and scale — refine based on data, expand what works, cut what does not",
+        ],
+      },
+      {
+        heading: "Common Digital Strategy Mistakes to Avoid",
+        content:
+          "The most common digital strategy mistake is doing too many things at once without doing any of them well. Focus and consistency beat breadth every time. Other common mistakes include ignoring your website's technical health while investing in marketing that drives traffic to a slow or broken site, neglecting your Google Business Profile when local search is your biggest opportunity, creating content without an SEO strategy to ensure it gets found, treating social media as a broadcast channel instead of a community, and failing to track results so you can learn and improve. Avoid these pitfalls by building your strategy on a strong foundation and expanding deliberately as each layer proves successful.",
+      },
+      {
+        heading: "Taking the Next Step",
+        content:
+          "Building a digital strategy does not have to be overwhelming. Start by assessing where you are today. Identify the one or two areas where improvement would have the biggest impact on your business. Create a 90-day plan focused on those priorities. Execute consistently, measure results, and adjust. If you are not sure where to start or want expert guidance, a digital strategy consultation can help you cut through the noise and focus on what matters most for your business. We help businesses across Middle Tennessee build digital strategies that are practical, measurable, and aligned with real business growth.",
+      },
+    ],
+    cta: {
+      heading: "Ready to Build Your Digital Strategy?",
+      description:
+        "A clear digital strategy aligns your online presence with your business goals and turns random tactics into intentional growth. Let us help you build a roadmap that works.",
+      buttonText: "Start Your Strategy",
+      buttonHref: "/services/digital-strategy",
+    },
+  },
+  {
+    slug: "seo-geo-ai-seo-work-together",
+    title: "Why SEO, GEO, and AI SEO Work Better Together",
+    metaTitle: "SEO, GEO & AI SEO: Why They Work Better Together | DustinTN",
+    metaDescription:
+      "Learn how traditional SEO, Generative Engine Optimization, and AI-powered SEO complement each other to maximize your search visibility across every platform.",
+    category: "SEO & Search",
+    excerpt:
+      "Traditional SEO, GEO, and AI SEO are not competing strategies — they are complementary layers that compound each other's results across every search surface.",
+    image:
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+    readTime: "10 min read",
+    publishDate: "February 10, 2026",
+    tags: ["SEO", "GEO", "AI SEO", "Search Strategy"],
+    relatedServices: ["seo-content", "geo-optimization", "ai-seo"],
+    sections: [
+      {
+        heading: "Search Has Fragmented — Your Strategy Should Not",
+        content:
+          "Five years ago, search strategy meant one thing: rank on Google. Today, people find businesses through traditional search results, AI-generated overviews, conversational AI assistants like ChatGPT and Perplexity, voice search, and social media search. Each of these surfaces uses different signals to decide what to show. A strategy that only targets one of them leaves visibility on the table. The businesses seeing the strongest growth in organic discovery are the ones treating SEO, GEO, and AI SEO as a unified system rather than isolated tactics. Each layer reinforces the others, creating a compounding effect that no single approach can match on its own.",
+      },
+      {
+        heading: "What Traditional SEO Still Does Best",
+        content:
+          "Traditional SEO remains the foundation of search visibility. It ensures your website is technically sound, loads fast, is mobile-friendly, and is structured so search engines can crawl and index it efficiently. On-page SEO — title tags, meta descriptions, header structure, internal linking — tells search engines what each page is about. Off-page SEO builds your domain authority through backlinks and brand mentions. Local SEO connects you with nearby customers through your Google Business Profile and local citations. None of this goes away in the AI era. In fact, AI search engines rely heavily on the same signals — well-structured content, domain authority, topical depth — to decide which sources to cite. Strong traditional SEO is the bedrock that makes GEO and AI SEO effective.",
+        list: [
+          "Technical foundation: site speed, crawlability, mobile experience",
+          "On-page signals: structured content, keyword relevance, internal linking",
+          "Authority building: backlinks, brand mentions, domain trust",
+          "Local presence: Google Business Profile, citations, local rankings",
+        ],
+      },
+      {
+        heading: "How GEO Extends Your Reach into AI Search",
+        content:
+          "Generative Engine Optimization is the practice of positioning your business to be cited and recommended by AI-powered search engines. When someone asks ChatGPT for a recommendation, Perplexity for a comparison, or triggers a Google AI Overview, the AI draws from sources it considers authoritative and relevant. GEO focuses on making your content the kind that AI engines want to cite: well-structured, factually rich, clearly attributed, and topically comprehensive. It involves optimizing for entity recognition, building structured data that AI can parse, creating content that directly answers the questions AI users ask, and establishing the kind of authority signals that AI models use to rank source credibility. GEO does not replace SEO — it builds on SEO's foundation and extends it into new surfaces.",
+      },
+      {
+        heading: "What AI SEO Adds to the Mix",
+        content:
+          "AI SEO uses artificial intelligence tools and workflows to make your entire search strategy smarter and faster. While GEO is about where you show up (AI search surfaces), AI SEO is about how you optimize. AI-powered tools can analyze thousands of keywords and content gaps in minutes, identify patterns human analysis would miss, predict which content topics will gain traction, and automate repetitive optimization tasks. AI SEO does not replace human strategy — it amplifies it. It lets you move faster, make better-informed decisions, and scale your optimization efforts without scaling your team. When combined with traditional SEO and GEO, AI SEO accelerates the results of both.",
+        list: [
+          "AI-powered keyword research identifies opportunities faster",
+          "Content gap analysis reveals untapped topics competitors miss",
+          "Predictive analytics forecast ranking potential before you publish",
+          "Automated optimization handles technical and on-page improvements at scale",
+        ],
+      },
+      {
+        heading: "The Compounding Effect: How All Three Layers Work Together",
+        content:
+          "The real power emerges when all three strategies work as a system. Traditional SEO builds the technical and content foundation that both GEO and AI SEO depend on. A well-optimized site with strong authority signals gives AI search engines a reason to cite you. GEO ensures the content you create through SEO is structured and positioned for AI citation, extending the reach of every piece of content you publish. AI SEO tools accelerate both traditional SEO and GEO by identifying opportunities faster, optimizing content more effectively, and predicting which efforts will have the greatest impact. The result is a flywheel: better SEO makes GEO more effective. GEO visibility builds the authority that strengthens SEO. AI SEO tools make both layers work harder. Each improvement compounds across all three channels.",
+      },
+      {
+        heading: "What a Unified Search Strategy Looks Like in Practice",
+        content:
+          "In practice, a unified approach means every piece of content you create is optimized for multiple surfaces simultaneously. A service page is written with traditional on-page SEO best practices, structured with schema markup for AI parsability, enriched with the factual depth and citation-worthy information that GEO requires, and refined using AI tools to ensure competitive positioning. Your content calendar is informed by AI-powered research that identifies topics with high potential across both traditional and AI search. Your technical SEO work ensures that AI crawlers can access and understand your site. Your authority-building efforts — content, backlinks, brand mentions — benefit both your traditional rankings and your AI citation rates.",
+        list: [
+          "Content serves multiple surfaces: Google results, AI overviews, chatbot citations",
+          "Technical SEO and structured data support both traditional crawlers and AI parsers",
+          "AI tools inform strategy decisions and accelerate execution across all channels",
+          "Authority signals compound: what helps traditional SEO also helps GEO",
+        ],
+      },
+      {
+        heading: "Getting Started with a Unified Approach",
+        content:
+          "You do not need to overhaul everything at once. Start with the foundation: make sure your traditional SEO is solid. Ensure your site is fast, well-structured, and targeting the right keywords. Then layer in GEO by enriching your best content with structured data, authoritative citations, and the kind of comprehensive answers AI engines want to surface. Finally, integrate AI SEO tools to identify opportunities, monitor performance, and continuously optimize across all channels. The businesses that start building this unified approach now will have a significant advantage as AI search becomes an even larger share of how people discover and choose the businesses they work with.",
+      },
+    ],
+    cta: {
+      heading: "Ready to Unify Your Search Strategy?",
+      description:
+        "SEO, GEO, and AI SEO work best as a coordinated system. Let us help you build a search strategy that covers every surface where your customers are looking.",
+      buttonText: "Explore SEO Services",
+      buttonHref: "/services/seo-content",
+    },
+  },
+  {
+    slug: "why-rebuild-website-for-seo-visibility",
+    title:
+      "Why Rebuilding Your Website Helps You Get Found — Even If You Redesigned Recently",
+    metaTitle:
+      "Why Rebuild Your Website for SEO Visibility | DustinTN",
+    metaDescription:
+      "Web standards evolve fast. Learn why a website redesigned 2-3 years ago may already be hurting your search visibility, and how a modern rebuild can fix it.",
+    category: "Web Development",
+    excerpt:
+      "A website redesigned two or three years ago may already be holding you back in search. Modern frameworks and evolving web standards mean yesterday's best practices are today's bottlenecks.",
+    image:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+    readTime: "9 min read",
+    publishDate: "February 12, 2026",
+    tags: ["Web Development", "SEO", "Performance", "Website Rebuild"],
+    relatedServices: ["web-development", "seo-content"],
+    sections: [
+      {
+        heading: "Your Website May Look Great and Still Hold You Back",
+        content:
+          "Here is something that surprises most business owners: a website can look perfectly modern on the surface while its underlying technology actively hurts your search visibility. Search engines have evolved dramatically in how they evaluate websites. Page speed, Core Web Vitals, mobile experience, crawlability, structured data, and JavaScript rendering all factor into how — and whether — your site appears in search results. A website built on a platform or framework from even two or three years ago may not meet today's performance thresholds, handle modern SEO requirements, or support the structured data formats that AI search engines rely on. The visual design might be fine, but the foundation underneath is what search engines judge you on.",
+      },
+      {
+        heading: "How Web Standards Have Changed Since Your Last Redesign",
+        content:
+          "Web technology moves fast. If your site was built or redesigned in 2023 or 2024, consider what has changed since then. Google has made Core Web Vitals a confirmed ranking factor, with stricter thresholds for Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift. AI search engines have emerged as major discovery channels, requiring structured data and content formats that older sites were never designed to support. Modern frameworks like Next.js and React Server Components deliver dramatically better performance than traditional WordPress themes or page builders. Mobile-first indexing is now the default — Google primarily crawls and indexes the mobile version of your site. Image formats like WebP and AVIF have become standard, offering significant performance gains over older formats. Every one of these changes affects your visibility. A site that met best practices three years ago may now fall short on multiple fronts.",
+        list: [
+          "Core Web Vitals thresholds have tightened — older sites often fail INP and LCP benchmarks",
+          "AI search requires structured data and content formats older platforms do not support",
+          "Modern frameworks deliver 2-5x better performance than legacy platforms",
+          "Mobile-first indexing means your mobile experience is your primary experience",
+        ],
+      },
+      {
+        heading: "The Hidden SEO Cost of Older Platforms",
+        content:
+          "Many business websites run on WordPress with a page builder like Elementor, Divi, or WPBakery. These tools make design easy, but they come with hidden costs. Page builders generate bloated HTML and CSS — sometimes 10 to 20 times more code than necessary for the same layout. This slows page load times, hurts Core Web Vitals scores, and makes it harder for search engines to parse your content. Plugin-heavy WordPress sites also introduce render-blocking scripts, security vulnerabilities, and maintenance overhead that compounds over time. Older themes may not support modern image formats, lazy loading, or the semantic HTML that search engines and AI parsers expect. Squarespace and Wix have similar limitations: proprietary code structures, limited control over technical SEO, and performance ceilings that cap how well your site can perform in search.",
+      },
+      {
+        heading: "What a Modern Rebuild Actually Changes",
+        content:
+          "A modern rebuild is not just a visual refresh — it is a complete re-engineering of how your site delivers content to browsers and search engines. Modern frameworks like Next.js use server-side rendering and static generation to deliver pages in milliseconds instead of seconds. Code splitting ensures visitors only download the JavaScript they need for the page they are on. Automatic image optimization converts and sizes images on the fly. Semantic HTML and structured data are built into the architecture rather than bolted on through plugins. The result is a site that loads faster, scores higher on Core Web Vitals, is easier for search engines to crawl and index, supports AI search citation, and provides a better experience for every visitor. These are not marginal improvements — businesses typically see dramatic performance gains after a modern rebuild.",
+        list: [
+          "Page load times drop from 3-5 seconds to under 1 second",
+          "Core Web Vitals move from failing to passing across all metrics",
+          "Structured data and semantic HTML improve search engine understanding",
+          "Clean code architecture makes future updates faster and less expensive",
+        ],
+      },
+      {
+        heading: "The Search Visibility Payoff",
+        content:
+          "Better performance directly translates to better search visibility. Google has confirmed that page experience signals — including Core Web Vitals — influence rankings. Faster sites earn more impressions, higher click-through rates, and lower bounce rates. Better mobile performance means better mobile rankings, which is where the majority of searches happen. Clean technical SEO architecture helps search engines discover and index your content more efficiently. Structured data increases your chances of appearing in rich snippets, knowledge panels, and AI overviews. Businesses that rebuild their websites with modern technology consistently report improvements in organic traffic, keyword rankings, and lead generation — often within the first few months after launch.",
+      },
+      {
+        heading: "But I Just Redesigned — Is It Really Worth It?",
+        content:
+          "This is the most common objection, and it is completely understandable. You invested in a redesign and the site looks good. But consider the cost of the status quo. If your current site loads slowly, fails Core Web Vitals, or does not support the structured data AI search engines need, it is actively losing you visibility every day. Your competitors who invest in modern technology will outrank you — not because their content is better, but because their platform delivers it more effectively. The question is not whether a rebuild costs money. It is whether the invisible cost of diminishing search visibility exceeds the investment in a modern foundation. For most businesses, the answer is yes — especially when you factor in the compounding nature of SEO performance over months and years.",
+      },
+      {
+        heading: "How to Know If Your Site Needs a Rebuild",
+        content:
+          "Not every site needs a full rebuild. Run your site through Google PageSpeed Insights and check your Core Web Vitals scores. If you are scoring below 80 on mobile, there is likely significant room for improvement. Check your site's performance in Google Search Console — are impressions and clicks trending up or down? Test how your content appears when you ask ChatGPT or Perplexity about your industry — are you being cited? Look at your site's source code: is it clean and semantic, or bloated with unnecessary scripts and inline styles? If your site was built with a page builder, runs on an outdated WordPress theme, or has not been technically audited in over a year, a rebuild conversation is worth having. The goal is not to chase trends — it is to make sure your digital foundation supports your growth rather than limiting it.",
+        list: [
+          "Google PageSpeed Insights mobile score below 80 suggests performance issues",
+          "Declining impressions or clicks in Search Console signal visibility loss",
+          "Page builder-generated code is typically 10-20x more bloated than hand-coded alternatives",
+          "No structured data or schema markup means missing opportunities in AI and rich results",
+        ],
+      },
+    ],
+    cta: {
+      heading: "Is Your Website Holding Back Your Visibility?",
+      description:
+        "Web standards evolve fast and your site's foundation matters more than its appearance. Let us audit your site and show you where a modern rebuild can unlock better search performance.",
+      buttonText: "Talk About a Rebuild",
+      buttonHref: "/services/web-development",
+    },
+  },
+  {
+    slug: "rebuild-vs-update-website",
+    title: "Should You Rebuild Your Website or Update What You Have?",
+    metaTitle:
+      "Rebuild vs Update Your Website: Making the Right Choice | DustinTN",
+    metaDescription:
+      "Not sure whether to rebuild your website or update the existing one? Compare the pros, cons, costs, and SEO impact of each approach to make the right decision.",
+    category: "Web Development",
+    excerpt:
+      "When your website is not performing the way you need it to, the first question is whether to update what you have or start fresh. The right answer depends on your foundation.",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    readTime: "9 min read",
+    publishDate: "February 14, 2026",
+    tags: ["Web Development", "Website Strategy", "Web Consulting"],
+    relatedServices: ["web-development", "web-consulting"],
+    sections: [
+      {
+        heading: "The Update vs. Rebuild Decision",
+        content:
+          "Every business reaches a point where their website needs attention. Maybe it looks outdated, loads slowly, does not rank well in search, or no longer reflects what the business offers. The instinct is often to update what you have — it feels faster, cheaper, and less disruptive. But updates are not always the right answer. Sometimes the underlying platform or architecture is the problem, and no amount of updating will fix it. Making the wrong choice here can mean spending money on improvements that deliver marginal results when a rebuild would have solved the root issues. Understanding when each approach makes sense is the key to spending your budget wisely.",
+      },
+      {
+        heading: "When Updating Your Existing Website Makes Sense",
+        content:
+          "Updating your current site is usually the right choice when the foundation is solid. If your site is built on a modern platform, loads reasonably fast, has good technical SEO fundamentals, and mainly needs content, design, or feature improvements, updates can be cost-effective and deliver quick results. Good candidates for updates include sites that need new pages or sections added, design refreshes within the existing framework, content updates for SEO improvement, plugin or integration additions, and minor performance optimizations. The key indicator is whether the changes you need can be made without fighting the underlying architecture. If you can achieve what you need within your current platform's capabilities, updating is often the pragmatic choice.",
+        list: [
+          "Your site is on a modern, well-maintained platform with good performance",
+          "Changes are primarily content, design, or feature additions",
+          "The technical SEO foundation is already solid",
+          "Your Core Web Vitals scores are passing or close to passing",
+          "The site architecture supports your current and near-term needs",
+        ],
+      },
+      {
+        heading: "When a Full Rebuild Is the Better Investment",
+        content:
+          "A rebuild becomes the better investment when the platform itself is the bottleneck. If your site is built on an outdated WordPress theme, relies heavily on a page builder like Elementor or Divi, or runs on a platform that limits your control over technical SEO, no amount of updating will overcome those structural limitations. Rebuilds make sense when your site consistently fails Core Web Vitals, when the codebase is so bloated that performance optimization would cost as much as starting fresh, when you need functionality your current platform cannot support, or when your business has evolved significantly and the site architecture no longer matches your needs. A rebuild also makes sense when you are investing in SEO and search visibility — a modern foundation can deliver dramatic improvements that updates on an older platform simply cannot match.",
+        list: [
+          "Your site fails Core Web Vitals and performance is capped by the platform",
+          "Page builder bloat makes optimization impractical",
+          "Your platform limits technical SEO control (meta tags, schema, redirects)",
+          "The codebase has accumulated years of patches and workarounds",
+          "Your business model or service offerings have changed significantly",
+        ],
+      },
+      {
+        heading: "Comparing the Costs: Short-Term vs. Long-Term",
+        content:
+          "On the surface, updating looks cheaper than rebuilding. But the total cost of ownership tells a different story. Repeated updates on an aging platform accumulate cost over time — each change takes longer as complexity grows, plugin conflicts increase, and performance degrades. Maintenance costs tend to rise as sites age. Security patches for older platforms become more frequent and more urgent. Meanwhile, a rebuild has a higher upfront cost but typically lower ongoing maintenance costs, better performance that reduces hosting expenses, and a modern architecture that makes future changes faster and cheaper. Think of it like home renovation: sometimes patching and painting makes sense. But if the foundation is cracking, you are better off building on solid ground than spending money on cosmetic fixes that do not address the structural problems.",
+      },
+      {
+        heading: "The SEO Impact of Each Approach",
+        content:
+          "SEO performance is often the deciding factor. Updates can improve SEO if the improvements target content, meta data, and on-page optimization — areas where better content directly translates to better rankings. But if your site's performance scores are poor, if it lacks structured data support, or if the HTML output is bloated, SEO updates will hit a ceiling. A rebuild with a modern framework like Next.js can deliver immediate SEO improvements through faster page loads, cleaner code, proper semantic HTML, built-in structured data support, and better mobile performance. Businesses that rebuild with SEO as a primary objective often see ranking improvements within the first few months — improvements that would have been impossible to achieve through updates alone. The key is preserving your existing SEO equity during a rebuild through proper URL mapping, redirect strategy, and content migration.",
+      },
+      {
+        heading: "WordPress Updates vs. Custom Rebuild",
+        content:
+          "WordPress powers a huge percentage of business websites, so this comparison comes up often. WordPress can be updated effectively when you are using a lightweight theme, your plugin stack is manageable, and your hosting environment is optimized. Theme updates, content changes, and adding well-coded plugins can extend the life of a WordPress site significantly. However, WordPress with heavy page builders is a different story. Elementor, Divi, and WPBakery sites are notoriously difficult to optimize because the page builder generates the HTML — you cannot control the output without abandoning the builder itself. If your WordPress site uses a page builder and performance is suffering, the realistic options are either stripping out the page builder (which is essentially a rebuild within WordPress) or moving to a modern framework that gives you full control over output and performance. The right choice depends on your team's technical comfort and your long-term goals.",
+      },
+      {
+        heading: "Making the Decision: A Practical Framework",
+        content:
+          "Start by answering these questions honestly. First, run Google PageSpeed Insights on your mobile site — is your performance score above 80? If not, can the issues be fixed within your current platform? Second, look at your search performance in Google Search Console — are organic impressions and clicks growing, flat, or declining? Third, estimate how much you have spent on website updates and fixes in the past 12 months — is that investment delivering proportional results? Finally, think about where your business is heading — does your current site support your goals for the next two to three years? If the answers point to platform limitations rather than content or design gaps, a rebuild will almost certainly deliver better return on investment than continued updates. If the foundation is solid and your needs are primarily content and feature-based, focused updates are the practical choice.",
+        list: [
+          "Audit performance: if PageSpeed mobile score is under 80, platform may be the bottleneck",
+          "Review search trends: declining visibility despite good content signals structural issues",
+          "Calculate total update costs: if 12 months of patches cost 50% or more of a rebuild, rebuild wins",
+          "Assess platform fit: if your current platform cannot support your next two years of needs, it is time",
+        ],
+      },
+    ],
+    cta: {
+      heading: "Not Sure Which Path Is Right for You?",
+      description:
+        "Every situation is different. Let us take a look at your current site and give you an honest recommendation on whether updating or rebuilding makes more sense for your goals and budget.",
+      buttonText: "Get Expert Advice",
+      buttonHref: "/services/web-consulting",
+    },
+  },
 ];
 
 export function getResourceBySlug(slug: string): Resource | undefined {

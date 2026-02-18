@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Mail, Phone, MapPin, Play, Users, Share2, Video, Clock, CheckCircle2, Globe, Search, Wrench, Calendar, HelpCircle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Mail, Phone, MapPin, Play, Users, Share2, Video, Clock, CheckCircle2, Globe, Search, Wrench, Calendar, HelpCircle, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -110,14 +110,14 @@ const services = [
     slug: "social-media",
     icon: Share2,
     title: "Social Media",
-    description: "Strategic social presence on Facebook, Instagram, Yelp, and more to engage your audience and grow your brand.",
-    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&h=400&fit=crop"
+    description: "Strategic social media management that builds community and drives meaningful engagement with your audience.",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop"
   },
   {
     slug: "digital-strategy",
     icon: Zap,
     title: "Digital Strategy",
-    description: "Comprehensive digital roadmaps that align technology choices with your business growth objectives.",
+    description: "Data-driven digital strategies that align your online presence with your business goals for measurable growth.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
   }
 ];
@@ -498,6 +498,86 @@ export default function Home() {
                   </Link>
                 </AnimatedSection>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* GEO & AI SEO Section */}
+        <section className="py-32 bg-dark-gray relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[200px]"></div>
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[150px]"></div>
+
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            <AnimatedSection className="text-center mb-16">
+              <span className="section-label mb-6 inline-flex justify-center">The Future of Search</span>
+              <h2 className="text-headline mb-6">
+                Get found by <span className="text-accent">AI-powered</span> search
+              </h2>
+              <p className="text-white/50 text-lg max-w-2xl mx-auto">
+                Search is evolving beyond traditional results. AI engines like ChatGPT, Perplexity, and Google AI Overviews are changing how people discover businesses. We help you show up everywhere.
+              </p>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* GEO Card */}
+              <AnimatedSection delay={100}>
+                <div className="group p-8 lg:p-10 bg-black rounded-2xl border border-white/5 hover:border-accent/30 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                    <Globe className="w-7 h-7 text-accent group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4">Generative Engine Optimization</h3>
+                  <p className="text-white/50 leading-relaxed mb-6">
+                    GEO ensures your business gets cited and recommended when people ask AI assistants for help. It&apos;s not about rankings — it&apos;s about being the answer.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      "Get cited by ChatGPT, Perplexity & Gemini",
+                      "Appear in Google AI Overviews",
+                      "Build authority AI engines trust",
+                      "Turn AI conversations into customers",
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-white/60 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/services/geo-optimization" className="inline-flex items-center gap-2 text-accent font-medium text-sm group/link">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </AnimatedSection>
+
+              {/* AI SEO Card */}
+              <AnimatedSection delay={200}>
+                <div className="group p-8 lg:p-10 bg-black rounded-2xl border border-white/5 hover:border-accent/30 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                    <BrainCircuit className="w-7 h-7 text-accent group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4">AI-Powered SEO</h3>
+                  <p className="text-white/50 leading-relaxed mb-6">
+                    Supercharge your search strategy with AI-driven keyword research, content optimization, and predictive analytics that outpace traditional methods.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      "AI-powered keyword & content gap analysis",
+                      "Predictive ranking insights",
+                      "Automated content optimization",
+                      "Smarter strategy, faster results",
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-white/60 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/services/ai-seo" className="inline-flex items-center gap-2 text-accent font-medium text-sm group/link">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </AnimatedSection>
             </div>
           </div>
         </section>
