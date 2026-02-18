@@ -90,8 +90,8 @@ const services = {
     slug: "brand-identity",
     icon: Palette,
     title: "Brand Identity",
-    tagline: "Visual Identities That Resonate",
-    description: "We create distinctive brand identities that capture your essence and connect with your audience. From logo design to complete brand systems, we help you stand out in a crowded marketplace with cohesive, memorable visual identities.",
+    tagline: "Visual Identities That Resonate — Online and in AI",
+    description: "We create distinctive brand identities that capture your essence and connect with your audience. In the age of AI search, strong branding matters more than ever. AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews prioritize brands with clear, authoritative identities when generating recommendations. A cohesive brand identity strengthens your SEO, improves your visibility in AI-generated answers, and builds the kind of digital authority that both humans and algorithms recognize. From logo design to complete brand systems, we help you stand out in a crowded marketplace — in traditional search results, AI-powered discovery, and everywhere in between.",
     heroImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1600&h=900&fit=crop",
     features: [
       "Logo design and variations",
@@ -101,7 +101,9 @@ const services = {
       "Business card and stationery design",
       "Social media brand assets",
       "Marketing collateral design",
-      "Brand voice and messaging"
+      "Brand voice and messaging",
+      "AI-ready brand positioning",
+      "Digital brand authority building"
     ],
     process: [
       { step: "01", title: "Research", description: "Understanding your industry, competitors, and target audience to inform design decisions." },
@@ -109,12 +111,34 @@ const services = {
       { step: "03", title: "Refinement", description: "Iterating on the chosen direction to perfect every detail of your brand identity." },
       { step: "04", title: "Delivery", description: "Providing comprehensive brand guidelines and all necessary file formats." }
     ],
-    technologies: ["Adobe Creative Suite", "Figma", "Brand Strategy", "Color Theory", "Typography"],
+    technologies: ["Adobe Creative Suite", "Figma", "Brand Strategy", "Color Theory", "Typography", "AI Brand Tools"],
     benefits: [
       { title: "Recognition", description: "Stand out from competitors with a unique visual identity" },
       { title: "Consistency", description: "Maintain brand coherence across all touchpoints" },
       { title: "Trust", description: "Professional branding builds credibility with customers" },
       { title: "Value", description: "Strong brands command premium pricing" }
+    ],
+    faqs: [
+      {
+        question: "Why does brand identity matter for SEO and AI search?",
+        answer: "Search engines and AI platforms prioritize brands they recognize as authoritative and trustworthy. A strong, consistent brand identity — with clear messaging, structured information, and a cohesive visual presence — sends signals that both Google and AI search engines use when deciding which businesses to surface and recommend. Investing in brand identity directly supports your SEO and GEO performance."
+      },
+      {
+        question: "How does branding affect AI search visibility (GEO)?",
+        answer: "AI search engines like ChatGPT and Perplexity rely on entity recognition to identify and recommend businesses. A well-defined brand with consistent naming, clear service descriptions, and strong authority signals is far more likely to be cited in AI-generated answers. Our branding process includes AI-ready brand positioning that ensures your identity translates effectively across AI platforms."
+      },
+      {
+        question: "Do I need a brand refresh for AI SEO?",
+        answer: "Not necessarily a complete rebrand, but your brand should be clearly defined and consistently represented online. If your messaging is vague, your visual identity is inconsistent, or your digital presence lacks authority signals, a strategic brand refresh can significantly improve your performance in both traditional and AI-powered search. We can assess where your brand stands and recommend targeted improvements."
+      },
+      {
+        question: "What is included in a brand identity package?",
+        answer: "Our brand identity packages typically include logo design with variations for different contexts, a complete color palette, typography selection, brand guidelines documentation, business card and stationery design, social media brand assets, and marketing collateral templates. We also include AI-ready brand positioning and digital brand authority recommendations to ensure your brand performs well across all channels."
+      },
+      {
+        question: "How long does the branding process take?",
+        answer: "A complete brand identity project typically takes four to six weeks from initial research to final delivery. This includes time for research, concept development, revision rounds, and comprehensive guideline documentation. Rush timelines are available for businesses with urgent needs. Every project includes at least two rounds of revisions to ensure the final result aligns perfectly with your vision."
+      }
     ]
   },
   "seo-content": {

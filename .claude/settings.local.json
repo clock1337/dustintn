@@ -44,7 +44,10 @@
       "Bash(open https://dustin-delta.vercel.app/)",
       "Bash(open https://dustin-delta.vercel.app/portfolio/coldwell-banker-commercial)",
       "Bash(open https://dustintn.com/)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(git restore:*)"
     ]
   }
 }
