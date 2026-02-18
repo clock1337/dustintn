@@ -77,7 +77,8 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2004", title: "Founded", description: "Started helping local businesses build their online presence in Nashville, Tennessee." },
+  { year: "2004", title: "Founded", description: "Started helping businesses build their online presence in Southern California." },
+  { year: "2021", title: "New Chapter", description: "Relocated to Nashville, Tennessee, bringing two decades of west-coast digital experience to the local business community." },
   { year: "2010", title: "Growth", description: "Expanded services to include SEO, branding, and digital marketing strategies." },
   { year: "2015", title: "Innovation", description: "Adopted modern web technologies and responsive design as industry standards evolved." },
   { year: "2020", title: "Adaptation", description: "Helped businesses pivot to digital-first strategies during challenging times." },
@@ -138,9 +139,9 @@ export default function AboutPage() {
                   My <span className="text-accent">Story</span>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-6">
-                  I started building websites in 2004 with a simple goal: help local businesses get online and grow.
+                  I started building websites in 2004 in Southern California with a simple goal: help local businesses get online and grow.
                   What began as a passion project quickly turned into a career as I saw firsthand how a strong digital
-                  presence could transform a small business.
+                  presence could transform a small business. In 2021, I brought that experience to Nashville, Tennessee.
                 </p>
                 <p className="text-white/60 leading-relaxed mb-6">
                   Over the years, I&apos;ve worked with healthcare providers, fitness studios, restaurants, real estate
@@ -254,8 +255,8 @@ export default function AboutPage() {
               <AnimatedSection delay={200}>
                 <div className="aspect-square rounded-2xl overflow-hidden relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=800&fit=crop"
-                    alt="Modern workspace"
+                    src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=800&fit=crop"
+                    alt="Solo workspace with laptop and coffee"
                     fill
                     className="object-cover"
                   />

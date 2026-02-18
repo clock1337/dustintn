@@ -174,7 +174,7 @@ export const resources: Resource[] = [
     category: "Social Media",
     excerpt:
       "Learn how to create an effective social media strategy that helps your local business connect with your community and drive results.",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80",
     readTime: "9 min read",
     publishDate: "February 1, 2026",
     tags: ["Social Media", "Local Business", "Strategy"],
