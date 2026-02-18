@@ -1386,6 +1386,9 @@ export const resources: Resource[] = [
   },
 ];
 
+// Sort articles newest to oldest by publish date
+resources.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+
 export interface CategoryPage {
   name: string;
   slug: string;

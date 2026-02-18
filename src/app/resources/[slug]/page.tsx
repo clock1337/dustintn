@@ -90,7 +90,7 @@ function CategoryLandingPage({ slug }: { slug: string }) {
               <span className="text-sm font-medium">All Resources</span>
             </Link>
 
-            <AnimatedSection className="max-w-3xl">
+            <AnimatedSection>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center">
                   <IconComponent className="w-7 h-7 text-accent" />
@@ -100,34 +100,34 @@ function CategoryLandingPage({ slug }: { slug: string }) {
                 </span>
               </div>
 
-              <h1 className="text-headline mb-6">{categoryPage.headline}</h1>
-              {categoryPage.description.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-xl text-white/50 leading-relaxed mb-4 last:mb-0">
-                  {paragraph}
-                </p>
-              ))}
-            </AnimatedSection>
-          </div>
-        </section>
+              <h1 className="text-headline mb-10">{categoryPage.headline}</h1>
 
-        {/* What You'll Learn */}
-        <section className="py-20 bg-dark-gray">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="max-w-4xl mx-auto">
-              <AnimatedSection>
-                <h2 className="text-2xl lg:text-3xl font-semibold mb-8">
-                  What You&apos;ll <span className="text-accent">Learn</span>
-                </h2>
-                <div className="space-y-4">
-                  {categoryPage.whatYoullLearn.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-4">
-                      <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70 text-lg">{item}</span>
-                    </div>
+              <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14">
+                {/* Left — Description */}
+                <div>
+                  {categoryPage.description.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="text-lg text-white/50 leading-relaxed mb-4 last:mb-0">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
-              </AnimatedSection>
-            </div>
+
+                {/* Right — What You'll Learn */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 lg:p-8">
+                  <h2 className="text-lg font-semibold mb-5">
+                    What You&apos;ll <span className="text-accent">Learn</span>
+                  </h2>
+                  <div className="space-y-3">
+                    {categoryPage.whatYoullLearn.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                        <span className="text-white/70 text-sm leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 
