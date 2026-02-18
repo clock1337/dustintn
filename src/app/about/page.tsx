@@ -78,10 +78,12 @@ const values = [
 
 const timeline = [
   { year: "2004", title: "Founded", description: "Started helping businesses build their online presence in Southern California." },
-  { year: "2021", title: "New Chapter", description: "Relocated to Nashville, Tennessee, bringing two decades of west-coast digital experience to the local business community." },
   { year: "2010", title: "Growth", description: "Expanded services to include SEO, branding, and digital marketing strategies." },
   { year: "2015", title: "Innovation", description: "Adopted modern web technologies and responsive design as industry standards evolved." },
   { year: "2020", title: "Adaptation", description: "Helped businesses pivot to digital-first strategies during challenging times." },
+  { year: "2021", title: "New Chapter", description: "Relocated to Nashville, Tennessee and launched CBC SoCal Group's website, bringing two decades of west-coast digital experience to new markets." },
+  { year: "2022", title: "Nashville Roots", description: "Built The Southern Collective's website, establishing a strong foothold in the Nashville business community." },
+  { year: "2025", title: "Expanding Impact", description: "Launched the Champions Adaptive Fitness website, continuing to help purpose-driven businesses grow online." },
   { year: "2026", title: "Today", description: "Continuing to deliver cutting-edge solutions for businesses across Nashville and beyond." }
 ];
 
