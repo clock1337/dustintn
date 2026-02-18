@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { ArrowRight, Clock, CheckCircle2, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle } from "lucide-react";
+import { ArrowRight, Clock, CheckCircle2, Video, Phone, Globe, Search, Wrench, Share2, Calendar, HelpCircle, Code2, BrainCircuit, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
@@ -100,6 +100,138 @@ function ResourcesPageContent() {
                 Everything you need to build and grow your online presence.
               </p>
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* What You'll Find Section */}
+        <section className="py-20 bg-black">
+          <div className="container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="text-center mb-12">
+              <span className="section-label mb-6 inline-flex justify-center">What You&apos;ll Find</span>
+              <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+                Free guides for every stage of your <span className="text-accent">digital journey</span>
+              </h2>
+              <p className="text-white/50 text-lg max-w-2xl mx-auto">
+                Step-by-step checklists, complete guides, and action plans written for small business owners — no jargon, no fluff.
+              </p>
+            </AnimatedSection>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {[
+                { icon: Code2, title: "Web Development", description: "Site launches, maintenance & platform guides", count: resources.filter(r => r.category === "Web Development").length },
+                { icon: Search, title: "SEO & Search", description: "Rankings, local SEO & Google Business", count: resources.filter(r => r.category === "SEO & Search").length },
+                { icon: BrainCircuit, title: "AI SEO & GEO", description: "AI search visibility & optimization", count: resources.filter(r => r.category === "AI SEO & GEO").length },
+                { icon: Share2, title: "Social Media", description: "Strategy, content & engagement", count: resources.filter(r => r.category === "Social Media").length },
+                { icon: Zap, title: "Digital Strategy", description: "Trends, planning & growth roadmaps", count: resources.filter(r => r.category === "Digital Strategy").length },
+              ].map((cat, idx) => (
+                <AnimatedSection key={idx} delay={idx * 75}>
+                  <button
+                    onClick={() => setActiveFilter(cat.title)}
+                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 group ${
+                      activeFilter === cat.title
+                        ? 'bg-accent/10 border-accent/30'
+                        : 'bg-dark-gray border-white/5 hover:border-accent/20'
+                    }`}
+                  >
+                    <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
+                      <cat.icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <h3 className="text-sm font-semibold mb-1">{cat.title}</h3>
+                    <p className="text-xs text-white/40 leading-relaxed mb-2">{cat.description}</p>
+                    <span className="text-xs text-accent font-medium">{cat.count} {cat.count === 1 ? 'guide' : 'guides'}</span>
+                  </button>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Filter Section */}
+        <section className="py-8 bg-black border-y border-white/5">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="flex flex-wrap gap-3">
+              {resourceCategories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveFilter(category)}
+                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeFilter === category
+                      ? 'bg-accent text-white'
+                      : 'bg-dark-gray text-white/60 hover:text-white hover:bg-dark-gray/80'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Resources Grid */}
+        <section className="py-20 bg-black">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredResources.map((resource, index) => (
+                <AnimatedSection key={resource.slug} delay={index * 100}>
+                  <Link
+                    href={`/resources/${resource.slug}`}
+                    className="group block bg-dark-gray rounded-2xl border border-white/5 hover:border-accent/30 transition-all duration-500 h-full overflow-hidden"
+                  >
+                    {/* Cover Image */}
+                    <div className="aspect-[5/2] relative overflow-hidden">
+                      <Image
+                        src={resource.image}
+                        alt={resource.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark-gray via-dark-gray/20 to-transparent"></div>
+                    </div>
+
+                    <div className="p-6 lg:p-8 flex flex-col h-full">
+                      {/* Meta */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 bg-accent/10 rounded-full text-xs text-accent font-medium">
+                          {resource.category}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs text-white/40">
+                          <Clock className="w-3 h-3" />
+                          {resource.readTime}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors leading-tight">
+                        {resource.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
+                        {resource.excerpt}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {resource.tags.map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/60"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      <div className="flex items-center gap-2 text-accent group-hover:gap-3 transition-all">
+                        <span className="text-sm font-medium">Read More</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -213,95 +345,6 @@ function ResourcesPageContent() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </AnimatedSection>
-            </div>
-          </div>
-        </section>
-
-        {/* Filter Section */}
-        <section className="py-8 bg-black border-y border-white/5">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="flex flex-wrap gap-3">
-              {resourceCategories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveFilter(category)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeFilter === category
-                      ? 'bg-accent text-white'
-                      : 'bg-dark-gray text-white/60 hover:text-white hover:bg-dark-gray/80'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Resources Grid */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredResources.map((resource, index) => (
-                <AnimatedSection key={resource.slug} delay={index * 100}>
-                  <Link
-                    href={`/resources/${resource.slug}`}
-                    className="group block bg-dark-gray rounded-2xl border border-white/5 hover:border-accent/30 transition-all duration-500 h-full overflow-hidden"
-                  >
-                    {/* Cover Image */}
-                    <div className="aspect-[5/2] relative overflow-hidden">
-                      <Image
-                        src={resource.image}
-                        alt={resource.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-dark-gray via-dark-gray/20 to-transparent"></div>
-                    </div>
-
-                    <div className="p-6 lg:p-8 flex flex-col h-full">
-                      {/* Meta */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 bg-accent/10 rounded-full text-xs text-accent font-medium">
-                          {resource.category}
-                        </span>
-                        <span className="flex items-center gap-1 text-xs text-white/40">
-                          <Clock className="w-3 h-3" />
-                          {resource.readTime}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors leading-tight">
-                        {resource.title}
-                      </h3>
-
-                      {/* Excerpt */}
-                      <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
-                        {resource.excerpt}
-                      </p>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {resource.tags.map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/60"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* CTA */}
-                      <div className="flex items-center gap-2 text-accent group-hover:gap-3 transition-all">
-                        <span className="text-sm font-medium">Read More</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </Link>
-                </AnimatedSection>
-              ))}
             </div>
           </div>
         </section>

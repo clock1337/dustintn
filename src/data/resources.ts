@@ -174,7 +174,7 @@ export const resources: Resource[] = [
     category: "Social Media",
     excerpt:
       "Learn how to create an effective social media strategy that helps your local business connect with your community and drive results.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
     readTime: "9 min read",
     publishDate: "February 1, 2026",
     tags: ["Social Media", "Local Business", "Strategy"],
@@ -703,7 +703,7 @@ export const resources: Resource[] = [
     title: "What Is GEO? A Guide to Generative Engine Optimization",
     metaTitle: "What Is GEO? Generative Engine Optimization Guide | DustinTN",
     metaDescription: "Learn what generative engine optimization (GEO) is, why it matters, and how to optimize your business for AI-powered search engines like ChatGPT and Perplexity.",
-    category: "SEO & Search",
+    category: "AI SEO & GEO",
     excerpt:
       "AI search engines are changing how people find businesses. Learn what GEO is, how it differs from traditional SEO, and how to get your brand cited in AI-generated answers.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
@@ -766,7 +766,7 @@ export const resources: Resource[] = [
     title: "AI SEO: How Artificial Intelligence Is Changing Search Optimization",
     metaTitle: "AI SEO: How AI Is Changing Search Optimization | DustinTN",
     metaDescription: "Discover how artificial intelligence is transforming SEO. Learn about AI-powered keyword research, content optimization, predictive analytics, and automated audits.",
-    category: "SEO & Search",
+    category: "AI SEO & GEO",
     excerpt:
       "AI is making SEO faster, smarter, and more effective. Learn how AI tools are transforming keyword research, content optimization, and technical audits.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
@@ -996,7 +996,7 @@ export const resources: Resource[] = [
     category: "Social Media",
     excerpt:
       "Everything local businesses need to know about social media — from choosing platforms and creating content to managing reviews and measuring real ROI.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
     readTime: "17 min read",
     publishDate: "February 17, 2026",
     tags: ["Social Media", "Local Business", "Ultimate Guide"],

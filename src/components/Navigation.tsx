@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, BookOpen } from "lucide-react";
+import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, Code2, Search, BrainCircuit, Share2, Zap } from "lucide-react";
 import Link from "next/link";
 import { resources, resourceCategories } from "@/data/resources";
 
@@ -37,13 +37,17 @@ const serviceItems = [
   { title: "AI SEO", href: "/services/ai-seo", description: "AI-powered SEO" }
 ];
 
-// Group resources by category (excluding "All")
-const resourcesByCategory = resourceCategories
-  .filter(cat => cat !== "All")
-  .map(cat => ({
-    category: cat,
-    items: resources.filter(r => r.category === cat),
-  }));
+// Resource category metadata for dropdown
+const resourceCategoryItems = [
+  { title: "Web Development", description: "Maintenance, platforms & launches", icon: Code2, category: "Web Development" },
+  { title: "SEO & Search", description: "Rankings, local SEO & Google Business", icon: Search, category: "SEO & Search" },
+  { title: "AI SEO & GEO", description: "AI search, ChatGPT & Perplexity", icon: BrainCircuit, category: "AI SEO & GEO" },
+  { title: "Social Media", description: "Strategy, content & engagement", icon: Share2, category: "Social Media" },
+  { title: "Digital Strategy", description: "Trends, planning & growth", icon: Zap, category: "Digital Strategy" },
+].map(item => ({
+  ...item,
+  count: resources.filter(r => r.category === item.category).length,
+}));
 
 interface NavigationProps {
   currentPage?: 'home' | 'portfolio' | 'project' | 'resources';
@@ -257,9 +261,9 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                     ? 'opacity-100 translate-y-0 pointer-events-auto'
                     : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}>
-                  <div className="bg-dark-gray/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 min-w-[380px] shadow-2xl shadow-black/50">
+                  <div className="bg-dark-gray/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 min-w-[320px] shadow-2xl shadow-black/50">
                     {/* Header */}
-                    <div className="flex items-center justify-between mb-3 pb-3 border-b border-white/10">
+                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
                       <span className="text-xs font-medium text-white/40 uppercase tracking-wider">Free Resources</span>
                       <Link
                         href="/resources"
@@ -270,34 +274,32 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                       </Link>
                     </div>
 
-                    {/* Categories with articles */}
-                    <div className="space-y-4">
-                      {resourcesByCategory.map((group) => (
-                        <div key={group.category}>
-                          <Link
-                            href={`/resources?category=${encodeURIComponent(group.category)}`}
-                            className="text-[10px] font-semibold text-accent uppercase tracking-widest px-3 mb-1 block hover:text-accent-hover transition-colors"
-                          >
-                            {group.category}
-                          </Link>
-                          <div className="space-y-0.5">
-                            {group.items.map((item) => (
-                              <Link
-                                key={item.slug}
-                                href={`/resources/${item.slug}`}
-                                className="flex items-center gap-3 px-3 py-2 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 group"
-                              >
-                                <BookOpen className="w-3.5 h-3.5 text-white/30 group-hover:text-accent transition-colors flex-shrink-0" />
-                                <span className="text-sm leading-snug line-clamp-1">{item.title}</span>
-                              </Link>
-                            ))}
+                    {/* Category Items */}
+                    <div className="space-y-1">
+                      {resourceCategoryItems.map((item) => (
+                        <Link
+                          key={item.category}
+                          href={`/resources?category=${encodeURIComponent(item.category)}`}
+                          className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 group"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <item.icon className="w-5 h-5" />
                           </div>
-                        </div>
+                          <div className="flex-1">
+                            <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
+                              {item.title}
+                            </div>
+                            <div className="text-xs text-white/40 mt-0.5">
+                              {item.description}
+                            </div>
+                          </div>
+                          <span className="text-xs text-white/30 mt-1">{item.count}</span>
+                        </Link>
                       ))}
                     </div>
 
                     {/* Footer CTA */}
-                    <div className="mt-3 pt-3 border-t border-white/10">
+                    <div className="mt-4 pt-4 border-t border-white/10">
                       <Link
                         href="/free-consultation"
                         className="flex items-center justify-center gap-2 w-full py-2.5 bg-accent/10 hover:bg-accent text-accent hover:text-white rounded-xl text-sm font-medium transition-all duration-300"
@@ -484,9 +486,9 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                 </button>
 
                 <div className={`overflow-hidden transition-all duration-300 ease-out ${
-                  mobileAccordion === 'resources' ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                  mobileAccordion === 'resources' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="pl-4 pr-2 pb-2 space-y-3">
+                  <div className="pl-4 pr-2 pb-2 space-y-1">
                     <Link
                       href="/resources"
                       onClick={closeMobile}
@@ -495,27 +497,21 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                       <ArrowRight className="w-4 h-4" />
                       View All Resources
                     </Link>
-                    {resourcesByCategory.map((group) => (
-                      <div key={group.category}>
-                        <Link
-                          href={`/resources?category=${encodeURIComponent(group.category)}`}
-                          onClick={closeMobile}
-                          className="text-[10px] font-semibold text-accent/70 uppercase tracking-widest px-4 mb-1 block hover:text-accent transition-colors"
-                        >
-                          {group.category}
-                        </Link>
-                        {group.items.map((item) => (
-                          <Link
-                            key={item.slug}
-                            href={`/resources/${item.slug}`}
-                            onClick={closeMobile}
-                            className="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-white/5 transition-colors"
-                          >
-                            <BookOpen className="w-3.5 h-3.5 text-white/30 flex-shrink-0" />
-                            <span className="text-sm text-white/80 leading-snug line-clamp-1">{item.title}</span>
-                          </Link>
-                        ))}
-                      </div>
+                    {resourceCategoryItems.map((item) => (
+                      <Link
+                        key={item.category}
+                        href={`/resources?category=${encodeURIComponent(item.category)}`}
+                        onClick={closeMobile}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
+                          <item.icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <span className="text-sm font-medium text-white/80 block">{item.title}</span>
+                          <span className="text-xs text-white/40">{item.description}</span>
+                        </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
