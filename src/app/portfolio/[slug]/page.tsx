@@ -263,7 +263,6 @@ const projects = {
       "Commission inquiry contact form"
     ],
     technologies: ["Next.js", "Tailwind CSS", "Vercel"],
-    staticScreenshot: true,
     results: [
       { metric: "1", label: "Unified Brand Identity" },
       { metric: "6+", label: "Sales Platforms Linked" },
@@ -347,23 +346,11 @@ export default function ProjectPage() {
         <section className="pb-20">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection delay={100}>
-              {'staticScreenshot' in project && project.staticScreenshot ? (
-                <div className="aspect-[16/9] rounded-2xl overflow-hidden relative">
-                  <Image
-                    src={project.heroImage}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top"
-                    priority
-                  />
-                </div>
-              ) : (
-                <ScrollingScreenshot
-                  src={project.heroImage}
-                  alt={project.title}
-                  className="aspect-[16/9]"
-                />
-              )}
+              <ScrollingScreenshot
+                src={project.heroImage}
+                alt={project.title}
+                className="aspect-[16/9]"
+              />
             </AnimatedSection>
           </div>
         </section>
