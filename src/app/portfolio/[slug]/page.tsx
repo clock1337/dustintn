@@ -244,7 +244,7 @@ const projects = {
     category: "Branding",
     tagline: "Discover The Art Of True Emotion",
     description: "Maple Sky Dreamtree Studio is the creative home of Mike Filippello, a painter, illustrator, and children's book author with over 30 years of experience. Mike had artwork scattered across the internet with no central hub to showcase his work. We built him a complete digital presence from the ground up — starting with turning his Post-It sketch into a professional logo, then creating a modern website that brings together his paintings, illustrations, children's books, and art prints in one place.",
-    heroImage: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1600&h=900&fit=crop",
+    heroImage: "/screenshots/maple-sky-dreamtree-studio.png",
     logo: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=160&fit=crop",
     client: "Mike Filippello",
     date: "2026",
