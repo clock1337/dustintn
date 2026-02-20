@@ -114,6 +114,18 @@ const projects = [
     location: "Southern California",
     services: ["Web Design", "Development", "SEO"],
     website: "cbcsocalgroup.com"
+  },
+  {
+    id: 6,
+    slug: "maple-sky-dreamtree-studio",
+    title: "Maple Sky Dreamtree Studio",
+    category: "Branding",
+    description: "A complete brand identity and website for a fine artist with 30+ years of experience. We turned a Post-It logo sketch into a professional mark and built a modern hub for his paintings, illustrations, children's books, and multi-platform shop.",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=600&fit=crop",
+    client: "Mike Filippello",
+    location: "Nashville, TN",
+    services: ["Logo Design", "Web Design", "Branding"],
+    website: "msdt-seven.vercel.app"
   }
 ];
 

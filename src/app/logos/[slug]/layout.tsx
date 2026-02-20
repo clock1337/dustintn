@@ -25,6 +25,10 @@ const logoMeta: Record<string, { title: string; description: string }> = {
     title: "Wild Sage Kitchen Logo Design | DustinTN",
     description: "Discover the Wild Sage Kitchen logo design. A warm, organic mark that captures farm-to-table dining and culinary artistry.",
   },
+  "maple-sky-dreamtree-studio": {
+    title: "Maple Sky Dreamtree Studio Logo Design | DustinTN",
+    description: "See how we turned a Post-It sketch into a professional logo for fine artist Mike Filippello. A whimsical, gold-toned brand mark for Maple Sky Dreamtree Studio.",
+  },
 };
 
 export async function generateMetadata({

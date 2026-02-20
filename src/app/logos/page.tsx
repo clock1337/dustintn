@@ -119,6 +119,17 @@ const logos = [
       { name: "Linen", hex: "#FAF5EF" },
     ],
   },
+  {
+    slug: "maple-sky-dreamtree-studio",
+    title: "Maple Sky Dreamtree Studio",
+    industry: "Fine Art",
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=800&fit=crop",
+    colors: [
+      { name: "MSDT Gold", hex: "#C8A96E" },
+      { name: "Deep Black", hex: "#0A0A0A" },
+      { name: "Cream", hex: "#F5F0E1" },
+    ],
+  },
 ];
 
 export default function LogosPage() {

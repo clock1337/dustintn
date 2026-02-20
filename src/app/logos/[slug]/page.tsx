@@ -188,6 +188,26 @@ const logos: Record<string, {
       { name: "Espresso", hex: "#3C2415", usage: "Typography, dark accents" },
     ],
   },
+  "maple-sky-dreamtree-studio": {
+    slug: "maple-sky-dreamtree-studio",
+    title: "Maple Sky Dreamtree Studio",
+    industry: "Fine Art",
+    tagline: "Where imagination takes root",
+    client: "Mike Filippello",
+    year: "2026",
+    location: "Nashville, TN",
+    services: ["Logo Design", "Brand Mark", "Brand Coaching", "Website"],
+    brief: "Mike Filippello is a painter, illustrator, and children's book author with over 30 years of creative work. He had no professional branding — just a hand-drawn logo idea sketched on a Post-It note and artwork scattered across the internet. He needed a mark that captured the whimsy and emotion of his art while feeling polished enough for a professional creative brand.",
+    challenge: "Turning a rough Post-It sketch into a professional logo that honored the artist's original vision while working across web, print, and merchandise. The mark needed to feel handcrafted and imaginative — reflecting Mike's whimsical painting style — without looking unfinished or amateur.",
+    solution: "We interviewed Mike to understand the story behind his sketch and what each element meant to him. Then we refined his hand-drawn concept into a clean, versatile brand mark that preserves the organic, dreamlike quality of the original idea. The final logo features a stylized tree form that references the 'Dreamtree' in his studio name, rendered in gold against dark backgrounds to feel both artistic and premium. The gold and black palette carries through to his entire website and brand presence.",
+    heroImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&h=900&fit=crop",
+    colorPalette: [
+      { name: "MSDT Gold", hex: "#C8A96E", usage: "Primary brand accent, logo, headings" },
+      { name: "Deep Black", hex: "#0A0A0A", usage: "Primary background, dark surfaces" },
+      { name: "Cream", hex: "#F5F0E1", usage: "Light text, cards, contrast elements" },
+      { name: "Warm Gray", hex: "#8A8A8A", usage: "Body text, secondary elements" },
+    ],
+  },
 };
 
 type LogoSlug = keyof typeof logos;

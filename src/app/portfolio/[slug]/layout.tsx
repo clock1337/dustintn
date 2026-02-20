@@ -21,6 +21,10 @@ const projectMeta: Record<string, { title: string; description: string }> = {
     title: "Coldwell Banker Commercial SC Website | DustinTN",
     description: "See the commercial real estate platform we built for Coldwell Banker Commercial SC. Property search, listings, agent profiles, and lead generation.",
   },
+  "maple-sky-dreamtree-studio": {
+    title: "Maple Sky Dreamtree Studio — Artist Website & Branding | DustinTN",
+    description: "See how we built a complete brand identity and website for fine artist Mike Filippello. Custom logo from a Post-It sketch, art gallery, children's book showcase, and multi-platform shop.",
+  },
 };
 
 export async function generateMetadata({

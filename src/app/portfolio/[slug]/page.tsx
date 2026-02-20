@@ -236,6 +236,43 @@ const projects = {
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
     ]
+  },
+  "maple-sky-dreamtree-studio": {
+    id: 6,
+    slug: "maple-sky-dreamtree-studio",
+    title: "Maple Sky Dreamtree Studio",
+    category: "Branding",
+    tagline: "Discover The Art Of True Emotion",
+    description: "Maple Sky Dreamtree Studio is the creative home of Mike Filippello, a painter, illustrator, and children's book author with over 30 years of experience. Mike had artwork scattered across the internet with no central hub to showcase his work. We built him a complete digital presence from the ground up — starting with turning his Post-It sketch into a professional logo, then creating a modern website that brings together his paintings, illustrations, children's books, and art prints in one place.",
+    heroImage: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1600&h=900&fit=crop",
+    logo: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=160&fit=crop",
+    client: "Mike Filippello",
+    date: "2026",
+    services: ["Logo Design", "Web Design", "Development", "Brand Coaching"],
+    website: "msdt-seven.vercel.app",
+    location: "Nashville, TN",
+    challenge: "Mike had been creating art for over 30 years but had no real online presence — just a basic WordPress.org site and artwork scattered across Etsy, Fine Art America, Amazon, and other platforms. He didn't know how to bring it all together into a cohesive brand or showcase his paintings, illustrations, and published children's books in one place.",
+    solution: "We started from scratch — interviewing Mike to understand his story and artistic vision, then coaching him through the entire brand-building process. We turned his hand-drawn Post-It logo sketch into a polished professional mark, then designed and built a modern website that serves as his creative hub. The site showcases his art gallery, published books, and links to every platform where his work is available for purchase.",
+    features: [
+      "Custom logo designed from a hand-drawn Post-It sketch",
+      "Art gallery with categorized portfolio",
+      "Children's book showcase section",
+      "Multi-platform shop directory (Etsy, Amazon, Fine Art America)",
+      "Press and recognition highlights",
+      "Instagram feed integration",
+      "Commission inquiry contact form"
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+    results: [
+      { metric: "1", label: "Unified Brand Identity" },
+      { metric: "6+", label: "Sales Platforms Linked" },
+      { metric: "150+", label: "Artworks Showcased" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&h=600&fit=crop"
+    ]
   }
 };
 

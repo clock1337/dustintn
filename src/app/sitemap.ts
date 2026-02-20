@@ -90,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "pinnacle-health-choice",
     "southern-collective-spirit-co",
     "coldwell-banker-commercial",
+    "maple-sky-dreamtree-studio",
   ].map((slug) => ({
     url: `${baseUrl}/portfolio/${slug}`,
     lastModified: "2026-02-01",
@@ -104,6 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "velocity-fitness",
     "riverstone-financial",
     "wild-sage-kitchen",
+    "maple-sky-dreamtree-studio",
   ].map((slug) => ({
     url: `${baseUrl}/logos/${slug}`,
     lastModified: "2026-02-19",

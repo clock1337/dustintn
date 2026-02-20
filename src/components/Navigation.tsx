@@ -19,6 +19,12 @@ const portfolioCategories = [
     icon: "+"
   },
   {
+    title: "Fine Art & Creative",
+    description: "Artist websites & branding",
+    href: "/portfolio/maple-sky-dreamtree-studio",
+    icon: "+"
+  },
+  {
     title: "Logo Portfolio",
     description: "Brand marks & logo design",
     href: "/logos",
