@@ -125,7 +125,8 @@ const projects = [
     client: "Mike Filippello",
     location: "Nashville, TN",
     services: ["Logo Design", "Web Design", "Branding"],
-    website: "msdt-seven.vercel.app"
+    website: "msdt-seven.vercel.app",
+    staticScreenshot: true
   }
 ];
 
@@ -193,10 +194,22 @@ export default function PortfolioPage() {
                     {/* Image */}
                     <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                       <Link href={`/portfolio/${project.slug}`} className="block">
-                        <ScrollingScreenshot
-                          src={project.image}
-                          alt={project.title}
-                        />
+                        {'staticScreenshot' in project && project.staticScreenshot ? (
+                          <div className="aspect-[4/3] rounded-2xl overflow-hidden relative group">
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-cover object-top"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
+                          </div>
+                        ) : (
+                          <ScrollingScreenshot
+                            src={project.image}
+                            alt={project.title}
+                          />
+                        )}
                       </Link>
                     </div>
 
