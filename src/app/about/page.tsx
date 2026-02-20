@@ -78,8 +78,14 @@ const values = [
 
 const timeline = [
   { year: "2004", title: "Founded", description: "Started helping businesses build their online presence in Southern California." },
+  { year: "2006", title: "First E-Commerce Build", description: "Built my first online store — saw how a good checkout experience could change a small business overnight." },
+  { year: "2008", title: "Went Mobile-First", description: "Started designing for mobile screens before it was mainstream, after noticing how many customers were browsing on phones." },
   { year: "2010", title: "Growth", description: "Expanded services to include SEO, branding, and digital marketing strategies." },
+  { year: "2012", title: "Social Media Marketing", description: "Helped clients tap into Facebook and Instagram for the first time, turning followers into real-world customers." },
+  { year: "2013", title: "Content Strategy", description: "Started building blog-driven SEO campaigns, learning that great content was the best long-term marketing investment." },
   { year: "2015", title: "Innovation", description: "Adopted modern web technologies and responsive design as industry standards evolved." },
+  { year: "2017", title: "JavaScript Frameworks", description: "Made the leap to React and component-driven development, building faster and more interactive experiences." },
+  { year: "2019", title: "Performance Obsessed", description: "Got serious about Core Web Vitals before Google did, optimizing load times and UX across every project." },
   { year: "2020", title: "Adaptation", description: "Helped businesses pivot to digital-first strategies during challenging times." },
   { year: "2021", title: "New Chapter", description: "Relocated to Nashville, Tennessee and launched CBC SoCal Group's website, bringing two decades of west-coast digital experience to new markets." },
   { year: "2022", title: "Nashville Roots", description: "Built The Southern Collective's website, establishing a strong foothold in the Nashville business community." },

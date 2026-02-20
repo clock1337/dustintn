@@ -36,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/logos`,
+      lastModified: "2026-02-19",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: "2026-01-15",
       changeFrequency: "monthly",
@@ -64,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages: MetadataRoute.Sitemap = [
     "web-development",
     "brand-identity",
+    "logo-design",
     "seo-content",
     "web-consulting",
     "social-media",
@@ -90,6 +97,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const logoPages: MetadataRoute.Sitemap = [
+    "mountain-peak-brewing",
+    "bright-path-therapy",
+    "cedar-ridge-homes",
+    "velocity-fitness",
+    "riverstone-financial",
+    "wild-sage-kitchen",
+  ].map((slug) => ({
+    url: `${baseUrl}/logos/${slug}`,
+    lastModified: "2026-02-19",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const resourcePages: MetadataRoute.Sitemap = resources.map((resource) => ({
     url: `${baseUrl}/resources/${resource.slug}`,
     lastModified: "2026-02-17",
@@ -97,5 +118,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...portfolioPages, ...resourcePages];
+  return [...staticPages, ...servicePages, ...portfolioPages, ...logoPages, ...resourcePages];
 }

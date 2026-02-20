@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Users, Share2, Globe, BrainCircuit } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2, Palette, PenTool, MessageSquare, Zap, Users, Share2, Globe, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -71,6 +71,15 @@ const services = [
     description: "Distinctive visual identities that capture your essence and resonate with your audience, from logos to complete brand systems.",
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
     features: ["Logo Design", "Brand Guidelines", "Color Systems", "Typography"]
+  },
+  {
+    slug: "logo-design",
+    icon: PenTool,
+    title: "Logo Design",
+    tagline: "Custom Logos That Tell Your Story",
+    description: "Custom logos and brand marks designed from scratch to capture your brand's essence and work beautifully at any size.",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop",
+    features: ["Custom Logos", "Brand Marks", "Vector Files", "Usage Guidelines"]
   },
   {
     slug: "seo-content",

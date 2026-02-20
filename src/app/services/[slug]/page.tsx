@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowLeft, Code2, Palette, MessageSquare, Zap, Users, Share2, CheckCircle2, Facebook, Instagram, Star, Globe, BrainCircuit } from "lucide-react";
+import { ArrowRight, ArrowLeft, Code2, Palette, PenTool, MessageSquare, Zap, Users, Share2, CheckCircle2, Facebook, Instagram, Star, Globe, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -138,6 +138,59 @@ const services = {
       {
         question: "How long does the branding process take?",
         answer: "A complete brand identity project typically takes four to six weeks from initial research to final delivery. This includes time for research, concept development, revision rounds, and comprehensive guideline documentation. Rush timelines are available for businesses with urgent needs. Every project includes at least two rounds of revisions to ensure the final result aligns perfectly with your vision."
+      }
+    ]
+  },
+  "logo-design": {
+    slug: "logo-design",
+    icon: PenTool,
+    title: "Logo Design",
+    tagline: "Custom Logos That Tell Your Story",
+    description: "Your logo is the face of your brand — it is the first thing people see and the last thing they forget. We design custom logos and brand marks that capture the essence of your business, stand out in any context, and work across every medium from business cards to billboards. Every logo we create is built on research, strategy, and a deep understanding of your audience.",
+    heroImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1600&h=900&fit=crop",
+    features: [
+      "Custom logo design from scratch",
+      "Multiple concept directions",
+      "Logo variations (primary, icon, wordmark)",
+      "Color and monochrome versions",
+      "Vector files for any size",
+      "Brand mark and icon design",
+      "Typography pairing recommendations",
+      "Usage guidelines documentation"
+    ],
+    process: [
+      { step: "01", title: "Discovery", description: "We learn about your business, audience, competitors, and the story you want your logo to tell." },
+      { step: "02", title: "Concepts", description: "We develop multiple creative directions based on research, each exploring a different angle of your brand." },
+      { step: "03", title: "Refinement", description: "We refine your chosen concept through revision rounds, perfecting every curve, color, and detail." },
+      { step: "04", title: "Delivery", description: "You receive production-ready files in every format you need, plus usage guidelines to keep your logo consistent." }
+    ],
+    technologies: ["Adobe Illustrator", "Figma", "Brand Strategy", "Typography", "Color Theory", "Vector Design"],
+    benefits: [
+      { title: "Memorable", description: "A distinctive mark that sticks in your audience's mind" },
+      { title: "Versatile", description: "Works at any size, on any background, in any context" },
+      { title: "Strategic", description: "Designed with your audience and industry in mind" },
+      { title: "Timeless", description: "Built to last years, not just follow trends" }
+    ],
+    faqs: [
+      {
+        question: "How many logo concepts will I see?",
+        answer: "We typically present three to four distinct concept directions in the first round. Each concept explores a different creative angle so you have meaningful options to choose from. After you select a direction, we refine it through two rounds of revisions to get every detail right."
+      },
+      {
+        question: "What file formats will I receive?",
+        answer: "You will receive your logo in all standard formats: vector files (SVG, AI, EPS) for print and scaling, high-resolution PNG files with transparent backgrounds, JPEG versions for web use, and a favicon version for your website. We also provide color, monochrome, and reversed (white) versions of each."
+      },
+      {
+        question: "How long does the logo design process take?",
+        answer: "A typical logo project takes two to three weeks from kickoff to final delivery. This includes the discovery phase, initial concept development, and two rounds of revisions. Rush timelines are available if you have a specific launch date in mind."
+      },
+      {
+        question: "Can you redesign or refresh my existing logo?",
+        answer: "Absolutely. We can modernize an existing logo while preserving the brand equity you have already built. Sometimes a subtle refresh is all it takes to bring a dated mark into the modern era without losing recognition. We will assess your current logo and recommend the right level of change."
+      },
+      {
+        question: "Do I own the final logo design?",
+        answer: "Yes. Once the project is complete and paid in full, you receive full ownership and usage rights to your logo. We provide all source files so you or any future designer can work with the logo. We do not charge licensing fees or retain usage restrictions."
       }
     ]
   },

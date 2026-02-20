@@ -11,6 +11,11 @@ const serviceMeta: Record<string, { title: string; description: string; tagline:
     description: "Build a distinctive brand identity that resonates with your audience. Logo design, color systems, typography, and complete brand guidelines for your business.",
     tagline: "Visual Identities That Resonate",
   },
+  "logo-design": {
+    title: "Custom Logo Design Services | DustinTN",
+    description: "Get a custom logo that captures your brand's essence. Professional logo design with multiple concepts, unlimited revisions, and full ownership for Nashville businesses and beyond.",
+    tagline: "Custom Logos That Tell Your Story",
+  },
   "seo-content": {
     title: "SEO & Content Marketing Services | DustinTN",
     description: "Improve your search rankings with data-driven SEO and content strategy. Keyword research, on-page optimization, and local SEO for Nashville businesses.",

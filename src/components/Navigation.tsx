@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, Code2, Search, BrainCircuit, Share2, Zap, Palette, BookOpen, Compass, Globe } from "lucide-react";
+import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, Code2, Search, BrainCircuit, Share2, Zap, Palette, PenTool, BookOpen, Compass, Globe } from "lucide-react";
 import Link from "next/link";
 import { resources, getCategorySlug, getNewestResourceByCategory } from "@/data/resources";
 
@@ -13,15 +13,15 @@ const portfolioCategories = [
     icon: "+"
   },
   {
-    title: "Personal Training",
+    title: "Fitness & Training",
     description: "Fitness platforms that inspire",
-    href: "/portfolio/fine-assets",
+    href: "/portfolio",
     icon: "+"
   },
   {
-    title: "Adaptive & Inclusive Fitness",
-    description: "Accessible fitness experiences",
-    href: "/portfolio/champions-adaptive-fitness",
+    title: "Logo Portfolio",
+    description: "Brand marks & logo design",
+    href: "/logos",
     icon: "+"
   }
 ];
@@ -29,10 +29,10 @@ const portfolioCategories = [
 const serviceItems = [
   { title: "Web Development", href: "/services/web-development", description: "Custom websites & apps", icon: Code2 },
   { title: "Brand Identity", href: "/services/brand-identity", description: "Logos & visual identity", icon: Palette },
+  { title: "Logo Design", href: "/services/logo-design", description: "Custom logos & marks", icon: PenTool },
   { title: "SEO & Content", href: "/services/seo-content", description: "Search optimization", icon: Search },
   { title: "Web Consulting", href: "/services/web-consulting", description: "Expert guidance", icon: Compass },
   { title: "Social Media", href: "/services/social-media", description: "Facebook, Instagram, Yelp", icon: Share2 },
-  { title: "Digital Strategy", href: "/services/digital-strategy", description: "Growth roadmaps", icon: Zap },
   { title: "GEO", href: "/services/geo-optimization", description: "AI search optimization", icon: Globe },
   { title: "AI SEO", href: "/services/ai-seo", description: "AI-powered SEO", icon: BrainCircuit }
 ];
