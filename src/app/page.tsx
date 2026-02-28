@@ -128,6 +128,7 @@ const portfolio = [
   { id: 3, slug: "pinnacle-health-choice", title: "Pinnacle Wellness", category: "Healthcare", image: "/screenshots/pinnacle-health-choice.png" },
   { id: 4, slug: "southern-collective-spirit-co", title: "Southern Collective Spirit Co.", category: "Hospitality", image: "/screenshots/southern-collective-spirit-co.png" },
   { id: 5, slug: "coldwell-banker-commercial", title: "Coldwell Banker Commercial SC", category: "Real Estate", image: "/screenshots/coldwell-banker-commercial.png" },
+  { id: 7, slug: "jobe-gutter-services", title: "Jobe Gutter Services", category: "Home Services", image: "/screenshots/jobe-gutter-services.png" },
 ];
 
 const stats = [
