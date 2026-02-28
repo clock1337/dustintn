@@ -126,10 +126,22 @@ const projects = [
     location: "Nashville, TN",
     services: ["Logo Design", "Web Design", "Branding"],
     website: "msdt-seven.vercel.app"
+  },
+  {
+    id: 7,
+    slug: "jobe-gutter-services",
+    title: "Jobe Gutter Services",
+    category: "Home Services",
+    description: "A professional website for a Southeast Texas gutter company with 15+ years of experience and over 1,000 installations. Featuring service showcases, project galleries, customer testimonials, and multi-city service area coverage.",
+    image: "/screenshots/jobe-gutter-services.png",
+    client: "Jobe Gutter Services LLC",
+    location: "Angleton, TX",
+    services: ["Web Design", "Development", "SEO"],
+    website: "jobegutterservices.com"
   }
 ];
 
-const categories = ["All", "Web Development", "Healthcare", "Hospitality", "Real Estate", "Branding"];
+const categories = ["All", "Web Development", "Healthcare", "Hospitality", "Real Estate", "Branding", "Home Services"];
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("All");

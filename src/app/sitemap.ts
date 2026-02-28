@@ -91,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "southern-collective-spirit-co",
     "coldwell-banker-commercial",
     "maple-sky-dreamtree-studio",
+    "jobe-gutter-services",
   ].map((slug) => ({
     url: `${baseUrl}/portfolio/${slug}`,
     lastModified: "2026-02-01",

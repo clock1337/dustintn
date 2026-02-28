@@ -273,6 +273,42 @@ const projects = {
       "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&h=600&fit=crop"
     ]
+  },
+  "jobe-gutter-services": {
+    id: 7,
+    slug: "jobe-gutter-services",
+    title: "Jobe Gutter Services",
+    category: "Home Services",
+    tagline: "Rain Happens. We Make Sure It Goes Where It's Supposed To.",
+    description: "Jobe Gutter Services LLC is a trusted gutter company serving Southeast Texas with over 15 years of experience and more than 1,000 installations. The website needed to establish their professional reputation, showcase their range of gutter services, and make it easy for homeowners across multiple cities to request free estimates.",
+    heroImage: "/screenshots/jobe-gutter-services.png",
+    logo: "/logos/jobe-gutter-services.png",
+    client: "Jobe Gutter Services LLC",
+    date: "2026",
+    services: ["Web Design", "Development", "SEO Optimization"],
+    website: "jobegutterservices.com",
+    location: "Angleton, TX",
+    challenge: "Jobe Gutter Services needed a professional online presence to match their strong local reputation. They serve 8+ cities across Southeast Texas and needed a site that would rank well in local searches, showcase their completed projects, and convert visitors into estimate requests.",
+    solution: "We built a modern, SEO-optimized website with dedicated service pages, a project photo gallery, customer testimonials, and localized landing content for each service area. The design emphasizes trust signals like their 5-star rating, 15+ years of experience, and full insurance coverage.",
+    features: [
+      "Service area pages for 8+ Southeast Texas cities",
+      "Project photo gallery with completed installations",
+      "Customer testimonial showcase",
+      "Free estimate request forms",
+      "Blog with gutter maintenance tips and guides",
+      "FAQ section addressing common gutter concerns"
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+    results: [
+      { metric: "8+", label: "Cities Served" },
+      { metric: "5.0", label: "Star Rating" },
+      { metric: "1,000+", label: "Installations" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1632178519912-8b0e5d1d2b1f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"
+    ]
   }
 };
 

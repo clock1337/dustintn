@@ -25,6 +25,10 @@ const projectMeta: Record<string, { title: string; description: string }> = {
     title: "Maple Sky Dreamtree Studio — Artist Website & Branding | DustinTN",
     description: "See how we built a complete brand identity and website for fine artist Mike Filippello. Custom logo from a Post-It sketch, art gallery, children's book showcase, and multi-platform shop.",
   },
+  "jobe-gutter-services": {
+    title: "Jobe Gutter Services Website | DustinTN",
+    description: "See how we built a professional gutter services website for Jobe Gutter Services in Southeast Texas. SEO-optimized with service areas, project gallery, and estimate requests.",
+  },
 };
 
 export async function generateMetadata({
