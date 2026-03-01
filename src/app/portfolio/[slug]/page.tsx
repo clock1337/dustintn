@@ -1,59 +1,13 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowLeft, ArrowUpRight, ExternalLink, Calendar, User, Briefcase, Globe, CheckCircle2, MapPin } from "lucide-react";
+import { ArrowRight, ArrowLeft, ExternalLink, Calendar, User, Briefcase, Globe, CheckCircle2, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-// Animated section wrapper
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import AnimatedSection from "@/components/AnimatedSection";
 
 // Project data
 const projects = {
@@ -305,18 +259,21 @@ const projects = {
       { metric: "1,000+", label: "Installations" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1632178519912-8b0e5d1d2b1f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"
+      "/screenshots/jobe-gallery-services.png",
+      "/screenshots/jobe-gallery-about.png",
+      "/screenshots/jobe-gallery-mobile.png"
     ]
   }
 };
 
 type ProjectSlug = keyof typeof projects;
 
-export default function ProjectPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+export function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({ slug }));
+}
+
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const project = projects[slug as ProjectSlug];
 
   // Get adjacent projects for navigation
@@ -326,20 +283,30 @@ export default function ProjectPage() {
   const nextProject = currentIndex < projectSlugs.length - 1 ? projects[projectSlugs[currentIndex + 1] as ProjectSlug] : null;
 
   if (!project) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-semibold mb-4">Project Not Found</h1>
-          <Link href="/portfolio" className="btn-pill btn-pill-primary">
-            Back to Portfolio
-          </Link>
-        </div>
-      </div>
-    );
+    notFound();
   }
+
+  const projectJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.title,
+    description: project.description,
+    url: `https://dustintn.com/portfolio/${slug}`,
+    image: `https://dustintn.com${project.heroImage}`,
+    dateCreated: project.date,
+    creator: {
+      '@type': 'ProfessionalService',
+      name: 'DustinTN',
+      url: 'https://dustintn.com',
+    },
+  };
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       <Navigation currentPage="project" />
 
       <main>
