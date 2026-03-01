@@ -17,42 +17,42 @@ const services = [
     icon: Code2,
     title: "Web Development",
     description: "I build custom websites in Next.js and React — from fitness coaching platforms to healthcare portals. Each one is hand-coded for speed, not pieced together from templates.",
-    image: "/screenshots/fine-assets.png"
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
   },
   {
     slug: "brand-identity",
     icon: Palette,
     title: "Brand Identity",
     description: "I've designed brand systems for hospitality companies, fitness studios, and healthcare practices. Your brand should feel like you — not a stock template with your name on it.",
-    image: "/screenshots/southern-collective-spirit-co.png"
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop"
   },
   {
     slug: "seo-content",
     icon: MessageSquare,
     title: "SEO & Content",
     description: "I helped Pinnacle Wellness go from invisible to filling new patient slots through search. Real SEO is about showing up when your customers are looking — and I know how to make that happen.",
-    image: "/screenshots/pinnacle-health-choice.png"
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=400&fit=crop"
   },
   {
     slug: "web-consulting",
     icon: Users,
     title: "Web Consulting",
     description: "Not sure what your business actually needs online? I've spent 20 years answering that question for real estate firms, restaurants, and service businesses. Let's figure it out together.",
-    image: "/screenshots/coldwell-banker-commercial.png"
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
   },
   {
     slug: "social-media",
     icon: Share2,
     title: "Social Media",
     description: "I manage social media for businesses that need real engagement, not vanity metrics. From Southern Collective's event promotion to fitness studio class signups — posts that actually drive action.",
-    image: "/screenshots/champions-adaptive-fitness.png"
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop"
   },
   {
     slug: "digital-strategy",
     icon: Zap,
     title: "Digital Strategy",
     description: "I connect the dots between your website, SEO, content, and social media into one plan that actually makes sense. No buzzwords — just a clear path from where you are to where you want to be.",
-    image: "/screenshots/jobe-gutter-services.png"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
   }
 ];
 

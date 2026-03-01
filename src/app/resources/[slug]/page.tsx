@@ -426,8 +426,8 @@ function ArticlePage({ slug }: { slug: string }) {
               </div>
 
               {/* Sidebar — Free Consultation + CTA */}
-              <aside className="lg:sticky lg:top-28 lg:self-start space-y-6">
-                <AnimatedSection delay={200}>
+              <aside className="lg:sticky lg:top-28 space-y-6">
+                <div>
                   <div className="bg-black rounded-2xl border border-white/5 overflow-hidden">
                     {/* Sidebar Image */}
                     <div className="aspect-[4/3] relative overflow-hidden">
@@ -506,10 +506,10 @@ function ArticlePage({ slug }: { slug: string }) {
                       </Link>
                     </div>
                   </div>
-                </AnimatedSection>
+                </div>
 
                 {/* Article CTA */}
-                <AnimatedSection delay={300}>
+                <div>
                   <div className="bg-black rounded-2xl border border-white/5 p-6 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-accent/5 rounded-full blur-[80px]"></div>
                     <div className="relative z-10">
@@ -528,7 +528,7 @@ function ArticlePage({ slug }: { slug: string }) {
                       </Link>
                     </div>
                   </div>
-                </AnimatedSection>
+                </div>
               </aside>
             </div>
           </div>

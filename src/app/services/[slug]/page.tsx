@@ -21,7 +21,7 @@ const services = {
       "Every project starts the same way: I learn how your business works, who your customers are, and what you need the website to do. Then I design and build a site around those requirements. The tech stack — Next.js, React, TypeScript, Tailwind CSS — is chosen because it produces fast, SEO-friendly websites that scale as your business grows. I handle everything from initial design to deployment on Vercel or AWS, and I provide ongoing maintenance so the site keeps performing long after launch.",
       "If you're a business in the Nashville area that needs more than a WordPress template — whether that's an e-commerce storefront, a client portal, a membership platform, or just a fast, professional website that converts visitors into customers — that's exactly what I build."
     ],
-    heroImage: "/screenshots/fine-assets.png",
+    heroImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&h=900&fit=crop",
     features: [
       "Custom website design and development",
       "Responsive mobile-first approach",
@@ -58,7 +58,7 @@ const services = {
       "In the age of AI search, brand identity matters more than ever. AI engines like ChatGPT, Perplexity, and Google AI Overviews prioritize brands with clear, consistent identities when generating recommendations. A cohesive visual presence and structured brand information — things like consistent naming, clear service descriptions, and recognizable design elements — sends signals that both human customers and algorithms use when deciding who to trust. I build that clarity into every brand system I create.",
       "A typical brand identity project takes four to six weeks and includes your logo with variations, a complete color palette, typography selection, brand guidelines documentation, social media assets, and business card design. I also include AI-ready brand positioning to ensure your identity performs well across both traditional and AI-powered search channels."
     ],
-    heroImage: "/screenshots/southern-collective-spirit-co.png",
+    heroImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1600&h=900&fit=crop",
     features: [
       "Logo design and variations",
       "Color palette development",
@@ -119,7 +119,7 @@ const services = {
       "Every logo I deliver is built as a scalable vector — meaning it looks sharp whether it's 16 pixels wide in a browser tab or 16 feet wide on a banner. You receive your logo in every format you'll need: SVG and AI files for print, high-resolution PNGs with transparent backgrounds, JPEG versions for web, and favicon versions for your website. I also provide color, monochrome, and reversed versions so your logo works on any background.",
       "A typical logo project takes two to three weeks from kickoff to final delivery, including two rounds of revisions to get every detail right. You own the final design outright — no licensing fees, no usage restrictions. If you already have a logo that needs modernizing, I can assess it and recommend the right level of refresh to bring it up to current standards without losing the equity you've built."
     ],
-    heroImage: "/screenshots/champions-adaptive-fitness.png",
+    heroImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1600&h=900&fit=crop",
     features: [
       "Custom logo design from scratch",
       "Multiple concept directions",
@@ -178,7 +178,7 @@ const services = {
       "My SEO work covers the full spectrum: keyword research and strategy, on-page optimization, technical SEO audits and fixes, content planning and writing, local SEO for Google Maps and Business Profile, and performance tracking with regular reporting. I also offer generative engine optimization (GEO) and AI-powered SEO services for businesses that want to stay ahead as search evolves toward AI-generated answers from ChatGPT, Perplexity, and Google AI Overviews.",
       "SEO is a long-term investment that compounds over time. Most businesses start seeing measurable improvements in three to six months, with results growing stronger as authority builds. Some quick wins — like fixing technical issues or optimizing your Google Business Profile — can show impact much sooner. Whether you need a one-time audit or ongoing monthly SEO management, I'll give you a clear picture of where you stand and a realistic plan for getting where you want to be."
     ],
-    heroImage: "/screenshots/pinnacle-health-choice.png",
+    heroImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1600&h=900&fit=crop",
     features: [
       "Keyword research and strategy",
       "On-page SEO optimization",
@@ -239,7 +239,7 @@ const services = {
       "My consulting covers website strategy and planning, technology stack recommendations, platform selection guidance, digital transformation roadmaps, vendor evaluation, project scoping, and performance and security audits. I also offer training sessions for teams that need to manage their own content or social media more effectively. Whether you need a one-hour strategy session or an ongoing advisory relationship, I work on your terms.",
       "The value of consulting is avoiding expensive mistakes. I've seen businesses spend tens of thousands of dollars on platforms they didn't need, plugins that slowed their site to a crawl, or marketing campaigns that targeted the wrong audience entirely. Twenty years of building for every kind of business — healthcare, fitness, hospitality, real estate, home services — means I've seen most of the pitfalls before. I'd rather help you skip them than rebuild after the fact."
     ],
-    heroImage: "/screenshots/coldwell-banker-commercial.png",
+    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop",
     features: [
       "Website strategy and planning",
       "Technology stack recommendations",
@@ -276,7 +276,7 @@ const services = {
       "Online reputation management is a critical part of social media that most businesses overlook. I monitor your reviews across Google, Yelp, and Facebook, craft professional responses, and build strategies to encourage satisfied customers to leave reviews. For local businesses, a strong review profile is often the deciding factor between a potential customer choosing you or your competitor.",
       "I also run targeted social media advertising when organic reach isn't enough. Facebook and Instagram ads, properly targeted to your service area and customer demographics, can drive measurable results — from website visits and phone calls to in-store traffic and online bookings. Every ad campaign I run includes clear reporting so you know exactly what your spend is producing. No black boxes, no guesswork."
     ],
-    heroImage: "/screenshots/southern-collective-spirit-co.png",
+    heroImage: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1600&h=900&fit=crop",
     features: [
       "Social media strategy development",
       "Facebook page setup and management",
@@ -319,7 +319,7 @@ const services = {
       "My approach starts with a deep dive into your business: who your customers are, how they find you, what your competitors are doing, and where the gaps are. From there, I map out a prioritized roadmap that covers your website, SEO, content marketing, social media, email, and paid advertising — depending on what actually makes sense for your industry and budget. A restaurant in Nashville has very different digital needs than a healthcare practice in Hendersonville or a home services company in Gallatin. The strategy should reflect that.",
       "I also factor in emerging channels like generative engine optimization (GEO) and AI search visibility, because the way people discover businesses is changing. A forward-looking digital strategy accounts for where search and discovery are headed, not just where they are today. Whether you need a full strategic overhaul or just a clear-eyed assessment of what's working and what to prioritize next, I'll give you a roadmap built on twenty years of experience across every type of business."
     ],
-    heroImage: "/screenshots/jobe-gutter-services.png",
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop",
     features: [
       "Digital ecosystem planning",
       "Customer journey mapping",
@@ -356,7 +356,7 @@ const services = {
       "The process starts with an AI search audit: I test how your brand currently appears when people ask AI platforms about your industry and service area. For most local businesses, the answer is alarming — they don't appear at all, or worse, their competitors do. From there, I build a GEO roadmap that targets the specific AI platforms your customers use most. This includes implementing structured data markup, building authority signals that AI engines trust, formatting content for AI citation, and monitoring your visibility across ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot.",
       "GEO works best alongside strong traditional SEO — AI search engines often pull from well-ranked, authoritative sources, so the two strategies reinforce each other. I offer GEO as a standalone service or as part of a comprehensive search strategy that includes traditional SEO and AI-powered SEO tools. The businesses that invest in GEO now will have a significant head start as AI search adoption continues to grow."
     ],
-    heroImage: "/screenshots/pinnacle-health-choice.png",
+    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop",
     features: [
       "AI search engine citation optimization",
       "Structured data and entity markup",
@@ -419,7 +419,7 @@ const services = {
       "My AI SEO workflow combines multiple specialized tools: SurferSEO for content optimization scoring, Clearscope for content intelligence and gap analysis, SEMrush AI features for competitive research, and custom natural language processing analysis for understanding search intent at scale. I also use predictive analytics to forecast which keywords and content investments will produce the best returns over the next six to twelve months, so your SEO budget goes where it will have the most impact.",
       "AI SEO doesn't replace human judgment — it sharpens it. I still make every strategic decision, interpret the data, and write or edit content with a human voice. The AI handles the grunt work: processing massive datasets, scoring content against ranking factors, identifying technical issues across hundreds of URLs, and generating insights that would take weeks to produce manually. Combined with traditional SEO fundamentals and GEO optimization, AI SEO gives your business every advantage in modern search."
     ],
-    heroImage: "/screenshots/fine-assets.png",
+    heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&h=900&fit=crop",
     features: [
       "AI-driven keyword research and clustering",
       "AI content optimization and scoring",
@@ -628,10 +628,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <AnimatedSection>
                 <span className="section-label mb-6 block">Overview</span>
                 <h2 className="text-headline mb-8">What We Offer</h2>
-                <p className="text-white/60 text-lg leading-relaxed mb-6">{service.description}</p>
-                {'overview' in service && (service as { overview: string[] }).overview.map((paragraph: string, index: number) => (
-                  <p key={index} className="text-white/50 leading-relaxed mb-5 last:mb-0">{paragraph}</p>
-                ))}
+                <p className="text-white/60 text-lg leading-relaxed">{service.description}</p>
               </AnimatedSection>
 
               <AnimatedSection delay={200}>
@@ -647,6 +644,25 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
         </section>
+
+        {/* In-Depth Overview */}
+        {'overview' in service && (
+          <section className="py-20 bg-black">
+            <div className="container mx-auto px-6 lg:px-12">
+              <AnimatedSection className="max-w-4xl mx-auto">
+                <span className="section-label mb-6 block">In Depth</span>
+                <h2 className="text-headline mb-10">
+                  A Closer <span className="text-accent">Look</span>
+                </h2>
+                <div className="space-y-6">
+                  {(service as { overview: string[] }).overview.map((paragraph: string, index: number) => (
+                    <p key={index} className="text-white/50 text-lg leading-relaxed">{paragraph}</p>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+        )}
 
         {/* Features */}
         <section className="py-20 bg-black">
