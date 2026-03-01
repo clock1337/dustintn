@@ -330,7 +330,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <h1 className="text-headline">{project.title}</h1>
                 <p className="text-xl text-white/50 max-w-2xl">{project.tagline}</p>
               </div>
-              <div className="flex-shrink-0 lg:self-center">
+              <div className="flex-shrink-0 lg:self-center self-center">
                 <div className="px-8 py-6 bg-white rounded-2xl shadow-xl">
                   <Image
                     src={project.logo}
@@ -410,8 +410,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection delay={400}>
-                <div className="flex items-start gap-4">
+              <AnimatedSection delay={400} className="col-span-2 md:col-span-1">
+                <div className="flex items-start gap-4 justify-center md:justify-start">
                   <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Globe className="w-5 h-5 text-accent" />
                   </div>
