@@ -55,14 +55,13 @@ export default function LogosPage() {
                     className="group block bg-black rounded-2xl overflow-hidden border border-white/5 hover:border-accent/30 transition-all duration-500 h-full"
                   >
                     {/* Image */}
-                    <div className="aspect-square relative overflow-hidden bg-white/5">
+                    <div className="aspect-square relative overflow-hidden bg-dark-gray flex items-center justify-center">
                       <Image
                         src={logo.image}
                         alt={logo.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-contain p-8 transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                       {/* Industry tag */}
                       <div className="absolute top-4 left-4">
