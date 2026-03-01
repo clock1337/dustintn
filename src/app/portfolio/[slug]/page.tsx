@@ -42,9 +42,9 @@ const projects = {
       { metric: "60%", label: "Mobile Traffic" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&h=600&fit=crop"
+      "/screenshots/fine-assets-gallery-1.png",
+      "/screenshots/fine-assets-gallery-2.png",
+      "/screenshots/fine-assets-gallery-3.png"
     ]
   },
   "champions-adaptive-fitness": {
@@ -78,9 +78,9 @@ const projects = {
       { metric: "45%", label: "Reduced Bounce Rate" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&h=600&fit=crop"
+      "/screenshots/champions-gallery-1.png",
+      "/screenshots/champions-gallery-2.png",
+      "/screenshots/champions-gallery-3.png"
     ]
   },
   "pinnacle-health-choice": {
@@ -114,9 +114,9 @@ const projects = {
       { metric: "50%", label: "New Patient Increase" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&h=600&fit=crop"
+      "/screenshots/pinnacle-gallery-1.png",
+      "/screenshots/pinnacle-gallery-2.png",
+      "/screenshots/pinnacle-gallery-3.png"
     ]
   },
   "southern-collective-spirit-co": {
@@ -150,9 +150,9 @@ const projects = {
       { metric: "45%", label: "Return Visitors" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1514218953589-2d7d37efd2dc?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1504675099198-7023dd85f5a3?w=800&h=600&fit=crop"
+      "/screenshots/southern-gallery-1.png",
+      "/screenshots/southern-gallery-2.png",
+      "/screenshots/southern-gallery-3.png"
     ]
   },
   "coldwell-banker-commercial": {
@@ -186,9 +186,9 @@ const projects = {
       { metric: "40%", label: "Lead Conversion" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
+      "/screenshots/coldwell-gallery-1.png",
+      "/screenshots/coldwell-gallery-2.png",
+      "/screenshots/coldwell-gallery-3.png"
     ]
   },
   "maple-sky-dreamtree-studio": {
@@ -223,9 +223,9 @@ const projects = {
       { metric: "150+", label: "Artworks Showcased" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&h=600&fit=crop"
+      "/screenshots/msdt-gallery-1.png",
+      "/screenshots/msdt-gallery-2.png",
+      "/screenshots/msdt-gallery-3.png"
     ]
   },
   "jobe-gutter-services": {
@@ -261,7 +261,7 @@ const projects = {
     gallery: [
       "/screenshots/jobe-gallery-services.png",
       "/screenshots/jobe-gallery-about.png",
-      "/screenshots/jobe-gallery-mobile.png"
+      "/screenshots/jobe-gallery-contact.png"
     ]
   }
 };
