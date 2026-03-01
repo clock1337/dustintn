@@ -82,43 +82,70 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Structured Data for Local Business
+// JSON-LD Structured Data for Local Business + Person Entity
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'DustinTN',
-  description: 'Expert web development, SEO, and digital marketing services in Nashville, Tennessee.',
-  url: 'https://dustintn.com',
-  logo: 'https://dustintn.com/logo.png',
-  image: 'https://dustintn.com/logo.png',
-  telephone: '+1-615-788-2453',
-  email: 'hello@dustintn.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Nashville',
-    addressRegion: 'TN',
-    addressCountry: 'US',
-  },
-  areaServed: [
-    { '@type': 'City', name: 'Nashville', addressRegion: 'TN' },
-    { '@type': 'City', name: 'Hendersonville', addressRegion: 'TN' },
-    { '@type': 'City', name: 'Gallatin', addressRegion: 'TN' },
-    { '@type': 'City', name: 'Goodlettsville', addressRegion: 'TN' },
-    { '@type': 'State', name: 'Tennessee' },
-  ],
-  serviceType: [
-    'Web Development',
-    'Web Design',
-    'SEO Services',
-    'Digital Marketing',
-    'Brand Identity',
-    'Social Media Marketing',
-  ],
-  priceRange: '$$',
-  foundingDate: '2004',
-  sameAs: [
-    'https://twitter.com/dustintn',
-    'https://linkedin.com/company/dustintn',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://dustintn.com/#business',
+      name: 'DustinTN',
+      description: 'Expert web development, SEO, and digital marketing services in Nashville, Tennessee.',
+      url: 'https://dustintn.com',
+      logo: 'https://dustintn.com/logo.png',
+      image: 'https://dustintn.com/logo.png',
+      telephone: '+1-615-788-2453',
+      email: 'hello@dustintn.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Nashville',
+        addressRegion: 'TN',
+        addressCountry: 'US',
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Nashville', addressRegion: 'TN' },
+        { '@type': 'City', name: 'Hendersonville', addressRegion: 'TN' },
+        { '@type': 'City', name: 'Gallatin', addressRegion: 'TN' },
+        { '@type': 'City', name: 'Goodlettsville', addressRegion: 'TN' },
+        { '@type': 'State', name: 'Tennessee' },
+      ],
+      serviceType: [
+        'Web Development',
+        'Web Design',
+        'SEO Services',
+        'Digital Marketing',
+        'Brand Identity',
+        'Social Media Marketing',
+      ],
+      priceRange: '$$',
+      foundingDate: '2004',
+      sameAs: [
+        'https://twitter.com/dustintn',
+        'https://linkedin.com/company/dustintn',
+      ],
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://dustintn.com/#person',
+      name: 'Dustin Smith',
+      jobTitle: 'Web Developer & Digital Marketing Specialist',
+      url: 'https://dustintn.com',
+      worksFor: { '@id': 'https://dustintn.com/#business' },
+      knowsAbout: [
+        'Web Development',
+        'Next.js',
+        'React',
+        'SEO',
+        'Digital Marketing',
+        'Brand Identity',
+        'Generative Engine Optimization',
+        'AI SEO',
+      ],
+      sameAs: [
+        'https://twitter.com/dustintn',
+        'https://linkedin.com/company/dustintn',
+      ],
+    },
   ],
 };
 

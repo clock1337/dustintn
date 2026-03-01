@@ -1,67 +1,27 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft, Code2, Palette, PenTool, MessageSquare, Zap, Users, Share2, CheckCircle2, Facebook, Instagram, Star, Globe, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-// Animated section wrapper
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import AnimatedSection from "@/components/AnimatedSection";
 
 const services = {
   "web-development": {
     slug: "web-development",
     icon: Code2,
     title: "Web Development",
-    tagline: "Custom Websites Built for Performance",
-    description: "We create custom websites and web applications using modern technologies that deliver exceptional performance, security, and user experience. From simple landing pages to complex web applications, we build solutions that grow with your business.",
-    heroImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&h=900&fit=crop",
+    tagline: "I Build Websites That Work as Hard as You Do",
+    description: "Every site I build is hand-coded in Next.js and React — from the Champions Adaptive Fitness coaching platform to the Pinnacle Wellness healthcare portal. No templates, no page builders. Just fast, secure websites built around how your business actually works.",
+    overview: [
+      "Most businesses in Nashville, Hendersonville, and Gallatin end up with a website that was built on a drag-and-drop platform and loaded with third-party plugins. It works for a while, then it slows down, breaks on mobile, or becomes impossible to update without breaking something else. I build the opposite: clean, hand-written code in Next.js and React that loads fast, ranks well in Google, and doesn't require constant babysitting.",
+      "When Fine Assets Personal Training needed a booking platform, I built it from scratch around their actual workflow — not the other way around. Their online bookings tripled within six months. When Pinnacle Wellness needed a healthcare portal that handled appointment scheduling, insurance information, and provider profiles, I built a system that now drives half their new patient appointments. These aren't template stories — they're real results from real Nashville-area businesses.",
+      "Every project starts the same way: I learn how your business works, who your customers are, and what you need the website to do. Then I design and build a site around those requirements. The tech stack — Next.js, React, TypeScript, Tailwind CSS — is chosen because it produces fast, SEO-friendly websites that scale as your business grows. I handle everything from initial design to deployment on Vercel or AWS, and I provide ongoing maintenance so the site keeps performing long after launch.",
+      "If you're a business in the Nashville area that needs more than a WordPress template — whether that's an e-commerce storefront, a client portal, a membership platform, or just a fast, professional website that converts visitors into customers — that's exactly what I build."
+    ],
+    heroImage: "/screenshots/fine-assets.png",
     features: [
       "Custom website design and development",
       "Responsive mobile-first approach",
@@ -90,9 +50,15 @@ const services = {
     slug: "brand-identity",
     icon: Palette,
     title: "Brand Identity",
-    tagline: "Visual Identities That Resonate — Online and in AI",
-    description: "We create distinctive brand identities that capture your essence and connect with your audience. In the age of AI search, strong branding matters more than ever. AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews prioritize brands with clear, authoritative identities when generating recommendations. A cohesive brand identity strengthens your SEO, improves your visibility in AI-generated answers, and builds the kind of digital authority that both humans and algorithms recognize. From logo design to complete brand systems, we help you stand out in a crowded marketplace — in traditional search results, AI-powered discovery, and everywhere in between.",
-    heroImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1600&h=900&fit=crop",
+    tagline: "Your Brand Should Feel Like You, Not a Template",
+    description: "I've built brand systems for Southern Collective Spirit Co., Maple Sky Dreamtree Studio, and healthcare practices that needed to stand out in competitive markets. A strong brand isn't just a logo — it's what makes AI search engines and real humans recognize and trust your business. I design identities that work everywhere: on your website, in social feeds, and in AI-generated recommendations.",
+    overview: [
+      "Brand identity is the difference between a business that blends in and one that people remember. When Southern Collective Spirit Co. needed a visual identity that reflected their Nashville roots and premium spirits, I didn't start with a mood board — I started by understanding their customers, their competitors, and the story they wanted to tell. The result was a complete brand system that works across their website, bottle labels, social media, and event signage.",
+      "The same process applies whether you're a healthcare practice in Hendersonville, a fitness studio in Gallatin, or a restaurant in Nashville. I develop your color palette, typography, logo variations, and brand guidelines from scratch, based on who you are and who you're trying to reach. Every deliverable is designed to work consistently across print, digital, social media, and the growing world of AI-powered search where brand recognition directly affects visibility.",
+      "In the age of AI search, brand identity matters more than ever. AI engines like ChatGPT, Perplexity, and Google AI Overviews prioritize brands with clear, consistent identities when generating recommendations. A cohesive visual presence and structured brand information — things like consistent naming, clear service descriptions, and recognizable design elements — sends signals that both human customers and algorithms use when deciding who to trust. I build that clarity into every brand system I create.",
+      "A typical brand identity project takes four to six weeks and includes your logo with variations, a complete color palette, typography selection, brand guidelines documentation, social media assets, and business card design. I also include AI-ready brand positioning to ensure your identity performs well across both traditional and AI-powered search channels."
+    ],
+    heroImage: "/screenshots/southern-collective-spirit-co.png",
     features: [
       "Logo design and variations",
       "Color palette development",
@@ -145,9 +111,15 @@ const services = {
     slug: "logo-design",
     icon: PenTool,
     title: "Logo Design",
-    tagline: "Custom Logos That Tell Your Story",
-    description: "Your logo is the face of your brand — it is the first thing people see and the last thing they forget. We design custom logos and brand marks that capture the essence of your business, stand out in any context, and work across every medium from business cards to billboards. Every logo we create is built on research, strategy, and a deep understanding of your audience.",
-    heroImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1600&h=900&fit=crop",
+    tagline: "A Mark That Sticks — Not Just Another Icon",
+    description: "I've designed logos for businesses across fitness, hospitality, real estate, and healthcare. Your logo is the first impression and the lasting memory. I design marks that hold up at any size, on any background, and in any context — from a browser tab to a storefront sign. Every logo starts with understanding what your business actually stands for.",
+    overview: [
+      "A logo isn't decoration — it's the single visual element that carries your entire brand. It shows up on your website favicon, your Google Business Profile, your social media accounts, your business cards, and eventually in the minds of your customers when they think of your industry. A well-designed mark earns recognition. A generic one gets forgotten. I approach logo design as a strategic exercise, not an artistic one.",
+      "When I designed the logo for Champions Adaptive Fitness, it needed to convey strength, inclusivity, and professionalism — all in a mark small enough to fit on a coaching jersey. For Maple Sky Dreamtree Studio, the challenge was different: capturing creativity and warmth in a way that felt handcrafted but polished. Each logo I design starts with a discovery session where I learn about your business, your audience, and your competitors. From there, I develop three to four distinct concept directions so you have real options to choose from.",
+      "Every logo I deliver is built as a scalable vector — meaning it looks sharp whether it's 16 pixels wide in a browser tab or 16 feet wide on a banner. You receive your logo in every format you'll need: SVG and AI files for print, high-resolution PNGs with transparent backgrounds, JPEG versions for web, and favicon versions for your website. I also provide color, monochrome, and reversed versions so your logo works on any background.",
+      "A typical logo project takes two to three weeks from kickoff to final delivery, including two rounds of revisions to get every detail right. You own the final design outright — no licensing fees, no usage restrictions. If you already have a logo that needs modernizing, I can assess it and recommend the right level of refresh to bring it up to current standards without losing the equity you've built."
+    ],
+    heroImage: "/screenshots/champions-adaptive-fitness.png",
     features: [
       "Custom logo design from scratch",
       "Multiple concept directions",
@@ -198,9 +170,15 @@ const services = {
     slug: "seo-content",
     icon: MessageSquare,
     title: "SEO & Content",
-    tagline: "Get Found Online",
-    description: "We help your business get discovered through strategic search engine optimization and compelling content. Our data-driven approach ensures your website ranks for the keywords that matter most — in traditional search results, AI-powered answers, and everywhere in between. We also offer specialized generative engine optimization (GEO) and AI SEO services to help you stay ahead as search evolves.",
-    heroImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1600&h=900&fit=crop",
+    tagline: "Show Up Where Your Customers Are Looking",
+    description: "I helped Pinnacle Wellness go from nearly invisible online to filling half their new patient appointments through search. Good SEO isn't about gaming an algorithm — it's about making sure the right people find you when they're ready to buy. I handle keyword strategy, content, technical SEO, and the newer AI search optimization (GEO) so you show up everywhere that matters.",
+    overview: [
+      "Search engine optimization is the foundation of being found online, and it's where most small businesses in Nashville, Hendersonville, and Gallatin are leaving the most money on the table. A beautiful website that nobody can find is just a digital brochure sitting in a drawer. I build SEO into the structure of your site from day one — from the technical markup and page speed to the keywords you target and the content that brings people in.",
+      "When Pinnacle Wellness came to me, they had a professional-looking website but almost zero organic search traffic. Their competitors in the Hendersonville healthcare space were outranking them for every relevant search term. I ran a full SEO audit, rebuilt their on-page optimization, created a keyword-driven content strategy, and optimized their Google Business Profile. Within six months, they were filling half their new patient appointments through organic search. That's the kind of outcome I work toward — not just higher rankings, but actual business results.",
+      "My SEO work covers the full spectrum: keyword research and strategy, on-page optimization, technical SEO audits and fixes, content planning and writing, local SEO for Google Maps and Business Profile, and performance tracking with regular reporting. I also offer generative engine optimization (GEO) and AI-powered SEO services for businesses that want to stay ahead as search evolves toward AI-generated answers from ChatGPT, Perplexity, and Google AI Overviews.",
+      "SEO is a long-term investment that compounds over time. Most businesses start seeing measurable improvements in three to six months, with results growing stronger as authority builds. Some quick wins — like fixing technical issues or optimizing your Google Business Profile — can show impact much sooner. Whether you need a one-time audit or ongoing monthly SEO management, I'll give you a clear picture of where you stand and a realistic plan for getting where you want to be."
+    ],
+    heroImage: "/screenshots/pinnacle-health-choice.png",
     features: [
       "Keyword research and strategy",
       "On-page SEO optimization",
@@ -253,9 +231,15 @@ const services = {
     slug: "web-consulting",
     icon: Users,
     title: "Web Consulting",
-    tagline: "Expert Guidance for Digital Success",
-    description: "Navigate the complex world of web technology with confidence. Our consulting services help you make informed decisions about your digital strategy, technology stack, and online presence to achieve your business objectives.",
-    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop",
+    tagline: "Straight Answers From Someone Who's Built It All",
+    description: "After 20 years building websites for real estate firms, healthcare practices, restaurants, and service businesses, I've seen what works and what doesn't. If you're not sure what your business needs online — or you're worried you're paying for the wrong things — I'll give you an honest assessment and a clear plan forward. No jargon, no upsell.",
+    overview: [
+      "Most business owners in Nashville and the surrounding area know they need a better online presence, but they're not sure where to start — or whether the advice they're getting from agencies and vendors is actually sound. That's where consulting comes in. I sit down with you, look at what you have, and tell you what's working, what's not, and what you should prioritize with your budget. Sometimes that means you need a new website. Sometimes it means your current site just needs a few fixes and better SEO. I'll tell you the truth either way.",
+      "When Coldwell Banker Commercial came to me, they had an outdated site on an expensive platform they'd outgrown. I evaluated their options, recommended a modern tech stack that would cut their hosting costs and improve load times, and laid out a migration plan that minimized downtime. For a fitness studio in Nashville, consulting meant something completely different — they needed guidance on which booking platform to integrate and how to structure their membership tiers online. The advice is always tailored to the business.",
+      "My consulting covers website strategy and planning, technology stack recommendations, platform selection guidance, digital transformation roadmaps, vendor evaluation, project scoping, and performance and security audits. I also offer training sessions for teams that need to manage their own content or social media more effectively. Whether you need a one-hour strategy session or an ongoing advisory relationship, I work on your terms.",
+      "The value of consulting is avoiding expensive mistakes. I've seen businesses spend tens of thousands of dollars on platforms they didn't need, plugins that slowed their site to a crawl, or marketing campaigns that targeted the wrong audience entirely. Twenty years of building for every kind of business — healthcare, fitness, hospitality, real estate, home services — means I've seen most of the pitfalls before. I'd rather help you skip them than rebuild after the fact."
+    ],
+    heroImage: "/screenshots/coldwell-banker-commercial.png",
     features: [
       "Website strategy and planning",
       "Technology stack recommendations",
@@ -284,9 +268,15 @@ const services = {
     slug: "social-media",
     icon: Share2,
     title: "Social Media",
-    tagline: "Engage Your Audience Everywhere",
-    description: "Build a powerful social presence across Facebook, Instagram, Yelp, Google, and more. We help you connect with your audience, manage your online reputation, and turn followers into customers through strategic social media management.",
-    heroImage: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1600&h=900&fit=crop",
+    tagline: "Posts That Drive Action, Not Just Likes",
+    description: "I manage social media for businesses that need real results — not vanity metrics. From promoting Southern Collective's tasting events to driving class signups for Champions Adaptive Fitness, I build content calendars that connect your social presence to actual business outcomes. Reviews, reputation management, and advertising are all part of the package.",
+    overview: [
+      "Social media management for small businesses is often done poorly — random posts when someone remembers, no connection to business goals, and no idea whether any of it is working. I take a different approach. Every social media strategy I build starts with one question: what do you want people to do after they see your content? For Southern Collective Spirit Co., the answer was event attendance and bottle reservations. For Champions Adaptive Fitness, it was class signups and community building. The content calendar, platforms, and posting schedule all flow from that answer.",
+      "I manage your presence across Facebook, Instagram, Google Business Profile, and Yelp — creating consistent, branded content that speaks directly to your target audience in Nashville, Hendersonville, Gallatin, and beyond. This includes writing posts, designing graphics, scheduling content, responding to comments, and monitoring reviews. I also handle your Google Business Profile optimization, which is one of the single highest-impact things you can do for local search visibility.",
+      "Online reputation management is a critical part of social media that most businesses overlook. I monitor your reviews across Google, Yelp, and Facebook, craft professional responses, and build strategies to encourage satisfied customers to leave reviews. For local businesses, a strong review profile is often the deciding factor between a potential customer choosing you or your competitor.",
+      "I also run targeted social media advertising when organic reach isn't enough. Facebook and Instagram ads, properly targeted to your service area and customer demographics, can drive measurable results — from website visits and phone calls to in-store traffic and online bookings. Every ad campaign I run includes clear reporting so you know exactly what your spend is producing. No black boxes, no guesswork."
+    ],
+    heroImage: "/screenshots/southern-collective-spirit-co.png",
     features: [
       "Social media strategy development",
       "Facebook page setup and management",
@@ -321,9 +311,15 @@ const services = {
     slug: "digital-strategy",
     icon: Zap,
     title: "Digital Strategy",
-    tagline: "Roadmaps for Digital Growth",
-    description: "Align your digital presence with your business goals through comprehensive strategy development. We help you create a cohesive digital ecosystem that drives growth, improves efficiency, and delivers measurable results.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop",
+    tagline: "A Plan That Connects the Dots",
+    description: "Most businesses have a website, some social media, maybe a few blog posts — but none of it is connected. I bring it all together into one strategy that makes sense: your website feeds your SEO, your content drives social, and everything points toward the same goal. I've built these roadmaps for Coldwell Banker Commercial, Fine Assets, and businesses across Nashville.",
+    overview: [
+      "Digital strategy is where the big picture comes together. Most small businesses in the Nashville area end up with a patchwork of digital tools — a website from one vendor, social media managed by an intern, SEO from a third party, and no clear picture of whether any of it is driving revenue. I build a cohesive digital strategy that connects every piece of your online presence into one plan with clear priorities and measurable goals.",
+      "When I built the digital strategy for Fine Assets Personal Training, it wasn't just about a nice website. The website needed to drive booking conversions, the blog content needed to rank for fitness-related search terms in Nashville, the social media needed to showcase real client transformations, and all of it needed to feed into a consistent brand message. The result was a 3x increase in online bookings. That's what a real digital strategy produces — not just activity, but outcomes.",
+      "My approach starts with a deep dive into your business: who your customers are, how they find you, what your competitors are doing, and where the gaps are. From there, I map out a prioritized roadmap that covers your website, SEO, content marketing, social media, email, and paid advertising — depending on what actually makes sense for your industry and budget. A restaurant in Nashville has very different digital needs than a healthcare practice in Hendersonville or a home services company in Gallatin. The strategy should reflect that.",
+      "I also factor in emerging channels like generative engine optimization (GEO) and AI search visibility, because the way people discover businesses is changing. A forward-looking digital strategy accounts for where search and discovery are headed, not just where they are today. Whether you need a full strategic overhaul or just a clear-eyed assessment of what's working and what to prioritize next, I'll give you a roadmap built on twenty years of experience across every type of business."
+    ],
+    heroImage: "/screenshots/jobe-gutter-services.png",
     features: [
       "Digital ecosystem planning",
       "Customer journey mapping",
@@ -352,9 +348,15 @@ const services = {
     slug: "geo-optimization",
     icon: Globe,
     title: "Generative Engine Optimization",
-    tagline: "Get Cited by AI Search Engines",
-    description: "AI-powered search engines like ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot are changing how people find businesses. Generative engine optimization (GEO) ensures your brand is cited, recommended, and visible in these AI-generated answers — not just traditional search results. GEO works alongside traditional SEO and AI SEO to create a comprehensive search presence that covers every way your customers discover you.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop",
+    tagline: "Be the Answer When AI Does the Searching",
+    description: "People are asking ChatGPT, Perplexity, and Google AI for recommendations instead of scrolling through search results. If your business isn't showing up in those AI-generated answers, you're invisible to a growing share of your market. I optimize your content, structured data, and authority signals so AI engines cite and recommend your business — the same approach I use for my own clients across healthcare, fitness, and hospitality.",
+    overview: [
+      "Generative engine optimization is the next evolution of search visibility. Right now, a growing number of people are skipping Google entirely — they're asking ChatGPT, Perplexity, or Google AI Overviews to recommend a web developer in Nashville, find the best fitness studio in Hendersonville, or suggest a healthcare provider in Gallatin. If your business isn't structured in a way that AI engines can parse, trust, and cite, you simply won't appear in those answers. GEO changes that.",
+      "GEO is different from traditional SEO because AI search engines don't return a list of links — they generate a direct answer and cite sources. Getting cited requires a combination of structured data (Schema.org and JSON-LD markup), strong entity authority (consistent naming, clear service descriptions, credible backlinks), and content formatted in ways that AI models can easily understand and reference. I've implemented these strategies across my own client sites — from healthcare portals to hospitality businesses — and I use the same techniques to ensure they show up in AI-generated recommendations.",
+      "The process starts with an AI search audit: I test how your brand currently appears when people ask AI platforms about your industry and service area. For most local businesses, the answer is alarming — they don't appear at all, or worse, their competitors do. From there, I build a GEO roadmap that targets the specific AI platforms your customers use most. This includes implementing structured data markup, building authority signals that AI engines trust, formatting content for AI citation, and monitoring your visibility across ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot.",
+      "GEO works best alongside strong traditional SEO — AI search engines often pull from well-ranked, authoritative sources, so the two strategies reinforce each other. I offer GEO as a standalone service or as part of a comprehensive search strategy that includes traditional SEO and AI-powered SEO tools. The businesses that invest in GEO now will have a significant head start as AI search adoption continues to grow."
+    ],
+    heroImage: "/screenshots/pinnacle-health-choice.png",
     features: [
       "AI search engine citation optimization",
       "Structured data and entity markup",
@@ -409,9 +411,15 @@ const services = {
     slug: "ai-seo",
     icon: BrainCircuit,
     title: "AI SEO",
-    tagline: "Supercharge SEO with Artificial Intelligence",
-    description: "Artificial intelligence is transforming how we approach search engine optimization. Our AI SEO services use cutting-edge AI tools to accelerate keyword research, optimize content at scale, predict ranking opportunities, and automate technical audits — delivering faster results with greater precision. Combined with our traditional SEO & Content and GEO services, AI SEO gives your business every advantage in modern search.",
-    heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&h=900&fit=crop",
+    tagline: "Smarter SEO, Not Harder SEO",
+    description: "I use AI tools to do in hours what used to take weeks — keyword research, content gap analysis, technical audits, and ranking predictions. This isn't about replacing strategy with automation. It's about giving your SEO sharper data and faster execution. The same AI-powered approach helped me identify content opportunities for Pinnacle Wellness and Fine Assets that manual research would have missed.",
+    overview: [
+      "AI-powered SEO is about using artificial intelligence as a force multiplier for search engine optimization. The fundamentals of SEO haven't changed — you still need strong content, solid technical foundations, and real authority. What's changed is how fast and precisely we can execute. AI tools let me run keyword research across thousands of variations in minutes, identify content gaps your competitors are exploiting, audit hundreds of pages for technical issues simultaneously, and predict which ranking opportunities will deliver the most traffic.",
+      "When I worked on the SEO strategy for Pinnacle Wellness, AI-powered analysis identified a cluster of long-tail healthcare keywords that manual research had completely missed. These were specific questions patients in Hendersonville were actually searching for — things traditional keyword tools ranked too low to surface. By creating targeted content around those queries, we captured traffic that was both highly relevant and low competition. The same approach helped Fine Assets identify untapped fitness content topics in the Nashville market.",
+      "My AI SEO workflow combines multiple specialized tools: SurferSEO for content optimization scoring, Clearscope for content intelligence and gap analysis, SEMrush AI features for competitive research, and custom natural language processing analysis for understanding search intent at scale. I also use predictive analytics to forecast which keywords and content investments will produce the best returns over the next six to twelve months, so your SEO budget goes where it will have the most impact.",
+      "AI SEO doesn't replace human judgment — it sharpens it. I still make every strategic decision, interpret the data, and write or edit content with a human voice. The AI handles the grunt work: processing massive datasets, scoring content against ranking factors, identifying technical issues across hundreds of URLs, and generating insights that would take weeks to produce manually. Combined with traditional SEO fundamentals and GEO optimization, AI SEO gives your business every advantage in modern search."
+    ],
+    heroImage: "/screenshots/fine-assets.png",
     features: [
       "AI-driven keyword research and clustering",
       "AI content optimization and scoring",
@@ -466,29 +474,23 @@ const services = {
 
 type ServiceSlug = keyof typeof services;
 
-export default function ServicePage() {
-  const params = useParams();
-  const slug = params.slug as string;
+export function generateStaticParams() {
+  return Object.keys(services).map((slug) => ({ slug }));
+}
+
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const service = services[slug as ServiceSlug];
+
+  if (!service) {
+    notFound();
+  }
 
   // Get adjacent services for navigation
   const serviceSlugs = Object.keys(services);
   const currentIndex = serviceSlugs.indexOf(slug);
   const prevService = currentIndex > 0 ? services[serviceSlugs[currentIndex - 1] as ServiceSlug] : null;
   const nextService = currentIndex < serviceSlugs.length - 1 ? services[serviceSlugs[currentIndex + 1] as ServiceSlug] : null;
-
-  if (!service) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-semibold mb-4">Service Not Found</h1>
-          <Link href="/#services" className="btn-pill btn-pill-primary">
-            View All Services
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   const ServiceIcon = service.icon;
 
@@ -505,8 +507,31 @@ export default function ServicePage() {
     })),
   } : null;
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.description,
+    url: `https://dustintn.com/services/${slug}`,
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'DustinTN',
+      url: 'https://dustintn.com',
+      telephone: '+1-615-788-2453',
+      areaServed: [
+        { '@type': 'City', name: 'Nashville', addressRegion: 'TN' },
+        { '@type': 'City', name: 'Hendersonville', addressRegion: 'TN' },
+        { '@type': 'City', name: 'Gallatin', addressRegion: 'TN' },
+      ],
+    },
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {faqJsonLd && (
         <script
           type="application/ld+json"
@@ -599,11 +624,14 @@ export default function ServicePage() {
         {/* Description */}
         <section className="py-20 bg-dark-gray">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
               <AnimatedSection>
                 <span className="section-label mb-6 block">Overview</span>
                 <h2 className="text-headline mb-8">What We Offer</h2>
-                <p className="text-white/60 text-lg leading-relaxed">{service.description}</p>
+                <p className="text-white/60 text-lg leading-relaxed mb-6">{service.description}</p>
+                {'overview' in service && (service as { overview: string[] }).overview.map((paragraph: string, index: number) => (
+                  <p key={index} className="text-white/50 leading-relaxed mb-5 last:mb-0">{paragraph}</p>
+                ))}
               </AnimatedSection>
 
               <AnimatedSection delay={200}>
@@ -624,7 +652,7 @@ export default function ServicePage() {
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection className="text-center mb-16">
-              <span className="section-label mb-6 inline-flex justify-center">What's Included</span>
+              <span className="section-label mb-6 inline-flex justify-center">What&apos;s Included</span>
               <h2 className="text-headline">Service Features</h2>
             </AnimatedSection>
 
@@ -742,7 +770,7 @@ export default function ServicePage() {
             <AnimatedSection className="text-center max-w-2xl mx-auto">
               <h2 className="text-headline mb-6">Ready to Get Started?</h2>
               <p className="text-white/50 text-lg mb-10">
-                Let's discuss how our {service.title.toLowerCase()} services can help your business grow.
+                Let&apos;s discuss how our {service.title.toLowerCase()} services can help your business grow.
               </p>
               <Link href="/#contact" className="btn-pill btn-pill-primary group">
                 Start Your Project

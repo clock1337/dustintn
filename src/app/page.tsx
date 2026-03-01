@@ -1,6 +1,3 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowUpRight, Code2, Palette, MessageSquare, Zap, Mail, Phone, MapPin, Play, Users, Share2, Video, Clock, CheckCircle2, Globe, Search, Wrench, Calendar, HelpCircle, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,116 +6,53 @@ import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-// Animated section wrapper
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-// Staggered children animation
-function StaggeredContainer({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div ref={ref} className={className}>
-      {Array.isArray(children) ? children.map((child, index) => (
-        <div
-          key={index}
-          className="transition-all duration-700 ease-out"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
-            transitionDelay: `${index * 100}ms`
-          }}
-        >
-          {child}
-        </div>
-      )) : children}
-    </div>
-  );
-}
+import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import ContactForm from "@/components/ContactForm";
 
 const services = [
   {
     slug: "web-development",
     icon: Code2,
     title: "Web Development",
-    description: "Custom websites and web applications built with modern technologies for optimal performance.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
+    description: "I build custom websites in Next.js and React — from fitness coaching platforms to healthcare portals. Each one is hand-coded for speed, not pieced together from templates.",
+    image: "/screenshots/fine-assets.png"
   },
   {
     slug: "brand-identity",
     icon: Palette,
     title: "Brand Identity",
-    description: "Distinctive visual identities that capture your essence and resonate with your audience.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop"
+    description: "I've designed brand systems for hospitality companies, fitness studios, and healthcare practices. Your brand should feel like you — not a stock template with your name on it.",
+    image: "/screenshots/southern-collective-spirit-co.png"
   },
   {
     slug: "seo-content",
     icon: MessageSquare,
     title: "SEO & Content",
-    description: "Strategic optimization and content that helps your business get found online.",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=400&fit=crop"
+    description: "I helped Pinnacle Wellness go from invisible to filling new patient slots through search. Real SEO is about showing up when your customers are looking — and I know how to make that happen.",
+    image: "/screenshots/pinnacle-health-choice.png"
   },
   {
     slug: "web-consulting",
     icon: Users,
     title: "Web Consulting",
-    description: "Expert guidance on website strategy, technology decisions, and digital transformation for your business.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+    description: "Not sure what your business actually needs online? I've spent 20 years answering that question for real estate firms, restaurants, and service businesses. Let's figure it out together.",
+    image: "/screenshots/coldwell-banker-commercial.png"
   },
   {
     slug: "social-media",
     icon: Share2,
     title: "Social Media",
-    description: "Strategic social media management that builds community and drives meaningful engagement with your audience.",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop"
+    description: "I manage social media for businesses that need real engagement, not vanity metrics. From Southern Collective's event promotion to fitness studio class signups — posts that actually drive action.",
+    image: "/screenshots/champions-adaptive-fitness.png"
   },
   {
     slug: "digital-strategy",
     icon: Zap,
     title: "Digital Strategy",
-    description: "Data-driven digital strategies that align your online presence with your business goals for measurable growth.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+    description: "I connect the dots between your website, SEO, content, and social media into one plan that actually makes sense. No buzzwords — just a clear path from where you are to where you want to be.",
+    image: "/screenshots/jobe-gutter-services.png"
   }
 ];
 
@@ -140,108 +74,52 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "Working with DustinTN transformed our online presence. Their attention to detail and understanding of our needs exceeded expectations.",
-    author: "Sarah Mitchell",
-    role: "CEO, HealthFirst Clinic",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+    quote: "Since launching the new site, our online bookings have tripled. Dustin built exactly what we needed — a fast, clean platform that converts visitors into paying clients.",
+    author: "Fine Assets Personal Training",
+    role: "Fitness & Coaching — Nashville, TN",
+    image: "/logos/fine-assets-logo.png"
   },
   {
-    quote: "Professional, responsive, and incredibly talented. They delivered a website that perfectly represents our brand.",
-    author: "Michael Chen",
-    role: "Owner, Chen's Kitchen",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+    quote: "We went from almost zero online visibility to filling half our new patient slots through the website. The whole process was straightforward and the results speak for themselves.",
+    author: "Pinnacle Wellness",
+    role: "Healthcare — Hendersonville, TN",
+    image: "/logos/pinnacle-health-choice.png"
   },
   {
-    quote: "The best investment we made for our business. Our new site has significantly increased our client inquiries.",
-    author: "Jennifer Adams",
-    role: "Partner, Adams Law Group",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+    quote: "85% of our bookings now come through the website. Dustin understood our brand from day one and built something that actually works for our business — not just looks pretty.",
+    author: "Southern Collective Spirit Co.",
+    role: "Hospitality — Nashville, TN",
+    image: "/logos/southern-collective-spirit-co.png"
   }
 ];
 
-// Counter animation component
-function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const { ref, isVisible } = useScrollAnimation(0.5);
-
-  useEffect(() => {
-    if (isVisible) {
-      const duration = 2000;
-      const steps = 60;
-      const increment = value / steps;
-      let current = 0;
-
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          setCount(value);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current));
-        }
-      }, duration / steps);
-
-      return () => clearInterval(timer);
-    }
-  }, [isVisible, value]);
-
-  return (
-    <span ref={ref}>
-      {count}<span className="text-accent">{suffix}</span>
-    </span>
-  );
-}
+const reviewJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://dustintn.com/#business',
+  name: 'DustinTN',
+  review: testimonials.map((t) => ({
+    '@type': 'Review',
+    reviewBody: t.quote,
+    author: {
+      '@type': 'Organization',
+      name: t.author,
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: 5,
+      bestRating: 5,
+    },
+  })),
+};
 
 export default function Home() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [contactForm, setContactForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [contactSubmitting, setContactSubmitting] = useState(false);
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [contactError, setContactError] = useState('');
-
-  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setContactForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleContactSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setContactSubmitting(true);
-    setContactError('');
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: contactForm.name,
-          email: contactForm.email,
-          message: `[Subject: ${contactForm.subject || 'N/A'}]\n\n${contactForm.message}`,
-        }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      setContactSubmitted(true);
-    } catch (err) {
-      setContactError(err instanceof Error ? err.message : 'Failed to send. Please try again.');
-    } finally {
-      setContactSubmitting(false);
-    }
-  };
-
-  // Auto-rotate testimonials
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+      />
       <Navigation currentPage="home" />
 
       <main>
@@ -637,54 +515,7 @@ export default function Home() {
               </h2>
             </AnimatedSection>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="relative">
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className={`transition-all duration-500 ${
-                      index === activeTestimonial
-                        ? 'opacity-100 translate-y-0'
-                        : 'opacity-0 translate-y-8 absolute inset-0'
-                    }`}
-                  >
-                    <blockquote className="text-center">
-                      <p className="text-2xl lg:text-3xl font-light leading-relaxed mb-8 text-white/80">
-                        "{testimonial.quote}"
-                      </p>
-                      <div className="flex items-center justify-center gap-4">
-                        <div className="w-14 h-14 rounded-full overflow-hidden">
-                          <Image
-                            src={testimonial.image}
-                            alt={testimonial.author}
-                            width={56}
-                            height={56}
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="text-left">
-                          <div className="font-semibold">{testimonial.author}</div>
-                          <div className="text-sm text-white/40">{testimonial.role}</div>
-                        </div>
-                      </div>
-                    </blockquote>
-                  </div>
-                ))}
-              </div>
-
-              {/* Dots */}
-              <div className="flex justify-center gap-2 mt-12">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveTestimonial(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === activeTestimonial ? 'bg-accent w-8' : 'bg-white/20 hover:bg-white/40'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+            <TestimonialCarousel testimonials={testimonials} />
           </div>
         </section>
 
@@ -762,98 +593,7 @@ export default function Home() {
               </AnimatedSection>
 
               <AnimatedSection delay={200}>
-                {contactSubmitted ? (
-                  <div className="bg-dark-gray p-8 lg:p-10 rounded-2xl text-center py-16">
-                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 className="w-10 h-10 text-accent" />
-                    </div>
-                    <h3 className="text-2xl font-semibold mb-4">Message Sent!</h3>
-                    <p className="text-white/50 mb-8">Thank you for reaching out. We'll be in touch soon.</p>
-                    <button
-                      onClick={() => {
-                        setContactSubmitted(false);
-                        setContactForm({ name: '', email: '', subject: '', message: '' });
-                      }}
-                      className="btn-pill btn-pill-outline"
-                    >
-                      Send Another Message
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleContactSubmit} className="space-y-6 bg-dark-gray p-8 lg:p-10 rounded-2xl">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <label className="text-xs text-white/40 uppercase tracking-wider mb-2 block">Name *</label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={contactForm.name}
-                          onChange={handleContactChange}
-                          required
-                          placeholder="John Doe"
-                          className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white placeholder:text-white/20 focus:border-accent focus:outline-none transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-xs text-white/40 uppercase tracking-wider mb-2 block">Email *</label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={contactForm.email}
-                          onChange={handleContactChange}
-                          required
-                          placeholder="john@example.com"
-                          className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white placeholder:text-white/20 focus:border-accent focus:outline-none transition-colors"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-xs text-white/40 uppercase tracking-wider mb-2 block">Subject</label>
-                      <input
-                        type="text"
-                        name="subject"
-                        value={contactForm.subject}
-                        onChange={handleContactChange}
-                        placeholder="Project inquiry"
-                        className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white placeholder:text-white/20 focus:border-accent focus:outline-none transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-xs text-white/40 uppercase tracking-wider mb-2 block">Message *</label>
-                      <textarea
-                        name="message"
-                        value={contactForm.message}
-                        onChange={handleContactChange}
-                        required
-                        rows={4}
-                        placeholder="Tell us about your project..."
-                        className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white placeholder:text-white/20 focus:border-accent focus:outline-none transition-colors resize-none"
-                      />
-                    </div>
-
-                    {contactError && (
-                      <p className="text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-xl px-4 py-3">{contactError}</p>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={contactSubmitting}
-                      className="btn-pill btn-pill-primary w-full justify-center mt-4 group"
-                    >
-                      {contactSubmitting ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          Send Message
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </>
-                      )}
-                    </button>
-                  </form>
-                )}
+                <ContactForm />
               </AnimatedSection>
             </div>
           </div>

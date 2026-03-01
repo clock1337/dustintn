@@ -1,58 +1,11 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowUpRight, ExternalLink, MapPin } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
-import ScrollingScreenshot from "@/components/ScrollingScreenshot";
 import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-// Animated section wrapper
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import AnimatedSection from "@/components/AnimatedSection";
+import PortfolioFilter from "@/components/PortfolioFilter";
 
 const projects = [
   {
@@ -141,15 +94,7 @@ const projects = [
   }
 ];
 
-const categories = ["All", "Web Development", "Healthcare", "Hospitality", "Real Estate", "Branding", "Home Services"];
-
 export default function PortfolioPage() {
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const filteredProjects = activeFilter === "All"
-    ? projects
-    : projects.filter(p => p.category === activeFilter);
-
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navigation currentPage="portfolio" />
@@ -174,103 +119,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        {/* Filter Section */}
-        <section className="py-8 bg-black border-y border-white/5">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveFilter(category)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeFilter === category
-                      ? 'bg-accent text-white'
-                      : 'bg-dark-gray text-white/60 hover:text-white hover:bg-dark-gray/80'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Portfolio Grid */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="space-y-24">
-              {filteredProjects.map((project, index) => (
-                <AnimatedSection key={project.id} delay={index * 100}>
-                  <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                    {/* Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <Link href={`/portfolio/${project.slug}`} className="block">
-                        <ScrollingScreenshot
-                          src={project.image}
-                          alt={project.title}
-                        />
-                      </Link>
-                    </div>
-
-                    {/* Content */}
-                    <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                      <span className="text-accent text-sm font-medium uppercase tracking-wider mb-4 block">
-                        {project.category}
-                      </span>
-                      <h2 className="text-3xl lg:text-4xl font-semibold mb-6">
-                        <Link href={`/portfolio/${project.slug}`} className="hover:text-accent transition-colors">
-                          {project.title}
-                        </Link>
-                      </h2>
-                      <p className="text-white/50 text-lg leading-relaxed mb-8">
-                        {project.description}
-                      </p>
-
-                      {/* Meta */}
-                      <div className="space-y-4 mb-8">
-                        <div className="flex items-center gap-4">
-                          <span className="text-white/40 text-sm w-24">Client</span>
-                          <span className="text-white/80">{project.client}</span>
-                        </div>
-                        <div className="flex items-center gap-4">
-                          <span className="text-white/40 text-sm w-24">Location</span>
-                          <span className="text-white/80 flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-accent" />
-                            {project.location}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-4">
-                          <span className="text-white/40 text-sm w-24">Services</span>
-                          <span className="text-white/80">{project.services.join(", ")}</span>
-                        </div>
-                        <div className="flex items-center gap-4">
-                          <span className="text-white/40 text-sm w-24">Website</span>
-                          <a
-                            href={`https://${project.website}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-accent hover:underline flex items-center gap-2"
-                          >
-                            {project.website}
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </div>
-                      </div>
-
-                      <Link
-                        href={`/portfolio/${project.slug}`}
-                        className="btn-pill btn-pill-outline group inline-flex"
-                      >
-                        View Project
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PortfolioFilter projects={projects} />
 
         {/* CTA Section */}
         <section className="py-32 bg-dark-gray relative overflow-hidden">

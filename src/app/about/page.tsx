@@ -1,6 +1,3 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
 import { ArrowRight, CheckCircle2, Target, Heart, Zap, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,50 +5,7 @@ import Navigation from "@/components/Navigation";
 import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-// Animated section wrapper
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import AnimatedSection from "@/components/AnimatedSection";
 
 const values = [
   {
@@ -90,7 +44,7 @@ const timeline = [
   { year: "2021", title: "New Chapter", description: "Relocated to Nashville, Tennessee and launched CBC SoCal Group's website, bringing two decades of west-coast digital experience to new markets." },
   { year: "2022", title: "Nashville Roots", description: "Built The Southern Collective's website, establishing a strong foothold in the Nashville business community." },
   { year: "2025", title: "Expanding Impact", description: "Launched the Champions Adaptive Fitness website, continuing to help purpose-driven businesses grow online." },
-  { year: "2026", title: "Today", description: "Continuing to deliver cutting-edge solutions for businesses across Nashville and beyond." }
+  { year: "2026", title: "Today", description: "Building websites and digital strategies for businesses across Nashville, Hendersonville, Gallatin, and beyond." }
 ];
 
 const stats = [
@@ -147,18 +101,22 @@ export default function AboutPage() {
                   My <span className="text-accent">Story</span>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-6">
-                  I started building websites in 2004 in Southern California with a simple goal: help local businesses get online and grow.
-                  What began as a passion project quickly turned into a career as I saw firsthand how a strong digital
-                  presence could transform a small business. In 2021, I brought that experience to Nashville, Tennessee.
+                  I started building websites in 2004 in Southern California with a simple goal: help local businesses
+                  get online and grow. What began as a passion project quickly turned into a career when I saw firsthand
+                  how a strong digital presence could transform a small business. In 2021, I brought that experience to
+                  Nashville, Tennessee.
                 </p>
                 <p className="text-white/60 leading-relaxed mb-6">
-                  Over the years, I&apos;ve worked with healthcare providers, fitness studios, restaurants, real estate
-                  professionals, and countless other businesses across Nashville and the surrounding areas. Each
-                  project has taught me something new and strengthened my commitment to delivering exceptional results.
+                  Since then, I&apos;ve built the online presence for Pinnacle Wellness in Hendersonville, designed
+                  the brand and website for Southern Collective Spirit Co. in Nashville, launched the Champions
+                  Adaptive Fitness coaching platform, and helped Fine Assets Personal Training triple their online
+                  bookings. I&apos;ve also worked with Coldwell Banker Commercial on their Southeast regional site
+                  and built Jobe Gutter Services from the ground up.
                 </p>
                 <p className="text-white/60 leading-relaxed">
-                  Today, I combine two decades of experience with cutting-edge technology to create websites and
-                  digital strategies that truly make a difference for my clients.
+                  Every project is different, but the approach is the same: understand the business first, then
+                  build something that actually works for it. No templates, no filler pages, no tech for the sake
+                  of tech. Just clean, fast websites and honest digital strategy.
                 </p>
               </AnimatedSection>
             </div>
@@ -175,6 +133,62 @@ export default function AboutPage() {
                   <div className="text-white/40 text-sm uppercase tracking-wider">{stat.label}</div>
                 </AnimatedSection>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What I Bring to the Table */}
+        <section className="py-20 bg-dark-gray">
+          <div className="container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="text-center mb-16">
+              <span className="section-label mb-6 inline-flex justify-center">Credentials</span>
+              <h2 className="text-headline">
+                What I Bring to the <span className="text-accent">Table</span>
+              </h2>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <AnimatedSection delay={100}>
+                <div className="p-8 bg-black rounded-2xl border border-white/5 h-full">
+                  <h3 className="text-xl font-semibold mb-4 text-accent">Technical Stack</h3>
+                  <ul className="space-y-2 text-white/50 text-sm">
+                    <li>Next.js & React</li>
+                    <li>TypeScript & Tailwind CSS</li>
+                    <li>Node.js & PostgreSQL</li>
+                    <li>Vercel & AWS</li>
+                    <li>Schema.org & JSON-LD</li>
+                    <li>SEO & GEO Optimization</li>
+                  </ul>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={200}>
+                <div className="p-8 bg-black rounded-2xl border border-white/5 h-full">
+                  <h3 className="text-xl font-semibold mb-4 text-accent">Industries Served</h3>
+                  <ul className="space-y-2 text-white/50 text-sm">
+                    <li>Healthcare — Pinnacle Wellness</li>
+                    <li>Fitness — Fine Assets, Champions Adaptive</li>
+                    <li>Hospitality — Southern Collective Spirit Co.</li>
+                    <li>Real Estate — Coldwell Banker Commercial</li>
+                    <li>Home Services — Jobe Gutter Services</li>
+                    <li>Creative — Maple Sky Dreamtree Studio</li>
+                  </ul>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={300}>
+                <div className="p-8 bg-black rounded-2xl border border-white/5 h-full">
+                  <h3 className="text-xl font-semibold mb-4 text-accent">By the Numbers</h3>
+                  <ul className="space-y-2 text-white/50 text-sm">
+                    <li>20+ years building for the web</li>
+                    <li>200+ projects delivered</li>
+                    <li>98% client retention rate</li>
+                    <li>3x online bookings for Fine Assets</li>
+                    <li>50% new patients via web for Pinnacle</li>
+                    <li>85% bookings online for Southern Collective</li>
+                  </ul>
+                </div>
+              </AnimatedSection>
             </div>
           </div>
         </section>

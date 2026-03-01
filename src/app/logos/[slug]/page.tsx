@@ -1,57 +1,11 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft, Calendar, User, MapPin, Briefcase } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import ProudlyServing from "@/components/ProudlyServing";
 import Footer from "@/components/Footer";
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-// Animated section wrapper
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import AnimatedSection from "@/components/AnimatedSection";
 
 const logos: Record<string, {
   slug: string;
@@ -212,10 +166,17 @@ const logos: Record<string, {
 
 type LogoSlug = keyof typeof logos;
 
-export default function LogoDetailPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+export function generateStaticParams() {
+  return Object.keys(logos).map((slug) => ({ slug }));
+}
+
+export default async function LogoDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const logo = logos[slug as LogoSlug];
+
+  if (!logo) {
+    notFound();
+  }
 
   // Get adjacent logos for navigation
   const logoSlugs = Object.keys(logos);
@@ -223,21 +184,26 @@ export default function LogoDetailPage() {
   const prevLogo = currentIndex > 0 ? logos[logoSlugs[currentIndex - 1] as LogoSlug] : null;
   const nextLogo = currentIndex < logoSlugs.length - 1 ? logos[logoSlugs[currentIndex + 1] as LogoSlug] : null;
 
-  if (!logo) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-semibold mb-4">Logo Not Found</h1>
-          <Link href="/logos" className="btn-pill btn-pill-primary">
-            View All Logos
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const logoJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: `${logo.title} Logo Design`,
+    description: logo.brief,
+    url: `https://dustintn.com/logos/${slug}`,
+    dateCreated: logo.year,
+    creator: {
+      '@type': 'ProfessionalService',
+      name: 'DustinTN',
+      url: 'https://dustintn.com',
+    },
+  };
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(logoJsonLd) }}
+      />
       <Navigation />
 
       <main>

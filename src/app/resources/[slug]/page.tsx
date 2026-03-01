@@ -1,57 +1,14 @@
-'use client';
-
-import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowLeft, Clock, Calendar, Tag, Video, Phone, CheckCircle2, Globe, Search, Wrench, Share2, HelpCircle, Link2, Check, Code2, BrainCircuit, Zap } from "lucide-react";
+import { ArrowRight, ArrowLeft, Clock, Calendar, Tag, Video, Phone, CheckCircle2, Globe, Search, Wrench, Share2, HelpCircle, Code2, BrainCircuit, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import ProudlyServing from "@/components/ProudlyServing";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
+import CopyLinkButton from "@/components/CopyLinkButton";
 import { resources, getResourceBySlug, getCategoryPageBySlug } from "@/data/resources";
-
-function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, isVisible };
-}
-
-function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -64,6 +21,18 @@ const categoryIcons: Record<string, React.ComponentType<{ className?: string }>>
   "Social Media": Share2,
   "Digital Strategy": Zap,
 };
+
+export function generateStaticParams() {
+  const articleSlugs = resources.map((r) => ({ slug: r.slug }));
+  const categorySlugs = [
+    { slug: 'web-development' },
+    { slug: 'seo-search' },
+    { slug: 'ai-seo-geo' },
+    { slug: 'social-media' },
+    { slug: 'digital-strategy' },
+  ];
+  return [...articleSlugs, ...categorySlugs];
+}
 
 function CategoryLandingPage({ slug }: { slug: string }) {
   const categoryPage = getCategoryPageBySlug(slug)!;
@@ -221,7 +190,10 @@ function CategoryLandingPage({ slug }: { slug: string }) {
 
 function ArticlePage({ slug }: { slug: string }) {
   const resource = getResourceBySlug(slug);
-  const [copied, setCopied] = useState(false);
+
+  if (!resource) {
+    notFound();
+  }
 
   // Get adjacent resources for navigation
   const currentIndex = resources.findIndex(r => r.slug === slug);
@@ -230,27 +202,39 @@ function ArticlePage({ slug }: { slug: string }) {
 
   const articleUrl = `https://dustintn.com/resources/${slug}`;
 
-  const copyLink = () => {
-    navigator.clipboard.writeText(articleUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: resource.title,
+    description: resource.excerpt,
+    url: articleUrl,
+    image: resource.image,
+    datePublished: resource.publishDate,
+    author: {
+      '@type': 'Person',
+      name: 'Dustin Smith',
+      jobTitle: 'Web Developer & Digital Marketing Specialist',
+      knowsAbout: ['Web Development', 'SEO', 'Digital Marketing', 'Brand Identity', 'Next.js', 'React'],
+      worksFor: {
+        '@type': 'ProfessionalService',
+        name: 'DustinTN',
+        url: 'https://dustintn.com',
+      },
+    },
+    publisher: {
+      '@type': 'ProfessionalService',
+      name: 'DustinTN',
+      url: 'https://dustintn.com',
+      logo: 'https://dustintn.com/og-image.png',
+    },
   };
-
-  if (!resource) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-semibold mb-4">Resource Not Found</h1>
-          <Link href="/resources" className="btn-pill btn-pill-primary">
-            View All Resources
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Navigation currentPage="resources" />
 
       <main>
@@ -286,9 +270,20 @@ function ArticlePage({ slug }: { slug: string }) {
               </div>
 
               <h1 className="text-headline mb-6">{resource.title}</h1>
-              <p className="text-xl text-white/50 leading-relaxed max-w-3xl">
+              <p className="text-xl text-white/50 leading-relaxed max-w-3xl mb-8">
                 {resource.excerpt}
               </p>
+
+              {/* Author Byline */}
+              <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-semibold text-lg">DS</span>
+                </div>
+                <div>
+                  <div className="font-semibold text-white">Dustin Smith</div>
+                  <div className="text-sm text-white/50">Web Developer & Digital Marketing Specialist &middot; 20+ years experience</div>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </section>
@@ -352,7 +347,7 @@ function ArticlePage({ slug }: { slug: string }) {
         {/* Article Content + Sidebar */}
         <section className="py-20 bg-dark-gray">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_340px] gap-12 lg:gap-16">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_340px] lg:items-start gap-12 lg:gap-16">
               {/* Main Article Content */}
               <div>
                 {resource.sections.map((section, index) => (
@@ -397,13 +392,7 @@ function ArticlePage({ slug }: { slug: string }) {
                     {/* Share buttons */}
                     <div className="flex items-center gap-2">
                       <span className="text-xs text-white/40 mr-1">Share</span>
-                      <button
-                        onClick={copyLink}
-                        className="w-9 h-9 bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/30 rounded-lg flex items-center justify-center text-white/50 hover:text-accent transition-all"
-                        title="Copy link"
-                      >
-                        {copied ? <Check className="w-4 h-4 text-accent" /> : <Link2 className="w-4 h-4" />}
-                      </button>
+                      <CopyLinkButton url={articleUrl} />
                       <a
                         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(resource.title)}&url=${encodeURIComponent(articleUrl)}`}
                         target="_blank"
@@ -610,9 +599,8 @@ function ArticlePage({ slug }: { slug: string }) {
   );
 }
 
-export default function ResourceDetailPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+export default async function ResourceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
 
   // Check if this is a category page
   const categoryPage = getCategoryPageBySlug(slug);
