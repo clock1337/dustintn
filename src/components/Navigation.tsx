@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X, Code2, Search, BrainCircuit, Share2, Zap, Palette, PenTool, BookOpen, Compass, Globe } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { resources, getCategorySlug, getNewestResourceByCategory } from "@/data/resources";
 
 const portfolioCategories = [
@@ -15,7 +16,13 @@ const portfolioCategories = [
   {
     title: "Fitness & Training",
     description: "Fitness platforms that inspire",
-    href: "/portfolio",
+    href: "/portfolio/fine-assets",
+    icon: "+"
+  },
+  {
+    title: "Home Services",
+    description: "Service business websites",
+    href: "/portfolio/jobe-gutter-services",
     icon: "+"
   },
   {
@@ -98,11 +105,16 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl font-semibold tracking-tight group relative z-50"
+              className="relative z-50 group"
             >
-              <span className="inline-block transition-transform duration-300 group-hover:scale-105">
-                DustinTN<span className="text-accent">.</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="DustinTN"
+                width={120}
+                height={63}
+                className="transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}

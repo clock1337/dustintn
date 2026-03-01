@@ -70,10 +70,16 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
     creator: '@dustintn',
   },
-  verification: {
-    google: 'add-your-google-verification-code',
-  },
   category: 'technology',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 // JSON-LD Structured Data for Local Business
@@ -83,8 +89,8 @@ const jsonLd = {
   name: 'DustinTN',
   description: 'Expert web development, SEO, and digital marketing services in Nashville, Tennessee.',
   url: 'https://dustintn.com',
-  logo: 'https://dustintn.com/og-image.png',
-  image: 'https://dustintn.com/og-image.png',
+  logo: 'https://dustintn.com/logo.png',
+  image: 'https://dustintn.com/logo.png',
   telephone: '+1-615-788-2453',
   email: 'hello@dustintn.com',
   address: {
