@@ -253,7 +253,7 @@ function ArticlePage({ slug }: { slug: string }) {
               <span className="text-sm font-medium">All Resources</span>
             </Link>
 
-            <AnimatedSection className="max-w-4xl">
+            <AnimatedSection>
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-4 mb-6">
                 <span className="px-4 py-1.5 bg-accent/10 rounded-full text-sm text-accent font-medium">
@@ -269,19 +269,23 @@ function ArticlePage({ slug }: { slug: string }) {
                 </span>
               </div>
 
-              <h1 className="text-headline mb-6">{resource.title}</h1>
-              <p className="text-xl text-white/50 leading-relaxed max-w-3xl mb-8">
-                {resource.excerpt}
-              </p>
-
-              {/* Author Byline */}
-              <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent font-semibold text-lg">DS</span>
-                </div>
+              <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-start">
                 <div>
-                  <div className="font-semibold text-white">Dustin Smith</div>
-                  <div className="text-sm text-white/50">Web Developer & Digital Marketing Specialist &middot; 20+ years experience</div>
+                  <h1 className="text-headline mb-6">{resource.title}</h1>
+                  <p className="text-xl text-white/50 leading-relaxed">
+                    {resource.excerpt}
+                  </p>
+                </div>
+
+                {/* Author Byline */}
+                <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 lg:mt-2">
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-accent font-semibold text-lg">DS</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">Dustin Smith</div>
+                    <div className="text-sm text-white/50">Web Developer & Digital<br className="hidden lg:block" /> Marketing Specialist<br className="hidden lg:block" /> &middot; 20+ years experience</div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
