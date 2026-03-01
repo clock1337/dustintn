@@ -8,76 +8,10 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const logos = [
   {
-    slug: "mountain-peak-brewing",
-    title: "Mountain Peak Brewing",
-    industry: "Food & Beverage",
-    image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&h=800&fit=crop",
-    colors: [
-      { name: "Forest", hex: "#2D5016" },
-      { name: "Amber", hex: "#D4A017" },
-      { name: "Cream", hex: "#F5F0E1" },
-    ],
-  },
-  {
-    slug: "bright-path-therapy",
-    title: "Bright Path Therapy",
-    industry: "Healthcare",
-    image: "https://images.unsplash.com/photo-1635405074683-96d6921a2a68?w=800&h=800&fit=crop",
-    colors: [
-      { name: "Teal", hex: "#0891B2" },
-      { name: "Lavender", hex: "#A78BFA" },
-      { name: "Soft White", hex: "#F8FAFC" },
-    ],
-  },
-  {
-    slug: "cedar-ridge-homes",
-    title: "Cedar Ridge Homes",
-    industry: "Real Estate",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=800&fit=crop",
-    colors: [
-      { name: "Charcoal", hex: "#1C1917" },
-      { name: "Gold", hex: "#CA8A04" },
-      { name: "Warm Gray", hex: "#D6D3D1" },
-    ],
-  },
-  {
-    slug: "velocity-fitness",
-    title: "Velocity Fitness",
-    industry: "Health & Fitness",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=800&fit=crop",
-    colors: [
-      { name: "Electric Red", hex: "#DC2626" },
-      { name: "Midnight", hex: "#0F172A" },
-      { name: "White", hex: "#FFFFFF" },
-    ],
-  },
-  {
-    slug: "riverstone-financial",
-    title: "Riverstone Financial",
-    industry: "Financial Services",
-    image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&h=800&fit=crop",
-    colors: [
-      { name: "Navy", hex: "#1E3A5F" },
-      { name: "Silver", hex: "#94A3B8" },
-      { name: "Ice", hex: "#F1F5F9" },
-    ],
-  },
-  {
-    slug: "wild-sage-kitchen",
-    title: "Wild Sage Kitchen",
-    industry: "Restaurant",
-    image: "https://images.unsplash.com/photo-1636955816868-fcb881e57954?w=800&h=800&fit=crop",
-    colors: [
-      { name: "Sage", hex: "#6B8E5A" },
-      { name: "Terracotta", hex: "#C2410C" },
-      { name: "Linen", hex: "#FAF5EF" },
-    ],
-  },
-  {
     slug: "maple-sky-dreamtree-studio",
     title: "Maple Sky Dreamtree Studio",
     industry: "Fine Art",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=800&fit=crop",
+    image: "/logos/maple-sky-dreamtree-studio.png",
     colors: [
       { name: "MSDT Gold", hex: "#C8A96E" },
       { name: "Deep Black", hex: "#0A0A0A" },
