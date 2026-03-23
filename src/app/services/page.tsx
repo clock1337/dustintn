@@ -117,6 +117,32 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Intro Prose */}
+        <section className="py-20 bg-black border-t border-white/5">
+          <div className="container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="max-w-4xl mx-auto">
+              <span className="section-label mb-6 block">Full-Service Digital Partner</span>
+              <h2 className="text-3xl lg:text-4xl font-semibold mb-8 leading-tight">
+                Everything Your Business Needs Online — <span className="text-accent">Under One Roof</span>
+              </h2>
+              <div className="space-y-6 text-white/50 text-lg leading-relaxed">
+                <p>
+                  Most small businesses in Nashville, Hendersonville, and Gallatin end up juggling three or four different vendors for their website, SEO, social media, and branding — and none of them talk to each other. The result is a disconnected digital presence where the website says one thing, the social media says another, and Google can barely figure out what you do. I handle all of it, so every piece of your online presence works together toward the same goal: bringing in more customers.
+                </p>
+                <p>
+                  Over the past 20 years I have built and launched more than 200 projects across industries including healthcare, fitness, real estate, hospitality, and home services. Every engagement starts with understanding what your business actually needs — not selling you a package. Some clients come in needing a complete website build with brand identity and ongoing SEO. Others just need a technical audit and a clear roadmap. I give you honest recommendations based on where your budget will have the most impact.
+                </p>
+                <p>
+                  What sets my work apart is the integration between services. When I build a website, it is already optimized for search engines, structured for AI citation, and designed to support your social media and content marketing. When I write a content strategy, it feeds directly into the site architecture and keyword targeting. When I design a brand identity, it carries consistently across your website, social profiles, business cards, and Google Business listing. This connected approach is why my clients see measurable results — not just a nice-looking website that sits there collecting dust.
+                </p>
+                <p>
+                  Whether you are launching a new business, rebuilding an outdated website, or trying to figure out why your competitors keep showing up on Google and you don't — explore the services below and reach out for a free consultation. No obligation, no pressure, just a straightforward conversation about what will actually move the needle for your business.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* Services Grid */}
         <section className="py-20 bg-dark-gray">
           <div className="container mx-auto px-6 lg:px-12">

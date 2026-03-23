@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getResourceBySlug } from "@/data/resources";
+import { getResourceBySlug, getCategoryPageBySlug } from "@/data/resources";
 
 export async function generateMetadata({
   params,
@@ -7,8 +7,32 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const resource = getResourceBySlug(slug);
 
+  // Check category pages first
+  const categoryPage = getCategoryPageBySlug(slug);
+  if (categoryPage) {
+    return {
+      title: categoryPage.metaTitle,
+      description: categoryPage.metaDescription,
+      openGraph: {
+        title: categoryPage.metaTitle,
+        description: categoryPage.metaDescription,
+        url: `https://dustintn.com/resources/${slug}`,
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: categoryPage.metaTitle,
+        description: categoryPage.metaDescription,
+      },
+      alternates: {
+        canonical: `/resources/${slug}`,
+      },
+    };
+  }
+
+  // Then check article pages
+  const resource = getResourceBySlug(slug);
   if (!resource) {
     return { title: "Resource Not Found | DustinTN" };
   }

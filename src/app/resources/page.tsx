@@ -33,6 +33,29 @@ export default function ResourcesPage() {
           </div>
         </section>
 
+        {/* Intro Prose */}
+        <section className="py-20 bg-black border-t border-white/5">
+          <div className="container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="max-w-4xl mx-auto">
+              <span className="section-label mb-6 block">Why These Guides Exist</span>
+              <h2 className="text-3xl lg:text-4xl font-semibold mb-8 leading-tight">
+                Honest Advice From <span className="text-accent">20 Years</span> in the Trenches
+              </h2>
+              <div className="space-y-6 text-white/50 text-lg leading-relaxed">
+                <p>
+                  After two decades of building websites, running SEO campaigns, and managing digital strategy for businesses across Nashville, Hendersonville, and Gallatin, I have heard the same questions hundreds of times. How do I get my website to show up on Google? Is social media actually worth the effort? What is AI search and should I care about it? These guides answer those questions with real, actionable advice — not the vague generalities you find on most marketing blogs.
+                </p>
+                <p>
+                  Every resource below is written specifically for small business owners who need to make smart decisions about their online presence without a dedicated marketing team or a six-figure budget. I cover the fundamentals of web development, search engine optimization, social media strategy, and the emerging world of AI-powered search — all explained in plain language with step-by-step instructions you can implement today. Where relevant, I include real examples from projects I have worked on so you can see how these strategies play out for actual businesses.
+                </p>
+                <p>
+                  These guides are completely free and always will be. My goal is to give you enough knowledge to make informed decisions — whether that means handling things yourself, hiring the right help, or working with me directly. If you read through a guide and want expert help putting those strategies into action, I offer a free 30-minute consultation where we can talk through your specific situation and figure out the best path forward.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* What You'll Find Section */}
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6 lg:px-12">

@@ -93,33 +93,9 @@ const testimonials = [
   }
 ];
 
-const reviewJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': 'https://dustintn.com/#business',
-  name: 'DustinTN',
-  review: testimonials.map((t) => ({
-    '@type': 'Review',
-    reviewBody: t.quote,
-    author: {
-      '@type': 'Organization',
-      name: t.author,
-    },
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: 5,
-      bestRating: 5,
-    },
-  })),
-};
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
-      />
       <Navigation currentPage="home" />
 
       <main>

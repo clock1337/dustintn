@@ -141,10 +141,10 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                 onMouseEnter={() => setActiveDropdown('services')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className={`nav-link-new flex items-center gap-1 ${activeDropdown === 'services' ? 'text-accent' : ''}`}>
+                <Link href="/services" className={`nav-link-new flex items-center gap-1 ${activeDropdown === 'services' ? 'text-accent' : ''}`}>
                   Services
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180 text-accent' : ''}`} />
-                </button>
+                </Link>
 
                 {/* Services Dropdown Menu */}
                 <div className={`absolute top-full left-0 pt-4 transition-all duration-300 ${
