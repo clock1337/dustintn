@@ -5,8 +5,10 @@ import { useState, useEffect, useRef } from 'react';
 function useScrollAnimation(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,7 +25,7 @@ function useScrollAnimation(threshold = 0.1) {
     return () => observer.disconnect();
   }, [threshold]);
 
-  return { ref, isVisible };
+  return { ref, isVisible, hasMounted };
 }
 
 export default function AnimatedSection({
@@ -35,16 +37,20 @@ export default function AnimatedSection({
   className?: string;
   delay?: number;
 }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref, isVisible, hasMounted } = useScrollAnimation(0.1);
+
+  // Before hydration: render fully visible for SSR/crawlers
+  // After hydration: apply scroll animations
+  const showContent = !hasMounted || isVisible;
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${className}`}
+      className={`${hasMounted ? 'transition-all duration-1000 ease-out' : ''} ${className}`}
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        transitionDelay: `${delay}ms`,
+        opacity: showContent ? 1 : 0,
+        transform: showContent ? 'translateY(0)' : 'translateY(60px)',
+        transitionDelay: hasMounted ? `${delay}ms` : undefined,
       }}
     >
       {children}
@@ -59,7 +65,9 @@ export function StaggeredContainer({
   children: React.ReactNode;
   className?: string;
 }) {
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref, isVisible, hasMounted } = useScrollAnimation(0.1);
+
+  const showContent = !hasMounted || isVisible;
 
   return (
     <div ref={ref} className={className}>
@@ -67,11 +75,11 @@ export function StaggeredContainer({
         ? children.map((child, index) => (
             <div
               key={index}
-              className="transition-all duration-700 ease-out"
+              className={hasMounted ? 'transition-all duration-700 ease-out' : ''}
               style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: `${index * 100}ms`,
+                opacity: showContent ? 1 : 0,
+                transform: showContent ? 'translateY(0)' : 'translateY(40px)',
+                transitionDelay: hasMounted ? `${index * 100}ms` : undefined,
               }}
             >
               {child}

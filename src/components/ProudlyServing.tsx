@@ -18,8 +18,10 @@ const cities = [
 export default function ProudlyServing() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -36,15 +38,17 @@ export default function ProudlyServing() {
     return () => observer.disconnect();
   }, []);
 
+  const showContent = !hasMounted || isVisible;
+
   return (
     <section className="py-20 bg-dark-gray border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
         <div
           ref={ref}
-          className="text-center transition-all duration-1000 ease-out"
+          className={`text-center ${hasMounted ? 'transition-all duration-1000 ease-out' : ''}`}
           style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
+            opacity: showContent ? 1 : 0,
+            transform: showContent ? 'translateY(0)' : 'translateY(60px)',
           }}
         >
           <h2 className="text-2xl font-semibold mb-8">
@@ -54,11 +58,11 @@ export default function ProudlyServing() {
             {cities.map((city, index) => (
               <span
                 key={index}
-                className="px-5 py-2.5 bg-black rounded-full text-white/70 border border-white/10 hover:border-accent/50 hover:text-white transition-all duration-300"
+                className={`px-5 py-2.5 bg-black rounded-full text-white/70 border border-white/10 hover:border-accent/50 hover:text-white ${hasMounted ? 'transition-all duration-300' : ''}`}
                 style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                  transitionDelay: `${index * 50}ms`,
+                  opacity: showContent ? 1 : 0,
+                  transform: showContent ? 'translateY(0)' : 'translateY(20px)',
+                  transitionDelay: hasMounted ? `${index * 50}ms` : undefined,
                 }}
               >
                 {city}

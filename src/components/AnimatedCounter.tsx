@@ -33,11 +33,18 @@ export default function AnimatedCounter({
   value: number;
   suffix?: string;
 }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(value); // SSR: show final value
+  const [hasAnimated, setHasAnimated] = useState(false);
   const { ref, isVisible } = useScrollAnimation(0.5);
 
   useEffect(() => {
-    if (isVisible) {
+    // Reset to 0 on mount so animation can play
+    setCount(0);
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      setHasAnimated(true);
       const duration = 2000;
       const steps = 60;
       const increment = value / steps;
@@ -55,7 +62,7 @@ export default function AnimatedCounter({
 
       return () => clearInterval(timer);
     }
-  }, [isVisible, value]);
+  }, [isVisible, hasAnimated, value]);
 
   return (
     <span ref={ref}>
