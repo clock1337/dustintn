@@ -26,3 +26,6 @@ npm-debug.log*
 
 # Notes
 seo-notes.rtf
+
+# Addon stats (local dev only — not persistent on Vercel)
+data/addon-stats.json

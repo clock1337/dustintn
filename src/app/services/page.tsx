@@ -6,6 +6,7 @@ import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import AscensionCallout from "@/components/ascension/AscensionCallout";
 
 const services = [
   {
@@ -289,6 +290,8 @@ export default function ServicesPage() {
         </section>
 
         <ResourceSnippets limit={3} />
+
+        <AscensionCallout />
 
         <ProudlyServing />
         <Footer />

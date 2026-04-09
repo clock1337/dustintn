@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Figtree, Cinzel, Crimson_Text, Share_Tech_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -7,6 +7,29 @@ const figtree = Figtree({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   subsets: ["latin"],
   variable: '--font-figtree'
+});
+
+// Project Ascension addon section fonts
+const cinzel = Cinzel({
+  weight: ['400', '600', '700', '900'],
+  subsets: ["latin"],
+  variable: '--font-cinzel',
+  display: 'swap',
+});
+
+const crimsonText = Crimson_Text({
+  weight: ['400', '600'],
+  style: ['normal', 'italic'],
+  subsets: ["latin"],
+  variable: '--font-crimson',
+  display: 'swap',
+});
+
+const shareTechMono = Share_Tech_Mono({
+  weight: ['400'],
+  subsets: ["latin"],
+  variable: '--font-tech-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -171,7 +194,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${figtree.variable} antialiased`}>
+      <body className={`${figtree.variable} ${cinzel.variable} ${crimsonText.variable} ${shareTechMono.variable} antialiased`}>
         {children}
         <Analytics />
       </body>

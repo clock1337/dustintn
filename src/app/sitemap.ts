@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { resources, categoryPages } from "@/data/resources";
+import { ascensionAddons } from "@/data/ascension-addons";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://dustintn.com";
@@ -129,5 +130,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...portfolioPages, ...logoPages, ...resourceCategoryPages, ...resourcePages];
+  // Project Ascension addon section
+  const ascensionStatic: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/project-ascension`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/project-ascension/addons`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ];
+
+  const ascensionAddonPages: MetadataRoute.Sitemap = ascensionAddons.map((addon) => ({
+    url: `${baseUrl}/project-ascension/addons/${addon.slug}`,
+    lastModified: new Date(addon.releaseDate),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...portfolioPages,
+    ...logoPages,
+    ...resourceCategoryPages,
+    ...resourcePages,
+    ...ascensionStatic,
+    ...ascensionAddonPages,
+  ];
 }

@@ -6,6 +6,7 @@ import ProudlyServing from "@/components/ProudlyServing";
 import Footer from "@/components/Footer";
 import { resources, getCategorySlug } from "@/data/resources";
 import AnimatedSection from "@/components/AnimatedSection";
+import AscensionCallout from "@/components/ascension/AscensionCallout";
 
 export default function ResourcesPage() {
   return (
@@ -298,6 +299,8 @@ export default function ResourcesPage() {
             </AnimatedSection>
           </div>
         </section>
+
+        <AscensionCallout />
 
         <ProudlyServing />
         <Footer />
