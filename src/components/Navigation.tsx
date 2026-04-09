@@ -477,7 +477,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                 </button>
 
                 <div className={`overflow-hidden transition-all duration-300 ease-out ${
-                  mobileAccordion === 'services' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                  mobileAccordion === 'services' ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className="pl-4 pr-2 pb-2 space-y-1">
                     <Link
@@ -565,7 +565,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                 </button>
 
                 <div className={`overflow-hidden transition-all duration-300 ease-out ${
-                  mobileAccordion === 'resources' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                  mobileAccordion === 'resources' ? 'max-h-[1500px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className="pl-4 pr-2 pb-2 space-y-1">
                     <Link
