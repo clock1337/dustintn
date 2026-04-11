@@ -370,12 +370,12 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                           <Link
                             key={idx}
                             href={addon.href}
-                            className="flex items-center gap-2 ml-[3.5rem] px-3 pb-2 pt-1 group/addon"
+                            className="flex items-center gap-2 ml-[3.5rem] px-3 pb-3 pt-1 group/addon"
                           >
-                            <span className="text-[11px] text-accent group-hover/addon:text-accent-hover transition-colors truncate flex-1">
+                            <span className="text-[11px] text-white/30 group-hover/addon:text-accent transition-colors truncate flex-1">
                               {addon.title}
                             </span>
-                            <span className="text-[10px] text-white/50 flex-shrink-0">
+                            <span className="text-[10px] text-white/20 flex-shrink-0">
                               {addon.description}
                             </span>
                           </Link>
