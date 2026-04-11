@@ -186,7 +186,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                           </div>
                           <div>
                             <span className="text-sm font-medium group-hover:text-accent transition-colors block">{item.title}</span>
-                            <span className="text-xs text-white/50 mt-0.5 block">{item.description}</span>
+                            <span className="text-xs text-accent/50 group-hover:text-accent/70 mt-0.5 block">{item.description}</span>
                           </div>
                         </Link>
                       ))}
@@ -254,7 +254,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                             <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
                               {category.title}
                             </div>
-                            <div className="text-xs text-white/50 mt-0.5">
+                            <div className="text-xs text-accent/50 group-hover:text-accent/70 mt-0.5">
                               {category.description}
                             </div>
                           </div>
@@ -325,21 +325,21 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                               <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
                                 {item.title}
                               </div>
-                              <div className="text-xs text-white/50 mt-0.5">
+                              <div className="text-xs text-accent/50 group-hover:text-accent/70 mt-0.5">
                                 {item.description}
                               </div>
                             </div>
-                            <span className="text-xs text-white/50 mt-1">{item.count}</span>
+                            <span className="text-xs text-accent/50 mt-1">{item.count}</span>
                           </Link>
                           {item.newestArticle && (
                             <Link
                               href={`/resources/${item.newestArticle.slug}`}
                               className="flex items-center gap-2 ml-[3.5rem] px-3 pb-3 pt-1 group/article"
                             >
-                              <span className="text-[11px] text-white/50 group-hover/article:text-accent transition-colors truncate flex-1">
+                              <span className="text-[11px] text-white/50 group-hover/article:text-accent transition-colors truncate flex-1 leading-relaxed">
                                 {item.newestArticle.title}
                               </span>
-                              <span className="text-[10px] text-white/40 flex-shrink-0">
+                              <span className="text-[10px] text-accent/40 flex-shrink-0">
                                 {item.newestArticle.date}
                               </span>
                             </Link>
@@ -360,11 +360,11 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                             <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
                               Project Ascension Addons
                             </div>
-                            <div className="text-xs text-white/50 mt-0.5">
+                            <div className="text-xs text-accent/50 group-hover:text-accent/70 mt-0.5">
                               Free WoW 3.3.5 addons
                             </div>
                           </div>
-                          <span className="text-xs text-white/50 mt-1">{ascensionAddonLinks.length}</span>
+                          <span className="text-xs text-accent/50 mt-1">{ascensionAddonLinks.length}</span>
                         </Link>
                         {ascensionAddonLinks.map((addon, idx) => (
                           <Link
@@ -375,7 +375,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                             <span className="text-[11px] text-white/50 group-hover/addon:text-accent transition-colors truncate flex-1">
                               {addon.title}
                             </span>
-                            <span className="text-[10px] text-white/40 flex-shrink-0">
+                            <span className="text-[10px] text-accent/40 flex-shrink-0">
                               {addon.description}
                             </span>
                           </Link>
@@ -611,7 +611,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                             <span className="text-[11px] text-white/50 truncate flex-1">
                               {item.newestArticle.title}
                             </span>
-                            <span className="text-[10px] text-white/40 flex-shrink-0">
+                            <span className="text-[10px] text-accent/40 flex-shrink-0">
                               {item.newestArticle.date}
                             </span>
                           </Link>
@@ -644,7 +644,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                           <span className="text-[11px] text-white/50 truncate flex-1">
                             {addon.title}
                           </span>
-                          <span className="text-[10px] text-white/40 flex-shrink-0">
+                          <span className="text-[10px] text-accent/40 flex-shrink-0">
                             {addon.description}
                           </span>
                         </Link>
