@@ -55,7 +55,7 @@ export default async function AddonDetailPage({ params }: PageProps) {
   if (!addon) notFound();
 
   const downloadCount = await getDownloadCount(addon.slug);
-  const themeClass = addon.themeColor === "blood" ? "theme-blood" : "";
+  const themeClass = addon.themeColor === "blood" ? "theme-blood" : addon.themeColor === "teal" ? "theme-teal" : "";
 
   // JSON-LD SoftwareApplication schema for SEO
   const jsonLd = {
@@ -116,6 +116,7 @@ export default async function AddonDetailPage({ params }: PageProps) {
                 fileName={addon.fileName}
                 initialCount={downloadCount}
                 label={`Download v${addon.version}`}
+                comingSoon={addon.comingSoon}
               />
             </div>
           </header>

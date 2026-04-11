@@ -34,27 +34,38 @@ export default async function Image({
     );
   }
 
-  const isBlood = addon.themeColor === "blood";
+  const colorMap = {
+    blood: {
+      bg: "linear-gradient(180deg, #1a0606 0%, #0a0806 100%)",
+      title: "#c0392b",
+      accent: "#c9a84c",
+      accentLight: "#e8d08a",
+      textDim: "#9a8a78",
+      text: "#d4c9b8",
+      borderRgba: "rgba(192, 57, 43, 0.4)",
+    },
+    teal: {
+      bg: "linear-gradient(180deg, #050f10 0%, #030d0e 100%)",
+      title: "#7eeaea",
+      accent: "#34b4b4",
+      accentLight: "#7eeaea",
+      textDim: "#6a8a8e",
+      text: "#c8d8da",
+      borderRgba: "rgba(52, 180, 180, 0.4)",
+    },
+    gold: {
+      bg: "linear-gradient(180deg, #0a0e14 0%, #080b0f 100%)",
+      title: "#f0d070",
+      accent: "#c8962a",
+      accentLight: "#f0c060",
+      textDim: "#8a8070",
+      text: "#d8cfc0",
+      borderRgba: "rgba(200, 150, 42, 0.4)",
+    },
+  };
 
-  const colors = isBlood
-    ? {
-        bg: "linear-gradient(180deg, #1a0606 0%, #0a0806 100%)",
-        title: "#c0392b",
-        accent: "#c9a84c",
-        accentLight: "#e8d08a",
-        textDim: "#9a8a78",
-        text: "#d4c9b8",
-        borderRgba: "rgba(192, 57, 43, 0.4)",
-      }
-    : {
-        bg: "linear-gradient(180deg, #0a0e14 0%, #080b0f 100%)",
-        title: "#f0d070",
-        accent: "#c8962a",
-        accentLight: "#f0c060",
-        textDim: "#8a8070",
-        text: "#d8cfc0",
-        borderRgba: "rgba(200, 150, 42, 0.4)",
-      };
+  const colors = colorMap[addon.themeColor] ?? colorMap.gold;
+  const isBlood = addon.themeColor === "blood";
 
   return new ImageResponse(
     (

@@ -103,6 +103,9 @@ export default async function ProjectAscensionHubPage() {
                 {ascensionAddons.map((addon) => {
                   const count = counts[addon.slug] ?? 0;
                   const isBlood = addon.themeColor === "blood";
+                  const isTeal = addon.themeColor === "teal";
+                  const titleColor = isBlood ? "#c0392b" : isTeal ? "#7eeaea" : "var(--pa-gold-lt)";
+                  const labelColor = isBlood ? "#c0392b" : isTeal ? "#34b4b4" : "var(--pa-gold)";
                   return (
                     <Link
                       key={addon.slug}
@@ -114,20 +117,25 @@ export default async function ProjectAscensionHubPage() {
                           fontFamily: "var(--font-tech-mono), monospace",
                           fontSize: 10,
                           letterSpacing: "0.2em",
-                          color: isBlood ? "#c0392b" : "var(--pa-gold)",
+                          color: labelColor,
                           textTransform: "uppercase",
                           marginBottom: 8,
                           opacity: 0.85,
                         }}
                       >
                         {addon.class} · {addon.category}
+                        {addon.comingSoon && (
+                          <span style={{ marginLeft: 12, fontSize: 9, letterSpacing: "0.15em", padding: "2px 8px", border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.5)" }}>
+                            COMING SOON
+                          </span>
+                        )}
                       </div>
                       <h3
                         style={{
                           fontFamily: "var(--font-cinzel), serif",
                           fontSize: 32,
                           fontWeight: 900,
-                          color: isBlood ? "#c0392b" : "var(--pa-gold-lt)",
+                          color: titleColor,
                           marginBottom: 8,
                           letterSpacing: isBlood ? "0.06em" : "0",
                           textTransform: isBlood ? "uppercase" : "none",

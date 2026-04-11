@@ -68,11 +68,11 @@ const resourceCategoryItems = [
   };
 });
 
-// Project Ascension addons (linked from Resources dropdown bottom)
-const ascensionResourceItems = [
-  { title: "Project Ascension Addons", description: "Free WoW 3.3.5 addons by The PenFifteen Club", href: "/project-ascension", icon: Swords },
-  { title: "DeathMark", description: "PvP healer detection HUD", href: "/project-ascension/addons/deathmark", icon: Swords },
-  { title: "QuiverKeeper", description: "Hunter ammo & pet food tracker", href: "/project-ascension/addons/quiverkeeper", icon: Swords },
+// Project Ascension addons (shown as 3rd category in Resources dropdown)
+const ascensionAddonLinks = [
+  { title: "DeathMark", description: "PvP healer detection HUD", href: "/project-ascension/addons/deathmark" },
+  { title: "QuiverKeeper", description: "Hunter ammo & pet food tracker", href: "/project-ascension/addons/quiverkeeper" },
+  { title: "HeroPulse", description: "Character life manager", href: "/project-ascension/addons/heropulse" },
 ];
 
 interface NavigationProps {
@@ -346,30 +346,41 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                           )}
                         </div>
                       ))}
-                    </div>
 
-                    {/* Project Ascension Addons section */}
-                    <div className="mt-4 pt-4 border-t border-white/10">
-                      <div className="text-[10px] font-medium text-white/30 uppercase tracking-wider mb-2 px-3">Side Quest</div>
-                      {ascensionResourceItems.map((item, idx) => (
+                      {/* Project Ascension Addons — 3rd tree */}
+                      <div>
                         <Link
-                          key={idx}
-                          href={item.href}
-                          className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 group"
+                          href="/project-ascension"
+                          className="flex items-start gap-4 p-3 pb-1 rounded-xl hover:bg-white/5 transition-all duration-200 group"
                         >
                           <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <item.icon className="w-5 h-5" />
+                            <Swords className="w-5 h-5" />
                           </div>
-                          <div className="flex-1 min-w-0">
+                          <div className="flex-1">
                             <div className="text-sm font-medium text-white group-hover:text-accent transition-colors">
-                              {item.title}
+                              Project Ascension Addons
                             </div>
-                            <div className="text-xs text-white/40 mt-0.5 truncate">
-                              {item.description}
+                            <div className="text-xs text-white/40 mt-0.5">
+                              Free WoW 3.3.5 addons
                             </div>
                           </div>
+                          <span className="text-xs text-white/30 mt-1">{ascensionAddonLinks.length}</span>
                         </Link>
-                      ))}
+                        {ascensionAddonLinks.map((addon, idx) => (
+                          <Link
+                            key={idx}
+                            href={addon.href}
+                            className="flex items-center gap-2 ml-[3.5rem] px-3 pb-2 pt-1 group/addon"
+                          >
+                            <span className="text-[11px] text-white/30 group-hover/addon:text-accent transition-colors truncate flex-1">
+                              {addon.title}
+                            </span>
+                            <span className="text-[10px] text-white/20 flex-shrink-0">
+                              {addon.description}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Footer CTA */}
@@ -608,23 +619,34 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                       </div>
                     ))}
 
-                    {/* Project Ascension Addons (mobile) */}
-                    <div className="pt-2 mt-2 border-t border-white/10">
-                      <div className="text-[10px] font-medium text-white/30 uppercase tracking-wider px-4 mb-1">Side Quest</div>
-                      {ascensionResourceItems.map((item, idx) => (
+                    {/* Project Ascension Addons (mobile — 3rd tree) */}
+                    <div>
+                      <Link
+                        href="/project-ascension"
+                        onClick={closeMobile}
+                        className="flex items-center gap-3 px-4 py-3 pb-1 rounded-xl hover:bg-white/5 transition-colors"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
+                          <Swords className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <span className="text-sm font-medium text-white/80 block">Project Ascension Addons</span>
+                          <span className="text-xs text-white/40">Free WoW 3.3.5 addons</span>
+                        </div>
+                      </Link>
+                      {ascensionAddonLinks.map((addon, idx) => (
                         <Link
                           key={idx}
-                          href={item.href}
+                          href={addon.href}
                           onClick={closeMobile}
-                          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
+                          className="flex items-center gap-2 ml-[3.25rem] px-4 pb-2 pt-1"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
-                            <item.icon className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <span className="text-sm font-medium text-white/80 block">{item.title}</span>
-                            <span className="text-xs text-white/40">{item.description}</span>
-                          </div>
+                          <span className="text-[11px] text-white/30 truncate flex-1">
+                            {addon.title}
+                          </span>
+                          <span className="text-[10px] text-white/20 flex-shrink-0">
+                            {addon.description}
+                          </span>
                         </Link>
                       ))}
                     </div>

@@ -7,6 +7,7 @@ interface AddonDownloadButtonProps {
   fileName: string;
   initialCount: number;
   label?: string;
+  comingSoon?: boolean;
 }
 
 export default function AddonDownloadButton({
@@ -14,14 +15,37 @@ export default function AddonDownloadButton({
   fileName,
   initialCount,
   label = "Download",
+  comingSoon = false,
 }: AddonDownloadButtonProps) {
   const [count, setCount] = useState(initialCount);
 
-  const handleClick = async () => {
-    // Optimistic increment
-    setCount((c) => c + 1);
+  if (comingSoon) {
+    return (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+        <span
+          className="pa-dl-btn"
+          style={{ opacity: 0.6, cursor: "default", pointerEvents: "none" }}
+        >
+          Coming Soon
+        </span>
+        <p
+          style={{
+            fontFamily: "var(--font-tech-mono), monospace",
+            fontSize: 11,
+            color: "var(--pa-text-dim)",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            margin: 0,
+          }}
+        >
+          Download available soon
+        </p>
+      </div>
+    );
+  }
 
-    // Fire-and-forget the counter increment
+  const handleClick = async () => {
+    setCount((c) => c + 1);
     try {
       const res = await fetch("/api/ascension/download", {
         method: "POST",
@@ -47,7 +71,7 @@ export default function AddonDownloadButton({
         onClick={handleClick}
         className="pa-dl-btn"
       >
-        ⬇ {label}
+        {label}
       </a>
       <p
         style={{

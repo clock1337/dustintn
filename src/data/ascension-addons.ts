@@ -26,7 +26,8 @@ export interface Addon {
   fileSize: string; // human-readable
   class: string;
   category: string;
-  themeColor: "gold" | "blood";
+  themeColor: "gold" | "blood" | "teal";
+  comingSoon?: boolean; // true = show "Coming Soon" instead of download button
   badges: string[];
   features: { icon: string; title: string; description: string }[];
   slashCommands: { command: string; description: string }[];
@@ -41,6 +42,7 @@ export const ascensionAddons: Addon[] = [
   {
     slug: "quiverkeeper",
     name: "QuiverKeeper",
+    comingSoon: true,
     tagline: "Never run dry mid-fight. Your ammo count and your pet's hunger, always in sight.",
     shortDescription:
       "Always-visible ammo counter and pet food tracker for hunters on Project Ascension.",
@@ -107,6 +109,7 @@ export const ascensionAddons: Addon[] = [
   {
     slug: "deathmark",
     name: "DeathMark",
+    comingSoon: true,
     tagline: "Your healer has been marked for death.",
     shortDescription:
       "PvP healer detection HUD that scans the BG roster and combat log to identify enemy healers from the first second.",
@@ -156,6 +159,72 @@ export const ascensionAddons: Addon[] = [
       { version: "1.30", date: "2026-04-03", changes: "Live health bars from nameplate data + combat log fallback." },
       { version: "1.20", date: "2026-04-01", changes: "GetBattlefieldScore-based roster scan. Title-case classToken handling for Ascension." },
       { version: "1.00", date: "2026-03-28", changes: "Initial release. Healer detection, draggable HUD, options menu." },
+    ],
+  },
+  {
+    slug: "heropulse",
+    name: "HeroPulse",
+    comingSoon: true,
+    tagline: "Think The Sims — your character has needs, a life, a routine.",
+    shortDescription:
+      "Persistent household manager that watches professions, gear, gold, and alts — surfacing exactly what needs attention when you log in.",
+    longDescription: [
+      "HeroPulse is a persistent household manager for your Ascension characters. It watches your professions, gear, gold, and alts — and surfaces exactly what needs attention, right when you log in.",
+      "No configuration. No slash commands required. Install it, log in, and the panel opens itself in the bottom-right corner. Everything is event-driven — zero FPS impact.",
+      "Five tabs cover everything: PULSE (prioritized alert feed), ASK (16 pre-built questions answered using your live data), GEAR (all 19 equipment slots with craftable upgrades and BoE cross-character scanning), NAV (profession catch-up routes and Horde zone progression), and GOLD (live session income tracking with sparkline history and source breakdowns).",
+      "Up to 5 characters tracked as a household. Cross-character supply gaps, BoE hand-me-downs, rested XP alerts, and a \"While You Were Gone\" recap every time you log in. Passive AH price cache scans while you browse — so gold tips in PULSE show real current prices, not estimates.",
+      "Built for Project Ascension on Bronzebeard by Longshaft of The PenFifteen Club™. Ascension reports every character as Druid — HeroPulse reads your talent tree names and maps them to your actual build archetype.",
+    ],
+    version: "1.0.0",
+    releaseDate: "2026-04-11",
+    fileName: "HeroPulse-v1.0.0.zip",
+    fileSize: "TBD",
+    class: "Any",
+    category: "Character Management",
+    themeColor: "teal",
+    badges: ["v1.0.0", "WoW 3.3.5a", "Bronzebeard · Horde", "Free"],
+    realm: "Bronzebeard · Horde",
+    gameVersion: "WoW 3.3.5a",
+    server: "Project Ascension",
+    features: [
+      { icon: "⚡", title: "PULSE Alert Feed", description: "Three priority levels — P1 act now (red), P2 do soon (yellow), P3 good to know (blue). Sorted by urgency. Footer dot changes color so you know the state at a glance." },
+      { icon: "💬", title: "ASK Advice Engine", description: "Click a question and get a real answer using your live data — level, professions, AH prices, roster state, zone, and session stats. 16 questions across 4 categories." },
+      { icon: "⚔", title: "Gear Slot Audit", description: "Reads all 19 equipment slots. Flags empty slots and gear below expected item level. Color-coded StatusBar for average iLvl vs expected." },
+      { icon: "🔨", title: "Craftable Upgrades", description: "Cross-references your profession skills against craftable gear. Only shows items you can make right now that beat what you're wearing." },
+      { icon: "📦", title: "BoE Cross-Char Scanner", description: "Scans bags for equippable green+ items. Reads roster alts' saved inventories and flags items your current character could use." },
+      { icon: "🧙", title: "5-Char Roster Household", description: "Up to 5 characters tracked automatically. Cross-profession supply gaps, rested XP status, notable loots, and \"While You Were Gone\" recap on login." },
+      { icon: "💰", title: "AH Price Cache", description: "Passive background scan while you browse. Rolling median from last 20 observations. 48-hour cache. 30+ tracked items." },
+      { icon: "📈", title: "GOLD Income Dashboard", description: "Live session stats, sparkline history across last 10 sessions, gold source StatusBars — Loot vs Vendor vs AH sales." },
+      { icon: "🗺", title: "NAV Profession Routes", description: "Progress bars for every profession with best catch-up zone for your current skill rank. 21 Horde zones with dungeon callouts." },
+      { icon: "🔍", title: "Class Detection", description: "Ascension reports every character as Druid. HeroPulse reads your talent tree names and maps them to your actual build archetype." },
+      { icon: "⚙", title: "Settings Panel", description: "Toggle auto-show, greeting overlay, life skill nudges, roster mat alerts. Reset position, clear roster, clear AH cache." },
+      { icon: "🛡", title: "Zero FPS Impact", description: "Everything is event-driven. No OnUpdate scripts. No per-frame work. StatusBars set once per event. Tested on low-spec hardware." },
+    ],
+    slashCommands: [
+      { command: "/hp", description: "Toggle panel open / closed" },
+      { command: "/hpsettings", description: "Open the settings overlay (or click the gear icon)" },
+      { command: "/hpgold", description: "Jump directly to the GOLD income tab" },
+      { command: "/hpgear", description: "Jump to GEAR tab and print slot summary to chat" },
+      { command: "/hpnav", description: "Jump to NAV tab" },
+      { command: "/hpask <topic>", description: "Ask a question — topics: sell, gold, ah, prof, level, need, next, todo, stats, ready, life, pair, craft, balance, alt, stock" },
+      { command: "/hpah", description: "Print AH price cache summary to chat" },
+      { command: "/hpclear", description: "Clear AH price cache — forces fresh scan on next AH visit" },
+      { command: "/hproster", description: "Print full roster summary to chat" },
+      { command: "/hpignore", description: "Toggle current character active / inactive in the roster" },
+      { command: "/hpversion", description: "Print full version history to chat" },
+      { command: "/hpdebug", description: "Toggle verbose debug logging" },
+    ],
+    changelog: [
+      { version: "1.0.0", date: "2026-04-11", changes: "Release — Integration & Hardening. Schema migration guard — safe upgrade from any earlier version. Version history in settings overlay. Per-key settings defaults. Gold source totals in journal entries. Tab font tuned for 5-tab layout." },
+      { version: "0.9.0", date: "2026-04-10", changes: "GOLD tab. Fifth tab — SESSION (live counters), HISTORY (sparkline from last 10 sessions), SOURCES (StatusBar breakdown). Gold source classification via combat state. AH sale detection via mailbox scan." },
+      { version: "0.8.0", date: "2026-04-09", changes: "Auto-Show & Settings. Panel opens on login by default. Separate minimize and close buttons. Settings overlay with 5 toggles and 3 action buttons. Ascension class detection via talent tab heuristics." },
+      { version: "0.7.0", date: "2026-04-08", changes: "GEAR tab. SLOTS reads all 19 equipment slots with iLvl vs expected, color-coded StatusBar. CRAFT shows craftable upgrades. BOE scans bags for equippables and cross-references roster alts." },
+      { version: "0.6.0", date: "2026-04-07", changes: "ASK tab. 16 clickable questions across 4 categories. Context-aware answers using live level, professions, AH cache, roster state, zone, and session data." },
+      { version: "0.5.0", date: "2026-04-06", changes: "AH Price Cache. Passive background scan on AUCTION_ITEM_LIST_UPDATE. Rolling median per item. 48-hour TTL. 30+ tracked items." },
+      { version: "0.4.0", date: "2026-04-05", changes: "NAV tab. ROUTES shows profession progress bars with catch-up zones. ZONES lists 21 Horde zones with dungeon callouts. TIPS gives travel shortcuts by level range." },
+      { version: "0.3.0", date: "2026-04-04", changes: "Roster System. Up to 5 characters tracked as a household. Cross-character mat supply detection. \"While You Were Gone\" recap on login." },
+      { version: "0.2.0", date: "2026-04-03", changes: "PULSE Dashboard. Alert engine with P1/P2/P3 priority levels. Session journal. Login recap greeting. Logoff summary with gold delta." },
+      { version: "0.1.0", date: "2026-04-01", changes: "Initial skeleton. Panel with draggable frame, header, snapshot bar, 4-tab bar, footer with alert dot, SavedVariables setup." },
     ],
   },
 ];

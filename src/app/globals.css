@@ -260,6 +260,36 @@
     line-height: 1.7;
   }
 
+  .pa-root.theme-teal {
+    --pa-gold: #34b4b4;
+    --pa-gold-lt: #7eeaea;
+    --pa-amber: #34b4b4;
+    --pa-bg-deep: #030d0e;
+    --pa-bg-mid: #060f10;
+    --pa-bg-card: #080e10;
+    --pa-bg-card2: #0d1618;
+    --pa-border: rgba(52, 180, 180, 0.18);
+    --pa-border-bright: rgba(52, 180, 180, 0.52);
+    --pa-text: #c8d8da;
+    --pa-text-dim: #6a8a8e;
+    --pa-text-bright: #e2f0f2;
+    --pa-cyan: #5ec8d8;
+  }
+
+  .pa-root.theme-teal .pa-hero {
+    background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(52, 180, 180, 0.14) 0%, transparent 70%),
+      linear-gradient(180deg, #050f10 0%, #030d0e 100%);
+  }
+
+  .pa-root.theme-teal .pa-title {
+    background: linear-gradient(150deg, #a0eaea 0%, #34b4b4 38%, #7ee8e8 66%, #1a7878 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.1em;
+    filter: drop-shadow(0 0 50px rgba(52, 180, 180, 0.25));
+  }
+
   .pa-root.theme-blood {
     --pa-gold: #c9a84c;
     --pa-gold-lt: #e8d08a;
