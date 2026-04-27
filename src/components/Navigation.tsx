@@ -36,6 +36,12 @@ const portfolioCategories = [
     description: "Brand marks & logo design",
     href: "/logos",
     icon: "+"
+  },
+  {
+    title: "Getting Learnt",
+    description: "Contests, side quests & R&D",
+    href: "/portfolio/getting-learnt",
+    icon: "+"
   }
 ];
 

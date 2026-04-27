@@ -1,45 +1,28 @@
 import type { MetadataRoute } from "next";
 
+// Paths intentionally hidden from all crawlers (search + AI). Kept here so the
+// disallow stays in sync across every user-agent rule below.
+const HIDDEN_PATHS = ["/portfolio/getting-learnt/"];
+
+const ALLOWED_USER_AGENTS = [
+  "*",
+  "GPTBot",
+  "ChatGPT-User",
+  "Google-Extended",
+  "PerplexityBot",
+  "Applebot-Extended",
+  "anthropic-ai",
+  "ClaudeBot",
+  "cohere-ai",
+];
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-      {
-        userAgent: "GPTBot",
-        allow: "/",
-      },
-      {
-        userAgent: "ChatGPT-User",
-        allow: "/",
-      },
-      {
-        userAgent: "Google-Extended",
-        allow: "/",
-      },
-      {
-        userAgent: "PerplexityBot",
-        allow: "/",
-      },
-      {
-        userAgent: "Applebot-Extended",
-        allow: "/",
-      },
-      {
-        userAgent: "anthropic-ai",
-        allow: "/",
-      },
-      {
-        userAgent: "ClaudeBot",
-        allow: "/",
-      },
-      {
-        userAgent: "cohere-ai",
-        allow: "/",
-      },
-    ],
+    rules: ALLOWED_USER_AGENTS.map((userAgent) => ({
+      userAgent,
+      allow: "/",
+      disallow: HIDDEN_PATHS,
+    })),
     sitemap: "https://dustintn.com/sitemap.xml",
   };
 }

@@ -2,6 +2,12 @@ import type { MetadataRoute } from "next";
 import { resources, categoryPages } from "@/data/resources";
 import { ascensionAddons } from "@/data/ascension-addons";
 
+// Note: Getting Learnt HUB (/portfolio/getting-learnt) is included below so
+// Google indexes the experiments-lab landing page. Chapter detail pages
+// (/portfolio/getting-learnt/<slug>) are intentionally excluded — they're
+// noindex/nofollow and disallowed in robots.ts so they stay portable to a
+// future standalone product/brand.
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://dustintn.com";
   const now = new Date();
@@ -102,12 +108,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const logoPages: MetadataRoute.Sitemap = [
-    "mountain-peak-brewing",
-    "bright-path-therapy",
-    "cedar-ridge-homes",
-    "velocity-fitness",
-    "riverstone-financial",
-    "wild-sage-kitchen",
     "maple-sky-dreamtree-studio",
   ].map((slug) => ({
     url: `${baseUrl}/logos/${slug}`,
@@ -153,6 +153,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Getting Learnt — hub only (chapter pages stay out, see note above).
+  const gettingLearntHub: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/portfolio/getting-learnt`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
   return [
     ...staticPages,
     ...servicePages,
@@ -162,5 +172,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...resourcePages,
     ...ascensionStatic,
     ...ascensionAddonPages,
+    ...gettingLearntHub,
   ];
 }
