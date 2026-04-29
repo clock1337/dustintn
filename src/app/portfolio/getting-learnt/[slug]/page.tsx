@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
@@ -11,12 +12,12 @@ import {
   Wrench,
   Quote,
   Sparkles,
+  Play,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ProudlyServing from "@/components/ProudlyServing";
-import CodejamDemo from "@/components/getting-learnt/CodejamDemo";
 import { gettingLearntEntries, getEntryBySlug } from "@/data/getting-learnt";
 
 interface PageProps {
@@ -173,98 +174,119 @@ export default async function GettingLearntDetail({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Live Showcase */}
-        {entry.showcaseUrl && (
-          <section className="py-20 bg-black">
-            <div className="container mx-auto px-6 lg:px-12">
-              <AnimatedSection className="mb-12 max-w-3xl">
-                <span className="section-label mb-6 block">Live Showcase</span>
-                <h2 className="text-headline">
-                  All {entry.submissions?.length ?? 0} entries, <span style={{ color: "var(--gl-accent)" }}>playable</span> right here.
-                </h2>
-                <p className="text-white/50 text-lg leading-relaxed mt-6">
-                  This is the actual contest showcase running embedded — pick a submission from the dropdown,
-                  press <strong className="text-white">Play</strong> to start the host video, and try to dismiss
-                  the overlay that takes over. Desktop Chrome or Edge gives the best experience.
-                </p>
-              </AnimatedSection>
-
-              <AnimatedSection delay={100}>
-                <div style={{ borderColor: "var(--gl-accent-border)" }}>
-                  <CodejamDemo
-                    iframeUrl={entry.showcaseUrl}
-                    title={`${entry.title} — live showcase`}
-                    label="codejam26-showcase.vercel.app"
-                  />
-                </div>
-              </AnimatedSection>
-            </div>
-          </section>
-        )}
-
-        {/* Submission Reference Cards */}
+        {/* The Submissions — screenshot cards */}
         {entry.submissions && entry.submissions.length > 0 && (
-          <section className="py-20 bg-dark-gray border-y border-white/5">
+          <section className="py-20 bg-black">
             <div className="container mx-auto px-6 lg:px-12">
               <AnimatedSection className="mb-12 max-w-3xl">
                 <span className="section-label mb-6 block">The Submissions</span>
                 <h2 className="text-headline">
-                  What&apos;s in the <span style={{ color: "var(--gl-accent)" }}>showcase</span>.
+                  {entry.submissions.length} entries, each a different flavor of <span style={{ color: "var(--gl-accent)" }}>intentionally hostile</span>.
                 </h2>
                 <p className="text-white/50 text-lg leading-relaxed mt-6">
-                  Five entries, each a different flavor of intentionally hostile design.
-                  Concept and flow for each, so you can read about it before (or after) you try to escape it.
+                  Real screenshots from each running submission. Click <strong className="text-white">Try it live</strong>{" "}
+                  on any card to launch the actual contest showcase in a new tab — pick that entry from the dropdown,
+                  press Play, and try to dismiss the overlay. (You won&apos;t.)
                 </p>
+                {entry.showcaseUrl && (
+                  <a
+                    href={entry.showcaseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:opacity-90"
+                    style={{ background: "var(--gl-accent)", color: "white" }}
+                  >
+                    <Play className="w-4 h-4 fill-white" />
+                    Launch the full showcase
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
               </AnimatedSection>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-8">
                 {entry.submissions.map((sub, i) => (
                   <AnimatedSection key={sub.slug} delay={i * 75}>
-                    <div
-                      className="h-full p-7 rounded-2xl border bg-black/50 hover:bg-black/70 transition-colors"
+                    <article
+                      className="h-full flex flex-col rounded-2xl overflow-hidden border bg-dark-gray hover:bg-dark-gray/70 transition-colors"
                       style={{ borderColor: "var(--gl-accent-border)" }}
                     >
-                      <div className="flex items-baseline justify-between gap-4 mb-4">
+                      {/* Faux browser chrome bar */}
+                      <div
+                        className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 text-xs font-mono"
+                        style={{ background: "var(--gl-accent-soft)" }}
+                      >
+                        <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 flex-shrink-0" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 flex-shrink-0" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 flex-shrink-0" />
+                        <span className="ml-2 text-white/60 truncate text-[11px]">{sub.slug}.codejam26.local</span>
                         <span
-                          className="text-xs font-mono"
+                          className="ml-auto text-[10px] font-semibold uppercase tracking-wider"
                           style={{ color: "var(--gl-accent)" }}
                         >
                           #{(i + 1).toString().padStart(2, "0")}
                         </span>
-                        <span className="text-[10px] text-white/30 uppercase tracking-widest font-mono truncate">
-                          {sub.slug}
-                        </span>
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">{sub.title}</h3>
-                      <p
-                        className="text-sm font-medium italic mb-5"
-                        style={{ color: "var(--gl-accent)" }}
-                      >
-                        {sub.tagline}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {sub.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 text-[10px] uppercase tracking-wider rounded-full bg-white/5 text-white/60 border border-white/10"
-                          >
-                            {tag}
+
+                      {/* Screenshot */}
+                      <div className="relative aspect-[16/10] bg-black overflow-hidden">
+                        <Image
+                          src={sub.screenshot}
+                          alt={`${sub.title} — initial overlay state`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover object-top"
+                        />
+                      </div>
+
+                      {/* Card body */}
+                      <div className="flex-1 p-7 flex flex-col">
+                        <h3 className="text-xl font-semibold mb-2">{sub.title}</h3>
+                        <p
+                          className="text-sm font-medium italic mb-5"
+                          style={{ color: "var(--gl-accent)" }}
+                        >
+                          {sub.tagline}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          {sub.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2.5 py-1 text-[10px] uppercase tracking-wider rounded-full bg-white/5 text-white/60 border border-white/10"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-white/60 text-sm leading-relaxed mb-4">
+                          <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
+                            Concept
                           </span>
-                        ))}
+                          {sub.concept}
+                        </p>
+                        <p className="text-white/50 text-sm leading-relaxed mb-6">
+                          <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
+                            Flow
+                          </span>
+                          {sub.flow}
+                        </p>
+                        {entry.showcaseUrl && (
+                          <a
+                            href={entry.showcaseUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border transition-all hover:bg-white/5"
+                            style={{
+                              borderColor: "var(--gl-accent-border)",
+                              color: "var(--gl-accent)",
+                            }}
+                          >
+                            <Play className="w-3.5 h-3.5" />
+                            Try it live
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        )}
                       </div>
-                      <p className="text-white/60 text-sm leading-relaxed mb-4">
-                        <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
-                          Concept
-                        </span>
-                        {sub.concept}
-                      </p>
-                      <p className="text-white/50 text-sm leading-relaxed">
-                        <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
-                          Flow
-                        </span>
-                        {sub.flow}
-                      </p>
-                    </div>
+                    </article>
                   </AnimatedSection>
                 ))}
               </div>
