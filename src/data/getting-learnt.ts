@@ -12,10 +12,10 @@ export interface CodejamSubmission {
   tags: string[];
   concept: string;
   flow: string;
-  iframeUrl: string;
-  // postMessage type to send into the iframe on load so the demo actually boots.
-  // Most submissions wait for "adStarted"; prize-combo waits for "adFinished".
-  startEvent: "adStarted" | "adFinished";
+  // Direct URL to the bare submission (no shell). Shown as an "advanced" link
+  // for people who want to inspect a single entry — note that without the
+  // showcase shell sending postMessage events, most submissions render blank.
+  bareSubmissionUrl: string;
 }
 
 export interface Learning {
@@ -34,6 +34,10 @@ export interface GettingLearntEntry {
   intro: string[]; // paragraphs above the demos / showcase
   externalUrl?: string; // live site / contest page / repo
   externalLabel?: string;
+  // For chapters with multiple submissions hosted in a single showcase shell,
+  // this is the URL to embed (the shell handles dropdown switching, video
+  // playback, and the postMessage handshake the submissions expect).
+  showcaseUrl?: string;
   // Per-entry accent (HSL "h s% l%") — drives a CSS var on the detail page.
   themeAccent: string;
   themeAccentSoft: string; // 10–15% alpha background
@@ -62,6 +66,7 @@ export const gettingLearntEntries: GettingLearntEntry[] = [
     ],
     externalUrl: "https://codejam26-showcase.vercel.app/",
     externalLabel: "Open the standalone showcase",
+    showcaseUrl: "https://codejam26-showcase.vercel.app/",
     themeAccent: "248 90% 66%", // electric indigo — matches showcase chrome
     themeAccentSoft: "248 90% 66%",
     tech: [
@@ -82,8 +87,7 @@ export const gettingLearntEntries: GettingLearntEntry[] = [
           "A GDPR-style privacy banner that never resolves. Clean corporate polish on the outside; absurd, unhinged labels on the inside.",
         flow:
           'A "We value your privacy" popup with 12 absurd toggles ("Allow vibes-based targeting", "Sync browsing history with your refrigerator"). Every action — Accept All, Reject Non-Essential, Manage Preferences — feeds into a "One more thing…" loop with fresh toggles. After 3 escalating loops, a 250-clause scrollable Data Agreement appears (you must scroll to the end to unlock the checkbox), then identity verification: type a name that subtly shifts characters as you type.',
-        iframeUrl: "https://codejam26-showcase.vercel.app/cookie-consent/submission.html",
-        startEvent: "adStarted",
+        bareSubmissionUrl: "https://codejam26-showcase.vercel.app/cookie-consent/submission.html",
       },
       {
         slug: "windows-update",
@@ -94,8 +98,7 @@ export const gettingLearntEntries: GettingLearntEntry[] = [
           "A pixel-accurate Windows 11 codec install nag that never finishes. Looks like the operating system itself, not a webpage.",
         flow:
           'Video pauses behind a flawless Win 11 dialog: "This video requires Windows Media Codec to play." Click Install Now → wizard launches with the legit Win 11 banner, EULA scroll, install location picker, "Ready to Install" review, then a fake install progress bar that climbs all the way to "Installation complete." The catch escalates from there.',
-        iframeUrl: "https://codejam26-showcase.vercel.app/windows-update/submission.html",
-        startEvent: "adStarted",
+        bareSubmissionUrl: "https://codejam26-showcase.vercel.app/windows-update/submission.html",
       },
       {
         slug: "refund-portal",
@@ -106,8 +109,7 @@ export const gettingLearntEntries: GettingLearntEntry[] = [
           "An official-looking consumer refund portal that traps the user in an endless settlement claim flow.",
         flow:
           '.gov-style landing: "You may be owed a refund." Click CLAIM → enter your refund amount (rejected unless it matches the "on file" amount, which is hinted on the landing) → human-verification CAPTCHA that rejects the first 4 attempts no matter what you select → fake "disbursement processing fee" payment form → endless cascade of fake bank-handshake statuses ("Connecting to processor…", "Verifying card on file…") that loops forever.',
-        iframeUrl: "https://codejam26-showcase.vercel.app/refund-portal/submission.html",
-        startEvent: "adStarted",
+        bareSubmissionUrl: "https://codejam26-showcase.vercel.app/refund-portal/submission.html",
       },
       {
         slug: "loading-bar-liar",
@@ -118,8 +120,7 @@ export const gettingLearntEntries: GettingLearntEntry[] = [
           "A fake connection-verification overlay plus an unhinged AI chat assistant that escalates the longer you stay.",
         flow:
           'Cloudflare-style "Verifying your connection…" page. Bar climbs to 73%, stalls at 83%, jumps to 100% with a green check, then immediately errors and resets. Second attempt stalls at 67% — Max 🤖 pops in the corner with absurd troubleshooting questions ("Is your router within 3 feet of a window?", "Rate your WiFi\'s personality 1–10"). Eventually escalates to Tier 2: a 6-digit code that rotates every 4 seconds. Enter it correctly → bar restarts at 0% with a 2:00 countdown that loops at 1:45.',
-        iframeUrl: "https://codejam26-showcase.vercel.app/loading-bar-liar/submission.html",
-        startEvent: "adStarted",
+        bareSubmissionUrl: "https://codejam26-showcase.vercel.app/loading-bar-liar/submission.html",
       },
       {
         slug: "prize-combo",
@@ -130,9 +131,7 @@ export const gettingLearntEntries: GettingLearntEntry[] = [
           "A combination video + interface entry. A boring insurance commercial gets 'hacked' mid-roll by a flashy fake prize notification, and the interface picks up where the video leaves off.",
         flow:
           'Video plays as a normal Pinnacle Life Insurance ad that glitches mid-roll and is hijacked by a game-show prize banner. When the video ends, the interface takes over: name + email form → slot machine that always lands "$999 — so close!" → 4-question quiz about the ad (wrong answer rewinds the video and forces a rewatch) → fake $2.99 shipping fee form that always errors → 47-question survey ending in "Please allow 6–8 business years for delivery."',
-        iframeUrl: "https://codejam26-showcase.vercel.app/prize-combo/submission.html",
-        // Prize-combo's interface only kicks in after adFinished.
-        startEvent: "adFinished",
+        bareSubmissionUrl: "https://codejam26-showcase.vercel.app/prize-combo/submission.html",
       },
     ],
     learnings: [

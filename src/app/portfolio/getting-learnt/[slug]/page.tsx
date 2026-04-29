@@ -80,7 +80,7 @@ export default async function GettingLearntDetail({ params }: PageProps) {
         "@type": "WebApplication",
         name: sub.title,
         description: sub.concept,
-        url: sub.iframeUrl,
+        url: sub.bareSubmissionUrl,
         applicationCategory: "InteractiveDemo",
       })),
     }),
@@ -173,75 +173,97 @@ export default async function GettingLearntDetail({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Submissions / Demos */}
-        {entry.submissions && entry.submissions.length > 0 && (
+        {/* Live Showcase */}
+        {entry.showcaseUrl && (
           <section className="py-20 bg-black">
+            <div className="container mx-auto px-6 lg:px-12">
+              <AnimatedSection className="mb-12 max-w-3xl">
+                <span className="section-label mb-6 block">Live Showcase</span>
+                <h2 className="text-headline">
+                  All {entry.submissions?.length ?? 0} entries, <span style={{ color: "var(--gl-accent)" }}>playable</span> right here.
+                </h2>
+                <p className="text-white/50 text-lg leading-relaxed mt-6">
+                  This is the actual contest showcase running embedded — pick a submission from the dropdown,
+                  press <strong className="text-white">Play</strong> to start the host video, and try to dismiss
+                  the overlay that takes over. Desktop Chrome or Edge gives the best experience.
+                </p>
+              </AnimatedSection>
+
+              <AnimatedSection delay={100}>
+                <div style={{ borderColor: "var(--gl-accent-border)" }}>
+                  <CodejamDemo
+                    iframeUrl={entry.showcaseUrl}
+                    title={`${entry.title} — live showcase`}
+                    label="codejam26-showcase.vercel.app"
+                  />
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+        )}
+
+        {/* Submission Reference Cards */}
+        {entry.submissions && entry.submissions.length > 0 && (
+          <section className="py-20 bg-dark-gray border-y border-white/5">
             <div className="container mx-auto px-6 lg:px-12">
               <AnimatedSection className="mb-12 max-w-3xl">
                 <span className="section-label mb-6 block">The Submissions</span>
                 <h2 className="text-headline">
-                  {entry.submissions.length} entries, all <span style={{ color: "var(--gl-accent)" }}>playable</span> below.
+                  What&apos;s in the <span style={{ color: "var(--gl-accent)" }}>showcase</span>.
                 </h2>
                 <p className="text-white/50 text-lg leading-relaxed mt-6">
-                  Each demo is the actual submission running live in an iframe — desktop Chrome / Edge gives the best experience.
-                  Try to dismiss the overlay. (You won&apos;t.)
+                  Five entries, each a different flavor of intentionally hostile design.
+                  Concept and flow for each, so you can read about it before (or after) you try to escape it.
                 </p>
               </AnimatedSection>
 
-              <div className="space-y-20">
+              <div className="grid md:grid-cols-2 gap-6">
                 {entry.submissions.map((sub, i) => (
-                  <AnimatedSection key={sub.slug} delay={i * 50}>
-                    <div className="grid lg:grid-cols-12 gap-8">
-                      {/* Write-up column */}
-                      <div className="lg:col-span-4">
-                        <div className="sticky top-28">
-                          <div className="text-xs text-white/40 font-mono mb-3">
-                            #{(i + 1).toString().padStart(2, "0")} / {entry.submissions!.length.toString().padStart(2, "0")}
-                          </div>
-                          <h3 className="text-2xl font-semibold mb-3">{sub.title}</h3>
-                          <p
-                            className="text-base font-medium mb-5 italic"
-                            style={{ color: "var(--gl-accent)" }}
+                  <AnimatedSection key={sub.slug} delay={i * 75}>
+                    <div
+                      className="h-full p-7 rounded-2xl border bg-black/50 hover:bg-black/70 transition-colors"
+                      style={{ borderColor: "var(--gl-accent-border)" }}
+                    >
+                      <div className="flex items-baseline justify-between gap-4 mb-4">
+                        <span
+                          className="text-xs font-mono"
+                          style={{ color: "var(--gl-accent)" }}
+                        >
+                          #{(i + 1).toString().padStart(2, "0")}
+                        </span>
+                        <span className="text-[10px] text-white/30 uppercase tracking-widest font-mono truncate">
+                          {sub.slug}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">{sub.title}</h3>
+                      <p
+                        className="text-sm font-medium italic mb-5"
+                        style={{ color: "var(--gl-accent)" }}
+                      >
+                        {sub.tagline}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {sub.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-1 text-[10px] uppercase tracking-wider rounded-full bg-white/5 text-white/60 border border-white/10"
                           >
-                            {sub.tagline}
-                          </p>
-                          <div className="flex flex-wrap gap-2 mb-5">
-                            {sub.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="px-2.5 py-1 text-[11px] uppercase tracking-wider rounded-full bg-white/5 text-white/60 border border-white/10"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                          <p className="text-white/60 text-sm leading-relaxed mb-4">
-                            <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
-                              Concept
-                            </span>
-                            {sub.concept}
-                          </p>
-                          <p className="text-white/50 text-sm leading-relaxed">
-                            <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
-                              Flow
-                            </span>
-                            {sub.flow}
-                          </p>
-                        </div>
+                            {tag}
+                          </span>
+                        ))}
                       </div>
-
-                      {/* Demo iframe column */}
-                      <div className="lg:col-span-8">
-                        <div style={{ borderColor: "var(--gl-accent-border)" }}>
-                          <CodejamDemo
-                            iframeUrl={sub.iframeUrl}
-                            title={sub.title}
-                            slug={sub.slug}
-                            startEvent={sub.startEvent}
-                            openInNewTabUrl={`/portfolio/getting-learnt/${entry.slug}/play/${sub.slug}`}
-                          />
-                        </div>
-                      </div>
+                      <p className="text-white/60 text-sm leading-relaxed mb-4">
+                        <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
+                          Concept
+                        </span>
+                        {sub.concept}
+                      </p>
+                      <p className="text-white/50 text-sm leading-relaxed">
+                        <span className="text-white/40 uppercase text-[10px] tracking-widest font-medium block mb-2">
+                          Flow
+                        </span>
+                        {sub.flow}
+                      </p>
                     </div>
                   </AnimatedSection>
                 ))}
