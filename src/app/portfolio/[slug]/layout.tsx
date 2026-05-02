@@ -29,7 +29,16 @@ const projectMeta: Record<string, { title: string; description: string }> = {
     title: "Jobe Gutter Services Website | DustinTN",
     description: "See how we built a professional gutter services website for Jobe Gutter Services in Southeast Texas. SEO-optimized with service areas, project gallery, and estimate requests.",
   },
+  "walking-street-pictures": {
+    title: "Walking Street Pictures Website | DustinTN",
+    description: "An editorial, magazine-style Next.js website for an independent cinema studio in Angeles City, Philippines.",
+  },
 };
+
+// Slugs that are accessible via direct URL (e.g. for client previews) but
+// must NOT be indexed by search engines until they go live. Flip a slug out
+// of this set when the project launches.
+const NOINDEX_SLUGS = new Set<string>(["walking-street-pictures"]);
 
 export async function generateMetadata({
   params,
@@ -43,9 +52,12 @@ export async function generateMetadata({
     return { title: "Project Not Found | DustinTN" };
   }
 
+  const noindex = NOINDEX_SLUGS.has(slug);
+
   return {
     title: meta.title,
     description: meta.description,
+    ...(noindex && { robots: { index: false, follow: false } }),
     openGraph: {
       title: meta.title,
       description: meta.description,

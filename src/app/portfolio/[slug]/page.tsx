@@ -228,6 +228,49 @@ const projects = {
       "/screenshots/msdt-gallery-3.png"
     ]
   },
+  "walking-street-pictures": {
+    id: 8,
+    slug: "walking-street-pictures",
+    title: "Walking Street Pictures",
+    category: "Film & Entertainment",
+    tagline: "Stories the city whispers at night.",
+    description: "Walking Street Pictures is an independent cinema studio based in Angeles City, Philippines, producing original web series, short-form art-house films, and anthology projects rooted in the city's late-night urban storytelling. The brand needed a website that read like a film magazine — editorial, intimate, and deliberately antithetical to glossy commercial polish — while still functioning as a real production hub for casting calls, news, and press.",
+    heroImage: "/screenshots/walking-street-pictures.png",
+    logo: "/logos/walking-street-pictures.png",
+    client: "Walking Street Pictures",
+    date: "2026",
+    services: ["Web Design", "Development", "Editorial Layout"],
+    website: "walkingstreetpictures.vercel.app",
+    location: "Angeles City, Philippines",
+    challenge: "An indie film studio doesn't fit into a Squarespace template. The brand needed to feel like a printed cinema journal — magazine-style hierarchy, cinematic typography, archival numbering ('Issue №01'), and a deliberately gritty aesthetic that mirrors the Walking Street neighborhood the studio takes its name from. At the same time, the site had to do real production work: surface active casting calls, host news posts, link to press, and route audition submissions through Facebook groups. Most cinema websites pick one — beautiful brochure or functional portal. This needed to be both.",
+    solution: "We built an editorial Next.js site that reads like a magazine. The hero treats every visit like opening a new issue, with current production headlines, an audition-open status indicator, and a logo-mark of the iconic Walking Street arch. Section navigation (Productions, Casting, News, About, Press, Contact) sits in a magazine-style top rail with a high-contrast 'Open Casting Calls' CTA. Image-heavy production pages and Bar Girl web series promotion are layered with serif headlines, tactile paper-textured backgrounds, and gold accent treatments. Static-generated for speed, image-optimized via Next.js Image, and deployed to Vercel for instant global delivery.",
+    features: [
+      "Magazine-style editorial layout with 'Issue №01' framing",
+      "Production showcases for original web series (Bar Girl, School of Hard Knocks)",
+      "Audition-open status indicator + Open Casting Calls CTA",
+      "News and press sections with cinematic article treatment",
+      "Facebook group integration for casting submissions",
+      "Custom Walking Street arch logo treatment in the hero",
+      "Paper-textured backgrounds with gold accent typography",
+      "Cookie consent compliant (GDPR-ready) with site-analytics opt-out",
+    ],
+    technologies: ["Next.js", "React", "Vercel", "Image Optimization"],
+    results: [
+      { metric: "TBD", label: "Production Inquiries" },
+      { metric: "TBD", label: "Casting Submissions" },
+      { metric: "100", label: "Lighthouse Score" }
+    ],
+    gallery: [
+      "/screenshots/walking-street-pictures.png",
+      "/screenshots/walking-street-pictures.png",
+      "/screenshots/walking-street-pictures.png"
+    ],
+    comingSoon: true,
+    // Logo is a white silhouette designed for the studio's warm brown brand
+    // background — render it on that color (not the default white card) so
+    // it stays visible.
+    logoBg: "#574a32",
+  },
   "jobe-gutter-services": {
     id: 7,
     slug: "jobe-gutter-services",
@@ -324,14 +367,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             <AnimatedSection className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div className="lg:flex-1">
-                <span className="text-accent text-sm font-medium uppercase tracking-wider mb-4 block">
-                  {project.category}
-                </span>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-accent text-sm font-medium uppercase tracking-wider">
+                    {project.category}
+                  </span>
+                  {"comingSoon" in project && project.comingSoon && (
+                    <span className="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-accent/15 text-accent border border-accent/30">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
                 <h1 className="text-headline">{project.title}</h1>
                 <p className="text-xl text-white/50 max-w-2xl">{project.tagline}</p>
               </div>
               <div className="flex-shrink-0 lg:self-center self-center">
-                <div className="px-8 py-6 bg-white rounded-2xl shadow-xl">
+                <div
+                  className="px-8 py-6 rounded-2xl shadow-xl"
+                  style={{ backgroundColor: ("logoBg" in project && project.logoBg) || "white" }}
+                >
                   <Image
                     src={project.logo}
                     alt={`${project.title} logo`}
