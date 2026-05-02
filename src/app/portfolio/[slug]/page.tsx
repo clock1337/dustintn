@@ -266,10 +266,9 @@ const projects = {
       "/screenshots/walking-street-pictures.png"
     ],
     comingSoon: true,
-    // Logo is a white silhouette designed for the studio's warm brown brand
-    // background — render it on that color (not the default white card) so
-    // it stays visible.
-    logoBg: "#574a32",
+    // Brand-supplied logo is white-on-black with the black baked in — render
+    // the card on black so the logo sits cleanly without a clashing edge.
+    logoBg: "#000000",
   },
   "jobe-gutter-services": {
     id: 7,
