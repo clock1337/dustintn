@@ -101,6 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "maple-sky-dreamtree-studio",
     "jobe-gutter-services",
     "walking-street-pictures",
+    "native-pastures",
   ].map((slug) => ({
     url: `${baseUrl}/portfolio/${slug}`,
     lastModified: now,

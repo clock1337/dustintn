@@ -228,6 +228,47 @@ const projects = {
       "/screenshots/msdt-gallery-3.png"
     ]
   },
+  "native-pastures": {
+    id: 9,
+    slug: "native-pastures",
+    title: "Native Pastures",
+    category: "Concept & Parody",
+    tagline: "You came from the earth. We just bottled it.",
+    description: "Native Pastures is a deadpan parody of the premium-wellness category — the brands that turn ordinary things into $90 ritual objects with serif typography and tasteful product photography. The premium product? Dirt. Literal Premium Ancestral Dirt™, sold with the same straight-faced sincerity as ashwagandha tinctures and grounding mats. The site is a craft exercise: build the satire as carefully as the brands it's making fun of, so the joke lands without ever winking at the camera.",
+    heroImage: "/screenshots/native-pastures.png",
+    logo: "/logos/native-pastures.png",
+    client: "Internal — DustinTN Creative Lab",
+    date: "2026",
+    services: ["Brand Concept", "Web Design", "Editorial Copy", "Development"],
+    website: "native-pastures.vercel.app",
+    location: "Internet",
+    challenge: "Parody only works when it's indistinguishable from the thing it parodies until the moment you realize you're being trolled. That meant building a wellness brand that genuinely feels premium — earthy palette, editorial product photography, real-feeling certifications ('Ethically Sourced', 'Spiritually Adjacent', '100% Real'), customer ratings, an actual FAQ. Then loading that polished package with the absurd payload: that you're paying for a jar of dirt. The challenge was tonal restraint — every winking line of copy or unserious design choice would let the viewer off the hook before the joke landed.",
+    solution: "We built it like a real wellness launch. Hero with serif headline ('You came from the earth.') and a clean product shot of 'The Original.' A row of trust badges. A 'Just bottled it' brand line. A long-scroll product story, customer ratings, and an FAQ that includes the question every visitor is silently asking — 'Is this a real product?' — answered with the same deadpan polish as 'Is this certified organic?'. Earthy cream/coffee-bean palette, generous whitespace, and product photography treated like editorial spreads. Every craft choice that would sell ashwagandha is the same choice that sells the joke.",
+    features: [
+      "Editorial product page treatment for 'Premium Ancestral Dirt™'",
+      "Trust-badge row: 'Ethically Sourced · Spiritually Adjacent · 100% Real'",
+      "Customer rating + review summary block",
+      "Deadpan FAQ section with 'Is this a real product?' as a real question",
+      "'Starter Kit $49 for a 4-bundle' pricing tier with the right amount of unexplained math",
+      "Earthy cream-and-coffee palette + serif display type",
+      "Footer that maintains the bit all the way through copyright",
+      "Sub-second page load, A+ Lighthouse — the satire ships fast",
+    ],
+    technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    results: [
+      { metric: "1", label: "Joke. No Winking." },
+      { metric: "100%", label: "Real-Feeling Brand" },
+      { metric: "100", label: "Lighthouse Score" }
+    ],
+    gallery: [
+      "/screenshots/native-pastures.png",
+      "/screenshots/native-pastures.png",
+      "/screenshots/native-pastures.png"
+    ],
+    // Native Pastures logo is a small earthy sun-over-mountain icon on a cream
+    // background — render the card on cream so the logo blends with the brand.
+    logoBg: "#f1ebd8",
+  },
   "walking-street-pictures": {
     id: 8,
     slug: "walking-street-pictures",

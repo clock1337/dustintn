@@ -103,6 +103,18 @@ const projects = [
     location: "Angeles City, Philippines",
     services: ["Web Design", "Development", "Custom CMS"],
     website: "walkingstreetpictures.com"
+  },
+  {
+    id: 9,
+    slug: "native-pastures",
+    title: "Native Pastures",
+    category: "Concept & Parody",
+    description: "A deadpan parody of premium-wellness branding — Native Pastures sells 'Premium Ancestral Dirt™' with the same earnest sincerity as a $90 supplement. Earthy palette, editorial product photography, certifications, FAQ that openly asks 'Is this a real product?'. A satire built with the same craft as the brands it's making fun of.",
+    image: "/screenshots/native-pastures.png",
+    client: "Internal — DustinTN Creative Lab",
+    location: "Internet",
+    services: ["Brand Concept", "Web Design", "Editorial Copy", "Development"],
+    website: "native-pastures.vercel.app"
   }
 ];
 

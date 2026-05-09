@@ -33,6 +33,10 @@ const projectMeta: Record<string, { title: string; description: string }> = {
     title: "Walking Street Pictures Website + CMS | DustinTN",
     description: "See how we built an editorial, magazine-style Next.js website with a custom web editor backend for Walking Street Pictures, an independent cinema studio in Angeles City, Philippines.",
   },
+  "native-pastures": {
+    title: "Native Pastures — Wellness Brand Parody | DustinTN",
+    description: "A deadpan parody of premium-wellness branding. Native Pastures sells 'Premium Ancestral Dirt™' with the same straight-faced craft as the brands it's making fun of. A case study in tonal restraint and parody-by-polish.",
+  },
 };
 
 // Slugs that are accessible via direct URL (e.g. for client previews) but

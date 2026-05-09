@@ -28,6 +28,7 @@ const categories = [
   'Branding',
   'Home Services',
   'Film & Entertainment',
+  'Concept & Parody',
 ];
 
 export default function PortfolioFilter({
