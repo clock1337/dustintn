@@ -100,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "coldwell-banker-commercial",
     "maple-sky-dreamtree-studio",
     "jobe-gutter-services",
+    "walking-street-pictures",
   ].map((slug) => ({
     url: `${baseUrl}/portfolio/${slug}`,
     lastModified: now,

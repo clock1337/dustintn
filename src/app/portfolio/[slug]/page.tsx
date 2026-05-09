@@ -234,30 +234,32 @@ const projects = {
     title: "Walking Street Pictures",
     category: "Film & Entertainment",
     tagline: "Stories the city whispers at night.",
-    description: "Walking Street Pictures is an independent cinema studio based in Angeles City, Philippines, producing original web series, short-form art-house films, and anthology projects rooted in the city's late-night urban storytelling. The brand needed a website that read like a film magazine — editorial, intimate, and deliberately antithetical to glossy commercial polish — while still functioning as a real production hub for casting calls, news, and press.",
+    description: "Walking Street Pictures is an independent cinema studio based in Angeles City, Philippines, producing original web series, short-form art-house films, and anthology projects rooted in the city's late-night urban storytelling. The brand needed a website that read like a film magazine — editorial, intimate, and deliberately antithetical to glossy commercial polish — while still functioning as a real production hub for casting calls, news, and press. We paired the public-facing magazine with a custom web editor backend so the studio team can publish new productions, news posts, and audition calls themselves without ever touching code.",
     heroImage: "/screenshots/walking-street-pictures.png",
     logo: "/logos/walking-street-pictures.png",
     client: "Walking Street Pictures",
     date: "2026",
-    services: ["Web Design", "Development", "Editorial Layout"],
-    website: "walkingstreetpictures.vercel.app",
+    services: ["Web Design", "Development", "Custom CMS", "Editorial Layout"],
+    website: "walkingstreetpictures.com",
     location: "Angeles City, Philippines",
-    challenge: "An indie film studio doesn't fit into a Squarespace template. The brand needed to feel like a printed cinema journal — magazine-style hierarchy, cinematic typography, archival numbering ('Issue №01'), and a deliberately gritty aesthetic that mirrors the Walking Street neighborhood the studio takes its name from. At the same time, the site had to do real production work: surface active casting calls, host news posts, link to press, and route audition submissions through Facebook groups. Most cinema websites pick one — beautiful brochure or functional portal. This needed to be both.",
-    solution: "We built an editorial Next.js site that reads like a magazine. The hero treats every visit like opening a new issue, with current production headlines, an audition-open status indicator, and a logo-mark of the iconic Walking Street arch. Section navigation (Productions, Casting, News, About, Press, Contact) sits in a magazine-style top rail with a high-contrast 'Open Casting Calls' CTA. Image-heavy production pages and Bar Girl web series promotion are layered with serif headlines, tactile paper-textured backgrounds, and gold accent treatments. Static-generated for speed, image-optimized via Next.js Image, and deployed to Vercel for instant global delivery.",
+    challenge: "An indie film studio doesn't fit into a Squarespace template. The brand needed to feel like a printed cinema journal — magazine-style hierarchy, cinematic typography, archival numbering ('Issue №01'), and a deliberately gritty aesthetic that mirrors the Walking Street neighborhood the studio takes its name from. At the same time, the site had to do real production work: surface active casting calls, host news posts, link to press, and route audition submissions. And the studio team — directors and producers, not developers — needed to be able to update everything themselves: spin up a new production page, post news, flip an audition status from open to closed, all without filing a ticket or learning Markdown.",
+    solution: "We built an editorial Next.js site paired with a custom web editor backend. The public-facing magazine reads like a printed issue — serif headlines, paper-textured backgrounds, gold accent treatments, an audition-open status indicator, and a logo-mark of the iconic Walking Street arch. The studio side is a private admin panel where the team can author new productions, news posts, casting calls, and press features in a clean WYSIWYG editor with image upload, drafts, and one-click publish. Static-generated for the public site, server-rendered for the editor, all on a single Next.js codebase deployed to walkingstreetpictures.com.",
     features: [
       "Magazine-style editorial layout with 'Issue №01' framing",
+      "Custom web editor backend — productions, news, and casting calls all self-managed",
+      "WYSIWYG content editor with image upload and draft/publish workflow",
       "Production showcases for original web series (Bar Girl, School of Hard Knocks)",
       "Audition-open status indicator + Open Casting Calls CTA",
       "News and press sections with cinematic article treatment",
-      "Facebook group integration for casting submissions",
       "Custom Walking Street arch logo treatment in the hero",
       "Paper-textured backgrounds with gold accent typography",
       "Cookie consent compliant (GDPR-ready) with site-analytics opt-out",
+      "Static-generated public site for speed; server-rendered admin panel",
     ],
-    technologies: ["Next.js", "React", "Vercel", "Image Optimization"],
+    technologies: ["Next.js", "React", "Custom CMS", "Vercel", "Image Optimization"],
     results: [
-      { metric: "TBD", label: "Production Inquiries" },
-      { metric: "TBD", label: "Casting Submissions" },
+      { metric: "100%", label: "Self-Managed Content" },
+      { metric: "0", label: "Developer Tickets to Publish" },
       { metric: "100", label: "Lighthouse Score" }
     ],
     gallery: [
@@ -265,7 +267,6 @@ const projects = {
       "/screenshots/walking-street-pictures.png",
       "/screenshots/walking-street-pictures.png"
     ],
-    comingSoon: true,
     // Brand-supplied logo is white-on-black with the black baked in — render
     // the card on black so the logo sits cleanly without a clashing edge.
     logoBg: "#000000",
@@ -370,7 +371,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <span className="text-accent text-sm font-medium uppercase tracking-wider">
                     {project.category}
                   </span>
-                  {"comingSoon" in project && project.comingSoon && (
+                  {Boolean((project as { comingSoon?: boolean }).comingSoon) && (
                     <span className="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-accent/15 text-accent border border-accent/30">
                       Coming Soon
                     </span>
@@ -382,7 +383,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <div className="flex-shrink-0 lg:self-center self-center">
                 <div
                   className="px-8 py-6 rounded-2xl shadow-xl"
-                  style={{ backgroundColor: ("logoBg" in project && project.logoBg) || "white" }}
+                  style={{ backgroundColor: (project as { logoBg?: string }).logoBg ?? "white" }}
                 >
                   <Image
                     src={project.logo}

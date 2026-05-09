@@ -30,15 +30,15 @@ const projectMeta: Record<string, { title: string; description: string }> = {
     description: "See how we built a professional gutter services website for Jobe Gutter Services in Southeast Texas. SEO-optimized with service areas, project gallery, and estimate requests.",
   },
   "walking-street-pictures": {
-    title: "Walking Street Pictures Website | DustinTN",
-    description: "An editorial, magazine-style Next.js website for an independent cinema studio in Angeles City, Philippines.",
+    title: "Walking Street Pictures Website + CMS | DustinTN",
+    description: "See how we built an editorial, magazine-style Next.js website with a custom web editor backend for Walking Street Pictures, an independent cinema studio in Angeles City, Philippines.",
   },
 };
 
 // Slugs that are accessible via direct URL (e.g. for client previews) but
 // must NOT be indexed by search engines until they go live. Flip a slug out
 // of this set when the project launches.
-const NOINDEX_SLUGS = new Set<string>(["walking-street-pictures"]);
+const NOINDEX_SLUGS = new Set<string>([]);
 
 export async function generateMetadata({
   params,

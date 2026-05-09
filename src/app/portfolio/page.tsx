@@ -93,21 +93,16 @@ const projects = [
     website: "jobegutterservices.com"
   },
   {
-    // Hidden from public /portfolio listing via comingSoon filter below.
-    // When going live: flip comingSoon to false, also flip noindex in
-    // [slug]/layout.tsx, and add "Film & Entertainment" to the category
-    // filter in PortfolioFilter.tsx.
     id: 8,
     slug: "walking-street-pictures",
     title: "Walking Street Pictures",
     category: "Film & Entertainment",
-    description: "An editorial, magazine-style website for an independent cinema studio in Angeles City, Philippines. Showcases original web series, casting calls, and a deliberately art-house aesthetic that mirrors the studio's late-night urban storytelling.",
+    description: "An editorial, magazine-style website for an independent cinema studio in Angeles City, Philippines. Showcases original web series and casting calls, and ships with a custom web editor backend the studio uses to publish productions, news, and audition posts without touching code.",
     image: "/screenshots/walking-street-pictures.png",
     client: "Walking Street Pictures",
     location: "Angeles City, Philippines",
-    services: ["Web Design", "Development", "Editorial Layout"],
-    website: "walkingstreetpictures.vercel.app",
-    comingSoon: true,
+    services: ["Web Design", "Development", "Custom CMS"],
+    website: "walkingstreetpictures.com"
   }
 ];
 
@@ -136,9 +131,9 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        {/* comingSoon entries are accessible via direct URL (e.g. for client previews)
-            but hidden from the public portfolio listing until they go live. */}
-        <PortfolioFilter projects={projects.filter((p) => !p.comingSoon)} />
+        {/* comingSoon entries (if added in the future) are accessible via
+            direct URL but hidden from the public portfolio listing. */}
+        <PortfolioFilter projects={projects.filter((p) => !("comingSoon" in p && p.comingSoon))} />
 
         {/* CTA Section */}
         <section className="py-32 bg-dark-gray relative overflow-hidden">

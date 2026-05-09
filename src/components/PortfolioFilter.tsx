@@ -27,6 +27,7 @@ const categories = [
   'Real Estate',
   'Branding',
   'Home Services',
+  'Film & Entertainment',
 ];
 
 export default function PortfolioFilter({
