@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowLeft, ExternalLink, Calendar, User, Briefcase, Globe, CheckCircle2, MapPin } from "lucide-react";
+import { ArrowRight, ArrowLeft, ExternalLink, Calendar, User, Briefcase, Globe, CheckCircle2, MapPin, Newspaper } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +8,7 @@ import ProudlyServing from "@/components/ProudlyServing";
 import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import { getLaunchByPortfolioSlug } from "@/data/launches";
 
 // Project data
 const projects = {
@@ -370,6 +371,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  // If this project has a published /launches article, surface a cross-link.
+  const launch = getLaunchByPortfolioSlug(slug);
+
   const projectJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -420,6 +424,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </div>
                 <h1 className="text-headline">{project.title}</h1>
                 <p className="text-xl text-white/50 max-w-2xl">{project.tagline}</p>
+                {launch && (
+                  <Link
+                    href={`/launches/${launch.slug}`}
+                    className="group inline-flex items-center gap-2 mt-6 px-5 py-3 bg-accent/10 hover:bg-accent text-accent hover:text-white border border-accent/30 hover:border-accent rounded-full text-sm font-medium transition-all duration-300"
+                  >
+                    <Newspaper className="w-4 h-4" />
+                    Read the launch story
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                )}
               </div>
               <div className="flex-shrink-0 lg:self-center self-center">
                 <div

@@ -82,7 +82,7 @@ const ascensionAddonLinks = [
 ];
 
 interface NavigationProps {
-  currentPage?: 'home' | 'portfolio' | 'project' | 'resources';
+  currentPage?: 'home' | 'portfolio' | 'project' | 'resources' | 'launches';
 }
 
 export default function Navigation({ currentPage = 'home' }: NavigationProps) {
@@ -403,6 +403,14 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                 </div>
               </div>
 
+              {/* Launches */}
+              <Link
+                href="/launches"
+                className={`nav-link-new ${currentPage === 'launches' ? 'nav-link-active' : ''}`}
+              >
+                Launches
+              </Link>
+
               {/* Contact */}
               <Link
                 href="/contact"
@@ -659,6 +667,15 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
                   </div>
                 </div>
               </div>
+
+              {/* Launches */}
+              <Link
+                href="/launches"
+                onClick={closeMobile}
+                className="flex items-center justify-between px-4 py-4 rounded-xl text-lg font-medium text-white hover:bg-white/5 transition-colors"
+              >
+                Launches
+              </Link>
 
               {/* Contact */}
               <Link

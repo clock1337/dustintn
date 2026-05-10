@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { resources, categoryPages } from "@/data/resources";
 import { ascensionAddons } from "@/data/ascension-addons";
+import { launches } from "@/data/launches";
 
 // Note: Getting Learnt HUB (/portfolio/getting-learnt) is included below so
 // Google indexes the experiments-lab landing page. Chapter detail pages
@@ -165,6 +166,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Launches — long-form build narratives. Index + each article.
+  const launchesIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/launches`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ];
+
+  const launchPages: MetadataRoute.Sitemap = launches.map((l) => ({
+    url: `${baseUrl}/launches/${l.slug}`,
+    lastModified: new Date(l.publishDate),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     ...staticPages,
     ...servicePages,
@@ -175,5 +193,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ascensionStatic,
     ...ascensionAddonPages,
     ...gettingLearntHub,
+    ...launchesIndex,
+    ...launchPages,
   ];
 }
