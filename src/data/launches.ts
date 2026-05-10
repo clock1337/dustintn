@@ -114,16 +114,6 @@ export const launches: Launch[] = [
         text: "Single Next.js codebase. Public routes statically generated for speed and SEO; admin routes server-rendered behind auth. Image optimization via Next.js Image (so the studio can drop a 4MB still from a shoot and the site still loads under a second). Deployed to Vercel for global edge delivery. No multi-repo split, no headless-vs-frontend boundary to maintain, no 'wait, that's in the CMS' confusion when something needs changing.",
       },
 
-      { type: "h2", text: "What I'd do differently" },
-      {
-        type: "list",
-        items: [
-          "Audit the editor's keyboard shortcuts earlier — the casting coordinator wanted Cmd+S to save drafts before I'd added it, which was an obvious oversight.",
-          "Design the empty states first. The magazine looks great with content; it looked underdressed during the bootstrap week before they had productions to publish. Next time I'll mock the empty state with the same care as the loaded state.",
-          "Bake in scheduled publishing day one. They wanted to queue an audition call to go live at 9am the next morning, and that became a v1.1 ask. Should have shipped it from the start.",
-        ],
-      },
-
       { type: "h2", text: "The takeaway" },
       {
         type: "p",
