@@ -7,6 +7,7 @@ import ResourceSnippets from "@/components/ResourceSnippets";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import AscensionCallout from "@/components/ascension/AscensionCallout";
+import MarketVendors from "@/components/MarketVendors";
 
 const services = [
   {
@@ -294,6 +295,7 @@ export default function ServicesPage() {
         <AscensionCallout />
 
         <ProudlyServing />
+        <MarketVendors />
         <Footer />
       </main>
     </div>

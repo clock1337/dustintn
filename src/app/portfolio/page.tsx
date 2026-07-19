@@ -9,6 +9,18 @@ import PortfolioFilter from "@/components/PortfolioFilter";
 
 const projects = [
   {
+    id: 10,
+    slug: "a-taste-of-sweden",
+    title: "A Taste of Sweden",
+    category: "Hospitality",
+    description: "A mother-and-daughter home bakery selling Swedish family recipes at the Hendersonville farmers market — prinsesstårta, kanelbullar and a menu that is largely naturally gluten free. Built to answer the two questions their customers actually ask: what do you make, and where are you Saturday.",
+    image: "/screenshots/a-taste-of-sweden.png",
+    client: "A Taste of Sweden",
+    location: "Hendersonville, TN",
+    services: ["Web Design", "Development", "Local SEO"],
+    website: "atasteofsweden.dustintn.com"
+  },
+  {
     id: 1,
     slug: "fine-assets",
     title: "Fine Assets Personal Training",
